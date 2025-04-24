@@ -1,0 +1,14 @@
+total_sentences: 4
+narrative: 3
+interrogative: 0
+imperative: 0
+avg_sentence_len: 11.0
+avg_word_len: 8.8
+smiley_count: 0
+sentences_with_digits: ['12346 hksafjfhaksf']
+date_pattern: (0[1-9]|[12]\d|3[01])/(0[1-9]|1[0-2])/(1[6-9]\d{2}|[2-9]\d{3})
+uppercase_count: 0
+lowercase_count: 39
+z_word: Not found
+z_position: -1
+no_a_text: ertyyuiu dfgfhjkhlj fghjkhljm 12346 hksafjfhaksf
