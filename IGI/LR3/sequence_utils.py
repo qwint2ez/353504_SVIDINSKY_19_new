@@ -24,15 +24,16 @@ def initialize_with_input(size):
 
 def initialize_with_generator(size):
     """
-    Initialize a list with random numbers.
+    Generate a sequence of random numbers using yield.
 
     Args:
-        size (int): Number of elements in the list.
+        size (int): Number of elements in the sequence.
 
-    Returns:
-        list: List of random floats.
+    Yields:
+        float: Random float between -10 and 10.
     """
-    return [random.uniform(-10, 10) for _ in range(size)]
+    for _ in range(size):
+        yield random.uniform(-10, 10)
 
 def process_list(sequence):
     """
@@ -43,8 +44,15 @@ def process_list(sequence):
 
     Returns:
         tuple: (max_index, product)
+
+    Raises:
+        ValueError: If the list has fewer than two non-zero elements or is empty.
     """
+    if not sequence:
+        raise ValueError("List cannot be empty")
     max_index = sequence.index(max(sequence))
     non_zeros = [x for x in sequence if x != 0]
-    product = non_zeros[0] * non_zeros[1] if len(non_zeros) >= 2 else 0
+    if len(non_zeros) < 2:
+        raise ValueError("List must contain at least two non-zero elements for product calculation")
+    product = non_zeros[0] * non_zeros[1]
     return max_index, product

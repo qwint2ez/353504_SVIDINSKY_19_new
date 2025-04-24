@@ -47,8 +47,23 @@ def run_task4():
 def run_task5():
     """Run Task 5: List processing."""
     print("\nTask 5: List processing")
-    size = int(get_float_input("Enter list size: "))
-    seq = initialize_with_input(size)
+    while True:
+        size = int(get_float_input("Enter list size (positive number): "))
+        if size <= 0:
+            print("Size must be a positive number!")
+            continue
+        break
+    print("Choose initialization method:")
+    print("1. Manual input")
+    print("2. Random generator")
+    method = input("Enter 1 or 2: ")
+    if method == '1':
+        seq = initialize_with_input(size)
+    elif method == '2':
+        seq = list(initialize_with_generator(size))  # Convert generator to list
+    else:
+        print("Invalid choice, using manual input by default.")
+        seq = initialize_with_input(size)
     max_idx, prod = process_list(seq)
     print(f"List: {seq}")
     print(f"Max element index: {max_idx}, Product of first two non-zeros: {prod}")
