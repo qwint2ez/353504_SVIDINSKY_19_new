@@ -7,7 +7,6 @@ from task1.student import Student  # Добавляем импорт класс�
 from utilities.input_utils import get_valid_int
 
 def run_task1():
-    """Run Task 1 with a user-friendly interface."""
     classroom = ClassRoom()
     print("=== Task 1: Manage School Class ===")
     choice = input("Do you want to (1) manually input students or (2) auto-generate? (1/2): ")
@@ -34,6 +33,8 @@ def run_task1():
 
     if classroom.students:
         classroom.to_csv("students.csv")
+        classroom.to_pickle("students.pkl")  # Добавляем сохранение в pickle
+        print("Data saved to students.csv and students.pkl")
         print("Average birthday:", classroom.calculate_average_birthday())
         search = input("Search student by surname: ")
         results = classroom.search_student(search)

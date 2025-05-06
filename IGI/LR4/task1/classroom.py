@@ -71,6 +71,28 @@ class ClassRoom:
             for s in self.students:
                 writer.writerow([s.surname, s._initials, s._day, s._month, s._year])
 
+    def to_pickle(self, filename):
+        """Serialize the classroom to a pickle file.
+
+        Args:
+            filename (str): File to save to.
+        """
+        with open(filename, 'wb') as f:
+            pickle.dump(self, f)
+
+    @staticmethod
+    def from_pickle(filename):
+        """Deserialize a classroom from a pickle file.
+
+        Args:
+            filename (str): File to read from.
+
+        Returns:
+            ClassRoom: The deserialized classroom.
+        """
+        with open(filename, 'rb') as f:
+            return pickle.load(f)
+
 def generate_random_student():
     """Generate a random student.
 

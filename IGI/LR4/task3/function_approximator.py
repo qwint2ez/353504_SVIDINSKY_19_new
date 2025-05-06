@@ -6,7 +6,8 @@ This module defines the FunctionApproximator class for function approximation.
 """
 import math
 import numpy as np
-from abc import ABC, abstractmethod  # Добавляем импорт ABC и abstractmethod
+import matplotlib.pyplot as plt  # Добавляем импорт matplotlib
+from abc import ABC, abstractmethod
 
 class Approximator(ABC):
     """Abstract base class for function approximators."""
@@ -29,6 +30,8 @@ class FunctionApproximator(Approximator):
         x_values (np.ndarray): X values.
         n (int): Number of terms.
         approximations (list): Approximated values.
+        exact_values (list): Exact arccos(x) values.
+        errors (list): Errors between approximated and exact values.
     """
     def __init__(self, x_start, x_end, num_points, n_terms):
         """Initialize approximator.
@@ -43,6 +46,8 @@ class FunctionApproximator(Approximator):
         self.x_values = np.linspace(x_start, x_end, num_points)
         self.n = n_terms
         self.approximations = [self.compute(x) for x in self.x_values]
+        self.exact_values = [math.acos(x) for x in self.x_values]
+        self.errors = [abs(approx - exact) for approx, exact in zip(self.approximations, self.exact_values)]
 
     def compute(self, x):
         """Compute arccos(x) series.
@@ -63,6 +68,29 @@ class FunctionApproximator(Approximator):
             term = math.factorial(2*k) / (4**k * math.factorial(k)**2 * (2*k + 1)) * x**(2*k + 1)
             result -= term
         return result
+
+    def plot(self, filename):
+        """Plot the approximated and exact arccos(x) functions.
+
+        Args:
+            filename (str): File to save the plot to.
+        """
+        plt.figure(figsize=(10, 6))
+        plt.plot(self.x_values, self.approximations, 'b-', label='Series Approximation')
+        plt.plot(self.x_values, self.exact_values, 'r--', label='Exact arccos(x)')
+        plt.xlabel('x')
+        plt.ylabel('arccos(x)')
+        plt.title('Series Approximation vs Exact arccos(x)')
+        plt.legend()
+        plt.grid(True)
+        mid_idx = len(self.x_values) // 2
+        mid_x = self.x_values[mid_idx]
+        mid_f = self.approximations[mid_idx]
+        plt.annotate(f"Error: {self.errors[mid_idx]:.4f}", (mid_x, mid_f), textcoords="offset points", xytext=(0,10), ha='center')
+        plt.axhline(0, color='black', linewidth=0.5)
+        plt.axvline(0, color='black', linewidth=0.5)
+        plt.savefig(filename)
+        plt.show()
 
     def __str__(self):
         """String representation.
