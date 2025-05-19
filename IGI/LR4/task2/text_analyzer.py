@@ -1,6 +1,6 @@
 """
 TextAnalyzer class for Task 2: Text analysis using regex.
-Lab Work #4, Version 1.0, Developer: John Doe, Date: 2025-04-24
+Lab Work #4, Version 1.0, Developer: Alexander Svidinsky, Date: 2025-04-24
 
 This module defines the TextAnalyzer class for analyzing text according to the task requirements.
 """
@@ -48,7 +48,7 @@ class TextAnalyzer(FileHandlerMixin):
         Args:
             text (str): Input text.
         """
-        super().__init__()  # Initialize mixin
+        super().__init__()
         self.text = text
 
     def analyze(self):
@@ -81,19 +81,33 @@ class TextAnalyzer(FileHandlerMixin):
         results['smiley_count'] = len([s for s in smileys if len(set(s[0])) == 1])
 
         # Sentences with spaces, digits, and punctuation
-        results['sentences_with_digits'] = [s for s in sentences if re.search(r'\d', s)]
+        results['sentences_with_special'] = [
+            s for s in sentences
+            if re.search(r'\s', s) and re.search(r'\d', s) and re.search(r'[.,!?;:"-]', s)
+        ]
 
         # Date pattern for dd/mm/yyyy (1600-9999)
-        results['date_pattern'] = r'(0[1-9]|[12]\d|3[01])/(0[1-9]|1[0-2])/(1[6-9]\d{2}|[2-9]\d{3})'
+        date_pattern = r'^(0[1-9]|[12]\d|3[01])/(0[1-9]|1[0-2])/(1[6-9]\d{2}|[2-9]\d{3})$'
+        dates = re.findall(date_pattern.replace('^', '').replace('$', ''), self.text)
+        results['dates_found'] = dates
+        # Проверка, является ли весь текст датой
+        results['is_date'] = bool(re.match(date_pattern, self.text.strip()))
 
         # Count uppercase and lowercase letters
         results['uppercase_count'] = len(re.findall(r'[А-ЯA-Z]', self.text))
         results['lowercase_count'] = len(re.findall(r'[а-яa-z]', self.text))
 
-        # Find first word with 'z' and its position
-        z_match = re.search(r'\b\w*z\w*\b', self.text, re.IGNORECASE)
-        results['z_word'] = z_match.group() if z_match else "Not found"
-        results['z_position'] = z_match.start() if z_match else -1
+        # Find first word with 'z' and its index
+        words = re.findall(r'\b\w+\b', self.text)
+        z_word = None
+        z_word_index = -1
+        for idx, word in enumerate(words):
+            if 'z' in word.lower():
+                z_word = word
+                z_word_index = idx
+                break
+        results['z_word'] = z_word if z_word else "Not found"
+        results['z_word_index'] = z_word_index
 
         # Exclude words starting with 'a' or 'A'
         results['no_a_text'] = ' '.join(re.findall(r'\b(?![aAаА])\w+\b', self.text))

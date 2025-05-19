@@ -1,6 +1,6 @@
 """
 Main module for Task 5: Matrix analysis.
-Lab Work #4, Version 1.0, Developer: John Doe, Date: 2025-04-24
+Lab Work #4, Version 1.0, Developer: Alexander Svidinsky, Date: 2025-04-24
 """
 from task5.matrix_analyzer import MatrixAnalyzer
 from utilities.input_utils import get_valid_int

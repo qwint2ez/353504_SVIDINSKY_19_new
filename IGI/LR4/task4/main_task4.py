@@ -1,6 +1,6 @@
 """
 Main module for Task 4: Geometric figures.
-Lab Work #4, Version 1.0, Developer: John Doe, Date: 2025-04-24
+Lab Work #4, Version 1.0, Developer: Alexander Svidinsky, Date: 2025-04-24
 
 This module provides the main function to run Task 4, allowing the user to create and draw trapezoids.
 """

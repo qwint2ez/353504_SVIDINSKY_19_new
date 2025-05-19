@@ -1,6 +1,6 @@
 """
 MatrixAnalyzer class for Task 5: Matrix operations.
-Lab Work #4, Version 1.0, Developer: John Doe, Date: 2025-04-24
+Lab Work #4, Version 1.0, Developer: Alexander Svidinsky, Date: 2025-04-24
 
 This module defines the MatrixAnalyzer class for matrix operations.
 """

@@ -1,6 +1,6 @@
 """
 GeometricFigure abstract base class for Task 4.
-Lab Work #4, Version 1.0, Developer: John Doe, Date: 2025-04-24
+Lab Work #4, Version 1.0, Developer: Alexander Svidinsky, Date: 2025-04-24
 
 This module defines the abstract base class for geometric figures.
 """

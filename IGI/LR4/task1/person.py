@@ -1,6 +1,6 @@
 """
 Person base class for Task 1.
-Lab Work #4, Version 1.0, Developer: John Doe, Date: 2025-04-24
+Lab Work #4, Version 1.0, Developer: Alexander Svidinsky, Date: 2025-04-24
 """
 
 class Person:

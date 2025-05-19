@@ -1,6 +1,6 @@
 """
 Main module for Task 1: Manage school class data.
-Lab Work #4, Version 1.0, Developer: John Doe, Date: 2025-04-24
+Lab Work #4, Version 1.0, Developer: Alexander Svidinsky, Date: 2025-04-24
 """
 from task1.classroom import ClassRoom, generate_random_student
 from task1.student import Student  # Добавляем импорт класса Student

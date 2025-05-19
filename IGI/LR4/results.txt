@@ -1,14 +1,15 @@
-total_sentences: 4
-narrative: 3
+total_sentences: 1
+narrative: 0
 interrogative: 0
 imperative: 0
-avg_sentence_len: 94.75
-avg_word_len: 5.414285714285715
+avg_sentence_len: 24.0
+avg_word_len: 2.6666666666666665
 smiley_count: 0
-sentences_with_digits: ['Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.1234567890!@#$%^&*()?><:"{}']
-date_pattern: (0[1-9]|[12]\d|3[01])/(0[1-9]|1[0-2])/(1[6-9]\d{2}|[2-9]\d{3})
-uppercase_count: 4
-lowercase_count: 365
+sentences_with_special: ['10/12/2015 10/11/1444 10.10.2010']
+dates_found: [('10', '12', '2015')]
+is_date: False
+uppercase_count: 0
+lowercase_count: 0
 z_word: Not found
-z_position: -1
-no_a_text: Lorem ipsum dolor sit consectetur elit sed do eiusmod tempor incididunt ut labore et dolore magna Ut enim minim veniam quis nostrud exercitation ullamco laboris nisi ut ex ea commodo consequat Duis irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit id est laborum 1234567890
+z_word_index: -1
+no_a_text: 10 12 2015 10 11 1444 10 10 2010

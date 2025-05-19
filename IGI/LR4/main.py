@@ -1,6 +1,6 @@
 """
 Main module to test all tasks.
-Lab Work #4, Version 1.0, Developer: John Doe, Date: 2025-04-24
+Lab Work #4, Version 1.0, Developer: Alexander Svidinsky, Date: 2025-04-24
 """
 from task1.main_task1 import run_task1
 from task2.main_task2 import run_task2
