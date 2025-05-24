@@ -1,0 +1,22 @@
+from django.contrib import admin
+from .models import *
+
+admin.site.register(Pizza)
+admin.site.register(Ingredient)
+admin.site.register(Allergen)
+admin.site.register(PizzaSize)
+admin.site.register(PizzaPricing)
+admin.site.register(Customer)
+admin.site.register(Courier)
+admin.site.register(Order)
+admin.site.register(OrderItem)
+admin.site.register(Article)
+admin.site.register(CompanyInfo)
+admin.site.register(FAQ)
+admin.site.register(Review)
+admin.site.register(Promo)
+admin.site.register(Vacancy)
+admin.site.register(CustomerPreferences)
+admin.site.register(Employee)
+admin.site.register(SeasonalPeriod)
+admin.site.register(PizzaCategory)

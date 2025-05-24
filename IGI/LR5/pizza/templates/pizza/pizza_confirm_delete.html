@@ -1,0 +1,11 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<h1>Удаление пиццы</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Вы уверены, что хотите удалить пиццу "{{ object.name }}"?</p>
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a href="{% url 'pizza:pizza_list' %}" class="btn btn-secondary">Отмена</a>
+</form>
+{% endblock %}
