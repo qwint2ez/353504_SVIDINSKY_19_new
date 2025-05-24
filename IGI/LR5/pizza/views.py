@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -17,23 +17,32 @@ class PizzaDetailView(DetailView):
     template_name = 'pizza/pizza_detail.html'
     context_object_name = 'pizza'
 
-class PizzaCreateView(LoginRequiredMixin, CreateView):
+class PizzaCreateView(UserPassesTestMixin, CreateView):
     model = Pizza
     form_class = PizzaForm
     template_name = 'pizza/pizza_form.html'
     success_url = reverse_lazy('pizza_list')
     login_url = 'pizza:login'
 
-class PizzaUpdateView(UpdateView):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class PizzaUpdateView(UserPassesTestMixin, UpdateView):
     model = Pizza
     form_class = PizzaForm
     template_name = 'pizza/pizza_form.html'
     success_url = reverse_lazy('pizza_list')
 
-class PizzaDeleteView(DeleteView):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class PizzaDeleteView(UserPassesTestMixin, DeleteView):
     model = Pizza
     template_name = 'pizza/pizza_confirm_delete.html'
     success_url = reverse_lazy('pizza_list')
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
 class OrderCreateView(LoginRequiredMixin, CreateView):
     model = Order
