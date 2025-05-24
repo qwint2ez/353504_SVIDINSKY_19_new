@@ -1,5 +1,7 @@
 from django import forms
-from .models import Pizza, Order, Review
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from .models import Pizza, Order, Review, Customer
 
 class PizzaForm(forms.ModelForm):
     class Meta:
@@ -40,3 +42,21 @@ class ReviewForm(forms.ModelForm):
         widgets = {
             'text': forms.Textarea(attrs={'rows': 4}),
         }
+
+class UserRegistrationForm(UserCreationForm):
+    email = forms.EmailField()
+    phone = forms.CharField(max_length=15)
+    address = forms.CharField(widget=forms.Textarea(attrs={'rows': 3}))
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+
+    def save(self, commit=True):
+        user = super().save(commit=True)
+        Customer.objects.create(
+            user=user,
+            phone=self.cleaned_data['phone'],
+            address=self.cleaned_data['address']
+        )
+        return user

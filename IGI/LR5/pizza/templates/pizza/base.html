@@ -14,6 +14,15 @@
                 <li><a href="{% url 'pizza:pizza_list' %}">Главная</a></li>
                 <li><a href="{% url 'pizza:pizza_create' %}">Добавить пиццу</a></li>
             </ul>
+            <div class="auth-block">
+                {% if user.is_authenticated %}
+                    Привет, {{ user.username }}!
+                    <a href="{% url 'pizza:logout' %}">Выйти</a>
+                {% else %}
+                    <a href="{% url 'pizza:login' %}">Войти</a>
+                    <a href="{% url 'pizza:register' %}">Регистрация</a>
+                {% endif %}
+            </div>
         </nav>
     </header>
 

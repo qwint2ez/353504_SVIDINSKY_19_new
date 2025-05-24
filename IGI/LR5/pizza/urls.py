@@ -1,9 +1,11 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from .views import (
     PizzaListView, PizzaDetailView, PizzaCreateView,
     PizzaUpdateView, PizzaDeleteView, OrderCreateView,
     ReviewCreateView
 )
+from . import views
 
 app_name = 'pizza'
 
@@ -15,4 +17,7 @@ urlpatterns = [
     path('pizza/<int:pk>/delete/', PizzaDeleteView.as_view(), name='pizza_delete'),
     path('order/create/', OrderCreateView.as_view(), name='order_create'),
     path('review/create/', ReviewCreateView.as_view(), name='review_create'),
+    path('login/', auth_views.LoginView.as_view(template_name='pizza/login.html'), name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('register/', views.register, name='register'),
 ]

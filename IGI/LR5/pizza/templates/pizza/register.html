@@ -1,0 +1,11 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<h2>Регистрация</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Зарегистрироваться</button>
+</form>
+<p>Уже есть аккаунт? <a href="{% url 'pizza:login' %}">Войдите</a></p>
+{% endblock %}
