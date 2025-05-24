@@ -6,6 +6,9 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.urls import reverse_lazy
 from .models import Pizza, Order, Review
 from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm
+from .services import WeatherService, PaymentService
+from django.http import JsonResponse
+from django.conf import settings
 
 class PizzaListView(ListView):
     model = Pizza
@@ -51,6 +54,26 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('pizza:order_success')
     login_url = 'pizza:login'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        weather_service = WeatherService()
+        weather = weather_service.get_weather()
+        if weather:
+            context['weather'] = weather
+        context['stripe_key'] = settings.STRIPE_PUBLISHABLE_KEY
+        return context
+
+    def form_valid(self, form):
+        # Создаем платёжное намерение
+        payment_service = PaymentService()
+        payment = payment_service.create_payment_intent(
+            amount=form.instance.total_price
+        )
+        if payment:
+            form.instance.payment_id = payment['payment_id']
+            return super().form_valid(form)
+        return self.form_invalid(form)
+
 class ReviewCreateView(LoginRequiredMixin, CreateView):
     model = Review
     form_class = ReviewForm
@@ -76,3 +99,14 @@ def register(request):
 def logout_view(request):
     logout(request)
     return redirect('pizza:pizza_list')
+
+def create_payment_intent(request):
+    if request.method == 'POST':
+        try:
+            amount = float(request.POST.get('amount'))
+            payment_service = PaymentService()
+            payment = payment_service.create_payment_intent(amount)
+            return JsonResponse(payment)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=400)
+    return JsonResponse({'error': 'Invalid request'}, status=400)

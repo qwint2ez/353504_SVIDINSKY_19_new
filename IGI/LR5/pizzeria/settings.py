@@ -135,3 +135,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'pizza:pizza_list'
 LOGIN_URL = 'pizza:login'
 LOGOUT_REDIRECT_URL = 'pizza:pizza_list'
+
+# API Keys
+OPENWEATHERMAP_API_KEY = 'your_openweathermap_api_key'
+STRIPE_SECRET_KEY = 'your_stripe_secret_key'
+STRIPE_PUBLISHABLE_KEY = 'your_stripe_publishable_key'

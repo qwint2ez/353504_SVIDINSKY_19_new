@@ -1,0 +1,57 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Оформление заказа</h1>
+    
+    {% if weather %}
+    <div class="weather-info">
+        <h3>Погода для доставки:</h3>
+        <p>Температура: {{ weather.temperature }}°C</p>
+        <p>Описание: {{ weather.description }}</p>
+        <p>Влажность: {{ weather.humidity }}%</p>
+    </div>
+    {% endif %}
+
+    <form method="post" id="payment-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <div id="card-element">
+            <!-- Stripe Elements будет встроен здесь -->
+        </div>
+        
+        <div id="card-errors" role="alert"></div>
+        
+        <button type="submit">Оплатить и заказать</button>
+    </form>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    const stripe = Stripe('{{ stripe_key }}');
+    const elements = stripe.elements();
+    const card = elements.create('card');
+    card.mount('#card-element');
+
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        
+        const {paymentIntent, error} = await stripe.confirmCardPayment('{{ client_secret }}', {
+            payment_method: {
+                card: card,
+            }
+        });
+
+        if (error) {
+            const errorElement = document.getElementById('card-errors');
+            errorElement.textContent = error.message;
+        } else {
+            if (paymentIntent.status === 'succeeded') {
+                form.submit();
+            }
+        }
+    });
+</script>
+{% endblock %}
