@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Pizza, Order, Review, OrderItem, PizzaSize
+from .models import Pizza, Order, Review, OrderItem, PizzaSize, PizzaPricing
 from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm
 from .services import WeatherService, PaymentService, QuoteService
 from django.http import JsonResponse
@@ -52,49 +52,62 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
     model = Order
     form_class = OrderForm
     template_name = 'pizza/order_form.html'
-    success_url = reverse_lazy('pizza:order_success')
-    login_url = 'pizza:login'
+    success_url = reverse_lazy('pizza:order_complete')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['pizzas'] = Pizza.objects.all()
-        
-        # Получаем погоду
         weather_service = WeatherService()
-        context['weather'] = weather_service.get_weather()
-        
-        # Получаем цитату
-        quote_service = QuoteService()
-        context['quote'] = quote_service.get_quote()
-        
+        weather = weather_service.get_weather()
+        if weather:
+            context['weather'] = weather
         return context
 
     def form_valid(self, form):
-        order = form.save(commit=False)
-        order.customer = self.request.user.customer
-        order.status = 'pending'
-        order.total_price = 0
-        order.save()
+        try:
+            order = form.save(commit=False)
+            order.customer = self.request.user.customer
+            order.status = 'pending'
+            order.total_price = 0
+            order.save()
 
-        # Обработка выбранных пицц и их количества
-        total_price = 0
-        for key, value in self.request.POST.items():
-            if key.startswith('pizza_quantity_'):
-                pizza_id = int(key.replace('pizza_quantity_', ''))
-                quantity = int(value)
-                if quantity > 0:
-                    pizza = Pizza.objects.get(id=pizza_id)
+            total_price = 0
+            pizzas = Pizza.objects.all()
+
+            for pizza in pizzas:
+                quantity = self.request.POST.get(f'quantity_{pizza.id}')
+                size_id = self.request.POST.get(f'size_{pizza.id}')
+                
+                if quantity and size_id and int(quantity) > 0:
+                    size = PizzaSize.objects.get(id=size_id)
+                    pricing = PizzaPricing.objects.get(pizza=pizza, size=size)
+                    
                     OrderItem.objects.create(
                         order=order,
                         pizza=pizza,
-                        quantity=quantity,
-                        item_price=pizza.price * quantity
+                        size=size,
+                        quantity=int(quantity),
+                        item_price=pricing.price * int(quantity)
                     )
-                    total_price += pizza.price * quantity
+                    total_price += pricing.price * int(quantity)
 
-        order.total_price = total_price
-        order.save()
-        return redirect(self.success_url)
+            if total_price == 0:
+                messages.error(self.request, 'Выберите хотя бы одну пиццу')
+                return self.form_invalid(form)
+
+            order.total_price = total_price
+            order.save()
+            messages.success(self.request, 'Заказ успешно создан!')
+            return super().form_valid(form)
+            
+        except Exception as e:
+            messages.error(self.request, f'Ошибка при создании заказа: {str(e)}')
+            return self.form_invalid(form)
+
+def order_complete(request):
+    return render(request, 'pizza/order_complete.html', {
+        'message': 'Ваш заказ успешно оформлен!'
+    })
 
 class ReviewCreateView(LoginRequiredMixin, CreateView):
     model = Review

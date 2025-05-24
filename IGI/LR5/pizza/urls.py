@@ -21,4 +21,5 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('register/', views.register, name='register'),
     path('create-payment-intent/', create_payment_intent, name='create_payment_intent'),
+    path('order/complete/', views.order_complete, name='order_complete'),
 ]

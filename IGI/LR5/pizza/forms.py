@@ -41,6 +41,10 @@ class OrderForm(forms.ModelForm):
             ),
         }
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['delivery_date'].label = 'Время доставки'
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
