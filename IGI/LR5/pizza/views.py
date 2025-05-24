@@ -10,6 +10,8 @@ from .services import WeatherService, PaymentService, QuoteService
 from django.http import JsonResponse
 from django.conf import settings
 from django.contrib import messages
+from django.db.models import Q
+from datetime import datetime
 
 class PizzaListView(ListView):
     model = Pizza
@@ -145,3 +147,32 @@ def create_payment_intent(request):
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=400)
     return JsonResponse({'error': 'Invalid request'}, status=400)
+
+def orders_by_month(request, year, month):
+    orders = Order.objects.filter(
+        order_date__year=year,
+        order_date__month=month
+    ).order_by('-order_date')
+    
+    context = {
+        'orders': orders,
+        'year': year,
+        'month': month
+    }
+    return render(request, 'pizza/orders_by_month.html', context)
+
+def orders_by_status(request, status):
+    orders = Order.objects.filter(status=status).order_by('-order_date')
+    context = {
+        'orders': orders,
+        'status': status
+    }
+    return render(request, 'pizza/orders_by_status.html', context)
+
+def reviews_by_rating(request, rating):
+    reviews = Review.objects.filter(rating=rating).order_by('-date')
+    context = {
+        'reviews': reviews,
+        'rating': rating
+    }
+    return render(request, 'pizza/reviews_by_rating.html', context)
