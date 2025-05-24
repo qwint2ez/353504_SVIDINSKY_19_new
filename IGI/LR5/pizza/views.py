@@ -4,11 +4,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Pizza, Order, Review
+from .models import Pizza, Order, Review, OrderItem, PizzaSize
 from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm
-from .services import WeatherService, PaymentService
+from .services import WeatherService, PaymentService, QuoteService
 from django.http import JsonResponse
 from django.conf import settings
+from django.contrib import messages
 
 class PizzaListView(ListView):
     model = Pizza
@@ -56,23 +57,44 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['pizzas'] = Pizza.objects.all()
+        
+        # Получаем погоду
         weather_service = WeatherService()
-        weather = weather_service.get_weather()
-        if weather:
-            context['weather'] = weather
-        context['stripe_key'] = settings.STRIPE_PUBLISHABLE_KEY
+        context['weather'] = weather_service.get_weather()
+        
+        # Получаем цитату
+        quote_service = QuoteService()
+        context['quote'] = quote_service.get_quote()
+        
         return context
 
     def form_valid(self, form):
-        # Создаем платёжное намерение
-        payment_service = PaymentService()
-        payment = payment_service.create_payment_intent(
-            amount=form.instance.total_price
-        )
-        if payment:
-            form.instance.payment_id = payment['payment_id']
-            return super().form_valid(form)
-        return self.form_invalid(form)
+        order = form.save(commit=False)
+        order.customer = self.request.user.customer
+        order.status = 'pending'
+        order.total_price = 0
+        order.save()
+
+        # Обработка выбранных пицц и их количества
+        total_price = 0
+        for key, value in self.request.POST.items():
+            if key.startswith('pizza_quantity_'):
+                pizza_id = int(key.replace('pizza_quantity_', ''))
+                quantity = int(value)
+                if quantity > 0:
+                    pizza = Pizza.objects.get(id=pizza_id)
+                    OrderItem.objects.create(
+                        order=order,
+                        pizza=pizza,
+                        quantity=quantity,
+                        item_price=pizza.price * quantity
+                    )
+                    total_price += pizza.price * quantity
+
+        order.total_price = total_price
+        order.save()
+        return redirect(self.success_url)
 
 class ReviewCreateView(LoginRequiredMixin, CreateView):
     model = Review

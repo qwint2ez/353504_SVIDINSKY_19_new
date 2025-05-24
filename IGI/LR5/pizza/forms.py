@@ -30,9 +30,15 @@ class PizzaForm(forms.ModelForm):
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['customer', 'delivery_date']
+        fields = ['delivery_date']
         widgets = {
-            'delivery_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+            'delivery_date': forms.DateTimeInput(
+                attrs={
+                    'type': 'datetime-local',
+                    'class': 'form-control'
+                },
+                format='%Y-%m-%dT%H:%M'
+            ),
         }
 
 class ReviewForm(forms.ModelForm):
