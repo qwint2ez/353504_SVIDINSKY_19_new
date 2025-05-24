@@ -48,8 +48,9 @@ class OrderForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['rating', 'text']
+        fields = ['pizza', 'rating', 'text']
         widgets = {
+            'rating': forms.RadioSelect(choices=[(i, i) for i in range(1, 6)]),
             'text': forms.Textarea(attrs={'rows': 4}),
         }
 

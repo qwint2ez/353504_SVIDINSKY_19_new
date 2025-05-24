@@ -26,8 +26,8 @@ urlpatterns = [
     re_path(r'^orders/(?P<status>pending|preparing|delivering|completed)/$', views.orders_by_status, name='orders_by_status'),
     
     # URLs для отзывов
-    re_path(r'^review/new/$', ReviewCreateView.as_view(), name='review_create'),
-    re_path(r'^reviews/(?P<rating>[1-5])/$', views.reviews_by_rating, name='reviews_by_rating'),
+    path('review/new/', ReviewCreateView.as_view(), name='review_create'),
+    path('review/success/', views.review_success, name='review_success'),
     
     # URLs для аутентификации
     re_path(r'^login/$', auth_views.LoginView.as_view(template_name='pizza/login.html'), name='login'),

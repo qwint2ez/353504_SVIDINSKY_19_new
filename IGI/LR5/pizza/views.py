@@ -116,11 +116,15 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
     form_class = ReviewForm
     template_name = 'pizza/review_form.html'
     success_url = reverse_lazy('pizza:review_success')
-    login_url = 'pizza:login'
 
     def form_valid(self, form):
         form.instance.customer = self.request.user.customer
-        return super().form_valid(form)
+        response = super().form_valid(form)
+        messages.success(self.request, 'Спасибо за ваш отзыв!')
+        return response
+
+def review_success(request):
+    return render(request, 'pizza/review_success.html')
 
 def register(request):
     if request.method == 'POST':
