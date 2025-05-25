@@ -106,95 +106,142 @@
             <canvas id="categoryChart"></canvas>
         </div>
     </div>
+
+    <div class="stats-section">
+        <h3>Список всех пицц</h3>
+        
+        <div class="search-controls mb-3">
+            <input type="text" id="pizzaSearch" class="form-control" placeholder="Поиск по названию или категории...">
+            <select id="sortOrder" class="form-select">
+                <option value="name_asc">По названию (А-Я)</option>
+                <option value="name_desc">По названию (Я-А)</option>
+                <option value="sales_desc">По продажам ↓</option>
+                <option value="sales_asc">По продажам ↑</option>
+                <option value="revenue_desc">По выручке ↓</option>
+                <option value="revenue_asc">По выручке ↑</option>
+            </select>
+        </div>
+
+        <table class="stats-table" id="pizzaTable">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Категория</th>
+                    <th>Продаж</th>
+                    <th>Выручка</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pizza in all_pizzas %}
+                <tr data-search="{{ pizza.name|lower }} {{ pizza.category.name|default:'без категории'|lower }}">
+                    <td>{{ pizza.name }}</td>
+                    <td>{{ pizza.category.name|default:"Без категории" }}</td>
+                    <td data-value="{{ pizza.sales_count }}">{{ pizza.sales_count }}</td>
+                    <td data-value="{{ pizza.revenue|default:0 }}">{{ pizza.revenue|floatformat:2 }} ₽</td>
+                    <td>
+                        <a href="{% url 'pizza:pizza_detail' pizza.id %}" class="btn-details">
+                            Подробнее
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 
-<!-- Добавляем Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-// График для топ-5 пицц
-const pizzaCtx = document.getElementById('pizzaChart').getContext('2d');
-new Chart(pizzaCtx, {
-    type: 'bar',
-    data: {
-        labels: {{ pizza_chart_data.labels|safe }},
-        datasets: [{
-            label: 'Количество продаж',
-            data: {{ pizza_chart_data.sales|safe }},
-            backgroundColor: 'rgba(54, 162, 235, 0.5)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-        }, {
-            label: 'Выручка (₽)',
-            data: {{ pizza_chart_data.revenue|safe }},
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-            borderColor: 'rgba(255, 99, 132, 1)',
-            borderWidth: 1,
-            yAxisID: 'y1'
-        }]
-    },
-    options: {
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true,
-                title: {
-                    display: true,
-                    text: 'Количество продаж'
-                }
-            },
-            y1: {
-                beginAtZero: true,
-                position: 'right',
-                title: {
-                    display: true,
-                    text: 'Выручка (₽)'
-                }
-            }
+document.addEventListener('DOMContentLoaded', function() {
+    // Графики
+    const pizzaCtx = document.getElementById('pizzaChart').getContext('2d');
+    const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+    
+    new Chart(pizzaCtx, {
+        type: 'bar',
+        data: {
+            labels: {{ pizza_chart_data.labels|safe }},
+            datasets: [{
+                label: 'Количество продаж',
+                data: {{ pizza_chart_data.sales|safe }},
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
         },
-        plugins: {
-            title: {
-                display: true,
-                text: 'Топ-5 популярных пицц'
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
-    }
-});
+    });
 
-// График для категорий
-const categoryCtx = document.getElementById('categoryChart').getContext('2d');
-new Chart(categoryCtx, {
-    type: 'pie',
-    data: {
-        labels: {{ category_chart_data.labels|safe }},
-        datasets: [{
-            data: {{ category_chart_data.revenue|safe }},
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(54, 162, 235, 0.5)',
-                'rgba(255, 206, 86, 0.5)',
-                'rgba(75, 192, 192, 0.5)',
-                'rgba(153, 102, 255, 0.5)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            title: {
-                display: true,
-                text: 'Распределение выручки по категориям'
-            }
+    new Chart(categoryCtx, {
+        type: 'pie',
+        data: {
+            labels: {{ category_chart_data.labels|safe }},
+            datasets: [{
+                data: {{ category_chart_data.revenue|safe }},
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true
         }
+    });
+
+    // Поиск и сортировка
+    const searchInput = document.getElementById('pizzaSearch');
+    const sortSelect = document.getElementById('sortOrder');
+    const table = document.getElementById('pizzaTable');
+    const tbody = table.querySelector('tbody');
+    
+    function sortTable() {
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        const [field, direction] = sortSelect.value.split('_');
+        
+        rows.sort((a, b) => {
+            let aVal = '', bVal = '';
+            
+            if (field === 'name') {
+                aVal = a.cells[0].textContent;
+                bVal = b.cells[0].textContent;
+                return direction === 'asc' ? 
+                    aVal.localeCompare(bVal) : 
+                    bVal.localeCompare(aVal);
+            } else {
+                aVal = parseFloat(a.cells[field === 'sales' ? 2 : 3].dataset.value);
+                bVal = parseFloat(b.cells[field === 'sales' ? 2 : 3].dataset.value);
+                return direction === 'asc' ? aVal - bVal : bVal - aVal;
+            }
+        });
+        
+        tbody.innerHTML = '';
+        rows.forEach(row => tbody.appendChild(row));
     }
+
+    function filterTable() {
+        const searchText = searchInput.value.toLowerCase();
+        const rows = tbody.querySelectorAll('tr');
+        
+        rows.forEach(row => {
+            const searchData = row.dataset.search;
+            row.style.display = searchData.includes(searchText) ? '' : 'none';
+        });
+    }
+
+    searchInput.addEventListener('input', filterTable);
+    sortSelect.addEventListener('change', sortTable);
 });
 </script>
 
@@ -254,6 +301,53 @@ new Chart(categoryCtx, {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     height: 400px;
+}
+
+.search-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-controls input,
+.search-controls select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-controls input {
+    flex: 1;
+}
+
+.search-controls select {
+    width: 200px;
+}
+
+.btn-details {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-details:hover {
+    background: #45a049;
+    color: white;
+    text-decoration: none;
+}
+
+.description-content {
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.description-row td {
+    background: #f9f9f9;
+    padding: 15px;
 }
 </style>
 {% endblock %}

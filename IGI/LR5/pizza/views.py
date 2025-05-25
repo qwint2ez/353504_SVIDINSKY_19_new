@@ -66,10 +66,19 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['pizzas'] = Pizza.objects.all()
+        
+        # Добавляем погоду
         weather_service = WeatherService()
         weather = weather_service.get_weather()
         if weather:
             context['weather'] = weather
+            
+        # Добавляем цитату из Breaking Bad
+        quote_service = QuoteService()
+        quote = quote_service.get_quote()
+        if quote:
+            context['quote'] = quote
+            
         return context
 
     def form_valid(self, form):
@@ -259,6 +268,13 @@ def statistics_view(request):
         'revenue': [float(c['revenue']) for c in category_stats]
     }
 
+    # Добавляем статистику по всем пиццам для интерактивной таблицы
+    all_pizzas = Pizza.objects.annotate(
+        sales_count=Count('orderitem'),
+        revenue=Coalesce(Sum('orderitem__item_price'), 0, 
+                        output_field=DecimalField(max_digits=10, decimal_places=2))
+    ).select_related('category')
+
     context = {
         'total_sales': total_sales,
         'avg_check': avg_check,
@@ -278,6 +294,7 @@ def statistics_view(request):
         'orders_today': orders.filter(order_date__date=current_date.date()).count(),
         'pizza_chart_data': pizza_chart_data,
         'category_chart_data': category_chart_data,
+        'all_pizzas': all_pizzas,  # Добавляем в контекст
     })
     
     return render(request, 'pizza/statistics.html', context)
