@@ -1,4 +1,4 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
@@ -8,12 +8,14 @@ from django.http import JsonResponse
 from django.conf import settings
 from django.contrib import messages
 from django.db.models import Q, Avg, Count, Sum, F, DecimalField, Value
-from django.db.models.functions import Coalesce, Cast
-from statistics import median
-from django.contrib.admin.views.decorators import staff_member_required
+from django.db.models.functions import Coalesce
+from statistics import median, mode
+from datetime import datetime
+import calendar
 from .models import Pizza, Order, Review, OrderItem, PizzaSize, PizzaPricing, Customer, PizzaCategory
 from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm
 from .services import WeatherService, PaymentService, QuoteService
+from django.utils import timezone
 
 class PizzaListView(ListView):
     model = Pizza
@@ -183,59 +185,52 @@ def reviews_by_rating(request, rating):
     }
     return render(request, 'pizza/reviews_by_rating.html', context)
 
-@staff_member_required
+@user_passes_test(lambda u: u.is_staff)
 def statistics_view(request):
-    # Получаем все заказы
+    # Get timezone from request (defaults to UTC if not set)
+    user_timezone = request.COOKIES.get('user_timezone', 'UTC')
+    current_time = timezone.now()
+    last_order = Order.objects.order_by('-order_date').first()
+    
+    # Get current month calendar
+    cal = calendar.month(current_time.year, current_time.month)
+    
+    # Basic statistics
     orders = Order.objects.all()
+    order_amounts = [order.total_price for order in orders if order.total_price > 0]
     
-    # Общие показатели
-    total_sales = orders.aggregate(
-        total=Coalesce(Sum('total_price'), Value(0), 
-        output_field=DecimalField(max_digits=10, decimal_places=2))
-    )['total']
-    
-    # Средний чек - только для заказов с суммой больше 0
-    avg_check = orders.filter(
-        total_price__gt=0
-    ).aggregate(
-        avg=Coalesce(Avg('total_price'), Value(0), 
-        output_field=DecimalField(max_digits=10, decimal_places=2))
-    )['avg'] or 0
-
-    # Медианный чек
-    order_amounts = list(orders.filter(
-        total_price__gt=0
-    ).values_list('total_price', flat=True))
-    median_check = median(order_amounts) if order_amounts else 0
-
-    # Топ-5 популярных пицц
-    top_pizzas = Pizza.objects.annotate(
-        sales_count=Count('orderitem'),
-        revenue=Sum('orderitem__item_price')
-    ).order_by('-sales_count')[:5]
-
-    # Статистика по категориям
-    category_stats = PizzaCategory.objects.annotate(
-        pizzas_count=Count('pizza', distinct=True),
-        total_sold=Count('pizza__orderitem'),
-        revenue=Sum('pizza__orderitem__item_price', default=0)
-    )
-
-    # Топ-10 клиентов
-    top_customers = Customer.objects.annotate(
-        orders_count=Count('order'),
-        total_spent=Sum('order__total_price', default=0)
-    ).filter(
-        total_spent__gt=0
-    ).order_by('-total_spent')[:10]
-
     context = {
-        'total_sales': total_sales,
-        'avg_check': avg_check,
-        'median_check': median_check,
-        'top_pizzas': top_pizzas,
-        'category_stats': category_stats,
-        'top_customers': top_customers,
+        # Time information
+        'current_time': current_time,
+        'current_time_utc': timezone.now(),
+        'last_order': last_order,
+        'user_timezone': user_timezone,
+        'calendar': cal,
+        
+        # Statistics
+        'total_sales': sum(order_amounts) if order_amounts else 0,
+        'avg_check': sum(order_amounts) / len(order_amounts) if order_amounts else 0,
+        'median_check': median(order_amounts) if order_amounts else 0,
+        
+        # Статистика по пиццам
+        'pizzas': Pizza.objects.annotate(
+            total_orders=Count('orderitem'),
+            total_revenue=Sum('orderitem__item_price', default=0)
+        ).order_by('name'),
+        
+        # Статистика по категориям
+        'categories': PizzaCategory.objects.annotate(
+            pizzas_count=Count('pizza'),
+            orders_count=Count('pizza__orderitem'),
+            total_revenue=Sum('pizza__orderitem__item_price', default=0)
+        ).order_by('-total_revenue'),
+        
+        # Статистика по клиентам
+        'customers': Customer.objects.annotate(
+            orders_count=Count('order'),
+            total_spent=Sum('order__total_price', default=0)
+        ).order_by('user__username'),
     }
     
-    return render(request, 'pizza/statistics.html', context)
+    response = render(request, 'pizza/statistics.html', context)
+    return response

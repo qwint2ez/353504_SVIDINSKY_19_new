@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 class PizzaCategory(models.Model):
     name = models.CharField(max_length=100)
@@ -107,9 +108,17 @@ class Order(models.Model):
         ('failed', 'Failed')
     ], default='pending')
     pizzas = models.ManyToManyField(Pizza, through='OrderItem')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return f"Order {self.id} by {self.customer}"
+    
+    def get_local_created_at(self):
+        return timezone.localtime(self.created_at).strftime('%d/%m/%Y %H:%M:%S')
+    
+    def get_utc_created_at(self):
+        return self.created_at.strftime('%d/%m/%Y %H:%M:%S')
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)

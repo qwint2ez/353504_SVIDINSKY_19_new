@@ -3,7 +3,19 @@
 {% block content %}
 <div class="container">
     <h2>Статистика пиццерии</h2>
-    
+
+    <div class="stats-section">
+        <h3>Временная информация</h3>
+        <p>Текущее время ({{ user_timezone }}): {{ current_time|date:"d/m/Y H:i:s" }}</p>
+        <p>Время UTC: {{ current_time_utc|date:"d/m/Y H:i:s" }}</p>
+        {% if last_order %}
+            <p>Последний заказ: {{ last_order.order_date|date:"d/m/Y H:i:s" }}</p>
+        {% endif %}
+        
+        <h4>Календарь на текущий месяц:</h4>
+        <pre>{{ calendar }}</pre>
+    </div>
+
     <div class="stats-section">
         <h3>Общие показатели</h3>
         <p>Общая сумма продаж: {{ total_sales|floatformat:2 }} ₽</p>
@@ -12,52 +24,52 @@
     </div>
 
     <div class="stats-section">
-        <h3>Топ-5 популярных пицц</h3>
+        <h3>Пиццы (по алфавиту)</h3>
         <table class="table">
             <tr>
                 <th>Название</th>
-                <th>Кол-во продаж</th>
+                <th>Заказов</th>
                 <th>Выручка</th>
             </tr>
-            {% for pizza in top_pizzas %}
+            {% for pizza in pizzas %}
             <tr>
                 <td>{{ pizza.name }}</td>
-                <td>{{ pizza.sales_count }}</td>
-                <td>{{ pizza.revenue|default:"0"|floatformat:2 }} ₽</td>
+                <td>{{ pizza.total_orders }}</td>
+                <td>{{ pizza.total_revenue|default:"0"|floatformat:2 }} ₽</td>
             </tr>
             {% endfor %}
         </table>
     </div>
 
     <div class="stats-section">
-        <h3>Статистика по категориям</h3>
+        <h3>Категории по прибыльности</h3>
         <table class="table">
             <tr>
                 <th>Категория</th>
                 <th>Кол-во пицц</th>
-                <th>Продано</th>
+                <th>Заказов</th>
                 <th>Выручка</th>
             </tr>
-            {% for cat in category_stats %}
+            {% for category in categories %}
             <tr>
-                <td>{{ cat.name }}</td>
-                <td>{{ cat.pizzas_count }}</td>
-                <td>{{ cat.total_sold }}</td>
-                <td>{{ cat.revenue|floatformat:2 }} ₽</td>
+                <td>{{ category.name }}</td>
+                <td>{{ category.pizzas_count }}</td>
+                <td>{{ category.orders_count }}</td>
+                <td>{{ category.total_revenue|floatformat:2 }} ₽</td>
             </tr>
             {% endfor %}
         </table>
     </div>
 
     <div class="stats-section">
-        <h3>Топ-10 клиентов</h3>
+        <h3>Клиенты (по алфавиту)</h3>
         <table class="table">
             <tr>
                 <th>Клиент</th>
                 <th>Заказов</th>
-                <th>Сумма</th>
+                <th>Потрачено</th>
             </tr>
-            {% for customer in top_customers %}
+            {% for customer in customers %}
             <tr>
                 <td>{{ customer.user.username }}</td>
                 <td>{{ customer.orders_count }}</td>
@@ -68,6 +80,13 @@
     </div>
 </div>
 
+<script>
+// Get user's timezone
+const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+// Set cookie with user's timezone
+document.cookie = `user_timezone=${timezone};path=/`;
+</script>
+
 <style>
 .stats-section {
     margin: 20px 0;
@@ -76,21 +95,30 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
+.time-info {
+    background: #f8f9fa;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
 .table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
-
 .table th, .table td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
-
 .table th {
     background-color: #f5f5f5;
+}
+pre {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: monospace;
 }
 </style>
 {% endblock %}
