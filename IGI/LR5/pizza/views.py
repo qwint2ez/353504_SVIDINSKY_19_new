@@ -238,6 +238,19 @@ def statistics_view(request):
         total_spent=Sum('total_price')
     ).order_by('-total_spent')[:10]
 
+    # Подготовка данных для графиков
+    pizza_chart_data = {
+        'labels': [p['pizza__name'] for p in top_pizzas],
+        'sales': [p['sales_count'] for p in top_pizzas],
+        'revenue': [float(p['revenue']) for p in top_pizzas]
+    }
+    
+    category_chart_data = {
+        'labels': [c['pizza__category__name'] for c in category_stats],
+        'sales': [c['sold'] for c in category_stats],
+        'revenue': [float(c['revenue']) for c in category_stats]
+    }
+
     context = {
         'total_sales': total_sales,
         'avg_check': avg_check,
@@ -255,6 +268,8 @@ def statistics_view(request):
         'month_name': month_name,
         'current_day': current_date.day,
         'orders_today': orders.filter(order_date__date=current_date.date()).count(),
+        'pizza_chart_data': pizza_chart_data,
+        'category_chart_data': category_chart_data,
     })
     
     return render(request, 'pizza/statistics.html', context)

@@ -96,7 +96,107 @@
             {% endfor %}
         </table>
     </div>
+
+    <div class="stats-section">
+        <h3>Визуализация данных</h3>
+        <div class="chart-container">
+            <canvas id="pizzaChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="categoryChart"></canvas>
+        </div>
+    </div>
 </div>
+
+<!-- Добавляем Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// График для топ-5 пицц
+const pizzaCtx = document.getElementById('pizzaChart').getContext('2d');
+new Chart(pizzaCtx, {
+    type: 'bar',
+    data: {
+        labels: {{ pizza_chart_data.labels|safe }},
+        datasets: [{
+            label: 'Количество продаж',
+            data: {{ pizza_chart_data.sales|safe }},
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }, {
+            label: 'Выручка (₽)',
+            data: {{ pizza_chart_data.revenue|safe }},
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1,
+            yAxisID: 'y1'
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Количество продаж'
+                }
+            },
+            y1: {
+                beginAtZero: true,
+                position: 'right',
+                title: {
+                    display: true,
+                    text: 'Выручка (₽)'
+                }
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'Топ-5 популярных пицц'
+            }
+        }
+    }
+});
+
+// График для категорий
+const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+new Chart(categoryCtx, {
+    type: 'pie',
+    data: {
+        labels: {{ category_chart_data.labels|safe }},
+        datasets: [{
+            data: {{ category_chart_data.revenue|safe }},
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Распределение выручки по категориям'
+            }
+        }
+    }
+});
+</script>
 
 <style>
 .stats-section {
@@ -145,6 +245,15 @@
     font-weight: bold;
     background: #e8f0fe;
     border-radius: 50%;
+}
+
+.chart-container {
+    margin: 20px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 400px;
 }
 </style>
 {% endblock %}
