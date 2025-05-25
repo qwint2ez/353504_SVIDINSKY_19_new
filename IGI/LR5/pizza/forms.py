@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from .models import Pizza, Order, Review, Customer, validate_age  # добавляем импорт validate_age
+from datetime import date
 
 class PizzaForm(forms.ModelForm):
     class Meta:
@@ -64,9 +65,10 @@ class UserRegistrationForm(UserCreationForm):
     )
     address = forms.CharField(widget=forms.Textarea(attrs={'rows': 3}))
     birth_date = forms.DateField(
-        required=False,
+        required=True,
         widget=forms.DateInput(attrs={'type': 'date'}),
-        help_text='Необязательное поле. Для работы с сайтом необходимо быть старше 18 лет.'
+        label='Дата рождения',
+        help_text='Для регистрации вам должно быть 18 лет или больше'
     )
 
     class Meta:
@@ -74,9 +76,11 @@ class UserRegistrationForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
     def clean_birth_date(self):
-        birth_date = self.cleaned_data.get('birth_date')
-        if birth_date:
-            validate_age(birth_date)
+        birth_date = self.cleaned_data['birth_date']
+        today = date.today()
+        age = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
+        if age < 18:
+            raise forms.ValidationError('Вам должно быть 18 лет или больше для регистрации')
         return birth_date
 
     def save(self, commit=True):

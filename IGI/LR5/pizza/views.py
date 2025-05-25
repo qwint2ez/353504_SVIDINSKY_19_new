@@ -150,6 +150,12 @@ def register(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            # Проверяем, есть ли уже профиль
+            if not Customer.objects.filter(user=user).exists():
+                Customer.objects.create(
+                    user=user,
+                    birth_date=form.cleaned_data['birth_date']
+                )
             login(request, user)
             return redirect('pizza:pizza_list')
     else:
@@ -292,7 +298,7 @@ def statistics_view(request):
 
     # Создаем графики с помощью matplotlib
     def generate_bar_chart(labels, sales_data, revenue_data):
-        plt.figure(figsize=(15, 8))  # Увеличиваем размер
+        plt.figure(figsize=(15, 8))
         plt.clf()
         plt.bar(labels, sales_data)
         plt.title('Топ-5 популярных пицц')
@@ -307,7 +313,7 @@ def statistics_view(request):
         return base64.b64encode(image_png).decode('utf-8')
 
     def generate_pie_chart(labels, values):
-        plt.figure(figsize=(12, 12))  # Увеличиваем размер
+        plt.figure(figsize=(12, 12))
         plt.clf()
         plt.pie(values, labels=labels, autopct='%1.1f%%')
         plt.title('Распределение выручки по категориям')

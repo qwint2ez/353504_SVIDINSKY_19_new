@@ -81,12 +81,13 @@ class PizzaPricing(models.Model):
         return f"{self.pizza.name} - {self.size.size}: {self.price}"
     
 class Customer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    birth_date = models.DateField(null=False, blank=False)
     phone_regex = RegexValidator(
         regex=r'^\+375 \((?:29|33|44|25)\) [0-9]{3}-[0-9]{2}-[0-9]{2}$',
         message="Номер телефона должен быть в формате: '+375 (29) XXX-XX-XX'"
     )
     
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(
         validators=[phone_regex],
         max_length=19,
