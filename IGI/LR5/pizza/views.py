@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
@@ -7,15 +8,17 @@ from django.urls import reverse_lazy
 from django.http import JsonResponse
 from django.conf import settings
 from django.contrib import messages
-from django.db.models import Q, Avg, Count, Sum, F, DecimalField, Value
-from django.db.models.functions import Coalesce
-from statistics import median, mode
-from datetime import datetime
-import calendar
+from django.db.models import Q, Avg, Count, Sum, F, DecimalField, Value, Min, Max
+from django.db.models.functions import Coalesce, TruncMonth, ExtractMonth, ExtractYear
+from statistics import median, mode, mean
+from calendar import month_name, monthcalendar
+import pytz
+from datetime import datetime, date
 from .models import Pizza, Order, Review, OrderItem, PizzaSize, PizzaPricing, Customer, PizzaCategory
 from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm
 from .services import WeatherService, PaymentService, QuoteService
 from django.utils import timezone
+import calendar
 
 class PizzaListView(ListView):
     model = Pizza
@@ -185,52 +188,73 @@ def reviews_by_rating(request, rating):
     }
     return render(request, 'pizza/reviews_by_rating.html', context)
 
-@user_passes_test(lambda u: u.is_staff)
+@staff_member_required
 def statistics_view(request):
-    # Get timezone from request (defaults to UTC if not set)
-    user_timezone = request.COOKIES.get('user_timezone', 'UTC')
-    current_time = timezone.now()
-    last_order = Order.objects.order_by('-order_date').first()
-    
-    # Get current month calendar
-    cal = calendar.month(current_time.year, current_time.month)
-    
-    # Basic statistics
+    # Получаем текущую дату для календаря
+    current_date = datetime.now()
+    cal = calendar.monthcalendar(current_date.year, current_date.month)
+    month_name = calendar.month_name[current_date.month]
+
+    # Общие показатели
     orders = Order.objects.all()
-    order_amounts = [order.total_price for order in orders if order.total_price > 0]
+    total_sales = orders.aggregate(
+        total=Coalesce(Sum('total_price'), Value(0), 
+        output_field=DecimalField(max_digits=10, decimal_places=2))
+    )['total']
     
+    # Средний чек
+    orders_with_price = orders.filter(total_price__gt=0)
+    avg_check = orders_with_price.aggregate(
+        avg=Coalesce(Avg('total_price'), Value(0), 
+        output_field=DecimalField(max_digits=10, decimal_places=2))
+    )['avg']
+
+    # Медианный чек
+    prices = list(orders_with_price.values_list('total_price', flat=True))
+    median_check = median(prices) if prices else 0
+
+    # Топ-5 популярных пицц
+    top_pizzas = OrderItem.objects.values(
+        'pizza__name'
+    ).annotate(
+        sales_count=Count('id'),
+        revenue=Sum('item_price')
+    ).order_by('-sales_count')[:5]
+
+    # Статистика по категориям
+    category_stats = OrderItem.objects.values(
+        'pizza__category__name'
+    ).annotate(
+        pizzas_count=Count('pizza', distinct=True),
+        sold=Count('id'),
+        revenue=Sum('item_price')
+    ).order_by('-revenue')
+
+    # Топ-10 клиентов
+    top_customers = Order.objects.values(
+        'customer__user__username'
+    ).annotate(
+        orders_count=Count('id'),
+        total_spent=Sum('total_price')
+    ).order_by('-total_spent')[:10]
+
     context = {
-        # Time information
-        'current_time': current_time,
-        'current_time_utc': timezone.now(),
-        'last_order': last_order,
-        'user_timezone': user_timezone,
-        'calendar': cal,
-        
-        # Statistics
-        'total_sales': sum(order_amounts) if order_amounts else 0,
-        'avg_check': sum(order_amounts) / len(order_amounts) if order_amounts else 0,
-        'median_check': median(order_amounts) if order_amounts else 0,
-        
-        # Статистика по пиццам
-        'pizzas': Pizza.objects.annotate(
-            total_orders=Count('orderitem'),
-            total_revenue=Sum('orderitem__item_price', default=0)
-        ).order_by('name'),
-        
-        # Статистика по категориям
-        'categories': PizzaCategory.objects.annotate(
-            pizzas_count=Count('pizza'),
-            orders_count=Count('pizza__orderitem'),
-            total_revenue=Sum('pizza__orderitem__item_price', default=0)
-        ).order_by('-total_revenue'),
-        
-        # Статистика по клиентам
-        'customers': Customer.objects.annotate(
-            orders_count=Count('order'),
-            total_spent=Sum('order__total_price', default=0)
-        ).order_by('user__username'),
+        'total_sales': total_sales,
+        'avg_check': avg_check,
+        'median_check': median_check,
+        'top_pizzas': top_pizzas,
+        'category_stats': category_stats,
+        'top_customers': top_customers
     }
     
-    response = render(request, 'pizza/statistics.html', context)
-    return response
+    context.update({
+        'current_date': current_date.strftime('%d/%m/%Y'),
+        'current_time': current_date.strftime('%H:%M:%S'),
+        'utc_time': datetime.utcnow().strftime('%d/%m/%Y %H:%M:%S'),
+        'calendar': cal,
+        'month_name': month_name,
+        'current_day': current_date.day,
+        'orders_today': orders.filter(order_date__date=current_date.date()).count(),
+    })
+    
+    return render(request, 'pizza/statistics.html', context)

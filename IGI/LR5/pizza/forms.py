@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
-from .models import Pizza, Order, Review, Customer
+from .models import Pizza, Order, Review, Customer, validate_age  # добавляем импорт validate_age
 
 class PizzaForm(forms.ModelForm):
     class Meta:
@@ -56,31 +56,35 @@ class ReviewForm(forms.ModelForm):
         }
 
 class UserRegistrationForm(UserCreationForm):
-    phone_regex = RegexValidator(
-        regex=r'^\+375 \((?:29|33|44|25)\) [0-9]{3}-[0-9]{2}-[0-9]{2}$',
-        message="Номер телефона должен быть в формате: '+375 (29) XXX-XX-XX'"
-    )
-    
     email = forms.EmailField()
     phone = forms.CharField(
-        validators=[phone_regex],
         max_length=19,
-        widget=forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': '+375 (29) XXX-XX-XX'
-        })
+        help_text="Формат: +375 (29) XXX-XX-XX",
+        validators=[Customer.phone_regex]
     )
     address = forms.CharField(widget=forms.Textarea(attrs={'rows': 3}))
+    birth_date = forms.DateField(
+        required=False,
+        widget=forms.DateInput(attrs={'type': 'date'}),
+        help_text='Необязательное поле. Для работы с сайтом необходимо быть старше 18 лет.'
+    )
 
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+
+    def clean_birth_date(self):
+        birth_date = self.cleaned_data.get('birth_date')
+        if birth_date:
+            validate_age(birth_date)
+        return birth_date
 
     def save(self, commit=True):
         user = super().save(commit=True)
         Customer.objects.create(
             user=user,
             phone=self.cleaned_data['phone'],
-            address=self.cleaned_data['address']
+            address=self.cleaned_data['address'],
+            birth_date=self.cleaned_data.get('birth_date')
         )
         return user

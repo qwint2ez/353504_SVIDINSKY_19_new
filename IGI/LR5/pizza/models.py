@@ -2,6 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.core.validators import RegexValidator
+from django.core.exceptions import ValidationError
+from datetime import date
+
+def validate_age(birth_date):
+    today = date.today()
+    age = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
+    if age < 18:
+        raise ValidationError('Возраст должен быть не менее 18 лет')
 
 class PizzaCategory(models.Model):
     name = models.CharField(max_length=100)
@@ -85,9 +93,20 @@ class Customer(models.Model):
         help_text="Формат: +375 (29) XXX-XX-XX"
     )
     address = models.TextField()
-    
+    birth_date = models.DateField(
+        verbose_name='Дата рождения',
+        validators=[validate_age],
+        help_text='Должно быть 18+ лет',
+        null=True,
+        blank=True
+    )
+
     def __str__(self):
         return self.user.username
+
+    def clean(self):
+        if self.birth_date:  # Проверяем возраст только если дата указана
+            validate_age(self.birth_date)
 
 class Courier(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -220,6 +239,18 @@ class Employee(models.Model):
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     description = models.TextField()
+    birth_date = models.DateField(
+        verbose_name='Дата рождения',
+        validators=[validate_age],
+        help_text='Должно быть 18+ лет',
+        null=True,  # Добавляем эти два параметра
+        blank=True  # чтобы поле стало опциональным
+    )
 
     def __str__(self):
         return f"{self.user.get_full_name()} - {self.position}"
+
+    def clean(self):
+        super().clean()
+        if self.birth_date:
+            validate_age(self.birth_date)

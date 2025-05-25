@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import *
 from django.urls import path
-from .views import statistics_view  # Импортируем ваше представление статистики
 
 class PizzaPricingInline(admin.TabularInline):
     model = PizzaPricing
@@ -20,9 +19,10 @@ class PizzaAdmin(admin.ModelAdmin):
     get_ingredients.short_description = 'Ингредиенты'
 
     def get_urls(self):
+        from . import views
         urls = super().get_urls()
         custom_urls = [
-            path('statistics/', self.admin_site.admin_view(statistics_view), 
+            path('statistics/', self.admin_site.admin_view(views.statistics_view), 
                  name='pizza_statistics'),
         ]
         return custom_urls + urls
@@ -42,8 +42,17 @@ class ReviewAdmin(admin.ModelAdmin):
 
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('user', 'phone', 'address')
+    list_display = ('user', 'phone', 'address', 'birth_date', 'get_age')
     search_fields = ('user__username', 'phone')
+    readonly_fields = ('get_age',)
+
+    def get_age(self, obj):
+        if obj.birth_date:
+            today = date.today()
+            age = today.year - obj.birth_date.year - ((today.month, today.day) < (obj.birth_date.month, obj.birth_date.day))
+            return f"{age} лет"
+        return "Не указан"
+    get_age.short_description = 'Возраст'
 
 @admin.register(Ingredient)
 class IngredientAdmin(admin.ModelAdmin):
@@ -85,11 +94,26 @@ class VacancyAdmin(admin.ModelAdmin):
     list_filter = ('is_active',)
     search_fields = ('title', 'description')
 
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = ('user', 'position', 'phone', 'birth_date', 'get_age')
+    search_fields = ('user__username', 'phone', 'position')
+    readonly_fields = ('get_age',)
+
+    def get_age(self, obj):
+        if obj.birth_date:
+            today = date.today()
+            age = today.year - obj.birth_date.year - ((today.month, today.day) < (obj.birth_date.month, obj.birth_date.day))
+            return f"{age} лет"
+        return "Не указан"
+    get_age.short_description = 'Возраст'
+
 # Регистрация остальных моделей
-admin.site.register(Allergen)
-admin.site.register(PizzaSize)
-admin.site.register(Courier)
-admin.site.register(OrderItem)
-admin.site.register(CustomerPreferences)
-admin.site.register(Employee)
-admin.site.register(SeasonalPeriod)
+admin.site.register([
+    Allergen,
+    PizzaSize,
+    Courier,
+    OrderItem,
+    CustomerPreferences,
+    SeasonalPeriod
+])
