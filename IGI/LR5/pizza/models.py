@@ -25,7 +25,7 @@ class Allergen(models.Model):
 
 class PizzaSize(models.Model):
     size = models.CharField(max_length=20)  # Small, Medium, Large
-    multiplier = models.FloatField()  # Price multiplier
+    multiplier = models.DecimalField(max_digits=4, decimal_places=2)  # Price multiplier
     
     def __str__(self):
         return self.size

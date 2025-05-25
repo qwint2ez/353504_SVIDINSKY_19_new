@@ -4,17 +4,16 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Pizza, Order, Review, OrderItem, PizzaSize, PizzaPricing, Customer, PizzaCategory
-from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm
-from .services import WeatherService, PaymentService, QuoteService
 from django.http import JsonResponse
 from django.conf import settings
 from django.contrib import messages
-from django.db.models import Q, Avg, Count, Sum, F, FloatField
-from django.db.models.functions import ExtractYear
-from statistics import median, mode
-from datetime import datetime
+from django.db.models import Q, Avg, Count, Sum, F, DecimalField, Value
+from django.db.models.functions import Coalesce, Cast
+from statistics import median
 from django.contrib.admin.views.decorators import staff_member_required
+from .models import Pizza, Order, Review, OrderItem, PizzaSize, PizzaPricing, Customer, PizzaCategory
+from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm
+from .services import WeatherService, PaymentService, QuoteService
 
 class PizzaListView(ListView):
     model = Pizza
@@ -186,53 +185,48 @@ def reviews_by_rating(request, rating):
 
 @staff_member_required
 def statistics_view(request):
-    # Получаем все завершенные заказы
-    completed_orders = Order.objects.filter(Q(status='completed') | Q(status='delivered'))
+    # Получаем все заказы
+    orders = Order.objects.all()
     
     # Общие показатели
-    total_sales = completed_orders.aggregate(
-        total=Sum(F('total_price'))
-    )['total'] or 0
+    total_sales = orders.aggregate(
+        total=Coalesce(Sum('total_price'), Value(0), 
+        output_field=DecimalField(max_digits=10, decimal_places=2))
+    )['total']
     
-    # Средний чек (используем все ненулевые заказы)
-    non_zero_orders = completed_orders.filter(total_price__gt=0)
-    avg_check = non_zero_orders.aggregate(
-        avg=Avg('total_price')
+    # Средний чек - только для заказов с суммой больше 0
+    avg_check = orders.filter(
+        total_price__gt=0
+    ).aggregate(
+        avg=Coalesce(Avg('total_price'), Value(0), 
+        output_field=DecimalField(max_digits=10, decimal_places=2))
     )['avg'] or 0
-    
+
     # Медианный чек
-    order_prices = list(non_zero_orders.values_list('total_price', flat=True))
-    median_check = median(order_prices) if order_prices else 0
-    
-    # Топ-5 популярных пицц с учетом только завершенных заказов
-    top_pizzas = OrderItem.objects.filter(
-        order__in=completed_orders
-    ).values(
-        'pizza__name'
-    ).annotate(
-        total_quantity=Sum('quantity'),
-        total_revenue=Sum(F('item_price'))
-    ).order_by('-total_quantity')[:5]
+    order_amounts = list(orders.filter(
+        total_price__gt=0
+    ).values_list('total_price', flat=True))
+    median_check = median(order_amounts) if order_amounts else 0
 
-    # Статистика по категориям с учетом только завершенных заказов
-    category_stats = OrderItem.objects.filter(
-        order__in=completed_orders
-    ).values(
-        'pizza__category__name'
-    ).annotate(
-        pizzas_count=Count('pizza__id', distinct=True),
-        total_sold=Sum('quantity'),
-        total_revenue=Sum('item_price')
-    ).order_by('-total_revenue')
+    # Топ-5 популярных пицц
+    top_pizzas = Pizza.objects.annotate(
+        sales_count=Count('orderitem'),
+        revenue=Sum('orderitem__item_price')
+    ).order_by('-sales_count')[:5]
 
-    # Топ-10 клиентов по завершенным заказам
-    top_customers = Order.objects.filter(
-        id__in=completed_orders
-    ).values(
-        'customer__user__username'
-    ).annotate(
-        orders_count=Count('id'),
-        total_spent=Sum('total_price')
+    # Статистика по категориям
+    category_stats = PizzaCategory.objects.annotate(
+        pizzas_count=Count('pizza', distinct=True),
+        total_sold=Count('pizza__orderitem'),
+        revenue=Sum('pizza__orderitem__item_price', default=0)
+    )
+
+    # Топ-10 клиентов
+    top_customers = Customer.objects.annotate(
+        orders_count=Count('order'),
+        total_spent=Sum('order__total_price', default=0)
+    ).filter(
+        total_spent__gt=0
     ).order_by('-total_spent')[:10]
 
     context = {
@@ -243,4 +237,5 @@ def statistics_view(request):
         'category_stats': category_stats,
         'top_customers': top_customers,
     }
-    return render(request, 'admin/pizza/statistics.html', context)
+    
+    return render(request, 'pizza/statistics.html', context)

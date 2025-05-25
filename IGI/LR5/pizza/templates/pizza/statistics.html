@@ -2,80 +2,68 @@
 
 {% block content %}
 <div class="container">
-    <h1>Статистика пиццерии</h1>
-
+    <h2>Статистика пиццерии</h2>
+    
     <div class="stats-section">
-        <h2>Общие показатели</h2>
+        <h3>Общие показатели</h3>
         <p>Общая сумма продаж: {{ total_sales|floatformat:2 }} ₽</p>
         <p>Средний чек: {{ avg_check|floatformat:2 }} ₽</p>
         <p>Медианный чек: {{ median_check|floatformat:2 }} ₽</p>
     </div>
 
     <div class="stats-section">
-        <h2>Топ-5 популярных пицц</h2>
+        <h3>Топ-5 популярных пицц</h3>
         <table class="table">
-            <thead>
-                <tr>
-                    <th>Название</th>
-                    <th>Кол-во продаж</th>
-                    <th>Выручка</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for pizza in top_pizzas %}
-                <tr>
-                    <td>{{ pizza.pizza__name }}</td>
-                    <td>{{ pizza.total_quantity }}</td>
-                    <td>{{ pizza.total_revenue|floatformat:2 }} ₽</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+            <tr>
+                <th>Название</th>
+                <th>Кол-во продаж</th>
+                <th>Выручка</th>
+            </tr>
+            {% for pizza in top_pizzas %}
+            <tr>
+                <td>{{ pizza.name }}</td>
+                <td>{{ pizza.sales_count }}</td>
+                <td>{{ pizza.revenue|default:"0"|floatformat:2 }} ₽</td>
+            </tr>
+            {% endfor %}
         </table>
     </div>
 
     <div class="stats-section">
-        <h2>Статистика по категориям</h2>
+        <h3>Статистика по категориям</h3>
         <table class="table">
-            <thead>
-                <tr>
-                    <th>Категория</th>
-                    <th>Кол-во пицц</th>
-                    <th>Продано</th>
-                    <th>Выручка</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for cat in category_stats %}
-                <tr>
-                    <td>{{ cat.pizza__category__name }}</td>
-                    <td>{{ cat.pizzas_count }}</td>
-                    <td>{{ cat.total_sold }}</td>
-                    <td>{{ cat.total_revenue|floatformat:2 }} ₽</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+            <tr>
+                <th>Категория</th>
+                <th>Кол-во пицц</th>
+                <th>Продано</th>
+                <th>Выручка</th>
+            </tr>
+            {% for cat in category_stats %}
+            <tr>
+                <td>{{ cat.name }}</td>
+                <td>{{ cat.pizzas_count }}</td>
+                <td>{{ cat.total_sold }}</td>
+                <td>{{ cat.revenue|floatformat:2 }} ₽</td>
+            </tr>
+            {% endfor %}
         </table>
     </div>
 
     <div class="stats-section">
-        <h2>Топ-10 клиентов</h2>
+        <h3>Топ-10 клиентов</h3>
         <table class="table">
-            <thead>
-                <tr>
-                    <th>Клиент</th>
-                    <th>Заказов</th>
-                    <th>Сумма</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for customer in top_customers %}
-                <tr>
-                    <td>{{ customer.customer__user__username }}</td>
-                    <td>{{ customer.orders_count }}</td>
-                    <td>{{ customer.total_spent|floatformat:2 }} ₽</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+            <tr>
+                <th>Клиент</th>
+                <th>Заказов</th>
+                <th>Сумма</th>
+            </tr>
+            {% for customer in top_customers %}
+            <tr>
+                <td>{{ customer.user.username }}</td>
+                <td>{{ customer.orders_count }}</td>
+                <td>{{ customer.total_spent|floatformat:2 }} ₽</td>
+            </tr>
+            {% endfor %}
         </table>
     </div>
 </div>
@@ -85,29 +73,23 @@
     margin: 20px 0;
     padding: 15px;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .table {
     width: 100%;
     border-collapse: collapse;
-    margin: 15px 0;
+    margin-top: 10px;
 }
 
-.table th,
-.table td {
-    padding: 12px;
+.table th, .table td {
+    padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 .table th {
-    background-color: #f8f9fa;
-    font-weight: 600;
-}
-
-.table tr:hover {
     background-color: #f5f5f5;
 }
 </style>
