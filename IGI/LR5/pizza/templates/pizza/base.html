@@ -24,6 +24,9 @@
                     <li><a href="{% url 'pizza:login' %}">Войти</a></li>
                     <li><a href="{% url 'pizza:register' %}">Регистрация</a></li>
                 {% endif %}
+                {% if user.is_staff %}
+                    <li><a href="{% url 'pizza:statistics' %}">Статистика</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

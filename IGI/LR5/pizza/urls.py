@@ -36,4 +36,7 @@ urlpatterns = [
     
     # API URLs
     re_path(r'^api/payment/create/$', create_payment_intent, name='create_payment_intent'),
+    
+    # Статистика
+    path('statistics/', views.statistics_view, name='statistics'),
 ]

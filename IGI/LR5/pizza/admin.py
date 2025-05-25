@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import *
+from django.urls import path
+from .views import statistics_view  # Импортируем ваше представление статистики
 
 class PizzaPricingInline(admin.TabularInline):
     model = PizzaPricing
@@ -16,6 +18,14 @@ class PizzaAdmin(admin.ModelAdmin):
     def get_ingredients(self, obj):
         return ", ".join([i.name for i in obj.ingredients.all()])
     get_ingredients.short_description = 'Ингредиенты'
+
+    def get_urls(self):
+        urls = super().get_urls()
+        custom_urls = [
+            path('statistics/', self.admin_site.admin_view(statistics_view), 
+                 name='pizza_statistics'),
+        ]
+        return custom_urls + urls
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
