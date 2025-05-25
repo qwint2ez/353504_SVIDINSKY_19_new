@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.core.validators import RegexValidator
 from .models import Pizza, Order, Review, Customer
 
 class PizzaForm(forms.ModelForm):
@@ -55,8 +56,20 @@ class ReviewForm(forms.ModelForm):
         }
 
 class UserRegistrationForm(UserCreationForm):
+    phone_regex = RegexValidator(
+        regex=r'^\+375 \((?:29|33|44|25)\) [0-9]{3}-[0-9]{2}-[0-9]{2}$',
+        message="Номер телефона должен быть в формате: '+375 (29) XXX-XX-XX'"
+    )
+    
     email = forms.EmailField()
-    phone = forms.CharField(max_length=15)
+    phone = forms.CharField(
+        validators=[phone_regex],
+        max_length=19,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': '+375 (29) XXX-XX-XX'
+        })
+    )
     address = forms.CharField(widget=forms.Textarea(attrs={'rows': 3}))
 
     class Meta:

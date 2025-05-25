@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.core.validators import RegexValidator
 
 class PizzaCategory(models.Model):
     name = models.CharField(max_length=100)
@@ -72,8 +73,17 @@ class PizzaPricing(models.Model):
         return f"{self.pizza.name} - {self.size.size}: {self.price}"
     
 class Customer(models.Model):
+    phone_regex = RegexValidator(
+        regex=r'^\+375 \((?:29|33|44|25)\) [0-9]{3}-[0-9]{2}-[0-9]{2}$',
+        message="Номер телефона должен быть в формате: '+375 (29) XXX-XX-XX'"
+    )
+    
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    phone = models.CharField(max_length=15)
+    phone = models.CharField(
+        validators=[phone_regex],
+        max_length=19,
+        help_text="Формат: +375 (29) XXX-XX-XX"
+    )
     address = models.TextField()
     
     def __str__(self):
