@@ -19,6 +19,9 @@ from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm
 from .services import WeatherService, PaymentService, QuoteService
 from django.utils import timezone
 import calendar
+import matplotlib.pyplot as plt
+import io
+import base64
 
 class PizzaListView(ListView):
     model = Pizza
@@ -207,6 +210,38 @@ def reviews_list(request):
 
 @staff_member_required
 def statistics_view(request):
+    # Параметры сортировки и поиска
+    search_query = request.GET.get('search', '')
+    sort_by = request.GET.get('sort', 'name')
+    sort_direction = request.GET.get('direction', 'asc')
+
+    # Базовый QuerySet для пицц
+    all_pizzas = Pizza.objects.annotate(
+        sales_count=Count('orderitem'),
+        revenue=Coalesce(Sum('orderitem__item_price'), Value(0), 
+                        output_field=DecimalField(max_digits=10, decimal_places=2))
+    ).select_related('category')
+
+    # Применяем поиск если есть запрос
+    if search_query:
+        all_pizzas = all_pizzas.filter(
+            Q(name__icontains=search_query) |
+            Q(category__name__icontains=search_query) |
+            Q(description__icontains=search_query)
+        )
+
+    # Определяем направление и поле сортировки
+    sort_field = {
+        'name_asc': 'name',
+        'name_desc': '-name',
+        'sales_asc': 'sales_count',
+        'sales_desc': '-sales_count',
+        'revenue_asc': 'revenue',
+        'revenue_desc': '-revenue',
+    }.get(f"{sort_by}_{sort_direction}", 'name')
+
+    all_pizzas = all_pizzas.order_by(sort_field)
+
     # Получаем текущую дату для календаря
     current_date = datetime.now()
     cal = calendar.monthcalendar(current_date.year, current_date.month)
@@ -255,25 +290,47 @@ def statistics_view(request):
         total_spent=Sum('total_price')
     ).order_by('-total_spent')[:10]
 
-    # Подготовка данных для графиков
-    pizza_chart_data = {
-        'labels': [p['pizza__name'] for p in top_pizzas],
-        'sales': [p['sales_count'] for p in top_pizzas],
-        'revenue': [float(p['revenue']) for p in top_pizzas]
-    }
-    
-    category_chart_data = {
-        'labels': [c['pizza__category__name'] for c in category_stats],
-        'sales': [c['sold'] for c in category_stats],
-        'revenue': [float(c['revenue']) for c in category_stats]
-    }
+    # Создаем графики с помощью matplotlib
+    def generate_bar_chart(labels, sales_data, revenue_data):
+        plt.figure(figsize=(15, 8))  # Увеличиваем размер
+        plt.clf()
+        plt.bar(labels, sales_data)
+        plt.title('Топ-5 популярных пицц')
+        plt.xticks(rotation=45)
+        
+        buffer = io.BytesIO()
+        plt.savefig(buffer, format='png', bbox_inches='tight')
+        buffer.seek(0)
+        image_png = buffer.getvalue()
+        buffer.close()
+        
+        return base64.b64encode(image_png).decode('utf-8')
 
-    # Добавляем статистику по всем пиццам для интерактивной таблицы
-    all_pizzas = Pizza.objects.annotate(
-        sales_count=Count('orderitem'),
-        revenue=Coalesce(Sum('orderitem__item_price'), 0, 
-                        output_field=DecimalField(max_digits=10, decimal_places=2))
-    ).select_related('category')
+    def generate_pie_chart(labels, values):
+        plt.figure(figsize=(12, 12))  # Увеличиваем размер
+        plt.clf()
+        plt.pie(values, labels=labels, autopct='%1.1f%%')
+        plt.title('Распределение выручки по категориям')
+        
+        buffer = io.BytesIO()
+        plt.savefig(buffer, format='png', bbox_inches='tight')
+        buffer.seek(0)
+        image_png = buffer.getvalue()
+        buffer.close()
+        
+        return base64.b64encode(image_png).decode('utf-8')
+
+    # Генерируем графики
+    sales_chart = generate_bar_chart(
+        [p['pizza__name'] for p in top_pizzas],
+        [p['sales_count'] for p in top_pizzas],
+        [float(p['revenue']) for p in top_pizzas]
+    )
+
+    category_chart = generate_pie_chart(
+        [c['pizza__category__name'] for c in category_stats],
+        [float(c['revenue']) for c in category_stats]
+    )
 
     context = {
         'total_sales': total_sales,
@@ -292,9 +349,12 @@ def statistics_view(request):
         'month_name': month_name,
         'current_day': current_date.day,
         'orders_today': orders.filter(order_date__date=current_date.date()).count(),
-        'pizza_chart_data': pizza_chart_data,
-        'category_chart_data': category_chart_data,
-        'all_pizzas': all_pizzas,  # Добавляем в контекст
+        'all_pizzas': all_pizzas,
+        'search_query': search_query,
+        'sort_by': sort_by,
+        'sort_direction': sort_direction,
+        'sales_chart': sales_chart,
+        'category_chart': category_chart
     })
     
     return render(request, 'pizza/statistics.html', context)

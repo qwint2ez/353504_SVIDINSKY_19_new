@@ -99,50 +99,57 @@
 
     <div class="stats-section">
         <h3>Визуализация данных</h3>
-        <div class="chart-container">
-            <canvas id="pizzaChart"></canvas>
-        </div>
-        <div class="chart-container">
-            <canvas id="categoryChart"></canvas>
-        </div>
+        <img src="data:image/png;base64,{{ sales_chart }}" alt="График продаж" style="width: 100%; max-width: 1200px;">
+        <img src="data:image/png;base64,{{ category_chart }}" alt="График категорий" style="width: 100%; max-width: 1000px;">
     </div>
 
     <div class="stats-section">
         <h3>Список всех пицц</h3>
         
-        <div class="search-controls mb-3">
-            <input type="text" id="pizzaSearch" class="form-control" placeholder="Поиск по названию или категории...">
-            <select id="sortOrder" class="form-select">
-                <option value="name_asc">По названию (А-Я)</option>
-                <option value="name_desc">По названию (Я-А)</option>
-                <option value="sales_desc">По продажам ↓</option>
-                <option value="sales_asc">По продажам ↑</option>
-                <option value="revenue_desc">По выручке ↓</option>
-                <option value="revenue_asc">По выручке ↑</option>
+        <form method="get" class="search-controls mb-3">
+            <input type="text" name="search" 
+                   class="form-control" 
+                   placeholder="Поиск по названию или категории..." 
+                   value="{{ search_query }}">
+                   
+            <select name="sort" class="form-select">
+                <option value="name" {% if sort_by == 'name' %}selected{% endif %}>По названию</option>
+                <option value="sales" {% if sort_by == 'sales' %}selected{% endif %}>По продажам</option>
+                <option value="revenue" {% if sort_by == 'revenue' %}selected{% endif %}>По выручке</option>
             </select>
-        </div>
+            
+            <select name="direction" class="form-select">
+                <option value="asc" {% if sort_direction == 'asc' %}selected{% endif %}>По возрастанию</option>
+                <option value="desc" {% if sort_direction == 'desc' %}selected{% endif %}>По убыванию</option>
+            </select>
+            
+            <button type="submit" class="btn btn-primary">Применить</button>
+        </form>
 
-        <table class="stats-table" id="pizzaTable">
+        <table class="stats-table">
             <thead>
                 <tr>
                     <th>Название</th>
                     <th>Категория</th>
                     <th>Продаж</th>
                     <th>Выручка</th>
-                    <th>Действия</th>
+                    <th>Описание</th>
                 </tr>
             </thead>
             <tbody>
                 {% for pizza in all_pizzas %}
-                <tr data-search="{{ pizza.name|lower }} {{ pizza.category.name|default:'без категории'|lower }}">
+                <tr>
                     <td>{{ pizza.name }}</td>
                     <td>{{ pizza.category.name|default:"Без категории" }}</td>
-                    <td data-value="{{ pizza.sales_count }}">{{ pizza.sales_count }}</td>
-                    <td data-value="{{ pizza.revenue|default:0 }}">{{ pizza.revenue|floatformat:2 }} ₽</td>
+                    <td>{{ pizza.sales_count }}</td>
+                    <td>{{ pizza.revenue|floatformat:2 }} ₽</td>
                     <td>
-                        <a href="{% url 'pizza:pizza_detail' pizza.id %}" class="btn-details">
-                            Подробнее
-                        </a>
+                        <details>
+                            <summary>Показать</summary>
+                            <div class="description-content">
+                                {{ pizza.description }}
+                            </div>
+                        </details>
                     </td>
                 </tr>
                 {% endfor %}
@@ -150,100 +157,6 @@
         </table>
     </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Графики
-    const pizzaCtx = document.getElementById('pizzaChart').getContext('2d');
-    const categoryCtx = document.getElementById('categoryChart').getContext('2d');
-    
-    new Chart(pizzaCtx, {
-        type: 'bar',
-        data: {
-            labels: {{ pizza_chart_data.labels|safe }},
-            datasets: [{
-                label: 'Количество продаж',
-                data: {{ pizza_chart_data.sales|safe }},
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    new Chart(categoryCtx, {
-        type: 'pie',
-        data: {
-            labels: {{ category_chart_data.labels|safe }},
-            datasets: [{
-                data: {{ category_chart_data.revenue|safe }},
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                    'rgba(255, 206, 86, 0.5)',
-                    'rgba(75, 192, 192, 0.5)',
-                    'rgba(153, 102, 255, 0.5)'
-                ]
-            }]
-        },
-        options: {
-            responsive: true
-        }
-    });
-
-    // Поиск и сортировка
-    const searchInput = document.getElementById('pizzaSearch');
-    const sortSelect = document.getElementById('sortOrder');
-    const table = document.getElementById('pizzaTable');
-    const tbody = table.querySelector('tbody');
-    
-    function sortTable() {
-        const rows = Array.from(tbody.querySelectorAll('tr'));
-        const [field, direction] = sortSelect.value.split('_');
-        
-        rows.sort((a, b) => {
-            let aVal = '', bVal = '';
-            
-            if (field === 'name') {
-                aVal = a.cells[0].textContent;
-                bVal = b.cells[0].textContent;
-                return direction === 'asc' ? 
-                    aVal.localeCompare(bVal) : 
-                    bVal.localeCompare(aVal);
-            } else {
-                aVal = parseFloat(a.cells[field === 'sales' ? 2 : 3].dataset.value);
-                bVal = parseFloat(b.cells[field === 'sales' ? 2 : 3].dataset.value);
-                return direction === 'asc' ? aVal - bVal : bVal - aVal;
-            }
-        });
-        
-        tbody.innerHTML = '';
-        rows.forEach(row => tbody.appendChild(row));
-    }
-
-    function filterTable() {
-        const searchText = searchInput.value.toLowerCase();
-        const rows = tbody.querySelectorAll('tr');
-        
-        rows.forEach(row => {
-            const searchData = row.dataset.search;
-            row.style.display = searchData.includes(searchText) ? '' : 'none';
-        });
-    }
-
-    searchInput.addEventListener('input', filterTable);
-    sortSelect.addEventListener('change', sortTable);
-});
-</script>
 
 <style>
 .stats-section {
@@ -310,7 +223,8 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .search-controls input,
-.search-controls select {
+.search-controls select,
+.search-controls button {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -324,30 +238,20 @@ document.addEventListener('DOMContentLoaded', function() {
     width: 200px;
 }
 
-.btn-details {
-    display: inline-block;
-    padding: 5px 10px;
-    background: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.btn-details:hover {
-    background: #45a049;
-    color: white;
-    text-decoration: none;
-}
-
 .description-content {
     padding: 10px;
+    margin-top: 5px;
     background: #f9f9f9;
     border-radius: 4px;
 }
 
-.description-row td {
-    background: #f9f9f9;
-    padding: 15px;
+details summary {
+    cursor: pointer;
+    color: #4CAF50;
+}
+
+details[open] summary {
+    margin-bottom: 10px;
 }
 </style>
 {% endblock %}
