@@ -28,6 +28,7 @@ urlpatterns = [
     # URLs для отзывов
     path('review/new/', ReviewCreateView.as_view(), name='review_create'),
     path('review/success/', views.review_success, name='review_success'),
+    path('reviews/', views.reviews_list, name='reviews_list'),
     
     # URLs для аутентификации
     re_path(r'^login/$', auth_views.LoginView.as_view(template_name='pizza/login.html'), name='login'),

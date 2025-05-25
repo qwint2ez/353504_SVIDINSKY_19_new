@@ -189,7 +189,7 @@ def reviews_by_rating(request, rating):
     return render(request, 'pizza/reviews_by_rating.html', context)
 
 def reviews_list(request):
-    """Представление для отображения списка всех отзывов"""
+    """Представление для отображения всех отзывов"""
     reviews = Review.objects.select_related(
         'customer__user', 
         'pizza'
