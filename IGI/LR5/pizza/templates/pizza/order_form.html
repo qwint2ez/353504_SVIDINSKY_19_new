@@ -21,38 +21,35 @@
 
     <form method="post">
         {% csrf_token %}
-        
-        <div style="margin: 20px;">
-            <h3>Выберите время доставки:</h3>
-            {{ form.delivery_date }}
-        </div>
+        {{ form.delivery_date }}
 
-        <div class="pizzas" style="margin: 20px;">
+        <div class="pizzas">
             {% for pizza in pizzas %}
             <div class="pizza-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 8px;">
-                <h4>{{ pizza.name }} - {{ pizza.price }}₽</h4>
+                <h4>{{ pizza.name }}</h4>
                 <p>{{ pizza.description }}</p>
-                
-                <div class="sizes" style="margin: 10px 0;">
-                    <label>Размер:</label>
+                <p>Категория: {{ pizza.category.name }}</p>
+
+                <div class="sizes" style="margin: 15px 0;">
+                    <h5>Выберите размер:</h5>
                     {% for size in pizza.available_sizes.all %}
-                    <label style="margin-right: 15px;">
-                        <input type="radio" name="size_{{ pizza.id }}" value="{{ size.id }}" 
-                               {% if forloop.first %}checked{% endif %}>
-                        {{ size.size }}
-                    </label>
+                    <div class="size-option" style="margin: 10px 0;">
+                        {% with pricing=pizza.pizzapricing_set.all|dictsort:"size.id"|first %}
+                        <label>
+                            <input type="radio" name="size_{{ pizza.id }}" value="{{ size.id }}">
+                            {{ size.size }} - {{ pricing.price|floatformat:2 }} ₽
+                        </label>
+                        {% endwith %}
+                    </div>
                     {% endfor %}
                 </div>
 
-                <div class="quantity">
+                <div class="quantity" style="margin-top: 15px;">
                     <label>Количество:</label>
                     <select name="quantity_{{ pizza.id }}">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        {% for i in "012345" %}
+                        <option value="{{ i }}">{{ i }}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
@@ -65,4 +62,25 @@
         </button>
     </form>
 </div>
+
+<style>
+.pizza-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.sizes {
+    margin: 15px 0;
+}
+
+.size-option {
+    margin: 10px 0;
+}
+
+.quantity {
+    margin-top: 15px;
+}
+</style>
 {% endblock %}

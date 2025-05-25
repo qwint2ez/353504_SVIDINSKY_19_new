@@ -2,39 +2,21 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
-from .models import Pizza, Order, Review, Customer, validate_age, PizzaPricing  # добавляем импорт validate_age
+from .models import Pizza, Order, Review, Customer, validate_age, PizzaPricing, PizzaSize, Ingredient, Allergen  # добавляем импорт validate_age
 from datetime import date
 
 class PizzaForm(forms.ModelForm):
-    prices = forms.JSONField(widget=forms.HiddenInput(), required=False)
-
     class Meta:
         model = Pizza
-        fields = ['name', 'description', 'price', 'sauce', 'image', 
-                 'ingredients', 'allergens', 'category', 'available_sizes']
+        fields = [
+            'name', 'description', 'price', 'sauce', 'image',
+            'ingredients', 'allergens', 'category', 'available_sizes', 'is_vegan'
+        ]
         widgets = {
-            'description': forms.Textarea(attrs={'rows': 4}),
-            'ingredients': forms.SelectMultiple(attrs={'class': 'form-select'}),
-            'allergens': forms.SelectMultiple(attrs={'class': 'form-select'}),
-            'category': forms.Select(attrs={'class': 'form-select'}),
-            'available_sizes': forms.SelectMultiple(attrs={'class': 'form-select'})
+            'ingredients': forms.CheckboxSelectMultiple,
+            'allergens': forms.CheckboxSelectMultiple,
+            'available_sizes': forms.CheckboxSelectMultiple,
         }
-
-    def save(self, commit=True):
-        pizza = super().save(commit=True)
-        prices = self.cleaned_data.get('prices', {})
-        
-        # Очищаем существующие цены
-        PizzaPricing.objects.filter(pizza=pizza).delete()
-        
-        # Создаем новые цены для каждого размера
-        for size in pizza.available_sizes.all():
-            PizzaPricing.objects.create(
-                pizza=pizza,
-                size=size,
-                price=pizza.price * size.multiplier
-            )
-        return pizza
 
 class OrderForm(forms.ModelForm):
     class Meta:

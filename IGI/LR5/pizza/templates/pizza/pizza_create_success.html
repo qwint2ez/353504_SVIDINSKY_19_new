@@ -1,0 +1,14 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-success mt-4">
+        <h4>Пицца успешно создана!</h4>
+        <p>Новая пицца добавлена в меню.</p>
+    </div>
+    <div class="mt-3">
+        <a href="{% url 'pizza:pizza_list' %}" class="btn btn-primary">Вернуться к списку пицц</a>
+        <a href="{% url 'pizza:pizza_create' %}" class="btn btn-success">Создать ещё одну пиццу</a>
+    </div>
+</div>
+{% endblock %}

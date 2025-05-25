@@ -40,4 +40,7 @@ urlpatterns = [
     
     # Статистика
     path('statistics/', views.statistics_view, name='statistics'),
+
+    # URL для успешного создания пиццы
+    path('pizza/create/success/', views.pizza_create_success, name='pizza_create_success'),
 ]

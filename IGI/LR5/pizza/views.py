@@ -37,11 +37,19 @@ class PizzaCreateView(UserPassesTestMixin, CreateView):
     model = Pizza
     form_class = PizzaForm
     template_name = 'pizza/pizza_form.html'
-    success_url = reverse_lazy('pizza_list')
-    login_url = 'pizza:login'
-
+    success_url = reverse_lazy('pizza:pizza_list')
+    
     def test_func(self):
         return self.request.user.is_superuser
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, 'Пицца успешно создана!')
+        return response
+
+# Add success view
+def pizza_create_success(request):
+    return render(request, 'pizza/pizza_create_success.html')
 
 class PizzaUpdateView(UserPassesTestMixin, UpdateView):
     model = Pizza
@@ -89,30 +97,33 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
             order = form.save(commit=False)
             order.customer = self.request.user.customer
             order.status = 'pending'
-            order.total_price = 0
             order.save()
 
             total_price = 0
-            pizzas = Pizza.objects.all()
+            has_items = False
 
-            for pizza in pizzas:
-                quantity = self.request.POST.get(f'quantity_{pizza.id}')
+            for pizza in Pizza.objects.all():
+                quantity = int(self.request.POST.get(f'quantity_{pizza.id}', 0))
                 size_id = self.request.POST.get(f'size_{pizza.id}')
-                
-                if quantity and size_id and int(quantity) > 0:
-                    size = PizzaSize.objects.get(id=size_id)
-                    pricing = PizzaPricing.objects.get(pizza=pizza, size=size)
-                    
-                    OrderItem.objects.create(
-                        order=order,
-                        pizza=pizza,
-                        size=size,
-                        quantity=int(quantity),
-                        item_price=pricing.price * int(quantity)
-                    )
-                    total_price += pricing.price * int(quantity)
 
-            if total_price == 0:
+                if quantity > 0 and size_id:
+                    has_items = True
+                    size = PizzaSize.objects.get(id=size_id)
+                    try:
+                        pricing = PizzaPricing.objects.get(pizza=pizza, size=size)
+                        OrderItem.objects.create(
+                            order=order,
+                            pizza=pizza,
+                            size=size,
+                            quantity=quantity,
+                            item_price=pricing.price * quantity
+                        )
+                        total_price += pricing.price * quantity
+                    except PizzaPricing.DoesNotExist:
+                        messages.error(self.request, f'Ошибка с ценой для пиццы {pizza.name}')
+                        return self.form_invalid(form)
+
+            if not has_items:
                 messages.error(self.request, 'Выберите хотя бы одну пиццу')
                 return self.form_invalid(form)
 
@@ -120,7 +131,7 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
             order.save()
             messages.success(self.request, 'Заказ успешно создан!')
             return super().form_valid(form)
-            
+
         except Exception as e:
             messages.error(self.request, f'Ошибка при создании заказа: {str(e)}')
             return self.form_invalid(form)

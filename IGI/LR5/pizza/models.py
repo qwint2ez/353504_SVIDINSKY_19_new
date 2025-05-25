@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
 from datetime import date
+from decimal import Decimal
 
 def validate_age(birth_date):
     today = date.today()
@@ -49,25 +50,35 @@ class SeasonalPeriod(models.Model):
         return self.name
     
 class Pizza(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    name = models.CharField(max_length=100, verbose_name="Название")
+    description = models.TextField(verbose_name="Описание")
+    price = models.DecimalField(
+        max_digits=6, 
+        decimal_places=2, 
+        verbose_name="Базовая цена",
+        help_text="Базовая цена для стандартного размера"
+    )
     sauce = models.CharField(max_length=50)
     image = models.ImageField(upload_to='pizzas/', null=True, blank=True)
     ingredients = models.ManyToManyField(Ingredient)
     allergens = models.ManyToManyField(Allergen)
     chef = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='created_pizzas')
     recommended_with = models.ManyToManyField('self', blank=True)
-    category = models.ForeignKey(PizzaCategory, on_delete=models.SET_NULL, null=True)
-    available_sizes = models.ManyToManyField(PizzaSize, through='PizzaPricing')
+    category = models.ForeignKey(PizzaCategory, on_delete=models.SET_NULL, null=True, verbose_name="Категория")
+    available_sizes = models.ManyToManyField(PizzaSize, through='PizzaPricing', verbose_name="Доступные размеры")
     seasonal_availability = models.ManyToManyField(
         'SeasonalPeriod',
         related_name='available_pizzas',
         blank=True
     )
+    is_vegan = models.BooleanField(default=False, verbose_name="Вегетарианская")
     
     def __str__(self):
         return self.name
+
+    def get_base_price(self):
+        pricing = self.pizzapricing_set.filter(size__multiplier=1.0).first()
+        return pricing.price if pricing else Decimal('0')
 
 class PizzaPricing(models.Model):
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
