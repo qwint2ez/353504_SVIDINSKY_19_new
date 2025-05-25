@@ -188,6 +188,14 @@ def reviews_by_rating(request, rating):
     }
     return render(request, 'pizza/reviews_by_rating.html', context)
 
+def reviews_list(request):
+    """Представление для отображения списка всех отзывов"""
+    reviews = Review.objects.select_related(
+        'customer__user', 
+        'pizza'
+    ).order_by('-date')
+    return render(request, 'pizza/reviews.html', {'reviews': reviews})
+
 @staff_member_required
 def statistics_view(request):
     # Получаем текущую дату для календаря
