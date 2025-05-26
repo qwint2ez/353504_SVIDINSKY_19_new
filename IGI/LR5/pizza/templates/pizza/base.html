@@ -14,6 +14,7 @@
                 <li><a href="{% url 'pizza:home' %}">Главная</a></li>
                 <li><a href="{% url 'pizza:menu' %}">Меню</a></li>
                 <li><a href="{% url 'pizza:promotions' %}">Акции</a></li>
+                <li><a href="{% url 'pizza:reviews_list' %}">Отзывы</a></li>
                 
                 {% if user.is_authenticated %}
                     {% if user.is_staff %}
@@ -27,6 +28,7 @@
                     {% endif %}
                     <li><a href="{% url 'pizza:my_orders' %}">Мои заказы</a></li>
                     <li><a href="{% url 'pizza:order_create' %}">Заказать</a></li>
+                    <li><a href="{% url 'pizza:review_create' %}">Оставить отзыв</a></li>
                     <li><a href="{% url 'pizza:logout' %}">Выйти</a></li>
                 {% else %}
                     <li><a href="{% url 'pizza:login' %}">Войти</a></li>

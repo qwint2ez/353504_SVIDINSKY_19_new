@@ -4,7 +4,8 @@ from . import views
 from .views import (
     HomeView, MenuView,
     PizzaDetailView, PizzaCreateView, PizzaUpdateView, PizzaDeleteView,
-    OrderCreateView, ReviewCreateView, OrdersListView
+    OrderCreateView, ReviewCreateView, OrdersListView, MyOrdersView,
+    CouriersListView  # Добавляем импорт
 )
 
 app_name = 'pizza'
@@ -48,16 +49,16 @@ urlpatterns = [
     # URL для успешного создания пиццы
     path('pizza/create/success/', views.pizza_create_success, name='pizza_create_success'),
 
-    # URLs для промоакций
+    # Order management
+    path('orders/', OrdersListView.as_view(), name='orders_list'),
+    path('my-orders/', MyOrdersView.as_view(), name='my_orders'),
+    path('order/<int:order_id>/update-status/', views.update_order_status, name='update_order_status'),
+    path('order/<int:order_id>/assign-courier/', views.assign_courier, name='assign_courier'),
+
+    # Promotions
     path('promotions/', views.promotions_view, name='promotions'),
     path('promotions/apply/', views.apply_promo, name='apply_promo'),
 
-    # Orders management
-    path('orders/', views.OrdersListView.as_view(), name='orders_list'),
-    path('orders/my/', views.MyOrdersView.as_view(), name='my_orders'),
-    path('couriers/', views.CouriersListView.as_view(), name='couriers_list'),
-    path('promos/', views.promotions_view, name='promo_list'),
-
-    path('order/<int:order_id>/update-status/', views.update_order_status, name='update_order_status'),
-    path('order/<int:order_id>/assign-courier/', views.assign_courier, name='assign_courier'),
+    # Добавляем URL для списка курьеров
+    path('couriers/', CouriersListView.as_view(), name='couriers_list'),
 ]

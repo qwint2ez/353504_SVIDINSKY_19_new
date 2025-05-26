@@ -51,6 +51,9 @@ class PizzaForm(forms.ModelForm):
         pizza = super().save(commit=True)
         base_price = self.cleaned_data['base_price']
         
+        # Удаляем существующие цены перед созданием новых
+        PizzaPricing.objects.filter(pizza=pizza).delete()
+        
         # Создаем цены для всех размеров
         sizes = PizzaSize.objects.all()
         for size in sizes:

@@ -90,7 +90,7 @@ class PizzaCreateView(UserPassesTestMixin, CreateView):
     model = Pizza
     form_class = PizzaForm
     template_name = 'pizza/pizza_form.html'
-    success_url = reverse_lazy('pizza:pizza_create_success')
+    success_url = reverse_lazy('pizza:menu')  # Изменено с pizza_create_success на menu
 
     def test_func(self):
         return self.request.user.is_superuser
@@ -98,25 +98,14 @@ class PizzaCreateView(UserPassesTestMixin, CreateView):
     def form_valid(self, form):
         try:
             logger.debug(f'Starting pizza creation process by user {self.request.user}')
-            context = self.get_context_data()
-            pricing_formset = context['pricing_formset']
-            if form.is_valid() and pricing_formset.is_valid():
-                logger.info(f"Creating new pizza: {form.cleaned_data['name']}")
-                self.object = form.save()
-                pricing_formset.instance = self.object
-                pricing_formset.save()
-                logger.debug(f"Pizza created successfully with ID: {self.object.id}")
-                messages.success(self.request, 'Пицца успешно создана!')
-                return super().form_valid(form)
-            logger.warning("Form validation failed")
-            return self.render_to_response(self.get_context_data(form=form))
+            self.object = form.save()
+            logger.info(f"Pizza created successfully with ID: {self.object.id}")
+            messages.success(self.request, 'Пицца успешно создана!')
+            return super().form_valid(form)
         except Exception as e:
             logger.error(f"Error creating pizza: {str(e)}")
-            raise
-
-    def form_invalid(self, form):
-        logger.warning(f"Invalid form data: {form.errors}")
-        return super().form_invalid(form)
+            messages.error(self.request, f'Ошибка при создании пиццы: {str(e)}')
+            return self.form_invalid(form)
 
 # Add success view
 def pizza_create_success(request):
@@ -222,20 +211,45 @@ def order_complete(request):
         'message': 'Ваш заказ успешно оформлен!'
     })
 
+@login_required
+def update_order_status(request, order_id):
+    if request.method == 'POST':  # Убрали проверку XMLHttpRequest
+        try:
+            order = get_object_or_404(Order, id=order_id)
+            status = request.POST.get('status')
+            courier_id = request.POST.get('courier_id')
+            
+            if status in dict(Order.STATUS_CHOICES):
+                order.status = status
+                if courier_id:
+                    order.courier = get_object_or_404(Courier, id=courier_id)
+                order.save()
+                logger.info(f'Order {order_id} status updated to {status} by {request.user}')
+                messages.success(request, 'Статус заказа успешно обновлен')
+                return redirect('pizza:orders_list')
+            else:
+                messages.error(request, 'Некорректный статус заказа')
+        except Exception as e:
+            logger.error(f'Error updating order status: {str(e)}')
+            messages.error(request, 'Произошла ошибка при обновлении статуса')
+    return redirect('pizza:orders_list')
+
+# Добавляем представления для отзывов
+def reviews_list(request):
+    reviews = Review.objects.select_related('customer__user', 'pizza').order_by('-date')
+    return render(request, 'pizza/reviews_list.html', {'reviews': reviews})
+
 class ReviewCreateView(LoginRequiredMixin, CreateView):
     model = Review
     form_class = ReviewForm
     template_name = 'pizza/review_form.html'
-    success_url = reverse_lazy('pizza:review_success')
+    success_url = reverse_lazy('pizza:reviews_list')
 
     def form_valid(self, form):
         form.instance.customer = self.request.user.customer
         response = super().form_valid(form)
         messages.success(self.request, 'Спасибо за ваш отзыв!')
         return response
-
-def review_success(request):
-    return render(request, 'pizza/review_success.html')
 
 def register(request):
     if request.method == 'POST':
@@ -256,7 +270,7 @@ def register(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('pizza:menu')  # Меняем на menu
+    return redirect('pizza:menu')
 
 def promo_list(request):
     current_time = timezone.now()
@@ -499,12 +513,8 @@ class OrdersListView(UserPassesTestMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        current_time = timezone.now()
-        for order in context['orders']:
-            if order.delivery_date:
-                time_left = order.delivery_date - current_time
-                order.time_left = time_left.total_seconds() if time_left.total_seconds() > 0 else 0
-                order.is_expired = time_left.total_seconds() <= 0
+        context['couriers'] = Courier.objects.all()
+        context['status_choices'] = Order.STATUS_CHOICES
         return context
 
     def get_queryset(self):
@@ -519,12 +529,12 @@ class MyOrdersView(LoginRequiredMixin, ListView):
         return Order.objects.filter(customer=self.request.user.customer).order_by('-created_at')
 
 class CouriersListView(UserPassesTestMixin, ListView):
-    model = Courier
-    template_name = 'pizza/couriers_list.html'
+    model = Courier 
+    template_name = 'pizza/couriers_list.html'  # Make sure template name matches
     context_object_name = 'couriers'
 
     def test_func(self):
-        return self.request.user.is_staff  # Разрешаем доступ всем сотрудникам
+        return self.request.user.is_staff
 
     def get_queryset(self):
         return Courier.objects.all().order_by('user__username')
@@ -569,42 +579,71 @@ def apply_promo(request):
 
 @login_required
 def update_order_status(request, order_id):
-    if request.method == 'POST' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        order = get_object_or_404(Order, id=order_id)
-        status = request.POST.get('status')
-        courier_id = request.POST.get('courier_id')
-        
-        if status:
-            order.status = status
-        if courier_id:
-            courier = get_object_or_404(Courier, id=courier_id)
-            order.courier = courier
+    if request.method == 'POST':  # Убрали проверку XMLHttpRequest
+        try:
+            order = get_object_or_404(Order, id=order_id)
+            status = request.POST.get('status')
+            courier_id = request.POST.get('courier_id')
             
-        order.save()
-        return JsonResponse({'status': 'success'})
-    return JsonResponse({'status': 'error'}, status=400)
+            if status in dict(Order.STATUS_CHOICES):
+                order.status = status
+                if courier_id:
+                    order.courier = get_object_or_404(Courier, id=courier_id)
+                order.save()
+                logger.info(f'Order {order_id} status updated to {status} by {request.user}')
+                messages.success(request, 'Статус заказа успешно обновлен')
+                return redirect('pizza:orders_list')
+            else:
+                messages.error(request, 'Некорректный статус заказа')
+        except Exception as e:
+            logger.error(f'Error updating order status: {str(e)}')
+            messages.error(request, 'Произошла ошибка при обновлении статуса')
+    return redirect('pizza:orders_list')
 
 @login_required
 def assign_courier(request, order_id):
     if request.method == 'POST' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        order = get_object_or_404(Order, id=order_id)
-        courier_id = request.POST.get('courier_id')
-        
-        if courier_id:
-            courier = get_object_or_404(Courier, id=courier_id)
-            order.courier = courier
-            order.save()
-            logger.info(f'Courier {courier.user.username} assigned to order {order.id}')
-            return JsonResponse({'status': 'success'})
-        
-        logger.warning(f'Attempt to assign courier without courier_id to order {order_id}')
-        return JsonResponse({'status': 'error', 'message': 'No courier specified'}, status=400)
-    
-    logger.warning(f'Invalid request method for assign_courier: {request.method}')
-    return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
+        try:
+            order = get_object_or_404(Order, id=order_id)
+            courier_id = request.POST.get('courier_id')
+            
+            if courier_id:
+                courier = Courier.objects.get(id=courier_id)
+                order.courier = courier
+                order.save()
+                logger.info(f'Courier {courier.user.username} assigned to order {order_id}')
+                return JsonResponse({
+                    'status': 'success',
+                    'message': 'Курьер успешно назначен'
+                })
+            else:
+                return JsonResponse({
+                    'status': 'error',
+                    'message': 'Не указан ID курьера'
+                }, status=400)
+        except Courier.DoesNotExist:
+            return JsonResponse({
+                'status': 'error',
+                'message': 'Курьер не найден'
+            }, status=404)
+        except Exception as e:
+            logger.error(f'Error assigning courier: {str(e)}')
+            return JsonResponse({
+                'status': 'error',
+                'message': 'Произошла ошибка при назначении курьера'
+            }, status=500)
+    return JsonResponse({
+        'status': 'error',
+        'message': 'Неверный запрос'
+    }, status=400)
 
 class ArticleListView(ListView):
     model = Article
     template_name = 'pizza/news.html'
     context_object_name = 'articles'
     ordering = ['-created_date']
+
+def review_success(request):
+    return render(request, 'pizza/review_success.html', {
+        'message': 'Спасибо за ваш отзыв!'
+    })
