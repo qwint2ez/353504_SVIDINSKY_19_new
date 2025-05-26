@@ -79,7 +79,6 @@ class PizzaPricing(models.Model):
     
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    birth_date = models.DateField(null=False, blank=False)
     phone_regex = RegexValidator(
         regex=r'^\+375 \((?:29|33|44|25)\) [0-9]{3}-[0-9]{2}-[0-9]{2}$',
         message="Номер телефона должен быть в формате: '+375 (29) XXX-XX-XX'"
@@ -109,10 +108,19 @@ class Customer(models.Model):
 class Courier(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=15)
+    earnings = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    completed_orders = models.IntegerField(default=0)
+    rating = models.DecimalField(max_digits=3, decimal_places=2, default=5.00)
     is_available = models.BooleanField(default=True)
-    
+    working_hours = models.JSONField(default=dict)  # График работы
+
     def __str__(self):
         return self.user.username
+
+    def update_earnings(self, amount):
+        self.earnings += amount
+        self.completed_orders += 1
+        self.save()
 
 class Order(models.Model):
     STATUS_CHOICES = [

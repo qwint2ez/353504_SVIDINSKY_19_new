@@ -11,23 +11,26 @@
     <header>
         <nav>
             <ul>
-                <li><a href="{% url 'pizza:pizza_list' %}">Главная</a></li>
+                <li><a href="{% url 'pizza:home' %}">Главная</a></li>
+                <li><a href="{% url 'pizza:menu' %}">Меню</a></li>
+                <li><a href="{% url 'pizza:promotions' %}">Акции</a></li>
+                
                 {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <li><a href="{% url 'pizza:orders_list' %}">Управление заказами</a></li>
+                        <li><a href="{% url 'pizza:statistics' %}">Статистика</a></li>
+                    {% endif %}
                     {% if user.is_superuser %}
                         <li><a href="{% url 'pizza:pizza_create' %}">Добавить пиццу</a></li>
+                        <li><a href="{% url 'pizza:couriers_list' %}">Курьеры</a></li>
                         <li><a href="{% url 'admin:index' %}">Админ-панель</a></li>
                     {% endif %}
-                    <li><a href="{% url 'pizza:order_create' %}">Сделать заказ</a></li>
-                    <li><a href="{% url 'pizza:review_create' %}">Оставить отзыв</a></li>
-                    <li><a href="{% url 'pizza:reviews_list' %}">Отзывы</a></li>
+                    <li><a href="{% url 'pizza:my_orders' %}">Мои заказы</a></li>
+                    <li><a href="{% url 'pizza:order_create' %}">Заказать</a></li>
                     <li><a href="{% url 'pizza:logout' %}">Выйти</a></li>
                 {% else %}
                     <li><a href="{% url 'pizza:login' %}">Войти</a></li>
                     <li><a href="{% url 'pizza:register' %}">Регистрация</a></li>
-                    <li><a href="{% url 'pizza:reviews_list' %}">Отзывы</a></li>
-                {% endif %}
-                {% if user.is_staff %}
-                    <li><a href="{% url 'pizza:statistics' %}">Статистика</a></li>
                 {% endif %}
             </ul>
         </nav>

@@ -1,0 +1,63 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Новости пиццерии</h1>
+
+    <div class="news-grid">
+        {% for article in news %}
+        <div class="news-card">
+            {% if article.image %}
+            <img src="{{ article.image.url }}" alt="{{ article.title }}">
+            {% endif %}
+            <div class="news-content">
+                <h2>{{ article.title }}</h2>
+                <p class="news-date">{{ article.created_date|date:"d.m.Y" }}</p>
+                <p class="news-summary">{{ article.summary }}</p>
+                <a href="#" class="read-more">Читать далее</a>
+            </div>
+        </div>
+        {% empty %}
+        <p>Нет новостей</p>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 15px;
+}
+
+.news-date {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Текущие акции</h2>
+    
+    {% if promos %}
+        <div class="promo-grid">
+            {% for promo in promos %}
+            <div class="promo-card">
+                <h3>Промокод: {{ promo.code }}</h3>
+                <p>Скидка: {{ promo.discount }}%</p>
+                <p>Действует до: {{ promo.valid_to|date:"d.m.Y H:i" }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>В данный момент нет активных акций</p>
+    {% endif %}
+</div>
+
+<style>
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.promo-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.promo-card h3 {
+    color: #dc3545;
+    margin-bottom: 10px;
+}
+</style>
+{% endblock %}

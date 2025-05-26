@@ -3,7 +3,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from django.urls import reverse_lazy
 from django.http import JsonResponse
 from django.conf import settings
@@ -14,7 +14,7 @@ from statistics import median, mode, mean
 from calendar import month_name, monthcalendar
 import pytz
 from datetime import datetime, date
-from .models import Pizza, Order, Review, OrderItem, PizzaSize, PizzaPricing, Customer, PizzaCategory
+from .models import Pizza, Order, Review, OrderItem, PizzaSize, PizzaPricing, Customer, PizzaCategory, Article, Promo, Courier
 from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm, PizzaPricingFormSet  # Добавляем импорт
 from .services import WeatherService, PaymentService, QuoteService
 from django.utils import timezone
@@ -27,10 +27,59 @@ from .decorators import api_login_required
 
 logger = logging.getLogger('pizza')
 
-class PizzaListView(ListView):
+class HomeView(TemplateView):
+    template_name = 'pizza/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Добавляем активные акции и популярные пиццы
+        context['promos'] = Promo.objects.filter(
+            is_active=True,
+            valid_from__lte=timezone.now(),
+            valid_to__gte=timezone.now()
+        )
+        context['popular_pizzas'] = Pizza.objects.annotate(
+            order_count=Count('orderitem')
+        ).order_by('-order_count')[:6]
+        return context
+
+class MenuView(ListView):
     model = Pizza
-    template_name = 'pizza/pizza_list.html'
+    template_name = 'pizza/menu.html'
     context_object_name = 'pizzas'
+
+    def get_queryset(self):
+        queryset = Pizza.objects.all()
+        category = self.request.GET.get('category')
+        sauce = self.request.GET.get('sauce')
+        is_vegan = self.request.GET.get('is_vegan')
+        min_price = self.request.GET.get('min_price')
+        max_price = self.request.GET.get('max_price')
+
+        if category:
+            queryset = queryset.filter(category_id=category)
+        if sauce:
+            queryset = queryset.filter(sauce=sauce)
+        if is_vegan:
+            queryset = queryset.filter(is_vegan=True)
+        if min_price:
+            queryset = queryset.filter(pizzapricing__price__gte=min_price)
+        if max_price:
+            queryset = queryset.filter(pizzapricing__price__lte=max_price)
+
+        logger.debug(f'Menu filter params: category={category}, sauce={sauce}, is_vegan={is_vegan}, price={min_price}-{max_price}')
+        return queryset.distinct()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = PizzaCategory.objects.all()
+        context['sauces'] = Pizza.objects.values_list('sauce', flat=True).distinct()
+        context['selected_category'] = self.request.GET.get('category')
+        context['selected_sauce'] = self.request.GET.get('sauce')
+        context['is_vegan'] = self.request.GET.get('is_vegan')
+        context['min_price'] = self.request.GET.get('min_price')
+        context['max_price'] = self.request.GET.get('max_price')
+        return context
 
 class PizzaDetailView(DetailView):
     model = Pizza
@@ -120,6 +169,13 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
             order = form.save(commit=False)
             order.customer = self.request.user.customer
             order.status = 'pending'
+            
+            # Убедимся, что delivery_date в UTC
+            delivery_date = form.cleaned_data.get('delivery_date')
+            if timezone.is_naive(delivery_date):
+                delivery_date = timezone.make_aware(delivery_date)
+            order.delivery_date = delivery_date
+            
             order.save()
             logger.info(f'Order created: {order.id} by user {self.request.user}')
 
@@ -200,7 +256,16 @@ def register(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('pizza:pizza_list')
+    return redirect('pizza:pizza_list')  # используем правильное имя URL
+
+def promo_list(request):
+    current_time = timezone.now()
+    active_promos = Promo.objects.filter(
+        is_active=True,
+        valid_from__lte=current_time,
+        valid_to__gte=current_time
+    )
+    return render(request, 'pizza/promo_list.html', {'promos': active_promos})
 
 @api_login_required
 def create_payment_intent(request):
@@ -257,8 +322,12 @@ def reviews_list(request):
 
 @staff_member_required
 def statistics_view(request):
-    logger.debug('Starting statistics calculation')
     try:
+        logger.debug('Starting statistics calculation')
+        
+        # Используем timezone.now() вместо datetime.now()
+        current_date = timezone.now()
+        
         # Параметры сортировки и поиска
         search_query = request.GET.get('search', '')
         sort_by = request.GET.get('sort', 'name')
@@ -292,7 +361,6 @@ def statistics_view(request):
         all_pizzas = all_pizzas.order_by(sort_field)
 
         # Получаем текущую дату для календаря
-        current_date = datetime.now()
         cal = calendar.monthcalendar(current_date.year, current_date.month)
         month_name = calendar.month_name[current_date.month]
 
@@ -420,3 +488,111 @@ def statistics_view(request):
         logger.error(f'Error generating statistics: {str(e)}', exc_info=True)
         messages.error(request, 'Ошибка при формировании статистики')
         return redirect('pizza:pizza_list')
+
+class OrdersListView(UserPassesTestMixin, ListView):
+    model = Order
+    template_name = 'pizza/orders_list.html'
+    context_object_name = 'orders'
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def get_queryset(self):
+        return Order.objects.all().order_by('-created_at')
+
+class MyOrdersView(LoginRequiredMixin, ListView):
+    model = Order
+    template_name = 'pizza/my_orders.html'
+    context_object_name = 'orders'
+
+    def get_queryset(self):
+        return Order.objects.filter(customer=self.request.user.customer).order_by('-created_at')
+
+class CouriersListView(UserPassesTestMixin, ListView):
+    model = Courier
+    template_name = 'pizza/couriers_list.html'
+    context_object_name = 'couriers'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_queryset(self):
+        return Courier.objects.all().order_by('user__username')
+
+def promotions_view(request):
+    """View for displaying promotions and promo codes"""
+    logger.debug('Accessing promotions page')
+    context = {
+        'active_promos': Promo.objects.filter(
+            is_active=True,
+            valid_from__lte=timezone.now(),
+            valid_to__gte=timezone.now()
+        ),
+        'public_promos': Promo.objects.filter(
+            is_active=True,
+            valid_from__lte=timezone.now(),
+            valid_to__gte=timezone.now(),
+            code__isnull=True  # Public promotions without codes
+        )
+    }
+    logger.info(f'User {request.user} viewed promotions')
+    return render(request, 'pizza/promotions.html', context)
+
+@login_required
+def apply_promo(request):
+    """View for applying promo codes"""
+    if request.method == 'POST':
+        code = request.POST.get('promo_code')
+        try:
+            promo = Promo.objects.get(
+                code=code,
+                is_active=True,
+                valid_from__lte=timezone.now(),
+                valid_to__gte=timezone.now()
+            )
+            messages.success(request, f'Промокод {code} успешно применен!')
+            logger.info(f'User {request.user} applied promo code {code}')
+        except Promo.DoesNotExist:
+            messages.error(request, 'Неверный или просроченный промокод')
+            logger.warning(f'User {request.user} tried to use invalid promo code {code}')
+    return redirect('pizza:promotions')
+
+@login_required
+def update_order_status(request, order_id):
+    if not (request.user.is_staff or request.user.is_superuser):
+        logger.warning(f'Unauthorized attempt to update order status by {request.user}')
+        return JsonResponse({'error': 'Unauthorized'}, status=403)
+    
+    try:
+        order = Order.objects.get(id=order_id)
+        status = request.POST.get('status')
+        if status in dict(Order.STATUS_CHOICES):
+            order.status = status
+            order.save()
+            logger.info(f'Order {order_id} status updated to {status} by {request.user}')
+            return JsonResponse({'status': 'success'})
+        return JsonResponse({'error': 'Invalid status'}, status=400)
+    except Order.DoesNotExist:
+        return JsonResponse({'error': 'Order not found'}, status=404)
+
+@login_required
+def assign_courier(request, order_id):
+    if not (request.user.is_staff or request.user.is_superuser):
+        return JsonResponse({'error': 'Unauthorized'}, status=403)
+    
+    try:
+        order = Order.objects.get(id=order_id)
+        courier_id = request.POST.get('courier')
+        courier = Courier.objects.get(id=courier_id, is_available=True)
+        order.courier = courier
+        order.save()
+        logger.info(f'Courier {courier.user.username} assigned to order {order_id}')
+        return JsonResponse({'status': 'success'})
+    except (Order.DoesNotExist, Courier.DoesNotExist):
+        return JsonResponse({'error': 'Invalid request'}, status=400)
+
+class ArticleListView(ListView):
+    model = Article
+    template_name = 'pizza/news.html'
+    context_object_name = 'articles'
+    ordering = ['-created_date']

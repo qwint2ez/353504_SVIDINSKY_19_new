@@ -1,0 +1,44 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Мои заказы</h2>
+    
+    {% if orders %}
+        <div class="orders-list">
+            {% for order in orders %}
+            <div class="order-card">
+                <h3>Заказ #{{ order.id }}</h3>
+                <p>Дата: {{ order.order_date|date:"d.m.Y H:i" }}</p>
+                <p>Статус: {{ order.get_status_display }}</p>
+                <p>Сумма: {{ order.total_price }} ₽</p>
+                
+                <h4>Пиццы в заказе:</h4>
+                <ul>
+                    {% for item in order.orderitem_set.all %}
+                    <li>{{ item.pizza.name }} ({{ item.size.size }}) - {{ item.quantity }} шт.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>У вас пока нет заказов</p>
+    {% endif %}
+</div>
+
+<style>
+.orders-list {
+    display: grid;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.order-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+</style>
+{% endblock %}

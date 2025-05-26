@@ -1,0 +1,88 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Акции и промокоды</h2>
+
+    {% if user.is_authenticated %}
+    <div class="promo-input">
+        <h3>Применить промокод</h3>
+        <form method="post" action="{% url 'pizza:apply_promo' %}">
+            {% csrf_token %}
+            <input type="text" name="promo_code" placeholder="Введите промокод">
+            <button type="submit">Применить</button>
+        </form>
+    </div>
+
+    <div class="active-promos">
+        <h3>Ваши активные промокоды</h3>
+        {% for promo in active_promos %}
+        <div class="promo-card">
+            <div class="promo-code">{{ promo.code }}</div>
+            <div class="promo-discount">Скидка: {{ promo.discount }}%</div>
+            <div class="promo-validity">
+                Действует до: {{ promo.valid_to|date:"d.m.Y" }}
+            </div>
+        </div>
+        {% empty %}
+        <p>У вас нет активных промокодов</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="current-promotions">
+        <h3>Текущие акции</h3>
+        {% for promo in public_promos %}
+        <div class="promo-card">
+            <h4>{{ promo.title }}</h4>
+            <p>{{ promo.description }}</p>
+            {% if promo.code %}
+            <div class="promo-code">Код: {{ promo.code }}</div>
+            {% endif %}
+            <div class="promo-validity">
+                Действует до: {{ promo.valid_to|date:"d.m.Y" }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.promo-input {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.promo-input form {
+    display: flex;
+    gap: 10px;
+}
+
+.promo-input input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.promo-card {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+
+.promo-code {
+    font-size: 1.2em;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.current-promotions {
+    margin-top: 30px;
+}
+</style>
+{% endblock %}
