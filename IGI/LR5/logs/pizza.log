@@ -13,3 +13,69 @@ INFO 2025-05-26 16:02:11,252 views 4412 11228 Order 3 completed with total price
 INFO 2025-05-26 16:03:23,221 views 4412 10436 Order created: 4 by user nikita
 INFO 2025-05-26 16:03:23,230 views 4412 10436 Order 4 completed with total price: 392.00
 INFO 2025-05-26 16:03:35,330 views 4412 756 Statistics viewed by user alexander
+INFO 2025-05-26 16:15:21,640 autoreload Watching for file changes with StatReloader
+INFO 2025-05-26 16:15:26,200 basehttp "GET /order/new/ HTTP/1.1" 200 36127
+WARNING 2025-05-26 16:15:26,217 basehttp "GET /static/js/main.js HTTP/1.1" 404 1844
+WARNING 2025-05-26 16:15:26,217 basehttp "GET /static/css/style.css HTTP/1.1" 404 1853
+WARNING 2025-05-26 16:15:26,219 basehttp "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+INFO 2025-05-26 16:15:27,308 views Statistics viewed by user alexander
+INFO 2025-05-26 16:15:27,594 basehttp "GET /statistics/ HTTP/1.1" 200 111099
+WARNING 2025-05-26 16:15:27,617 basehttp "GET /static/js/main.js HTTP/1.1" 404 1844
+WARNING 2025-05-26 16:15:27,617 basehttp "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+WARNING 2025-05-26 16:15:27,617 basehttp "GET /static/css/style.css HTTP/1.1" 404 1853
+INFO 2025-05-26 16:15:35,990 views Statistics viewed by user alexander
+INFO 2025-05-26 16:15:36,347 basehttp "GET /statistics/?search=&sort=sales&direction=desc HTTP/1.1" 200 111099
+WARNING 2025-05-26 16:15:36,370 basehttp "GET /static/css/style.css HTTP/1.1" 404 1853
+WARNING 2025-05-26 16:15:36,373 basehttp "GET /static/js/main.js HTTP/1.1" 404 1844
+WARNING 2025-05-26 16:15:36,382 basehttp "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+INFO 2025-05-26 16:15:43,547 basehttp "GET /order/new/ HTTP/1.1" 200 36101
+WARNING 2025-05-26 16:15:43,595 basehttp "GET /static/css/style.css HTTP/1.1" 404 1853
+WARNING 2025-05-26 16:15:43,600 basehttp "GET /static/js/main.js HTTP/1.1" 404 1844
+WARNING 2025-05-26 16:15:43,604 basehttp "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+INFO 2025-05-26 16:16:03,562 views Starting order creation for user alexander
+INFO 2025-05-26 16:16:03,567 views Order created: 5 by user alexander
+INFO 2025-05-26 16:16:04,224 basehttp "POST /order/new/ HTTP/1.1" 200 36335
+WARNING 2025-05-26 16:16:04,265 basehttp "GET /static/css/style.css HTTP/1.1" 404 1853
+WARNING 2025-05-26 16:16:04,275 basehttp "GET /static/js/main.js HTTP/1.1" 404 1844
+WARNING 2025-05-26 16:16:04,279 basehttp "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+INFO 2025-05-26 16:16:16,010 views Starting order creation for user alexander
+INFO 2025-05-26 16:16:16,015 views Order created: 6 by user alexander
+INFO 2025-05-26 16:16:16,026 views Order 6 completed with total price: 2268.00
+INFO 2025-05-26 16:16:16,030 basehttp "POST /order/new/ HTTP/1.1" 302 0
+INFO 2025-05-26 16:16:16,040 basehttp "GET /order/complete/ HTTP/1.1" 200 1947
+WARNING 2025-05-26 16:16:16,085 basehttp "GET /static/css/style.css HTTP/1.1" 404 1853
+WARNING 2025-05-26 16:16:16,093 basehttp "GET /static/js/main.js HTTP/1.1" 404 1844
+WARNING 2025-05-26 16:16:16,106 basehttp "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+INFO 2025-05-26 16:16:19,303 basehttp "GET /review/new/ HTTP/1.1" 200 3684
+WARNING 2025-05-26 16:16:19,335 basehttp "GET /static/css/style.css HTTP/1.1" 404 1853
+WARNING 2025-05-26 16:16:19,335 basehttp "GET /static/js/main.js HTTP/1.1" 404 1844
+WARNING 2025-05-26 16:16:19,335 basehttp "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+INFO 2025-05-26 16:16:48,732 basehttp "POST /review/new/ HTTP/1.1" 302 0
+INFO 2025-05-26 16:16:48,740 basehttp "GET /review/success/ HTTP/1.1" 200 1958
+WARNING 2025-05-26 16:16:48,791 basehttp "GET /static/css/style.css HTTP/1.1" 404 1853
+WARNING 2025-05-26 16:16:48,799 basehttp "GET /static/js/main.js HTTP/1.1" 404 1844
+WARNING 2025-05-26 16:16:48,804 basehttp "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+INFO 2025-05-26 16:16:51,647 views Statistics viewed by user alexander
+INFO 2025-05-26 16:16:51,998 basehttp "GET /statistics/ HTTP/1.1" 200 106233
+WARNING 2025-05-26 16:16:52,031 basehttp "GET /static/css/style.css HTTP/1.1" 404 1853
+WARNING 2025-05-26 16:16:52,041 basehttp "GET /static/js/main.js HTTP/1.1" 404 1844
+WARNING 2025-05-26 16:16:52,046 basehttp "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 16:29:00 Watching for file changes with StatReloader
+[INFO] 2025-05-26 16:29:03 Statistics viewed by user alexander
+[INFO] 2025-05-26 16:29:03 "GET /statistics/ HTTP/1.1" 200 106233
+[WARNING] 2025-05-26 16:29:03 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 16:29:03 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 16:29:03 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 16:29:05 "GET /admin/ HTTP/1.1" 200 19939
+[INFO] 2025-05-26 16:29:11 "GET /order/new/ HTTP/1.1" 200 36121
+[WARNING] 2025-05-26 16:29:11 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 16:29:11 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 16:29:11 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-05-26 16:29:40 Starting order creation for user alexander
+[INFO] 2025-05-26 16:29:40 Order created: 7 by user alexander
+[INFO] 2025-05-26 16:29:40 Order 7 completed with total price: 4340.00
+[INFO] 2025-05-26 16:29:40 "POST /order/new/ HTTP/1.1" 302 0
+[INFO] 2025-05-26 16:29:40 "GET /order/complete/ HTTP/1.1" 200 1947
+[WARNING] 2025-05-26 16:29:40 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 16:29:40 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 16:29:40 "GET /static/js/form-validation.js HTTP/1.1" 404 1877

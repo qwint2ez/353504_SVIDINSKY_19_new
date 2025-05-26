@@ -47,14 +47,25 @@ class PizzaCreateView(UserPassesTestMixin, CreateView):
 
     def form_valid(self, form):
         try:
-            pizza = form.save()
-            logger.info(f'Pizza created: {pizza.name} by user {self.request.user}')
-            messages.success(self.request, 'Пицца успешно создана!')
-            return redirect('pizza:pizza_create_success')
+            context = self.get_context_data()
+            pricing_formset = context['pricing_formset']
+            if form.is_valid() and pricing_formset.is_valid():
+                logger.info(f"Creating new pizza: {form.cleaned_data['name']}")
+                self.object = form.save()
+                pricing_formset.instance = self.object
+                pricing_formset.save()
+                logger.debug(f"Pizza created successfully with ID: {self.object.id}")
+                messages.success(self.request, 'Пицца успешно создана!')
+                return super().form_valid(form)
+            logger.warning("Form validation failed")
+            return self.render_to_response(self.get_context_data(form=form))
         except Exception as e:
-            logger.error(f'Error creating pizza: {str(e)}')
-            messages.error(self.request, f'Ошибка при создании пиццы: {str(e)}')
-            return self.form_invalid(form)
+            logger.error(f"Error creating pizza: {str(e)}")
+            raise
+
+    def form_invalid(self, form):
+        logger.warning(f"Invalid form data: {form.errors}")
+        return super().form_invalid(form)
 
 # Add success view
 def pizza_create_success(request):
@@ -103,6 +114,7 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         try:
+            logger.info(f'Starting order creation for user {self.request.user}')
             order = form.save(commit=False)
             order.customer = self.request.user.customer
             order.status = 'pending'
@@ -142,9 +154,8 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
             logger.info(f'Order {order.id} completed with total price: {total_price}')
             messages.success(self.request, 'Заказ успешно создан!')
             return super().form_valid(form)
-
         except Exception as e:
-            logger.error(f'Error creating order: {str(e)}')
+            logger.error(f'Error creating order: {str(e)}', exc_info=True)
             messages.error(self.request, f'Ошибка при создании заказа: {str(e)}')
             return self.form_invalid(form)
 
