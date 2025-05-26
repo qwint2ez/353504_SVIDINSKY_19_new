@@ -1,23 +1,21 @@
 import pytest
-from django.test import TestCase
 from pizza.forms import UserRegistrationForm
 from datetime import date, timedelta
 
-class TestUserRegistrationForm(TestCase):
+@pytest.mark.django_db
+class TestUserRegistrationForm:
     def test_valid_registration(self):
         form_data = {
             'username': 'testuser',
             'email': 'test@example.com',
-            'password1': 'StrongPass123!',  # Более сложный пароль
+            'password1': 'StrongPass123!',
             'password2': 'StrongPass123!',
             'birth_date': date.today() - timedelta(days=365*20),
-            'phone': '+375 (29) 123-45-67',  # Правильный формат телефона
+            'phone': '+375 (29) 123-45-67',
             'address': 'Test Address'
         }
         form = UserRegistrationForm(data=form_data)
-        if not form.is_valid():
-            print(form.errors)  # Для отладки
-        self.assertTrue(form.is_valid())
+        assert form.is_valid()
 
     def test_invalid_age(self):
         form_data = {
@@ -30,4 +28,4 @@ class TestUserRegistrationForm(TestCase):
             'address': 'Test Address'
         }
         form = UserRegistrationForm(data=form_data)
-        self.assertFalse(form.is_valid())
+        assert not form.is_valid()

@@ -48,39 +48,42 @@ class TestPizzaViews:
         assert response.status_code == 200
         assert test_pizza.name.encode() in response.content
 
-class TestOrderViews(TestCase):
-    def setUp(self):
-        self.client = Client()
-        self.user = User.objects.create_user(
-            username='testuser',
-            password='testpass123'
-        )
-        self.customer = Customer.objects.create(
-            user=self.user,
+@pytest.mark.django_db
+class TestOrderViews:
+    @pytest.fixture
+    def user(self):
+        return User.objects.create_user(username='testuser', password='testpass123')
+
+    @pytest.fixture
+    def customer(self, user):
+        return Customer.objects.create(
+            user=user,
             birth_date=date.today() - timedelta(days=365*20)
         )
-        self.category = PizzaCategory.objects.create(name="Тест")
-        self.size = PizzaSize.objects.create(size="Средняя (30 см)", multiplier=Decimal('1.0'))
-        
-        self.pizza = Pizza.objects.create(
+
+    @pytest.fixture
+    def pizza(self):
+        category = PizzaCategory.objects.create(name="Тест")
+        size = PizzaSize.objects.create(size="Средняя (30 см)", multiplier=Decimal('1.0'))
+        pizza = Pizza.objects.create(
             name="Тест пицца",
             description="Описание",
-            category=self.category,
+            category=category,
             sauce="Томатный",
             is_vegan=False
         )
-        
-        self.pricing = PizzaPricing.objects.create(
-            pizza=self.pizza,
-            size=self.size,
+        PizzaPricing.objects.create(
+            pizza=pizza,
+            size=size,
             price=Decimal('10.00')
         )
+        return pizza
 
-    def test_order_creation_authenticated(self):
-        self.client.login(username='testuser', password='testpass123')
-        response = self.client.get(reverse('pizza:order_create'))
-        self.assertEqual(response.status_code, 200)
+    def test_order_creation_authenticated(self, client, user, customer, pizza):
+        client.login(username='testuser', password='testpass123')
+        response = client.get(reverse('pizza:order_create'))
+        assert response.status_code == 200
 
-    def test_order_creation_unauthenticated(self):
-        response = self.client.get(reverse('pizza:order_create'))
-        self.assertEqual(response.status_code, 302)  # Редирект на страницу входа
+    def test_order_creation_unauthenticated(self, client):
+        response = client.get(reverse('pizza:order_create'))
+        assert response.status_code == 302
