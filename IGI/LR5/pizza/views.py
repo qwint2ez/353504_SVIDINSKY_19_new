@@ -14,7 +14,7 @@ from statistics import median, mode, mean
 from calendar import month_name, monthcalendar
 import pytz
 from datetime import datetime, date
-from .models import Pizza, Order, Review, OrderItem, PizzaSize, PizzaPricing, Customer, PizzaCategory, Article, Promo, Courier
+from .models import Pizza, Order, Review, OrderItem, PizzaSize, PizzaPricing, Customer, PizzaCategory, Article, Promo, Courier, CompanyInfo, FAQ, Vacancy
 from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm, PizzaPricingFormSet  # Добавляем импорт
 from .services import WeatherService, PaymentService, QuoteService
 from django.utils import timezone
@@ -212,10 +212,10 @@ def order_complete(request):
     })
 
 @login_required
-def update_order_status(request, order_id):
-    if request.method == 'POST':  # Убрали проверку XMLHttpRequest
+def update_order_status(request, order_id):  # Изменили pk на order_id
+    if request.method == 'POST':
         try:
-            order = get_object_or_404(Order, id=order_id)
+            order = get_object_or_404(Order, id=order_id)  # Используем order_id
             status = request.POST.get('status')
             courier_id = request.POST.get('courier_id')
             
@@ -226,6 +226,8 @@ def update_order_status(request, order_id):
                 order.save()
                 logger.info(f'Order {order_id} status updated to {status} by {request.user}')
                 messages.success(request, 'Статус заказа успешно обновлен')
+                if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                    return JsonResponse({'status': 'success'})
                 return redirect('pizza:orders_list')
             else:
                 messages.error(request, 'Некорректный статус заказа')
@@ -270,7 +272,7 @@ def register(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('pizza:menu')
+    return redirect('pizza:menu')  # изменено с pizza_list на menu
 
 def promo_list(request):
     current_time = timezone.now()
@@ -578,10 +580,10 @@ def apply_promo(request):
     return redirect('pizza:promotions')
 
 @login_required
-def update_order_status(request, order_id):
-    if request.method == 'POST':  # Убрали проверку XMLHttpRequest
+def update_order_status(request, order_id):  # Изменили pk на order_id
+    if request.method == 'POST':
         try:
-            order = get_object_or_404(Order, id=order_id)
+            order = get_object_or_404(Order, id=order_id)  # Используем order_id
             status = request.POST.get('status')
             courier_id = request.POST.get('courier_id')
             
@@ -592,6 +594,8 @@ def update_order_status(request, order_id):
                 order.save()
                 logger.info(f'Order {order_id} status updated to {status} by {request.user}')
                 messages.success(request, 'Статус заказа успешно обновлен')
+                if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                    return JsonResponse({'status': 'success'})
                 return redirect('pizza:orders_list')
             else:
                 messages.error(request, 'Некорректный статус заказа')
@@ -647,3 +651,22 @@ def review_success(request):
     return render(request, 'pizza/review_success.html', {
         'message': 'Спасибо за ваш отзыв!'
     })
+
+def about_view(request):
+    company_info = CompanyInfo.objects.first()
+    return render(request, 'pizza/about.html', {'company_info': company_info})
+
+def faq_view(request):
+    faqs = FAQ.objects.all().order_by('-date_added')
+    return render(request, 'pizza/faq.html', {'faqs': faqs})
+
+def contacts_view(request):
+    return render(request, 'pizza/contacts.html')
+
+def jobs_view(request):
+    vacancies = Vacancy.objects.filter(is_active=True)
+    return render(request, 'pizza/jobs.html', {'vacancies': vacancies})
+
+def privacy_policy(request):
+    logger.info(f"Privacy policy viewed by {request.user}")
+    return render(request, 'pizza/privacy_policy.html')

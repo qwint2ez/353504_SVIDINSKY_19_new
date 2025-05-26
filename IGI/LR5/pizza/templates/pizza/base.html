@@ -12,9 +12,14 @@
         <nav>
             <ul>
                 <li><a href="{% url 'pizza:home' %}">Главная</a></li>
+                <li><a href="{% url 'pizza:about' %}">О компании</a></li>
                 <li><a href="{% url 'pizza:menu' %}">Меню</a></li>
-                <li><a href="{% url 'pizza:promotions' %}">Акции</a></li>
+                <li><a href="{% url 'pizza:news' %}">Новости</a></li>
+                <li><a href="{% url 'pizza:faq' %}">FAQ</a></li>
+                <li><a href="{% url 'pizza:contacts' %}">Контакты</a></li>
+                <li><a href="{% url 'pizza:jobs' %}">Вакансии</a></li>
                 <li><a href="{% url 'pizza:reviews_list' %}">Отзывы</a></li>
+                <li><a href="{% url 'pizza:promotions' %}">Акции</a></li>
                 
                 {% if user.is_authenticated %}
                     {% if user.is_staff %}
@@ -56,6 +61,9 @@
     <footer>
         <div class="container">
             <p class="text-center">&copy; 2025 Пиццерия</p>
+            <div class="footer-links">
+                <a href="{% url 'pizza:privacy_policy' %}">Политика конфиденциальности</a>
+            </div>
         </div>
     </footer>
 

@@ -4,6 +4,18 @@
 <div class="container">
     <h1>Добро пожаловать в нашу пиццерию!</h1>
 
+    {% if latest_article %}
+    <section class="latest-news">
+        <h2>Последние новости</h2>
+        <div class="news-card">
+            <h3>{{ latest_article.title }}</h3>
+            <p class="date">{{ latest_article.created_date|date:"d.m.Y" }}</p>
+            <p>{{ latest_article.summary }}</p>
+            <a href="{% url 'pizza:news' %}" class="btn btn-primary">Читать все новости</a>
+        </div>
+    </section>
+    {% endif %}
+
     {% if promos %}
     <section class="promos">
         <h2>Текущие акции</h2>

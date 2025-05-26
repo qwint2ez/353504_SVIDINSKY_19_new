@@ -1,0 +1,17 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Часто задаваемые вопросы</h1>
+    <div class="faq-list">
+        {% for faq in faqs %}
+        <div class="faq-item">
+            <h3>{{ faq.question }}</h3>
+            <p>{{ faq.answer }}</p>
+        </div>
+        {% empty %}
+        <p>Нет доступных вопросов</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

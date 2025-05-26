@@ -11,7 +11,7 @@
         <p>Дата: {{ order.created_at|date:"d.m.Y H:i" }}</p>
         <p>Статус: {{ order.get_status_display }}</p>
         
-        <form method="post" action="{% url 'pizza:update_order_status' order.id %}">
+        <form method="post" action="{% url 'pizza:update_order_status' order.id %}" class="status-form">
             {% csrf_token %}
             <div class="form-group">
                 <label>Статус:</label>
@@ -41,25 +41,4 @@
     </div>
     {% endfor %}
 </div>
-
-<style>
-.order-card {
-    padding: 20px;
-    margin: 15px 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.form-group {
-    margin: 10px 0;
-}
-
-.form-control {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-</style>
 {% endblock %}

@@ -133,9 +133,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'pizza:pizza_list'
+# Authentication settings
+LOGIN_REDIRECT_URL = 'pizza:menu'  # изменено с pizza_list на menu
 LOGIN_URL = 'pizza:login'
-LOGOUT_REDIRECT_URL = 'pizza:pizza_list'
+LOGOUT_REDIRECT_URL = 'pizza:menu'  # изменено с pizza_list на menu
 
 # API Keys
 OPENWEATHERMAP_API_KEY = 'your_openweathermap_api_key'

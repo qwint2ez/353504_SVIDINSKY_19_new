@@ -6560,3 +6560,1768 @@ KeyError: 'pricing_formset'
 [WARNING] 2025-05-26 21:00:36 "GET /static/js/main.js HTTP/1.1" 404 1844
 [WARNING] 2025-05-26 21:00:36 "GET /static/css/style.css HTTP/1.1" 404 1853
 [WARNING] 2025-05-26 21:00:36 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:01:30 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:01:32 "GET /admin/ HTTP/1.1" 200 20978
+[INFO] 2025-05-26 21:01:47 "GET /admin/pizza/article/ HTTP/1.1" 200 17636
+[INFO] 2025-05-26 21:01:47 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:01:50 "GET /admin/pizza/article/1/change/ HTTP/1.1" 200 18614
+[INFO] 2025-05-26 21:01:50 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:01:56 "GET /admin/pizza/article/ HTTP/1.1" 200 17636
+[INFO] 2025-05-26 21:01:56 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:01:59 "GET /admin/pizza/article/ HTTP/1.1" 200 17636
+[INFO] 2025-05-26 21:01:59 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:02:03 "GET /admin/pizza/vacancy/ HTTP/1.1" 200 16598
+[INFO] 2025-05-26 21:02:03 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:02:10 "GET /admin/pizza/faq/ HTTP/1.1" 200 17609
+[INFO] 2025-05-26 21:02:10 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:02:19 "GET /admin/pizza/customerpreferences/ HTTP/1.1" 200 17026
+[INFO] 2025-05-26 21:02:19 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:02:22 "GET /admin/pizza/customerpreferences/1/change/ HTTP/1.1" 200 22613
+[INFO] 2025-05-26 21:02:22 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:02:24 "GET /admin/pizza/customerpreferences/ HTTP/1.1" 200 17026
+[INFO] 2025-05-26 21:02:26 "GET /admin/pizza/customerpreferences/1/change/ HTTP/1.1" 200 22613
+[INFO] 2025-05-26 21:02:26 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:02:31 "GET /admin/pizza/customerpreferences/ HTTP/1.1" 200 17026
+[INFO] 2025-05-26 21:04:17 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:04:25 "GET /admin/pizza/seasonalperiod/ HTTP/1.1" 200 15644
+[INFO] 2025-05-26 21:04:25 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:04:31 "GET /admin/pizza/ HTTP/1.1" 200 15727
+[INFO] 2025-05-26 21:04:35 "GET /admin/ HTTP/1.1" 200 20978
+[INFO] 2025-05-26 21:08:23 "GET /admin/ HTTP/1.1" 200 20978
+[INFO] 2025-05-26 21:08:25 "GET /admin/ HTTP/1.1" 200 20978
+[INFO] 2025-05-26 21:08:29 "GET /admin/pizza/employee/ HTTP/1.1" 200 17959
+[INFO] 2025-05-26 21:08:29 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[ERROR] 2025-05-26 21:08:38 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'about' not found. 'about' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:08:38 "GET / HTTP/1.1" 500 141835
+[ERROR] 2025-05-26 21:08:38 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'about' not found. 'about' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:08:38 "GET / HTTP/1.1" 500 141561
+[DEBUG] 2025-05-26 21:08:44 Starting statistics calculation
+[INFO] 2025-05-26 21:08:44 Statistics viewed by user alexander
+[ERROR] 2025-05-26 21:08:44 Error generating statistics: Reverse for 'about' not found. 'about' is not a valid view function or pattern name.
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\igi\lr5\pizza\views.py", line 500, in statistics_view
+    return render(request, 'pizza/statistics.html', context)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'about' not found. 'about' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:08:44 Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\igi\lr5\pizza\views.py", line 500, in statistics_view
+    return render(request, 'pizza/statistics.html', context)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'about' not found. 'about' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\igi\lr5\pizza\views.py", line 504, in statistics_view
+    return redirect('pizza:pizza_list')
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\shortcuts.py", line 51, in redirect
+    resolve_url(to, *args, **kwargs),
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'pizza_list' not found. 'pizza_list' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:08:44 "GET /statistics/?search=%D0%94%D0%B8%D0%B0%D0%B1%D0%BB%D0%BE&sort=-total_price HTTP/1.1" 500 266593
+[ERROR] 2025-05-26 21:09:54 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'about' not found. 'about' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:09:54 "GET / HTTP/1.1" 500 141884
+[ERROR] 2025-05-26 21:10:10 Internal Server Error: /reviews/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\igi\lr5\pizza\views.py", line 335, in reviews_list
+    return render(request, 'pizza/reviews.html', {'reviews': reviews})
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'about' not found. 'about' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:10:10 "GET /reviews/ HTTP/1.1" 500 143709
+[INFO] 2025-05-26 21:11:45 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\urls.py changed, reloading.
+[INFO] 2025-05-26 21:11:47 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:11:53 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\views.py changed, reloading.
+[INFO] 2025-05-26 21:11:53 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:12:08 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\views.py changed, reloading.
+[INFO] 2025-05-26 21:12:09 Watching for file changes with StatReloader
+[ERROR] 2025-05-26 21:12:13 Internal Server Error: /reviews/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\igi\lr5\pizza\views.py", line 335, in reviews_list
+    return render(request, 'pizza/reviews.html', {'reviews': reviews})
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'reviews' not found. 'reviews' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:12:13 "GET /reviews/ HTTP/1.1" 500 144574
+[ERROR] 2025-05-26 21:12:13 Internal Server Error: /reviews/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\igi\lr5\pizza\views.py", line 335, in reviews_list
+    return render(request, 'pizza/reviews.html', {'reviews': reviews})
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'reviews' not found. 'reviews' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:12:13 "GET /reviews/ HTTP/1.1" 500 144574
+[ERROR] 2025-05-26 21:12:15 Internal Server Error: /reviews/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\igi\lr5\pizza\views.py", line 335, in reviews_list
+    return render(request, 'pizza/reviews.html', {'reviews': reviews})
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'reviews' not found. 'reviews' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:12:15 "GET /reviews/ HTTP/1.1" 500 144711
+[ERROR] 2025-05-26 21:12:16 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'reviews' not found. 'reviews' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:12:16 "GET / HTTP/1.1" 500 142886
+[ERROR] 2025-05-26 21:12:16 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'reviews' not found. 'reviews' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:12:16 "GET / HTTP/1.1" 500 142612
+[ERROR] 2025-05-26 21:12:21 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'reviews' not found. 'reviews' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:12:21 "GET / HTTP/1.1" 500 142612
+[ERROR] 2025-05-26 21:12:25 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'reviews' not found. 'reviews' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:12:25 "GET / HTTP/1.1" 500 142612
+[INFO] 2025-05-26 21:12:30 "GET /admin/ HTTP/1.1" 200 21147
+[INFO] 2025-05-26 21:12:30 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:12:32 "GET /admin/ HTTP/1.1" 200 20978
+[ERROR] 2025-05-26 21:12:35 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'reviews' not found. 'reviews' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:12:35 "GET / HTTP/1.1" 500 142563
+[ERROR] 2025-05-26 21:12:35 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'reviews' not found. 'reviews' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:12:35 "GET / HTTP/1.1" 500 142289
+[INFO] 2025-05-26 21:14:47 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\urls.py changed, reloading.
+[INFO] 2025-05-26 21:14:48 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:15:03 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\urls.py changed, reloading.
+[INFO] 2025-05-26 21:15:03 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:15:17 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:17:28 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\urls.py changed, reloading.
+[INFO] 2025-05-26 21:17:29 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:17:32 D:\353504_SVIDINSKY_19\IGI\LR5\pizzeria\settings.py changed, reloading.
+[INFO] 2025-05-26 21:17:33 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:17:35 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\views.py changed, reloading.
+[INFO] 2025-05-26 21:17:36 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:17:47 D:\353504_SVIDINSKY_19\IGI\LR5\pizzeria\settings.py changed, reloading.
+[INFO] 2025-05-26 21:17:48 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:17:51 "GET / HTTP/1.1" 200 5596
+[WARNING] 2025-05-26 21:17:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:17:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:17:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-05-26 21:17:57 "GET / HTTP/1.1" 200 5596
+[WARNING] 2025-05-26 21:17:57 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:17:57 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:17:57 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:17:58 "GET /about/ HTTP/1.1" 200 3069
+[WARNING] 2025-05-26 21:17:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:17:58 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:17:58 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-05-26 21:18:09 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-05-26 21:18:09 "GET /menu/ HTTP/1.1" 200 10377
+[WARNING] 2025-05-26 21:18:09 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:18:09 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:18:09 "GET /static/js/main.js HTTP/1.1" 404 1844
+[DEBUG] 2025-05-26 21:18:13 Menu filter params: category=, sauce=Томатный, is_vegan=None, price=-
+[INFO] 2025-05-26 21:18:13 "GET /menu/?category=&sauce=%D0%A2%D0%BE%D0%BC%D0%B0%D1%82%D0%BD%D1%8B%D0%B9&min_price=&max_price= HTTP/1.1" 200 8566
+[WARNING] 2025-05-26 21:18:13 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:18:13 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:18:13 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:18:17 "GET /pizza/1/ HTTP/1.1" 200 3809
+[WARNING] 2025-05-26 21:18:17 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:18:17 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:18:17 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:18:20 "GET /news/ HTTP/1.1" 200 3008
+[WARNING] 2025-05-26 21:18:20 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:18:20 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:18:20 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:18:27 "GET /faq/ HTTP/1.1" 200 2306
+[WARNING] 2025-05-26 21:18:27 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:18:27 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:18:27 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:18:29 "GET /contacts/ HTTP/1.1" 200 2298
+[WARNING] 2025-05-26 21:18:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:18:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:18:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-05-26 21:18:34 "GET /jobs/ HTTP/1.1" 200 2628
+[WARNING] 2025-05-26 21:18:34 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:18:34 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:18:34 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-05-26 21:18:41 "GET /reviews/ HTTP/1.1" 200 5542
+[WARNING] 2025-05-26 21:18:41 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:18:41 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:18:41 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-05-26 21:18:48 "GET /promotions/ HTTP/1.1" 200 5504
+[WARNING] 2025-05-26 21:18:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:18:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:18:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:18:54 "POST /promo/apply/ HTTP/1.1" 302 0
+[INFO] 2025-05-26 21:18:54 "GET /promotions/ HTTP/1.1" 200 6329
+[WARNING] 2025-05-26 21:18:55 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:18:55 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:18:55 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-05-26 21:18:59 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'update_order_status' not found. 'update_order_status' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:18:59 "GET /orders/ HTTP/1.1" 500 180470
+[ERROR] 2025-05-26 21:19:02 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'update_order_status' not found. 'update_order_status' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:19:02 "GET /orders/ HTTP/1.1" 500 180470
+[DEBUG] 2025-05-26 21:19:04 Starting statistics calculation
+[INFO] 2025-05-26 21:19:04 Statistics viewed by user alexander
+[INFO] 2025-05-26 21:19:04 "GET /statistics/ HTTP/1.1" 200 109948
+[WARNING] 2025-05-26 21:19:04 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:19:04 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:19:04 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-05-26 21:19:09 "GET /pizza/create/ HTTP/1.1" 200 10598
+[WARNING] 2025-05-26 21:19:09 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:19:09 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:19:09 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-05-26 21:19:22 Starting pizza creation process by user alexander
+[INFO] 2025-05-26 21:19:22 Pizza created successfully with ID: 13
+[INFO] 2025-05-26 21:19:22 "POST /pizza/create/ HTTP/1.1" 302 0
+[DEBUG] 2025-05-26 21:19:22 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-05-26 21:19:22 "GET /menu/ HTTP/1.1" 200 11027
+[WARNING] 2025-05-26 21:19:22 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:19:22 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:19:22 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:19:26 "GET /couriers/ HTTP/1.1" 200 3113
+[WARNING] 2025-05-26 21:19:26 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:19:26 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:19:26 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-05-26 21:19:32 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'update_order_status' not found. 'update_order_status' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:19:32 "GET /orders/ HTTP/1.1" 500 180468
+[INFO] 2025-05-26 21:19:35 "GET /admin/ HTTP/1.1" 200 20978
+[INFO] 2025-05-26 21:19:37 "GET /my-orders/ HTTP/1.1" 200 6762
+[WARNING] 2025-05-26 21:19:37 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:19:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:19:37 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:19:42 "GET /order/new/ HTTP/1.1" 200 42358
+[WARNING] 2025-05-26 21:19:42 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:19:42 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:19:42 "GET /static/js/main.js HTTP/1.1" 404 1844
+[DEBUG] 2025-05-26 21:19:56 Starting order creation process for user alexander
+[INFO] 2025-05-26 21:19:56 Order created: 10 by user alexander
+[INFO] 2025-05-26 21:19:56 Order 10 completed with total price: 1598.40
+[INFO] 2025-05-26 21:19:56 "POST /order/new/ HTTP/1.1" 302 0
+[INFO] 2025-05-26 21:19:56 "GET /order/complete/ HTTP/1.1" 200 2636
+[WARNING] 2025-05-26 21:19:56 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:19:56 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:19:56 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:20:02 "GET /reviews/new/ HTTP/1.1" 200 4411
+[WARNING] 2025-05-26 21:20:02 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:20:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:20:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:20:18 "POST /reviews/new/ HTTP/1.1" 302 0
+[INFO] 2025-05-26 21:20:18 "GET /reviews/ HTTP/1.1" 200 6648
+[WARNING] 2025-05-26 21:20:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:20:19 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:20:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:20:25 "GET /about/ HTTP/1.1" 200 3069
+[WARNING] 2025-05-26 21:20:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:20:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:20:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[DEBUG] 2025-05-26 21:20:26 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-05-26 21:20:26 "GET /menu/ HTTP/1.1" 200 10827
+[WARNING] 2025-05-26 21:20:26 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:20:26 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:20:26 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:20:27 "GET /about/ HTTP/1.1" 200 3069
+[WARNING] 2025-05-26 21:20:27 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:20:27 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:20:27 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:20:28 "GET /news/ HTTP/1.1" 200 3008
+[WARNING] 2025-05-26 21:20:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:20:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:20:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:20:28 "GET /faq/ HTTP/1.1" 200 2306
+[WARNING] 2025-05-26 21:20:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:20:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:20:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-05-26 21:20:29 "GET /contacts/ HTTP/1.1" 200 2298
+[WARNING] 2025-05-26 21:20:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:20:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:20:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:20:30 "GET /jobs/ HTTP/1.1" 200 2628
+[WARNING] 2025-05-26 21:20:30 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:20:30 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:20:30 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:20:32 "GET /admin/ HTTP/1.1" 200 20978
+[INFO] 2025-05-26 21:20:36 "GET /admin/pizza/vacancy/ HTTP/1.1" 200 16598
+[INFO] 2025-05-26 21:20:36 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:20:38 "GET /admin/pizza/vacancy/add/ HTTP/1.1" 200 18851
+[INFO] 2025-05-26 21:20:38 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:21:19 "POST /admin/pizza/vacancy/add/ HTTP/1.1" 302 0
+[INFO] 2025-05-26 21:21:19 "GET /admin/pizza/vacancy/ HTTP/1.1" 200 18525
+[INFO] 2025-05-26 21:21:19 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:21:19 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:21:21 "GET /admin/pizza/vacancy/add/ HTTP/1.1" 200 18851
+[INFO] 2025-05-26 21:21:21 "GET /admin/pizza/vacancy/ HTTP/1.1" 200 18309
+[INFO] 2025-05-26 21:21:22 "GET /admin/ HTTP/1.1" 200 20999
+[INFO] 2025-05-26 21:21:26 "GET /jobs/ HTTP/1.1" 200 2868
+[WARNING] 2025-05-26 21:21:26 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:21:26 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:21:26 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-05-26 21:21:46 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'update_order_status' not found. 'update_order_status' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:21:46 "GET /orders/ HTTP/1.1" 500 181723
+[INFO] 2025-05-26 21:22:10 "GET / HTTP/1.1" 200 5449
+[WARNING] 2025-05-26 21:22:10 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:22:10 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:22:10 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:22:13 Not Found: /privacy
+[WARNING] 2025-05-26 21:22:13 "GET /privacy HTTP/1.1" 404 9171
+[ERROR] 2025-05-26 21:22:24 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'update_order_status' not found. 'update_order_status' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:22:24 "GET /orders/ HTTP/1.1" 500 181723
+[INFO] 2025-05-26 21:24:36 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\urls.py changed, reloading.
+[INFO] 2025-05-26 21:24:38 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:24:46 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\views.py changed, reloading.
+[INFO] 2025-05-26 21:24:47 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:24:57 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\urls.py changed, reloading.
+[INFO] 2025-05-26 21:24:58 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:24:59 "GET /orders/ HTTP/1.1" 200 20371
+[WARNING] 2025-05-26 21:24:59 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:24:59 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:24:59 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-05-26 21:25:06 Internal Server Error: /order/10/update-status/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+TypeError: update_order_status() got an unexpected keyword argument 'pk'
+[ERROR] 2025-05-26 21:25:06 "POST /order/10/update-status/ HTTP/1.1" 500 71959
+[INFO] 2025-05-26 21:25:24 "GET / HTTP/1.1" 200 5608
+[WARNING] 2025-05-26 21:25:24 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:25:24 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:25:24 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:25:27 Not Found: /privacy
+[WARNING] 2025-05-26 21:25:27 "GET /privacy HTTP/1.1" 404 10030
+[INFO] 2025-05-26 21:25:49 "GET /orders/ HTTP/1.1" 200 20371
+[WARNING] 2025-05-26 21:25:49 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:25:49 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:25:49 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-05-26 21:25:55 Internal Server Error: /order/8/update-status/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+TypeError: update_order_status() got an unexpected keyword argument 'pk'
+[ERROR] 2025-05-26 21:25:55 "POST /order/8/update-status/ HTTP/1.1" 500 71947
+[INFO] 2025-05-26 21:28:40 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\urls.py changed, reloading.
+[INFO] 2025-05-26 21:28:41 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:28:45 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\views.py changed, reloading.
+[INFO] 2025-05-26 21:28:46 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:28:50 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\urls.py changed, reloading.
+[INFO] 2025-05-26 21:28:51 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:28:55 Order 8 status updated to preparing by alexander
+[INFO] 2025-05-26 21:28:55 "POST /order/8/update-status/ HTTP/1.1" 302 0
+[ERROR] 2025-05-26 21:28:55 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'privacy' not found. 'privacy' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:28:55 "GET /orders/ HTTP/1.1" 500 150130
+[ERROR] 2025-05-26 21:28:56 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'privacy' not found. 'privacy' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:28:56 "GET /orders/ HTTP/1.1" 500 149547
+[ERROR] 2025-05-26 21:29:00 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'privacy' not found. 'privacy' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:29:00 "GET / HTTP/1.1" 500 139981
+[ERROR] 2025-05-26 21:29:00 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'privacy' not found. 'privacy' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:29:00 "GET / HTTP/1.1" 500 139707
+[ERROR] 2025-05-26 21:29:03 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'privacy' not found. 'privacy' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:29:03 "GET / HTTP/1.1" 500 139707
+[ERROR] 2025-05-26 21:30:00 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'privacy' not found. 'privacy' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:30:00 "GET / HTTP/1.1" 500 139844
+[ERROR] 2025-05-26 21:30:01 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\IGI\LR5\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'privacy' not found. 'privacy' is not a valid view function or pattern name.
+[ERROR] 2025-05-26 21:30:01 "GET / HTTP/1.1" 500 139844
+[INFO] 2025-05-26 21:31:59 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\urls.py changed, reloading.
+[INFO] 2025-05-26 21:32:00 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:32:09 D:\353504_SVIDINSKY_19\IGI\LR5\pizza\views.py changed, reloading.
+[INFO] 2025-05-26 21:32:10 Watching for file changes with StatReloader
+[INFO] 2025-05-26 21:32:23 "GET / HTTP/1.1" 200 5608
+[WARNING] 2025-05-26 21:32:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:32:23 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:32:23 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:32:28 Privacy policy viewed by alexander
+[INFO] 2025-05-26 21:32:28 "GET /privacy-policy/ HTTP/1.1" 200 2354
+[WARNING] 2025-05-26 21:32:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:32:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:32:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:32:50 Privacy policy viewed by alexander
+[INFO] 2025-05-26 21:32:50 "GET /privacy-policy/ HTTP/1.1" 200 2354
+[WARNING] 2025-05-26 21:32:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:32:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:32:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:32:53 "GET /orders/ HTTP/1.1" 200 20371
+[WARNING] 2025-05-26 21:32:53 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:32:53 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:32:53 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-05-26 21:32:58 Order 10 status updated to completed by alexander
+[INFO] 2025-05-26 21:32:58 "POST /order/10/update-status/ HTTP/1.1" 302 0
+[INFO] 2025-05-26 21:32:58 "GET /orders/ HTTP/1.1" 200 20597
+[WARNING] 2025-05-26 21:32:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:32:58 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:32:58 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:00 "GET /my-orders/ HTTP/1.1" 200 7397
+[WARNING] 2025-05-26 21:33:00 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:00 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:00 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:10 "GET / HTTP/1.1" 200 5608
+[WARNING] 2025-05-26 21:33:10 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:10 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:10 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:11 "GET /about/ HTTP/1.1" 200 3228
+[WARNING] 2025-05-26 21:33:11 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:11 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:11 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-05-26 21:33:12 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-05-26 21:33:12 "GET /menu/ HTTP/1.1" 200 10986
+[WARNING] 2025-05-26 21:33:12 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:12 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:12 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:13 "GET /news/ HTTP/1.1" 200 3167
+[WARNING] 2025-05-26 21:33:13 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:13 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:33:13 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-05-26 21:33:14 "GET /about/ HTTP/1.1" 200 3228
+[WARNING] 2025-05-26 21:33:14 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:14 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:14 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:16 "GET /news/ HTTP/1.1" 200 3167
+[WARNING] 2025-05-26 21:33:16 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:16 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:16 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:17 "GET /faq/ HTTP/1.1" 200 2465
+[WARNING] 2025-05-26 21:33:17 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:17 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:17 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:17 "GET /contacts/ HTTP/1.1" 200 2457
+[WARNING] 2025-05-26 21:33:17 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:17 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 21:33:17 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-05-26 21:33:18 "GET /jobs/ HTTP/1.1" 200 3027
+[WARNING] 2025-05-26 21:33:18 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:18 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:18 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:19 "GET /reviews/ HTTP/1.1" 200 6610
+[WARNING] 2025-05-26 21:33:19 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:19 "GET /orders/ HTTP/1.1" 200 20381
+[WARNING] 2025-05-26 21:33:19 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:20 "GET /promotions/ HTTP/1.1" 200 6280
+[WARNING] 2025-05-26 21:33:20 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:20 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:20 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:21 "GET /orders/ HTTP/1.1" 200 20381
+[WARNING] 2025-05-26 21:33:21 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:21 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:21 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:22 "GET /promotions/ HTTP/1.1" 200 6280
+[WARNING] 2025-05-26 21:33:22 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:22 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:22 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:24 "GET /my-orders/ HTTP/1.1" 200 7397
+[WARNING] 2025-05-26 21:33:24 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:24 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:24 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:25 "GET /admin/ HTTP/1.1" 200 20999
+[INFO] 2025-05-26 21:33:27 "GET / HTTP/1.1" 200 5608
+[WARNING] 2025-05-26 21:33:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:34 "GET /about/ HTTP/1.1" 200 3228
+[WARNING] 2025-05-26 21:33:34 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:34 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:34 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-05-26 21:33:35 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-05-26 21:33:35 "GET /menu/ HTTP/1.1" 200 10986
+[WARNING] 2025-05-26 21:33:35 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:35 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:35 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:37 "GET /pizza/1/ HTTP/1.1" 200 3968
+[WARNING] 2025-05-26 21:33:37 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:37 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:41 "GET /pizza/1/edit/ HTTP/1.1" 200 11064
+[WARNING] 2025-05-26 21:33:41 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:41 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:41 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:33:53 "GET /pizza/1/edit/ HTTP/1.1" 200 11064
+[WARNING] 2025-05-26 21:33:53 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:33:53 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:33:53 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:34:02 "GET /pizza/create/ HTTP/1.1" 200 10757
+[WARNING] 2025-05-26 21:34:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:34:02 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:34:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:34:35 "GET / HTTP/1.1" 200 5608
+[WARNING] 2025-05-26 21:34:35 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 21:34:35 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 21:34:35 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 21:34:37 "GET /admin/ HTTP/1.1" 200 20999
+[INFO] 2025-05-26 21:34:52 "GET /admin/pizza/allergen/ HTTP/1.1" 200 17434
+[INFO] 2025-05-26 21:34:52 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:34:55 "GET /admin/pizza/employee/ HTTP/1.1" 200 17959
+[INFO] 2025-05-26 21:34:55 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:34:56 "GET /admin/pizza/employee/1/change/ HTTP/1.1" 200 22554
+[INFO] 2025-05-26 21:34:56 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:34:56 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:34:56 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:34:56 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:35:01 "GET /admin/pizza/pizza/ HTTP/1.1" 200 27496
+[INFO] 2025-05-26 21:35:01 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:35:03 "GET /admin/pizza/pizza/10/change/ HTTP/1.1" 200 38790
+[INFO] 2025-05-26 21:35:03 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-05-26 21:35:03 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:35:03 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:35:03 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:35:03 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:35:03 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:35:03 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+[INFO] 2025-05-26 21:35:19 "GET /admin/pizza/pizza/ HTTP/1.1" 200 27496
+[INFO] 2025-05-26 21:35:22 "GET /admin/pizza/pizza/10/change/ HTTP/1.1" 200 38790
+[INFO] 2025-05-26 21:35:22 "GET /admin/jsi18n/ HTTP/1.1" 200 3342

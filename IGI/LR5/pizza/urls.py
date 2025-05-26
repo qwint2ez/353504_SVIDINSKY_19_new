@@ -1,64 +1,59 @@
-from django.urls import path, re_path
-from django.contrib.auth import views as auth_views
+from django.urls import path
 from . import views
 from .views import (
-    HomeView, MenuView,
-    PizzaDetailView, PizzaCreateView, PizzaUpdateView, PizzaDeleteView,
-    OrderCreateView, ReviewCreateView, OrdersListView, MyOrdersView,
-    CouriersListView  # Добавляем импорт
+    HomeView, MenuView, PizzaDetailView, PizzaCreateView, 
+    PizzaUpdateView, PizzaDeleteView, OrderCreateView, 
+    ReviewCreateView, OrdersListView, MyOrdersView,
+    CouriersListView
 )
+from django.contrib.auth import views as auth_views
 
 app_name = 'pizza'
 
 urlpatterns = [
-    # Базовые URL
-    path('', views.HomeView.as_view(), name='home'),  # Используем HomeView как главную
-    path('menu/', views.MenuView.as_view(), name='menu'),  # Это наш список пицц
-
-    # URLs с регулярными выражениями
-    re_path(r'^pizza/(?P<pk>\d+)/$', PizzaDetailView.as_view(), name='pizza_detail'),
-    re_path(r'^pizza/create/$', PizzaCreateView.as_view(), name='pizza_create'),
-    re_path(r'^pizza/(?P<pk>\d+)/edit/$', PizzaUpdateView.as_view(), name='pizza_update'),
-    re_path(r'^pizza/(?P<pk>\d+)/delete/$', PizzaDeleteView.as_view(), name='pizza_delete'),
-
-    # URLs для заказов с regex
-    re_path(r'^order/new/$', OrderCreateView.as_view(), name='order_create'),
-    re_path(r'^order/complete/$', views.order_complete, name='order_complete'),
-    re_path(r'^orders/(?P<year>\d{4})/(?P<month>\d{2})/$', views.orders_by_month, name='orders_by_month'),
-    re_path(r'^orders/(?P<status>pending|preparing|delivering|completed)/$', views.orders_by_status, name='orders_by_status'),
-
-    # URLs для отзывов
-    path('review/new/', ReviewCreateView.as_view(), name='review_create'),
-    path('review/success/', views.review_success, name='review_success'),
+    # Base URLs
+    path('', HomeView.as_view(), name='home'),
+    path('menu/', MenuView.as_view(), name='menu'),
+    path('search/', views.MenuView.as_view(), name='pizza_search'),
+    path('about/', views.about_view, name='about'),
+    path('news/', views.ArticleListView.as_view(), name='news'),
+    path('faq/', views.faq_view, name='faq'),
+    path('contacts/', views.contacts_view, name='contacts'),
+    path('jobs/', views.jobs_view, name='jobs'),
+    
+    # Reviews URLs
     path('reviews/', views.reviews_list, name='reviews_list'),
-
-    # URLs для аутентификации
+    path('reviews/new/', ReviewCreateView.as_view(), name='review_create'),
+    path('reviews/success/', views.review_success, name='review_success'),
+    
+    # Order URLs
+    path('orders/', OrdersListView.as_view(), name='orders_list'),
+    path('my-orders/', MyOrdersView.as_view(), name='my_orders'),
+    path('order/new/', OrderCreateView.as_view(), name='order_create'),
+    path('order/complete/', views.order_complete, name='order_complete'),
+    
+    # Pizza URLs
+    path('pizza/<int:pk>/', PizzaDetailView.as_view(), name='pizza_detail'),
+    path('pizza/create/', PizzaCreateView.as_view(), name='pizza_create'),
+    path('pizza/<int:pk>/edit/', PizzaUpdateView.as_view(), name='pizza_update'),
+    path('pizza/<int:pk>/delete/', PizzaDeleteView.as_view(), name='pizza_delete'),
+    
+    # Auth URLs
     path('login/', auth_views.LoginView.as_view(
         template_name='pizza/login.html',
-        next_page='pizza:menu'  # Меняем на menu вместо pizza_list
+        next_page='pizza:menu'
     ), name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('register/', views.register, name='register'),
-
-    # API URLs
-    re_path(r'^api/payment/create/$', views.create_payment_intent, name='create_payment_intent'),
-
-    # Статистика
+    
+    # Additional URLs
     path('statistics/', views.statistics_view, name='statistics'),
-
-    # URL для успешного создания пиццы
-    path('pizza/create/success/', views.pizza_create_success, name='pizza_create_success'),
-
-    # Order management
-    path('orders/', OrdersListView.as_view(), name='orders_list'),
-    path('my-orders/', MyOrdersView.as_view(), name='my_orders'),
-    path('order/<int:order_id>/update-status/', views.update_order_status, name='update_order_status'),
-    path('order/<int:order_id>/assign-courier/', views.assign_courier, name='assign_courier'),
-
-    # Promotions
-    path('promotions/', views.promotions_view, name='promotions'),
-    path('promotions/apply/', views.apply_promo, name='apply_promo'),
-
-    # Добавляем URL для списка курьеров
     path('couriers/', CouriersListView.as_view(), name='couriers_list'),
+    path('promotions/', views.promotions_view, name='promotions'),
+    path('promo/apply/', views.apply_promo, name='apply_promo'),
+    
+    # Order management URLs
+    path('order/<int:order_id>/update-status/', views.update_order_status, name='update_order_status'),
+    path('order/<int:pk>/assign-courier/', views.assign_courier, name='assign_courier'),
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
 ]
