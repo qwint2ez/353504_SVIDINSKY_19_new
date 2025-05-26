@@ -79,3 +79,71 @@ WARNING 2025-05-26 16:16:52,046 basehttp "GET /static/js/form-validation.js HTTP
 [WARNING] 2025-05-26 16:29:40 "GET /static/css/style.css HTTP/1.1" 404 1853
 [WARNING] 2025-05-26 16:29:40 "GET /static/js/main.js HTTP/1.1" 404 1844
 [WARNING] 2025-05-26 16:29:40 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 16:38:50 Watching for file changes with StatReloader
+[INFO] 2025-05-26 16:38:52 "GET /logout/ HTTP/1.1" 302 0
+[INFO] 2025-05-26 16:38:52 "GET / HTTP/1.1" 200 8407
+[WARNING] 2025-05-26 16:38:52 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 16:38:52 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 16:38:52 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 16:44:49 "GET /pizza/10/ HTTP/1.1" 200 2358
+[WARNING] 2025-05-26 16:44:49 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 16:44:49 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 16:44:49 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 17:45:44 Watching for file changes with StatReloader
+[INFO] 2025-05-26 17:45:50 "GET / HTTP/1.1" 200 8407
+[WARNING] 2025-05-26 17:45:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:45:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 17:45:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-05-26 17:45:51 "GET / HTTP/1.1" 200 8407
+[WARNING] 2025-05-26 17:45:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:45:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 17:45:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 17:45:52 "GET / HTTP/1.1" 200 8407
+[WARNING] 2025-05-26 17:45:52 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:45:52 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 17:45:52 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 17:45:53 "GET / HTTP/1.1" 200 8407
+[WARNING] 2025-05-26 17:45:53 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:45:53 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 17:45:53 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 17:45:58 "GET /reviews/ HTTP/1.1" 200 5189
+[WARNING] 2025-05-26 17:45:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:45:58 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 17:45:58 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 17:46:02 "GET /login/ HTTP/1.1" 200 1694
+[WARNING] 2025-05-26 17:46:02 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:46:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 17:46:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 17:46:04 "POST /login/ HTTP/1.1" 302 0
+[INFO] 2025-05-26 17:46:04 "GET / HTTP/1.1" 200 8801
+[WARNING] 2025-05-26 17:46:04 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:46:04 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 17:46:04 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-05-26 17:46:10 "GET /order/new/ HTTP/1.1" 200 36160
+[WARNING] 2025-05-26 17:46:10 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:46:10 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-05-26 17:46:10 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-05-26 17:46:15 "GET /order/new/ HTTP/1.1" 200 36184
+[WARNING] 2025-05-26 17:46:15 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 17:46:15 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:46:15 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-05-26 17:46:27 Starting order creation process for user alexander
+[INFO] 2025-05-26 17:46:27 Order created: 8 by user alexander
+[INFO] 2025-05-26 17:46:28 "POST /order/new/ HTTP/1.1" 200 36307
+[WARNING] 2025-05-26 17:46:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:46:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 17:46:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-05-26 17:46:34 Starting order creation process for user alexander
+[INFO] 2025-05-26 17:46:34 Order created: 9 by user alexander
+[INFO] 2025-05-26 17:46:34 Order 9 completed with total price: 392.00
+[INFO] 2025-05-26 17:46:34 "POST /order/new/ HTTP/1.1" 302 0
+[INFO] 2025-05-26 17:46:34 "GET /order/complete/ HTTP/1.1" 200 1947
+[WARNING] 2025-05-26 17:46:34 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:46:34 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 17:46:35 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-05-26 17:46:37 Starting statistics calculation
+[INFO] 2025-05-26 17:46:37 Statistics viewed by user alexander
+[INFO] 2025-05-26 17:46:37 "GET /statistics/ HTTP/1.1" 200 106943
+[WARNING] 2025-05-26 17:46:37 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-05-26 17:46:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-05-26 17:46:37 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
