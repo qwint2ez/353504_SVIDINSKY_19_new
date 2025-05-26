@@ -12,7 +12,7 @@ app_name = 'pizza'
 urlpatterns = [
     # Базовые URL
     path('', views.HomeView.as_view(), name='home'),  # Используем HomeView как главную
-    path('menu/', views.MenuView.as_view(), name='menu'),
+    path('menu/', views.MenuView.as_view(), name='menu'),  # Это наш список пицц
 
     # URLs с регулярными выражениями
     re_path(r'^pizza/(?P<pk>\d+)/$', PizzaDetailView.as_view(), name='pizza_detail'),
@@ -34,7 +34,7 @@ urlpatterns = [
     # URLs для аутентификации
     path('login/', auth_views.LoginView.as_view(
         template_name='pizza/login.html',
-        next_page='pizza:pizza_list'
+        next_page='pizza:menu'  # Меняем на menu вместо pizza_list
     ), name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('register/', views.register, name='register'),
@@ -56,5 +56,8 @@ urlpatterns = [
     path('orders/', views.OrdersListView.as_view(), name='orders_list'),
     path('orders/my/', views.MyOrdersView.as_view(), name='my_orders'),
     path('couriers/', views.CouriersListView.as_view(), name='couriers_list'),
-    path('promos/', views.promo_list, name='promo_list'),
+    path('promos/', views.promotions_view, name='promo_list'),
+
+    path('order/<int:order_id>/update-status/', views.update_order_status, name='update_order_status'),
+    path('order/<int:order_id>/assign-courier/', views.assign_courier, name='assign_courier'),
 ]

@@ -249,14 +249,14 @@ def register(request):
                     birth_date=form.cleaned_data['birth_date']
                 )
             login(request, user)
-            return redirect('pizza:pizza_list')
+            return redirect('pizza:menu')  # Меняем на menu
     else:
         form = UserRegistrationForm()
     return render(request, 'pizza/register.html', {'form': form})
 
 def logout_view(request):
     logout(request)
-    return redirect('pizza:pizza_list')  # используем правильное имя URL
+    return redirect('pizza:menu')  # Меняем на menu
 
 def promo_list(request):
     current_time = timezone.now()
@@ -497,6 +497,16 @@ class OrdersListView(UserPassesTestMixin, ListView):
     def test_func(self):
         return self.request.user.is_staff
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        current_time = timezone.now()
+        for order in context['orders']:
+            if order.delivery_date:
+                time_left = order.delivery_date - current_time
+                order.time_left = time_left.total_seconds() if time_left.total_seconds() > 0 else 0
+                order.is_expired = time_left.total_seconds() <= 0
+        return context
+
     def get_queryset(self):
         return Order.objects.all().order_by('-created_at')
 
@@ -514,33 +524,34 @@ class CouriersListView(UserPassesTestMixin, ListView):
     context_object_name = 'couriers'
 
     def test_func(self):
-        return self.request.user.is_superuser
+        return self.request.user.is_staff  # Разрешаем доступ всем сотрудникам
 
     def get_queryset(self):
         return Courier.objects.all().order_by('user__username')
 
 def promotions_view(request):
-    """View for displaying promotions and promo codes"""
-    logger.debug('Accessing promotions page')
+    current_time = timezone.now()
+    public_promos = Promo.objects.filter(
+        is_active=True,
+        valid_from__lte=current_time,
+        valid_to__gte=current_time
+    )
+    
     context = {
-        'active_promos': Promo.objects.filter(
-            is_active=True,
-            valid_from__lte=timezone.now(),
-            valid_to__gte=timezone.now()
-        ),
-        'public_promos': Promo.objects.filter(
-            is_active=True,
-            valid_from__lte=timezone.now(),
-            valid_to__gte=timezone.now(),
-            code__isnull=True  # Public promotions without codes
-        )
+        'public_promos': public_promos,
     }
-    logger.info(f'User {request.user} viewed promotions')
+    
+    if request.user.is_authenticated:
+        active_promos = request.user.customer.promos.filter(
+            is_active=True,
+            valid_to__gte=current_time
+        )
+        context['active_promos'] = active_promos
+    
     return render(request, 'pizza/promotions.html', context)
 
 @login_required
 def apply_promo(request):
-    """View for applying promo codes"""
     if request.method == 'POST':
         code = request.POST.get('promo_code')
         try:
@@ -550,46 +561,47 @@ def apply_promo(request):
                 valid_from__lte=timezone.now(),
                 valid_to__gte=timezone.now()
             )
-            messages.success(request, f'Промокод {code} успешно применен!')
-            logger.info(f'User {request.user} applied promo code {code}')
+            promo.customers.add(request.user.customer)
+            messages.success(request, 'Промокод успешно применен!')
         except Promo.DoesNotExist:
-            messages.error(request, 'Неверный или просроченный промокод')
-            logger.warning(f'User {request.user} tried to use invalid promo code {code}')
+            messages.error(request, 'Недействительный промокод')
     return redirect('pizza:promotions')
 
 @login_required
 def update_order_status(request, order_id):
-    if not (request.user.is_staff or request.user.is_superuser):
-        logger.warning(f'Unauthorized attempt to update order status by {request.user}')
-        return JsonResponse({'error': 'Unauthorized'}, status=403)
-    
-    try:
-        order = Order.objects.get(id=order_id)
+    if request.method == 'POST' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        order = get_object_or_404(Order, id=order_id)
         status = request.POST.get('status')
-        if status in dict(Order.STATUS_CHOICES):
+        courier_id = request.POST.get('courier_id')
+        
+        if status:
             order.status = status
-            order.save()
-            logger.info(f'Order {order_id} status updated to {status} by {request.user}')
-            return JsonResponse({'status': 'success'})
-        return JsonResponse({'error': 'Invalid status'}, status=400)
-    except Order.DoesNotExist:
-        return JsonResponse({'error': 'Order not found'}, status=404)
+        if courier_id:
+            courier = get_object_or_404(Courier, id=courier_id)
+            order.courier = courier
+            
+        order.save()
+        return JsonResponse({'status': 'success'})
+    return JsonResponse({'status': 'error'}, status=400)
 
 @login_required
 def assign_courier(request, order_id):
-    if not (request.user.is_staff or request.user.is_superuser):
-        return JsonResponse({'error': 'Unauthorized'}, status=403)
+    if request.method == 'POST' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        order = get_object_or_404(Order, id=order_id)
+        courier_id = request.POST.get('courier_id')
+        
+        if courier_id:
+            courier = get_object_or_404(Courier, id=courier_id)
+            order.courier = courier
+            order.save()
+            logger.info(f'Courier {courier.user.username} assigned to order {order.id}')
+            return JsonResponse({'status': 'success'})
+        
+        logger.warning(f'Attempt to assign courier without courier_id to order {order_id}')
+        return JsonResponse({'status': 'error', 'message': 'No courier specified'}, status=400)
     
-    try:
-        order = Order.objects.get(id=order_id)
-        courier_id = request.POST.get('courier')
-        courier = Courier.objects.get(id=courier_id, is_available=True)
-        order.courier = courier
-        order.save()
-        logger.info(f'Courier {courier.user.username} assigned to order {order_id}')
-        return JsonResponse({'status': 'success'})
-    except (Order.DoesNotExist, Courier.DoesNotExist):
-        return JsonResponse({'error': 'Invalid request'}, status=400)
+    logger.warning(f'Invalid request method for assign_courier: {request.method}')
+    return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
 
 class ArticleListView(ListView):
     model = Article

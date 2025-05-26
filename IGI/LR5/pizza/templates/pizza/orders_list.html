@@ -2,19 +2,154 @@
 
 {% block content %}
 <div class="container">
-    <h1>Управление заказами</h1>
-    <div class="orders-list">
-        {% for order in orders %}
+    <h2>Управление заказами</h2>
+    
+    <form id="bulk-update-form" method="post">
+        {% csrf_token %}
+        <div class="orders-list">
+            {% for order in orders %}
             <div class="order-card">
-                <h3>Заказ #{{ order.id }}</h3>
-                <p>Клиент: {{ order.customer.user.username }}</p>
-                <p>Статус: {{ order.get_status_display }}</p>
-                <p>Сумма: {{ order.total_price }}₽</p>
-                <p>Создан: {{ order.get_local_created_at }}</p>
+                <div class="order-header">
+                    <h3>Заказ #{{ order.id }}</h3>
+                    <div class="order-status {{ order.status }}">{{ order.get_status_display }}</div>
+                </div>
+                
+                <div class="order-info">
+                    <p><strong>Клиент:</strong> {{ order.customer.user.username }}</p>
+                    <p><strong>Дата:</strong> {{ order.created_at|date:"d.m.Y H:i" }}</p>
+                    <p><strong>Сумма:</strong> {{ order.total_price }} ₽</p>
+                </div>
+
+                <div class="order-actions">
+                    <div class="status-update">
+                        <p><strong>Статус заказа:</strong></p>
+                        {% for status, label in order.STATUS_CHOICES %}
+                        <label class="status-checkbox">
+                            <input type="radio" name="status_{{ order.id }}" 
+                                   value="{{ status }}" 
+                                   {% if order.status == status %}checked{% endif %}>
+                            {{ label }}
+                        </label>
+                        {% endfor %}
+                    </div>
+
+                    {% if not order.courier %}
+                    <div class="courier-assign">
+                        <p><strong>Назначить курьера:</strong></p>
+                        <select name="courier_{{ order.id }}">
+                            <option value="">-- Выберите курьера --</option>
+                            {% for courier in couriers %}
+                            <option value="{{ courier.id }}">
+                                {{ courier.user.username }} 
+                                {% if courier.is_available %}(Свободен){% endif %}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    {% else %}
+                    <p><strong>Курьер:</strong> {{ order.courier.user.username }}</p>
+                    {% endif %}
+                </div>
             </div>
-        {% empty %}
-            <p>Нет заказов</p>
-        {% endfor %}
-    </div>
+            {% empty %}
+            <p>Нет активных заказов</p>
+            {% endfor %}
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Применить изменения</button>
+        </div>
+    </form>
 </div>
+
+<style>
+.orders-list {
+    margin: 20px 0;
+}
+
+.order-card {
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.order-status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.order-status.pending { background: #fff3cd; }
+.order-status.preparing { background: #cff4fc; }
+.order-status.delivering { background: #d1e7dd; }
+.order-status.completed { background: #c3e6cb; }
+
+.order-info {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.order-actions {
+    display: grid;
+    gap: 15px;
+}
+
+.status-update {
+    display: grid;
+    gap: 10px;
+}
+
+.status-checkbox {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.courier-assign {
+    margin-top: 10px;
+}
+
+.courier-assign select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.form-actions {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+</style>
 {% endblock %}

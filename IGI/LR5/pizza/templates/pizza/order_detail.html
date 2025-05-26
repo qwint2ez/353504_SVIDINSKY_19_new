@@ -41,7 +41,7 @@
         {% if user.is_staff or user.is_superuser %}
         <div class="order-management">
             <h3>Управление заказом</h3>
-            <form method="post" action="{% url 'pizza:update_order_status' order.id %}">
+            <form id="status-form" method="post" action="{% url 'pizza:update_order_status' order.id %}">
                 {% csrf_token %}
                 <select name="status">
                     {% for status, label in status_choices %}
@@ -54,7 +54,7 @@
             </form>
 
             {% if not order.courier %}
-            <form method="post" action="{% url 'pizza:assign_courier' order.id %}">
+            <form id="courier-form" method="post" action="{% url 'pizza:assign_courier' order.id %}">
                 {% csrf_token %}
                 <select name="courier">
                     {% for courier in available_couriers %}
@@ -107,4 +107,46 @@
     margin: 5px;
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Обновление статуса заказа
+    const statusForm = document.getElementById('status-form');
+    const courierForm = document.getElementById('courier-form');
+    
+    if (statusForm) {
+        statusForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            updateOrder('status');
+        });
+    }
+    
+    if (courierForm) {
+        courierForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            updateOrder('courier');
+        });
+    }
+    
+    function updateOrder(type) {
+        const form = type === 'status' ? statusForm : courierForm;
+        const formData = new FormData(form);
+        
+        fetch('{% url "pizza:update_order_status" order.id %}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                location.reload();
+            }
+        });
+    }
+});
+</script>
 {% endblock %}
