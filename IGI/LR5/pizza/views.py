@@ -22,6 +22,9 @@ import calendar
 import matplotlib.pyplot as plt
 import io
 import base64
+import logging
+
+logger = logging.getLogger('pizza')
 
 class PizzaListView(ListView):
     model = Pizza
@@ -45,9 +48,11 @@ class PizzaCreateView(UserPassesTestMixin, CreateView):
     def form_valid(self, form):
         try:
             pizza = form.save()
+            logger.info(f'Pizza created: {pizza.name} by user {self.request.user}')
             messages.success(self.request, 'Пицца успешно создана!')
             return redirect('pizza:pizza_create_success')
         except Exception as e:
+            logger.error(f'Error creating pizza: {str(e)}')
             messages.error(self.request, f'Ошибка при создании пиццы: {str(e)}')
             return self.form_invalid(form)
 
@@ -102,6 +107,7 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
             order.customer = self.request.user.customer
             order.status = 'pending'
             order.save()
+            logger.info(f'Order created: {order.id} by user {self.request.user}')
 
             total_price = 0
             has_items = False
@@ -133,10 +139,12 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
 
             order.total_price = total_price
             order.save()
+            logger.info(f'Order {order.id} completed with total price: {total_price}')
             messages.success(self.request, 'Заказ успешно создан!')
             return super().form_valid(form)
 
         except Exception as e:
+            logger.error(f'Error creating order: {str(e)}')
             messages.error(self.request, f'Ошибка при создании заказа: {str(e)}')
             return self.form_invalid(form)
 
@@ -231,6 +239,7 @@ def reviews_list(request):
 
 @staff_member_required
 def statistics_view(request):
+    logger.info(f'Statistics viewed by user {request.user}')
     # Параметры сортировки и поиска
     search_query = request.GET.get('search', '')
     sort_by = request.GET.get('sort', 'name')
