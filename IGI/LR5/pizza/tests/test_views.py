@@ -2,7 +2,8 @@ import pytest
 from django.test import Client, TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from pizza.models import Pizza, PizzaCategory, Customer
+from pizza.models import Pizza, PizzaCategory, Customer, PizzaSize, PizzaPricing
+from decimal import Decimal
 from datetime import date, timedelta
 
 @pytest.mark.django_db
@@ -16,13 +17,24 @@ class TestPizzaViews:
         return PizzaCategory.objects.create(name="Тестовая категория")
 
     @pytest.fixture
-    def test_pizza(self, test_category):
-        return Pizza.objects.create(
+    def test_size(self):
+        return PizzaSize.objects.create(size="Средняя (30 см)", multiplier=Decimal('1.0'))
+
+    @pytest.fixture
+    def test_pizza(self, test_category, test_size):
+        pizza = Pizza.objects.create(
             name="Тестовая пицца",
             description="Описание",
             category=test_category,
-            price=10.00  # Добавляем обязательное поле цены
+            sauce="Томатный",
+            is_vegan=False
         )
+        PizzaPricing.objects.create(
+            pizza=pizza,
+            size=test_size,
+            price=Decimal('10.00')
+        )
+        return pizza
 
     def test_pizza_list_view(self, client, test_pizza):
         response = client.get(reverse('pizza:pizza_list'))
@@ -48,11 +60,20 @@ class TestOrderViews(TestCase):
             birth_date=date.today() - timedelta(days=365*20)
         )
         self.category = PizzaCategory.objects.create(name="Тест")
+        self.size = PizzaSize.objects.create(size="Средняя (30 см)", multiplier=Decimal('1.0'))
+        
         self.pizza = Pizza.objects.create(
             name="Тест пицца",
             description="Описание",
             category=self.category,
-            price=10.00  # Добавляем обязательное поле цены
+            sauce="Томатный",
+            is_vegan=False
+        )
+        
+        self.pricing = PizzaPricing.objects.create(
+            pizza=self.pizza,
+            size=self.size,
+            price=Decimal('10.00')
         )
 
     def test_order_creation_authenticated(self):
