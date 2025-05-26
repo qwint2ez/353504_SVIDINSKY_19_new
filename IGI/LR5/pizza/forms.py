@@ -4,19 +4,37 @@ from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from .models import Pizza, Order, Review, Customer, validate_age, PizzaPricing, PizzaSize, Ingredient, Allergen  # добавляем импорт validate_age
 from datetime import date
+from django.forms import inlineformset_factory
 
 class PizzaForm(forms.ModelForm):
+    base_price = forms.DecimalField(
+        label='Базовая цена (для среднего размера)',
+        min_value=0,
+        help_text='Цены для других размеров будут рассчитаны автоматически'
+    )
+
     class Meta:
         model = Pizza
-        fields = [
-            'name', 'description', 'price', 'sauce', 'image',
-            'ingredients', 'allergens', 'category', 'available_sizes', 'is_vegan'
-        ]
+        fields = ['name', 'description', 'category', 'sauce', 'is_vegan', 'ingredients', 'allergens']
         widgets = {
-            'ingredients': forms.CheckboxSelectMultiple,
-            'allergens': forms.CheckboxSelectMultiple,
-            'available_sizes': forms.CheckboxSelectMultiple,
+            'description': forms.Textarea(attrs={'rows': 3}),
+            'ingredients': forms.CheckboxSelectMultiple(attrs={'class': 'ingredients-list'}),
+            'allergens': forms.CheckboxSelectMultiple(attrs={'class': 'allergens-list'}),
         }
+
+    def save(self, commit=True):
+        pizza = super().save(commit=True)
+        base_price = self.cleaned_data['base_price']
+        
+        # Создаем цены для всех размеров
+        sizes = PizzaSize.objects.all()
+        for size in sizes:
+            PizzaPricing.objects.create(
+                pizza=pizza,
+                size=size,
+                price=base_price * size.multiplier
+            )
+        return pizza
 
 class OrderForm(forms.ModelForm):
     class Meta:
@@ -81,3 +99,12 @@ class UserRegistrationForm(UserCreationForm):
             birth_date=self.cleaned_data.get('birth_date')
         )
         return user
+
+# Новая форма для цен
+PizzaPricingFormSet = inlineformset_factory(
+    Pizza, 
+    PizzaPricing,
+    fields=['size', 'price'],
+    extra=1,
+    can_delete=True
+)

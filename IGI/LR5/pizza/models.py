@@ -52,44 +52,30 @@ class SeasonalPeriod(models.Model):
 class Pizza(models.Model):
     name = models.CharField(max_length=100, verbose_name="Название")
     description = models.TextField(verbose_name="Описание")
-    price = models.DecimalField(
-        max_digits=6, 
-        decimal_places=2, 
-        verbose_name="Базовая цена",
-        help_text="Базовая цена для стандартного размера"
-    )
-    sauce = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='pizzas/', null=True, blank=True)
-    ingredients = models.ManyToManyField(Ingredient)
-    allergens = models.ManyToManyField(Allergen)
-    chef = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='created_pizzas')
-    recommended_with = models.ManyToManyField('self', blank=True)
     category = models.ForeignKey(PizzaCategory, on_delete=models.SET_NULL, null=True, verbose_name="Категория")
-    available_sizes = models.ManyToManyField(PizzaSize, through='PizzaPricing', verbose_name="Доступные размеры")
-    seasonal_availability = models.ManyToManyField(
-        'SeasonalPeriod',
-        related_name='available_pizzas',
-        blank=True
-    )
+    sauce = models.CharField(max_length=100, verbose_name="Соус")
     is_vegan = models.BooleanField(default=False, verbose_name="Вегетарианская")
-    
+    ingredients = models.ManyToManyField(Ingredient, verbose_name="Ингредиенты")
+    allergens = models.ManyToManyField(Allergen, verbose_name="Аллергены")
+    available_sizes = models.ManyToManyField(PizzaSize, through='PizzaPricing', verbose_name="Доступные размеры")
+
     def __str__(self):
         return self.name
 
     def get_base_price(self):
-        pricing = self.pizzapricing_set.filter(size__multiplier=1.0).first()
-        return pricing.price if pricing else Decimal('0')
+        pricing = self.pizzapricing_set.order_by('price').first()
+        return pricing.price if pricing else None
 
 class PizzaPricing(models.Model):
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     size = models.ForeignKey(PizzaSize, on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2, verbose_name="Цена")
 
     class Meta:
         unique_together = ('pizza', 'size')
 
     def __str__(self):
-        return f"{self.pizza.name} - {self.size.size}: {self.price}"
+        return f"{self.pizza.name} - {self.size.size} - {self.price}₽"
     
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

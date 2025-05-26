@@ -15,7 +15,7 @@ from calendar import month_name, monthcalendar
 import pytz
 from datetime import datetime, date
 from .models import Pizza, Order, Review, OrderItem, PizzaSize, PizzaPricing, Customer, PizzaCategory
-from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm
+from .forms import PizzaForm, OrderForm, ReviewForm, UserRegistrationForm, PizzaPricingFormSet  # Добавляем импорт
 from .services import WeatherService, PaymentService, QuoteService
 from django.utils import timezone
 import calendar
@@ -37,15 +37,19 @@ class PizzaCreateView(UserPassesTestMixin, CreateView):
     model = Pizza
     form_class = PizzaForm
     template_name = 'pizza/pizza_form.html'
-    success_url = reverse_lazy('pizza:pizza_list')
-    
+    success_url = reverse_lazy('pizza:pizza_create_success')
+
     def test_func(self):
         return self.request.user.is_superuser
 
     def form_valid(self, form):
-        response = super().form_valid(form)
-        messages.success(self.request, 'Пицца успешно создана!')
-        return response
+        try:
+            pizza = form.save()
+            messages.success(self.request, 'Пицца успешно создана!')
+            return redirect('pizza:pizza_create_success')
+        except Exception as e:
+            messages.error(self.request, f'Ошибка при создании пиццы: {str(e)}')
+            return self.form_invalid(form)
 
 # Add success view
 def pizza_create_success(request):
@@ -286,8 +290,8 @@ def statistics_view(request):
     top_pizzas = OrderItem.objects.values(
         'pizza__name'
     ).annotate(
-        sales_count=Count('id'),
-        revenue=Sum('item_price')
+        sales_count=Sum('quantity'),
+        revenue=Sum(F('item_price'))
     ).order_by('-sales_count')[:5]
 
     # Статистика по категориям
@@ -295,8 +299,8 @@ def statistics_view(request):
         'pizza__category__name'
     ).annotate(
         pizzas_count=Count('pizza', distinct=True),
-        sold=Count('id'),
-        revenue=Sum('item_price')
+        sold=Sum('quantity'),
+        revenue=Sum(F('item_price'))
     ).order_by('-revenue')
 
     # Топ-10 клиентов
@@ -349,6 +353,14 @@ def statistics_view(request):
         [float(c['revenue']) for c in category_stats]
     )
 
+    # Исправляем подсчет заказов за сегодня
+    today_start = timezone.now().replace(hour=0, minute=0, second=0, microsecond=0)
+    today_end = today_start + timezone.timedelta(days=1)
+    orders_today = Order.objects.filter(
+        order_date__gte=today_start,
+        order_date__lt=today_end
+    ).count()
+
     context = {
         'total_sales': total_sales,
         'avg_check': avg_check,
@@ -365,7 +377,7 @@ def statistics_view(request):
         'calendar': cal,
         'month_name': month_name,
         'current_day': current_date.day,
-        'orders_today': orders.filter(order_date__date=current_date.date()).count(),
+        'orders_today': orders_today,
         'all_pizzas': all_pizzas,
         'search_query': search_query,
         'sort_by': sort_by,

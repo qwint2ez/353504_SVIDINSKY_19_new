@@ -9,7 +9,6 @@
     <div class="row">
         <div class="col-md-8">
             <p>{{ pizza.description }}</p>
-            <p><strong>Цена:</strong> {{ pizza.price }} руб.</p>
             <p><strong>Соус:</strong> {{ pizza.sauce }}</p>
             <h3>Ингредиенты:</h3>
             <ul>
@@ -17,6 +16,18 @@
                 <li>{{ ingredient.name }}</li>
                 {% endfor %}
             </ul>
+
+            <h3>Аллергены:</h3>
+            <ul>
+                {% for allergen in pizza.allergens.all %}
+                <li>{{ allergen.name }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Доступные размеры и цены:</h3>
+            {% for pricing in pizza.pizzapricing_set.all %}
+            <p>{{ pricing.size.size }}: {{ pricing.price }} ₽</p>
+            {% endfor %}
         </div>
     </div>
     <div class="mt-3">

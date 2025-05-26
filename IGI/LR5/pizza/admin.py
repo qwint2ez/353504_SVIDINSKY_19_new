@@ -1,6 +1,12 @@
 from django.contrib import admin
-from .models import *
 from django.urls import path
+from datetime import date
+from .models import (
+    Pizza, Order, Review, Customer, Ingredient, PizzaCategory,
+    Article, CompanyInfo, FAQ, Promo, Vacancy, Employee,
+    Allergen, PizzaSize, Courier, OrderItem, CustomerPreferences,
+    SeasonalPeriod, PizzaPricing
+)
 
 class PizzaPricingInline(admin.TabularInline):
     model = PizzaPricing
@@ -8,15 +14,19 @@ class PizzaPricingInline(admin.TabularInline):
 
 @admin.register(Pizza)
 class PizzaAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'price', 'get_ingredients')
+    list_display = ('name', 'category', 'get_base_price', 'get_ingredients')
     list_filter = ('category', 'ingredients', 'allergens')
     search_fields = ('name', 'description')
-    filter_horizontal = ('ingredients', 'allergens', 'recommended_with')
+    filter_horizontal = ('ingredients', 'allergens')  # Удалено recommended_with
     inlines = [PizzaPricingInline]
 
     def get_ingredients(self, obj):
         return ", ".join([i.name for i in obj.ingredients.all()])
     get_ingredients.short_description = 'Ингредиенты'
+
+    def get_base_price(self, obj):
+        return obj.get_base_price()
+    get_base_price.short_description = 'Базовая цена'
 
     def get_urls(self):
         from . import views
