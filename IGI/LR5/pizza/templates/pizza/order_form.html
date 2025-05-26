@@ -19,7 +19,7 @@
     </div>
     {% endif %}
 
-    <form method="post">
+    <form method="post" class="order-form">
         {% csrf_token %}
         {{ form.delivery_date }}
 
