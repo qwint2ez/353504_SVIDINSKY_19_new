@@ -1,0 +1,20 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Оплата заказа</h1>
+    {% if cart and cart.items.all %}
+    <ul>
+        {% for item in cart.items.all %}
+        <li>{{ item.pizza.name }} x{{ item.quantity }} — {{ item.get_total_price }} ₽</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Итого: {{ cart.items.all|map:"get_total_price"|sum }} ₽</strong></p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">Оплатить</button>
+    </form>
+    {% else %}
+    <p>Корзина пуста.</p>
+    {% endif %}
+</div>
+{% endblock %}

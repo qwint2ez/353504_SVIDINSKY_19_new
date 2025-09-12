@@ -1,0 +1,45 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Корзина заказа</h1>
+    {% if cart and cart.items.all %}
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Пицца</th>
+                <th>Количество</th>
+                <th>Цена за шт.</th>
+                <th>Сумма</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart.items.all %}
+            <tr>
+                <td>{{ item.pizza.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.pizza.get_base_price }} ₽</td>
+                <td>{{ item.get_total_price }} ₽</td>
+                <td>
+                    <form method="post" style="display:inline;" action="{% url 'pizza:cart' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="item_id" value="{{ item.id }}">
+                        <button name="action" value="increase" class="btn btn-sm btn-success">+</button>
+                        <button name="action" value="decrease" class="btn btn-sm btn-warning">-</button>
+                        <button name="action" value="delete" class="btn btn-sm btn-danger">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'pizza:payment' %}" class="btn btn-primary">Оплатить</a>
+    {% else %}
+    <p>Ваша корзина пуста.</p>
+    {% endif %}
+</div>
+<style>
+.cart-table { width:100%; border-collapse:collapse; margin:20px 0; }
+.cart-table th, .cart-table td { border:1px solid #ddd; padding:8px; text-align:center; }
+</style>
+{% endblock %}

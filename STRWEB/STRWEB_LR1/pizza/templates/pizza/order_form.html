@@ -1,0 +1,88 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Оформление заказа</h1>
+    
+    {% if weather %}
+    <div class="weather-info" style="background: #f5f5f5; padding: 15px; margin: 20px; border-radius: 8px;">
+        <h3>Погода для доставки:</h3>
+        <p>🌡️ Температура: {{ weather.temperature }}°C</p>
+        <p>🌤️ Условия: {{ weather.description }}</p>
+    </div>
+    {% endif %}
+
+    {% if quote %}
+    <div class="quote-box" style="background: #f5f5f5; padding: 15px; margin: 20px; border-radius: 8px;">
+        <p style="font-style: italic;">"{{ quote.quote }}"</p>
+        <p style="text-align: right;">— {{ quote.author }}</p>
+    </div>
+    {% endif %}
+
+    <form method="post" class="order-form">
+        {% csrf_token %}
+        {{ form.delivery_date }}
+
+        <div class="pizzas">
+            {% for pizza in pizzas %}
+            <div class="pizza-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 8px;">
+                <h4>{{ pizza.name }}</h4>
+                <p>{{ pizza.description }}</p>
+                <p>Категория: {{ pizza.category.name }}</p>
+
+                <div class="sizes" style="margin: 15px 0;">
+                    <h5>Выберите размер:</h5>
+                    {% for size in pizza.available_sizes.all %}
+                    <div class="size-option" style="margin: 10px 0;">
+                        {% for pricing in pizza.pizzapricing_set.all %}
+                            {% if pricing.size_id == size.id %}
+                                <label>
+                                    <input type="radio" name="size_{{ pizza.id }}" value="{{ size.id }}">
+                                    {{ size.size }} - {{ pricing.price|floatformat:2 }} ₽
+                                </label>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="quantity" style="margin-top: 15px;">
+                    <label>Количество:</label>
+                    <select name="quantity_{{ pizza.id }}">
+                        {% for i in "012345" %}
+                        <option value="{{ i }}">{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <button type="submit" style="background: #4CAF50; color: white; padding: 10px 20px; 
+                                   border: none; border-radius: 4px; cursor: pointer;">
+            Оформить заказ
+        </button>
+    </form>
+</div>
+
+<style>
+.pizza-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.sizes {
+    margin: 15px 0;
+}
+
+.size-option {
+    margin: 10px 0;
+}
+
+.quantity {
+    margin-top: 15px;
+}
+</style>
+{% endblock %}

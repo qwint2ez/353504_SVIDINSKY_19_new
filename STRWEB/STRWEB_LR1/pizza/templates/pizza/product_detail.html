@@ -1,0 +1,21 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+<div class="container">
+    <h1>{{ pizza.name }}</h1>
+    {% if pizza.image %}
+    <img src="{{ pizza.image.url }}" alt="{{ pizza.name }}" style="max-width:300px;">
+    {% endif %}
+    <p>{{ pizza.description }}</p>
+    <p>Соус: {{ pizza.sauce }}</p>
+    <p>Категория: {{ pizza.category.name }}</p>
+    <p>Цена от: {{ pizza.get_base_price }} ₽</p>
+    {% if can_add_to_cart %}
+    <form method="post" action="{% url 'pizza:add_to_cart' pizza.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">Добавить в корзину</button>
+    </form>
+    {% else %}
+    <p>Для добавления в корзину <a href="{% url 'pizza:login' %}">войдите</a> или <a href="{% url 'pizza:register' %}">зарегистрируйтесь</a>.</p>
+    {% endif %}
+</div>
+{% endblock %}

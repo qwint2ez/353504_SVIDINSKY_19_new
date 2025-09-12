@@ -1,0 +1,257 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Статистика пиццерии</h2>
+
+    <div class="stats-section">
+        <h3>Дата и время</h3>
+        <p>Текущая дата: {{ current_date }}</p>
+        <p>Локальное время: {{ current_time }}</p>
+        <p>UTC: {{ utc_time }}</p>
+        
+        <h4>Календарь ({{ month_name }})</h4>
+        <table class="calendar">
+            <tr>
+                <th>Пн</th>
+                <th>Вт</th>
+                <th>Ср</th>
+                <th>Чт</th>
+                <th>Пт</th>
+                <th>Сб</th>
+                <th>Вс</th>
+            </tr>
+            {% for week in calendar %}
+            <tr>
+                {% for day in week %}
+                <td {% if day == current_day %}class="current-day"{% endif %}>
+                    {{ day|default:"" }}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <p>Заказов сегодня: {{ orders_today }}</p>
+    </div>
+
+    <div class="stats-section">
+        <h3>Общие показатели</h3>
+        <p>Общая сумма продаж: {{ total_sales|floatformat:2 }} ₽</p>
+        <p>Средний чек: {{ avg_check|floatformat:2 }} ₽</p>
+        <p>Медианный чек: {{ median_check|floatformat:2 }} ₽</p>
+    </div>
+
+    <div class="stats-section">
+        <h3>Топ-5 популярных пицц</h3>
+        <table class="stats-table">
+            <tr>
+                <th>Название</th>
+                <th>Количество продаж</th>
+                <th>Выручка</th>
+            </tr>
+            {% for pizza in top_pizzas %}
+            <tr>
+                <td>{{ pizza.pizza__name }}</td>
+                <td>{{ pizza.sales_count }}</td>
+                <td>{{ pizza.revenue|floatformat:2 }} ₽</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="stats-section">
+        <h3>Статистика по категориям</h3>
+        <table class="stats-table">
+            <tr>
+                <th>Категория</th>
+                <th>Кол-во пицц</th>
+                <th>Количество продаж</th>
+                <th>Выручка</th>
+            </tr>
+            {% for cat in category_stats %}
+            <tr>
+                <td>{{ cat.pizza__category__name|default:"Без категории" }}</td>
+                <td>{{ cat.pizzas_count }}</td>
+                <td>{{ cat.sold }}</td>
+                <td>{{ cat.revenue|floatformat:2 }} ₽</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="stats-section">
+        <h3>Топ-10 клиентов</h3>
+        <table class="stats-table">
+            <tr>
+                <th>Клиент</th>
+                <th>Количество заказов</th>
+                <th>Общая сумма</th>
+            </tr>
+            {% for customer in top_customers %}
+            <tr>
+                <td>{{ customer.customer__user__username }}</td>
+                <td>{{ customer.orders_count }}</td>
+                <td>{{ customer.total_spent|floatformat:2 }} ₽</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="stats-section">
+        <h3>Визуализация данных</h3>
+        <img src="data:image/png;base64,{{ sales_chart }}" alt="График продаж" style="width: 100%; max-width: 1200px;">
+        <img src="data:image/png;base64,{{ category_chart }}" alt="График категорий" style="width: 100%; max-width: 1000px;">
+    </div>
+
+    <div class="stats-section">
+        <h3>Список всех пицц</h3>
+        
+        <form method="get" class="search-controls mb-3">
+            <input type="text" name="search" 
+                   class="form-control" 
+                   placeholder="Поиск по названию или категории..." 
+                   value="{{ search_query }}">
+                   
+            <select name="sort" class="form-select">
+                <option value="name" {% if sort_by == 'name' %}selected{% endif %}>По названию</option>
+                <option value="sales" {% if sort_by == 'sales' %}selected{% endif %}>По продажам</option>
+                <option value="revenue" {% if sort_by == 'revenue' %}selected{% endif %}>По выручке</option>
+            </select>
+            
+            <select name="direction" class="form-select">
+                <option value="asc" {% if sort_direction == 'asc' %}selected{% endif %}>По возрастанию</option>
+                <option value="desc" {% if sort_direction == 'desc' %}selected{% endif %}>По убыванию</option>
+            </select>
+            
+            <button type="submit" class="btn btn-primary">Применить</button>
+        </form>
+
+        <table class="stats-table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Категория</th>
+                    <th>Продаж</th>
+                    <th>Выручка</th>
+                    <th>Описание</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pizza in all_pizzas %}
+                <tr>
+                    <td>{{ pizza.name }}</td>
+                    <td>{{ pizza.category.name|default:"Без категории" }}</td>
+                    <td>{{ pizza.sales_count }}</td>
+                    <td>{{ pizza.revenue|floatformat:2 }} ₽</td>
+                    <td>
+                        <details>
+                            <summary>Показать</summary>
+                            <div class="description-content">
+                                {{ pizza.description }}
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+.stats-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.stats-table th,
+.stats-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.stats-table th {
+    background: #f8f9fa;
+}
+
+.calendar {
+    width: 100%;
+    max-width: 400px;
+    margin: 15px 0;
+}
+
+.calendar th {
+    background: #f0f0f0;
+    padding: 5px;
+    text-align: center;
+}
+
+.calendar td {
+    padding: 5px;
+    text-align: center;
+}
+
+.current-day {
+    font-weight: bold;
+    background: #e8f0fe;
+    border-radius: 50%;
+}
+
+.chart-container {
+    margin: 20px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 400px;
+}
+
+.search-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-controls input,
+.search-controls select,
+.search-controls button {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-controls input {
+    flex: 1;
+}
+
+.search-controls select {
+    width: 200px;
+}
+
+.description-content {
+    padding: 10px;
+    margin-top: 5px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+details summary {
+    cursor: pointer;
+    color: #4CAF50;
+}
+
+details[open] summary {
+    margin-bottom: 10px;
+}
+</style>
+{% endblock %}

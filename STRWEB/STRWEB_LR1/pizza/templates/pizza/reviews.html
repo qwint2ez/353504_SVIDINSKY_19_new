@@ -1,0 +1,72 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Отзывы о пиццах</h2>
+    
+    {% if user.is_authenticated %}
+    <a href="{% url 'pizza:review_create' %}" class="btn btn-primary mb-4">
+        Оставить отзыв
+    </a>
+    {% endif %}
+
+    <div class="reviews-list">
+        {% for review in reviews %}
+        <div class="review-card">
+            <div class="review-header">
+                <h4>{{ review.pizza.name }}</h4>
+                <div class="rating">
+                    {% for i in "12345" %}
+                    <span class="star {% if forloop.counter <= review.rating %}filled{% endif %}">★</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <p class="review-text">{{ review.text }}</p>
+            <div class="review-footer">
+                <span class="author">{{ review.customer.user.username }}</span>
+                <span class="date">{{ review.date|date:"d.m.Y H:i" }}</span>
+            </div>
+        </div>
+        {% empty %}
+        <p>Пока нет отзывов. Будьте первым!</p>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.reviews-list {
+    margin: 20px 0;
+}
+.review-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.star {
+    color: #ddd;
+    font-size: 20px;
+}
+.star.filled {
+    color: #ffd700;
+}
+.review-text {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+.review-footer {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+</style>
+{% endblock %}
