@@ -8,11 +8,14 @@
     </div>
     {% endif %}
 
-    <div class="banner-section">
+    <section class="banner-section">
         {% for banner in banners %}
-        <img src="{{ banner.image.url }}" alt="{{ banner.title }}" class="banner-img" style="width:100%;max-height:300px;object-fit:cover;">
+        <figure>
+            <img src="{{ banner.image.url }}" alt="{{ banner.title }}" class="banner-img" style="width:100%;max-height:300px;object-fit:cover;">
+            <figcaption>{{ banner.title }}</figcaption>
+        </figure>
         {% endfor %}
-    </div>
+    </section>
 
     <h2>Каталог продуктов</h2>
     <div class="catalog-grid">

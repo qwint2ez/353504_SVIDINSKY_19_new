@@ -3,27 +3,34 @@
 {% block content %}
 <div class="container">
     <h1>О компании</h1>
-    
     {% if company_info %}
     <div class="company-info">
         {% if company_info.logo %}
         <img src="{{ company_info.logo.url }}" alt="{{ company_info.name }}" class="company-logo">
         {% endif %}
-        
         <h2>{{ company_info.name }}</h2>
         <div class="description">{{ company_info.description }}</div>
-        
         <h3>История компании</h3>
         <div class="history">{{ company_info.history|linebreaks }}</div>
-        
         <h3>Наша миссия</h3>
         <div class="mission">{{ company_info.mission }}</div>
-        
         <h3>Реквизиты</h3>
         <div class="requisites">{{ company_info.requisites|linebreaks }}</div>
+        {% if company_info.video_url %}
+        <h3>Видео о компании</h3>
+        <video controls width="320">
+            <source src="{{ company_info.video_url }}" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        {% endif %}
+        <h3>Сертификат</h3>
+        <div class="certificate">
+            <p>Настоящим подтверждается, что компания "{{ company_info.name }}" соответствует стандартам качества и безопасности пищевой продукции.</p>
+        </div>
     </div>
     {% endif %}
 </div>
+{% endblock %}
 
 <style>
 .company-info {
@@ -31,18 +38,15 @@
     margin: 0 auto;
     padding: 20px;
 }
-
 .company-logo {
     max-width: 300px;
     margin: 20px auto;
     display: block;
 }
-
-.history, .mission, .requisites {
+.history, .mission, .requisites, .certificate {
     margin: 20px 0;
     padding: 15px;
     background: #f8f9fa;
     border-radius: 8px;
 }
 </style>
-{% endblock %}

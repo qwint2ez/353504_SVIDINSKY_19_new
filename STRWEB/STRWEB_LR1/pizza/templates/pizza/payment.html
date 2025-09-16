@@ -8,7 +8,22 @@
         <li>{{ item.pizza.name }} x{{ item.quantity }} — {{ item.get_total_price }} ₽</li>
         {% endfor %}
     </ul>
-    <p><strong>Итого: {{ cart.items.all|map:"get_total_price"|sum }} ₽</strong></p>
+    <p>
+        <strong>
+            Итого:
+            {% with total=0 %}
+            {% for item in cart.items.all %}
+                {% widthratio item.get_total_price 1 1 as item_total %}
+                {% if forloop.first %}
+                    {% widthratio item.get_total_price 1 1 as total %}
+                {% else %}
+                    {% widthratio total|add:item.get_total_price 1 1 as total %}
+                {% endif %}
+            {% endfor %}
+            {{ total }} ₽
+            {% endwith %}
+        </strong>
+    </p>
     <form method="post">
         {% csrf_token %}
         <button type="submit" class="btn btn-success">Оплатить</button>

@@ -51,94 +51,9 @@
             </ul>
         </nav>
     </header>
-
     <main>
-        <section>
-            <!-- Пример цитаты -->
-            <blockquote cite="https://ru.wikipedia.org/wiki/Пицца">
-                <q>Пицца — традиционное итальянское блюдо, известное во всем мире.</q>
-            </blockquote>
-            <!-- Пример определения -->
-            <dl>
-                <dt><dfn id="dfn-pizza">Пицца</dfn></dt>
-                <dd>Блюдо итальянской кухни в виде круглой лепёшки, покрытой томатами и сыром.</dd>
-            </dl>
-            <!-- Пример сокращения -->
-            <p>Мы используем <abbr title="HyperText Markup Language">HTML</abbr> и <abbr title="Cascading Style Sheets">CSS</abbr> для верстки.</p>
-            <!-- Пример дата-время -->
-            <time datetime="2025-09-12T12:00">12 сентября 2025, 12:00</time>
-            <!-- Пример четверостишия -->
-            <pre>
-Пицца вкусная всегда,
-Сыр тянется, как луна.
-Тесто мягкое, как пух,
-Съешь кусочек — и ты друг.
-            </pre>
-            <!-- Пример ссылки для скачивания -->
-            <a href="{% static 'docs/menu.pdf' %}" download>Скачать меню (PDF)</a>
-            <!-- Пример якоря -->
-            <a href="#footer-links">Перейти к ссылкам внизу</a>
-            <!-- Пример списка -->
-            <ul>
-                <li>Свежие ингредиенты</li>
-                <li>Быстрая доставка</li>
-                <li>Выгодные акции</li>
-            </ul>
-            <!-- Пример figure -->
-            <figure>
-                <img src="{% static 'img/sample-pizza.jpg' %}" alt="Пример пиццы" style="max-width:200px;">
-                <figcaption>Наша фирменная пицца</figcaption>
-            </figure>
-            <!-- Пример таблицы с headers -->
-            <table>
-                <caption>Пример таблицы цен</caption>
-                <thead>
-                    <tr>
-                        <th id="th-size">Размер</th>
-                        <th id="th-price">Цена (₽)</th>
-                        <th id="th-vegan">Вегетарианская</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td headers="th-size">Маленькая</td>
-                        <td headers="th-price">400</td>
-                        <td headers="th-vegan">Да</td>
-                    </tr>
-                    <tr>
-                        <td headers="th-size">Средняя</td>
-                        <td headers="th-price">600</td>
-                        <td headers="th-vegan">Нет</td>
-                    </tr>
-                    <tr>
-                        <td headers="th-size">Большая</td>
-                        <td headers="th-price" colspan="2">800 (акция!)</td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- Пример формы -->
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Подпишитесь на новости</legend>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <button type="submit">Подписаться</button>
-                </fieldset>
-            </form>
-            <!-- Пример аудио -->
-            <audio controls>
-                <source src="{% static 'media/pizza-song.mp3' %}" type="audio/mpeg">
-                Ваш браузер не поддерживает аудио.
-            </audio>
-            <!-- Пример видео -->
-            <video controls width="320">
-                <source src="{% static 'media/pizza-video.mp4' %}" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
-            <!-- Пример iframe -->
-            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=27.55,53.9,27.57,53.91" width="300" height="200" title="Карта доставки"></iframe>
-        </section>
-
+        {% block content %}
+        {% endblock %}
         {% if messages %}
         <div class="messages">
             {% for message in messages %}
@@ -148,18 +63,12 @@
             {% endfor %}
         </div>
         {% endif %}
-
-        {% block content %}
-        {% endblock %}
     </main>
-
     <footer>
         <div class="container">
             <p class="text-center">&copy; 2025 Пиццерия</p>
             <div class="footer-links" id="footer-links">
                 <a href="{% url 'pizza:privacy_policy' %}">Политика конфиденциальности</a>
-                <!-- Пример внешней ссылки -->
-                <a href="https://metanit.com/python/django/2.6.php" target="_blank" rel="noopener">Метанит Django</a>
             </div>
         </div>
     </footer>
@@ -167,3 +76,5 @@
     <script src="{% static 'js/form-validation.js' %}"></script>
 </body>
 </html>
+</html>
+             
