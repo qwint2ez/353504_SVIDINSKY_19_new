@@ -182,11 +182,12 @@ class CompanyInfo(models.Model):
     logo = models.ImageField(upload_to='company/', null=True, blank=True)
     history = models.TextField()
     requisites = models.TextField()
-    employees = models.ManyToManyField('Employee', related_name='company')
     founding_year = models.IntegerField()
     mission = models.TextField()
     video_url = models.URLField(null=True, blank=True)
-    
+    certificate_image = models.ImageField(upload_to='certificates/', blank=True, null=True)  # Новое поле
+    employees = models.ManyToManyField('Employee', related_name='company')
+
     def __str__(self):
         return self.name
 
@@ -244,7 +245,7 @@ class CustomerPreferences(models.Model):
 
 class Employee(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    photo = models.ImageField(upload_to='employees/', null=True, blank=True)
+    photo = models.ImageField(upload_to='employees/', null=True, blank=True)  # Новое поле
     position = models.CharField(max_length=100)
     phone = models.CharField(max_length=15)
     email = models.EmailField()

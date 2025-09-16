@@ -25,7 +25,11 @@
         {% endif %}
         <h3>Сертификат</h3>
         <div class="certificate">
-            <p>Настоящим подтверждается, что компания "{{ company_info.name }}" соответствует стандартам качества и безопасности пищевой продукции.</p>
+            {% if company_info.certificate_image %}
+            <img src="{{ company_info.certificate_image.url }}" alt="Сертификат" style="max-width:300px;">
+            {% else %}
+            <p>Сертификат отсутствует</p>
+            {% endif %}
         </div>
     </div>
     {% endif %}
@@ -48,5 +52,9 @@
     padding: 15px;
     background: #f8f9fa;
     border-radius: 8px;
+}
+.certificate img {
+    display: block;
+    margin: 0 auto;
 }
 </style>

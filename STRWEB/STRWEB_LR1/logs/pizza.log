@@ -16352,3 +16352,472 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 48: 'e
 [INFO] 2025-09-16 16:37:52 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 [INFO] 2025-09-16 16:37:52 "GET /admin/pizza/customerpreferences/ HTTP/1.1" 200 15679
 [INFO] 2025-09-16 16:37:53 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:39:23 Watching for file changes with StatReloader
+[INFO] 2025-09-16 16:39:25 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 17131
+[INFO] 2025-09-16 16:39:26 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:39:28 "GET / HTTP/1.1" 200 7792
+[WARNING] 2025-09-16 16:39:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:39:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:39:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:39:30 "GET /news/ HTTP/1.1" 200 4079
+[WARNING] 2025-09-16 16:39:30 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:39:30 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:39:30 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:39:39 "GET /contacts/ HTTP/1.1" 200 3328
+[WARNING] 2025-09-16 16:39:39 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:39:39 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:39:39 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:40:07 "GET /admin/ HTTP/1.1" 200 19640
+[INFO] 2025-09-16 16:40:11 "GET /admin/pizza/employee/ HTTP/1.1" 200 17944
+[INFO] 2025-09-16 16:40:11 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:40:13 "GET /admin/pizza/employee/1/change/ HTTP/1.1" 200 22403
+[INFO] 2025-09-16 16:40:13 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:40:22 "GET /admin/pizza/employee/ HTTP/1.1" 200 17944
+[INFO] 2025-09-16 16:40:22 "GET /admin/ HTTP/1.1" 200 19640
+[INFO] 2025-09-16 16:40:24 "GET /contacts/ HTTP/1.1" 200 3328
+[WARNING] 2025-09-16 16:40:24 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:40:24 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:40:24 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:41:32 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\models.py changed, reloading.
+[INFO] 2025-09-16 16:41:33 Watching for file changes with StatReloader
+[INFO] 2025-09-16 16:42:46 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\models.py changed, reloading.
+[INFO] 2025-09-16 16:42:47 Watching for file changes with StatReloader
+[INFO] 2025-09-16 16:42:48 "GET /contacts/ HTTP/1.1" 200 3328
+[WARNING] 2025-09-16 16:42:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-16 16:42:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:42:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[ERROR] 2025-09-16 16:42:49 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: pizza_companyinfo.certificate_image
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 226, in get
+    context = self.get_context_data(**kwargs)
+  File "D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\views.py", line 35, in get_context_data
+    context['company_logo'] = CompanyInfo.objects.first().logo if CompanyInfo.objects.first() else None
+                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1104, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: pizza_companyinfo.certificate_image
+[ERROR] 2025-09-16 16:42:49 "GET / HTTP/1.1" 500 158092
+[INFO] 2025-09-16 16:42:52 "GET /contacts/ HTTP/1.1" 200 3328
+[WARNING] 2025-09-16 16:42:52 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:42:52 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:42:52 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-09-16 16:42:52 Internal Server Error: /about/
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: pizza_companyinfo.certificate_image
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\views.py", line 677, in about_view
+    company_info = CompanyInfo.objects.first()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1104, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: pizza_companyinfo.certificate_image
+[ERROR] 2025-09-16 16:42:52 "GET /about/ HTTP/1.1" 500 143467
+[INFO] 2025-09-16 16:42:57 "GET /promotions/ HTTP/1.1" 200 5180
+[WARNING] 2025-09-16 16:42:57 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:42:57 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:42:57 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:42:58 "GET /news/ HTTP/1.1" 200 4079
+[WARNING] 2025-09-16 16:42:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:42:58 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:42:58 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-16 16:42:59 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-16 16:42:59 "GET /menu/ HTTP/1.1" 200 10568
+[WARNING] 2025-09-16 16:42:59 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:42:59 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:42:59 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-09-16 16:42:59 Internal Server Error: /about/
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: pizza_companyinfo.certificate_image
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\views.py", line 677, in about_view
+    company_info = CompanyInfo.objects.first()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1104, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: pizza_companyinfo.certificate_image
+[ERROR] 2025-09-16 16:42:59 "GET /about/ HTTP/1.1" 500 143463
+[INFO] 2025-09-16 16:43:19 "GET /admin/ HTTP/1.1" 200 19640
+[ERROR] 2025-09-16 16:43:21 Internal Server Error: /admin/pizza/companyinfo/
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: pizza_companyinfo.certificate_image
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 2163, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+                                                           ~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 366, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: pizza_companyinfo.certificate_image
+[ERROR] 2025-09-16 16:43:21 "GET /admin/pizza/companyinfo/ HTTP/1.1" 500 179281
+[INFO] 2025-09-16 16:43:23 "GET /admin/ HTTP/1.1" 200 19640
+[INFO] 2025-09-16 16:43:54 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\models.py changed, reloading.
+[INFO] 2025-09-16 16:43:55 Watching for file changes with StatReloader
+[INFO] 2025-09-16 16:44:03 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\models.py changed, reloading.
+[INFO] 2025-09-16 16:44:03 Watching for file changes with StatReloader
+[INFO] 2025-09-16 16:44:20 Watching for file changes with StatReloader
+[INFO] 2025-09-16 16:44:25 "GET / HTTP/1.1" 200 7792
+[WARNING] 2025-09-16 16:44:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:44:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:44:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:44:27 "GET / HTTP/1.1" 200 7792
+[WARNING] 2025-09-16 16:44:27 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:44:27 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-16 16:44:27 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-16 16:44:30 "GET /about/ HTTP/1.1" 200 4225
+[WARNING] 2025-09-16 16:44:30 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:44:30 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:44:30 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:44:36 "GET /news/ HTTP/1.1" 200 4079
+[WARNING] 2025-09-16 16:44:36 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:44:36 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:44:36 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:44:38 "GET /cart/ HTTP/1.1" 200 4650
+[WARNING] 2025-09-16 16:44:38 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:44:38 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-16 16:44:38 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-16 16:44:40 "GET / HTTP/1.1" 200 7792
+[WARNING] 2025-09-16 16:44:40 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:44:40 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:44:40 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:44:44 "GET /admin/ HTTP/1.1" 200 19640
+[INFO] 2025-09-16 16:44:47 "GET /admin/pizza/allergen/ HTTP/1.1" 200 17434
+[INFO] 2025-09-16 16:44:47 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:44:48 "GET /admin/pizza/article/ HTTP/1.1" 200 17658
+[INFO] 2025-09-16 16:44:48 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:44:50 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 17131
+[INFO] 2025-09-16 16:44:50 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:44:52 "GET /admin/pizza/companyinfo/1/change/ HTTP/1.1" 200 23989
+[INFO] 2025-09-16 16:44:52 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:13 "POST /admin/pizza/companyinfo/1/change/ HTTP/1.1" 302 0
+[INFO] 2025-09-16 16:45:13 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 17359
+[INFO] 2025-09-16 16:45:13 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:15 "GET /admin/pizza/courier/ HTTP/1.1" 200 15590
+[INFO] 2025-09-16 16:45:15 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:17 "GET /admin/pizza/customerpreferences/ HTTP/1.1" 200 15679
+[INFO] 2025-09-16 16:45:17 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:18 "GET /admin/pizza/customer/ HTTP/1.1" 200 17972
+[INFO] 2025-09-16 16:45:18 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:19 "GET /admin/pizza/customerpreferences/ HTTP/1.1" 200 15679
+[INFO] 2025-09-16 16:45:19 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:20 "GET /admin/pizza/customerpreferences/add/ HTTP/1.1" 200 22176
+[INFO] 2025-09-16 16:45:20 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:24 "GET /admin/pizza/employee/ HTTP/1.1" 200 17944
+[INFO] 2025-09-16 16:45:24 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:27 "GET /admin/pizza/faq/ HTTP/1.1" 200 15927
+[INFO] 2025-09-16 16:45:27 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:33 "GET /admin/pizza/faq/add/ HTTP/1.1" 200 16986
+[INFO] 2025-09-16 16:45:33 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:37 "POST /admin/pizza/faq/add/ HTTP/1.1" 302 0
+[INFO] 2025-09-16 16:45:37 "GET /admin/pizza/faq/ HTTP/1.1" 200 17800
+[INFO] 2025-09-16 16:45:37 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:39 "GET /admin/pizza/orderitem/ HTTP/1.1" 200 17222
+[INFO] 2025-09-16 16:45:39 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:44 "GET /admin/pizza/seasonalperiod/ HTTP/1.1" 200 15644
+[INFO] 2025-09-16 16:45:44 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:47 "GET /admin/pizza/seasonalperiod/add/ HTTP/1.1" 200 17865
+[INFO] 2025-09-16 16:45:47 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:51 "POST /admin/pizza/seasonalperiod/add/ HTTP/1.1" 302 0
+[INFO] 2025-09-16 16:45:51 "GET /admin/pizza/seasonalperiod/ HTTP/1.1" 200 17206
+[INFO] 2025-09-16 16:45:51 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:45:54 "GET / HTTP/1.1" 200 7792
+[WARNING] 2025-09-16 16:45:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:45:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:45:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:45:58 "GET /about/ HTTP/1.1" 200 4392
+[WARNING] 2025-09-16 16:45:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:45:58 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:45:58 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:45:58 "GET /media/certificates/%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0_%D0%B1%D0%B5%D0%B7_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.drawio.png HTTP/1.1" 200 108928
+[INFO] 2025-09-16 16:46:25 "GET /news/ HTTP/1.1" 200 4079
+[WARNING] 2025-09-16 16:46:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:46:25 "GET /faq/ HTTP/1.1" 200 3342
+[WARNING] 2025-09-16 16:46:26 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:26 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-16 16:46:26 "GET /static/js/main.js HTTP/1.1" 404 1844
+[DEBUG] 2025-09-16 16:46:26 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-16 16:46:26 "GET /menu/ HTTP/1.1" 200 10568
+[WARNING] 2025-09-16 16:46:26 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:26 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:26 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:46:27 "GET /about/ HTTP/1.1" 200 4392
+[INFO] 2025-09-16 16:46:27 "GET /media/certificates/%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0_%D0%B1%D0%B5%D0%B7_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.drawio.png HTTP/1.1" 304 0
+[WARNING] 2025-09-16 16:46:27 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:27 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:27 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:46:28 "GET /contacts/ HTTP/1.1" 200 3328
+[WARNING] 2025-09-16 16:46:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:46:29 "GET /jobs/ HTTP/1.1" 200 3658
+[WARNING] 2025-09-16 16:46:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:46:31 "GET /reviews/ HTTP/1.1" 200 4011
+[WARNING] 2025-09-16 16:46:31 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:31 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-16 16:46:31 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-16 16:46:31 "GET /promotions/ HTTP/1.1" 200 5180
+[WARNING] 2025-09-16 16:46:32 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:32 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:32 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:46:32 "GET /cart/ HTTP/1.1" 200 4650
+[WARNING] 2025-09-16 16:46:32 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:32 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:32 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:46:33 "GET /cart/ HTTP/1.1" 200 4650
+[WARNING] 2025-09-16 16:46:33 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:33 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:33 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-16 16:46:35 Starting statistics calculation
+[INFO] 2025-09-16 16:46:35 "GET /couriers/ HTTP/1.1" 200 3643
+[WARNING] 2025-09-16 16:46:35 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:35 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:35 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-16 16:46:36 Starting statistics calculation
+[INFO] 2025-09-16 16:46:36 Statistics viewed by user alexander
+[INFO] 2025-09-16 16:46:36 - Broken pipe from ('127.0.0.1', 50652)
+[INFO] 2025-09-16 16:46:37 Statistics viewed by user alexander
+[INFO] 2025-09-16 16:46:37 - Broken pipe from ('127.0.0.1', 50661)
+[DEBUG] 2025-09-16 16:46:37 Starting statistics calculation
+[DEBUG] 2025-09-16 16:46:37 Starting statistics calculation
+[INFO] 2025-09-16 16:46:38 Statistics viewed by user alexander
+[INFO] 2025-09-16 16:46:38 - Broken pipe from ('127.0.0.1', 50662)
+[INFO] 2025-09-16 16:46:38 Statistics viewed by user alexander
+[INFO] 2025-09-16 16:46:38 "GET /statistics/ HTTP/1.1" 200 80913
+[WARNING] 2025-09-16 16:46:38 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:38 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:38 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:46:45 "GET / HTTP/1.1" 200 7792
+[WARNING] 2025-09-16 16:46:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-16 16:46:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-16 16:46:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-16 16:46:51 "GET /admin/ HTTP/1.1" 200 20740
