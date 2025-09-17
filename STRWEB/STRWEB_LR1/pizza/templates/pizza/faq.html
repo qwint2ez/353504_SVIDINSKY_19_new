@@ -143,7 +143,78 @@ function calculateCalories(weight) {
         </figure>
     </section>
 
-    <!-- Основные вопросы с details/summary -->
+    <!-- Секция с примерами таблиц -->
+    <section id="tables-section" class="faq-section">
+        <h2>Информация о наших пиццах</h2>
+        
+        <!-- Простая таблица с заголовками -->
+        <h3>Стандартные размеры</h3>
+        <table class="simple-table">
+            <tr>
+                <th>Размер</th>
+                <th>Диаметр</th>
+            </tr>
+            <tr>
+                <td>Маленькая</td>
+                <td>25 см</td>
+            </tr>
+            <tr>
+                <td>Средняя</td>
+                <td>30 см</td>
+            </tr>
+            <tr>
+                <td>Большая</td>
+                <td>35 см</td>
+            </tr>
+        </table>
+
+        <!-- Сложная таблица с объединением ячеек и headers -->
+        <h3>Подробная информация о пиццах</h3>
+        <table class="detailed-table">
+            <thead>
+                <tr>
+                    <th id="category" rowspan="2">Категория</th>
+                    <th id="name" rowspan="2">Название</th>
+                    <th id="size" colspan="3">Размер и цена</th>
+                    <th id="calories" rowspan="2">Калории</th>
+                </tr>
+                <tr>
+                    <th id="small">25 см</th>
+                    <th id="medium">30 см</th>
+                    <th id="large">35 см</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td headers="category" rowspan="2">Классические</td>
+                    <td headers="name">Маргарита</td>
+                    <td headers="size small">450₽</td>
+                    <td headers="size medium">650₽</td>
+                    <td headers="size large">850₽</td>
+                    <td headers="calories">220 ккал</td>
+                </tr>
+                <tr>
+                    <td headers="name">Пепперони</td>
+                    <td headers="size small">500₽</td>
+                    <td headers="size medium">700₽</td>
+                    <td headers="size large">900₽</td>
+                    <td headers="calories">250 ккал</td>
+                </tr>
+                <tr>
+                    <td headers="category" colspan="2">Акция дня</td>
+                    <td headers="size small" colspan="3">Скидка 20% на все размеры</td>
+                    <td headers="calories">-</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">* Цены действительны при заказе на сайте</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <!-- Основные вопросы с details/bmary -->
     <div class="faq-list">
         {% for faq in faqs %}
         <details class="faq-item">
@@ -320,6 +391,54 @@ figcaption {
     padding: 1em;
     border-radius: 4px;
     display: block;
+}
+
+/* Стили для таблиц */
+.simple-table, .detailed-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    background: white;
+}
+
+.simple-table th,
+.simple-table td,
+.detailed-table th,
+.detailed-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.simple-table th {
+    background: #ff6b6b;
+    color: white;
+}
+
+.detailed-table thead th {
+    background: #ff6b6b;
+    color: white;
+    font-weight: bold;
+}
+
+.detailed-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.detailed-table tbody td[headers="category"] {
+    background: #fff5f5;
+    font-weight: bold;
+}
+
+.detailed-table tfoot td {
+    background: #f8f9fa;
+    font-style: italic;
+    text-align: center;
+}
+
+.detailed-table td[colspan] {
+    text-align: center;
+    background: #fff5f5;
 }
 </style>
 {% endblock %}
