@@ -1,17 +1,162 @@
 {% extends 'pizza/base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="container">
+<div class="container faq-container">
     <h1>Часто задаваемые вопросы</h1>
+
+    <!-- Навигация по разделам FAQ -->
+    <nav class="faq-nav">
+        <a href="#ordering">Заказ</a> |
+        <a href="#delivery">Доставка</a> |
+        <a href="#menu">Меню</a> |
+        <a href="#tech">Технические вопросы</a>
+    </nav>
+
+    <!-- Секция с определениями -->
+    <section id="terms" class="faq-section">
+        <h2>Термины и определения</h2>
+        <dl class="terms-list">
+            <dt><dfn id="napoletana">Пицца Неаполитана</dfn></dt>
+            <dd>Традиционная итальянская пицца, приготовленная по строгим правилам.</dd>
+            
+            <dt><dfn id="marinara">Маринара</dfn></dt>
+            <dd>Классическая пицца с томатным соусом, чесноком и орегано.</dd>
+        </dl>
+    </section>
+
+    <!-- Секция с сокращениями -->
+    <section id="abbr" class="faq-section">
+        <h2>Используемые сокращения</h2>
+        <p>
+            В нашей работе мы используем следующие термины:
+            <abbr title="Время доставки">ВД</abbr>,
+            <abbr title="Система контроля качества">СКК</abbr>,
+            <abbr title="Индивидуальный предприниматель">ИП</abbr>
+        </p>
+    </section>
+
+    <!-- Секция с цитатами -->
+    <section id="quotes" class="faq-section">
+        <h2>Цитаты наших клиентов</h2>
+        <blockquote cite="https://reviews.pizza/123">
+            <p>Лучшая пицца в городе! Всегда горячая и вовремя.</p>
+            <cite>— Иван Петров, постоянный клиент</cite>
+        </blockquote>
+    </section>
+
+    <!-- Секция с листингом кода -->
+    <section id="tech" class="faq-section">
+        <h2>Техническая информация</h2>
+        <pre><code>
+// Пример расчета времени доставки
+function calculateDeliveryTime(distance) {
+    return Math.max(30, distance * 2);
+}
+        </code></pre>
+    </section>
+
+    <!-- Основные вопросы с details/summary -->
     <div class="faq-list">
         {% for faq in faqs %}
-        <div class="faq-item">
-            <h3>{{ faq.question }}</h3>
-            <p>{{ faq.answer }}</p>
-        </div>
-        {% empty %}
-        <p>Нет доступных вопросов</p>
+        <details class="faq-item">
+            <summary>{{ faq.question }}</summary>
+            <div class="faq-content">
+                {{ faq.answer }}
+                <time datetime="{{ faq.date_added|date:'Y-m-d H:i' }}">
+                    Добавлено: {{ faq.date_added|date:"d.m.Y" }}
+                </time>
+            </div>
+        </details>
         {% endfor %}
     </div>
 </div>
+
+<style>
+.faq-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 20px;
+}
+
+.faq-nav {
+    margin: 20px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.faq-section {
+    margin: 40px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.terms-list {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.terms-list dt {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.terms-list dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+blockquote {
+    border-left: 4px solid #ff6b6b;
+    padding: 15px;
+    margin: 20px 0;
+    background: #fff5f5;
+    font-style: italic;
+}
+
+cite {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+}
+
+pre code {
+    display: block;
+    padding: 15px;
+    background: #2d2d2d;
+    color: #fff;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+details {
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+summary {
+    padding: 15px;
+    cursor: pointer;
+    background: #f8f9fa;
+    font-weight: bold;
+}
+
+summary:hover {
+    background: #e9ecef;
+}
+
+time {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+</style>
 {% endblock %}

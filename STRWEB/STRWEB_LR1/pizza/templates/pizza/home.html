@@ -3,162 +3,283 @@
 
 {% block content %}
 <main>
-    <section>
-        <header>
+    <section class="main-content">
+        <!-- Логотип и заголовок -->
+        <header class="welcome-header">
             {% if company_logo %}
-            <img src="{{ company_logo.url }}" alt="Логотип компании" style="max-width:200px;">
+            <img src="{{ company_logo.url }}" alt="Логотип компании" class="company-logo">
             {% endif %}
+            <blockquote class="company-motto">
+                Пицца — традиционное итальянское блюдо, которое мы готовим с любовью для вас!
+            </blockquote>
         </header>
-        <nav>
-            <a href="#partners">Компании-партнеры</a>
-            <a href="#banners">Рекламные баннеры</a>
-        </nav>
-        <article>
-            <h2>Рекламные баннеры</h2>
+
+        <!-- Баннеры -->
+        <article class="banners-section">
+            <h2>Специальные предложения</h2>
             <section id="banners">
-                <ul style="display: flex; flex-wrap: wrap; gap: 20px; list-style: none; padding: 0;">
+                <ul class="banners-grid">
                     {% for banner in banners %}
-                    <li style="text-align: center;">
-                        <img src="{{ banner.image.url }}" alt="{{ banner.title }}" style="max-width:100px; max-height:100px; object-fit:cover;">
-                        <div><strong>{{ banner.title }}</strong></div>
+                    <li class="banner-item">
+                        <img src="{{ banner.image.url }}" alt="{{ banner.title }}">
+                        <div class="banner-title">{{ banner.title }}</div>
                     </li>
                     {% empty %}
-                    <li><span>Нет баннеров для отображения.</span></li>
+                    <li>Скоро здесь появятся новые акции</li>
                     {% endfor %}
                 </ul>
             </section>
         </article>
-        <article>
-            <h2>Компании-партнеры</h2>
+
+        <!-- Партнеры -->
+        <article class="partners-section">
+            <h2>Наши партнеры</h2>
             <section id="partners">
-                <ul style="display: flex; flex-wrap: wrap; gap: 20px; list-style: none; padding: 0;">
+                <ul class="partners-grid">
                     {% for partner in partners %}
-                    <li style="text-align: center;">
+                    <li class="partner-item">
                         <a href="{{ partner.website }}" target="_blank">
-                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" style="max-width:100px;">
+                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
                         </a>
-                        <div><strong>{{ partner.name }}</strong></div>
-                        <p>{{ partner.description }}</p>
+                        <div class="partner-info">
+                            <strong>{{ partner.name }}</strong>
+                            <p>{{ partner.description }}</p>
+                        </div>
                     </li>
                     {% endfor %}
                 </ul>
             </section>
         </article>
-        <!-- Добавить блок последней статьи -->
+
+        <!-- Последние новости -->
         {% if latest_article %}
-        <article class="latest-article">
-            <h2>Последняя новость</h2>
-            <h3>{{ latest_article.title }}</h3>
-            <p class="news-date">{{ latest_article.created_date|date:"d.m.Y" }}</p>
-            <p class="news-summary">{{ latest_article.summary }}</p>
-            <a href="{% url 'pizza:news' %}">Читать далее</a>
+        <article class="latest-news">
+            <h2>Новости пиццерии</h2>
+            <div class="news-card">
+                <h3>{{ latest_article.title }}</h3>
+                <time datetime="{{ latest_article.created_date|date:'Y-m-d' }}">
+                    {{ latest_article.created_date|date:"d.m.Y" }}
+                </time>
+                <p>{{ latest_article.summary }}</p>
+                <a href="{% url 'pizza:news' %}" class="read-more">Читать далее</a>
+            </div>
         </article>
         {% endif %}
-        <aside>
-            <blockquote cite="https://ru.wikipedia.org/wiki/Пицца">
-                Пицца — традиционное итальянское блюдо, известное во всем мире.
-            </blockquote>
-            <dl>
-                <dt><dfn id="dfn-pizza">Пицца</dfn></dt>
-                <dd>Блюдо итальянской кухни в виде круглой лепёшки, покрытой томатами и сыром.</dd>
-            </dl>
-            <p>Мы используем <abbr title="HyperText Markup Language">HTML</abbr> и <abbr title="Cascading Style Sheets">CSS</abbr> для верстки.</p>
-            <time datetime="2025-09-12T12:00">12 сентября 2025, 12:00</time>
-            <pre>
-Пицца вкусная всегда,<wbr>
-Сыр тянется, как луна.<wbr>
-Тесто мягкое, как пух,<wbr>
-Съешь кусочек — и ты друг.<wbr>
-            </pre>
-            <a href="{% static 'docs/menu.pdf' %}" download>Скачать меню (PDF)</a>
-            <a href="#partners">Перейти к партнерам</a>
-            <ul>
-                <li>Свежие ингредиенты</li>
-                <li>Быстрая доставка</li>
-                <li>Выгодные акции</li>
+
+        <!-- Преимущества -->
+        <section class="features">
+            <h2>Почему выбирают нас</h2>
+            <ul class="features-list">
+                <li>🌟 Свежие ингредиенты</li>
+                <li>⚡ Быстрая доставка</li>
+                <li>💰 Выгодные акции</li>
             </ul>
-            <figure>
-                <img src="{% static 'img/sample-pizza.jpg' %}" alt="Пример пиццы" style="max-width:200px;">
-                <figcaption>Наша фирменная пицца</figcaption>
-            </figure>
-            <table>
-                <caption>Пример таблицы цен</caption>
-                <thead>
-                    <tr>
-                        <th id="th-size">Размер</th>
-                        <th id="th-price">Цена (₽)</th>
-                        <th id="th-vegan">Вегетарианская</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td headers="th-size">Маленькая</td>
-                        <td headers="th-price">400</td>
-                        <td headers="th-vegan">Да</td>
-                    </tr>
-                    <tr>
-                        <td headers="th-size">Средняя</td>
-                        <td headers="th-price">600</td>
-                        <td headers="th-vegan">Нет</td>
-                    </tr>
-                    <tr>
-                        <td headers="th-size">Большая</td>
-                        <td headers="th-price" colspan="2">800 (акция!)</td>
-                    </tr>
-                </tbody>
-            </table>
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Подпишитесь на новости</legend>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <button type="submit">Подписаться</button>
-                </fieldset>
-            </form>
-            <audio controls>
-                <source src="{% static 'media/pizza-song.mp3' %}" type="audio/mpeg">
-                Ваш браузер не поддерживает аудио.
-            </audio>
-            <video controls width="320">
-                <source src="{% static 'media/pizza-video.mp4' %}" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
-            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=27.55,53.9,27.57,53.91" width="300" height="200" title="Карта доставки"></iframe>
-            <h3>Пример листинга (code)</h3>
-            <pre><code>
-def get_pizza_price(size, base_price):
-    if size == "Большая":
-        return base_price * 1.5
-    return base_price
-            </code></pre>
+        </section>
+    </section>
 
-            <h3>Пример сокращения (abbr)</h3>
-            <p>
-                Элемент <abbr title="аббревиатура">abbr</abbr> позволяет вставить в документ сокращение. Например:
-                <br>
-                <abbr title="HyperText Markup Language">HTML</abbr>,
-                <abbr title="Cascading Style Sheets">CSS</abbr>,
-                <abbr title="JavaScript">JS</abbr>
-            </p>
+    <!-- Поэтическая секция -->
+    <section class="poetry-section">
+        <h2>Наше вдохновение</h2>
+        <pre class="pizza-poem">
+Аромат пиццы в воздухе тает,<wbr>
+Сыр моцарелла нежно мерцает,<wbr>
+Томаты спелые, базилик свежий,<wbr>
+Вкус итальянский, как прежде.<wbr>
+        </pre>
+    </section>
 
-            <h3>Пример определения (dfn)</h3>
-            <p>
-                Для вставки в HTML-документ определений служит элемент <dfn>dfn</dfn>.
-                <br>
-                The <dfn title="apple">apple</dfn> is the pomaceous fruit of the apple tree.
-            </p>
+    <!-- Ссылки и якоря -->
+    <section id="links-section" class="links-section">
+        <h2>Полезные ссылки</h2>
+        <!-- Внешняя ссылка -->
+        <a href="https://pizzaschool.com" target="_blank" rel="noopener">Школа пиццы</a> |
+        <!-- Ссылка для скачивания -->
+        <a href="{% static 'docs/menu.pdf' %}" download>Скачать меню (PDF)</a> |
+        <!-- Якорная ссылка -->
+        <a href="#partners">К списку партнеров</a>
+    </section>
 
-            <h3>Пример цитаты (q, cite)</h3>
-            <p>
-                <q cite="http://en.wikipedia.org/wiki/Apple">The apple is the pomaceous fruit of the apple tree.</q>
-                <br>
-                My favorite book on fruit is <cite>Fruit: Edible, Inedible, Incredible</cite>.
-            </p>
+    <!-- Контейнеры и списки -->
+    <div class="info-container">
+        <section class="menu-preview">
+            <h2>Наше меню</h2>
+            <!-- Маркированный список -->
+            <ul class="pizza-types">
+                <li>Классические пиццы</li>
+                <li>Фирменные пиццы</li>
+                <li>Вегетарианские</li>
+            </ul>
+            
+            <!-- Нумерованный список -->
+            <h3>Топ-3 продаж</h3>
+            <ol class="top-sales">
+                <li>Маргарита</li>
+                <li>Пепперони</li>
+                <li>Четыре сыра</li>
+            </ol>
+        </section>
 
-            <h3>Пример даты и времени (time)</h3>
-            <p>
-                At <time datetime="15:00">3 o'clock</time>
-                on <time datetime="1984-12-7">December 7th</time>.
+        <!-- Фигуры с изображениями -->
+        <figure class="pizza-gallery">
+            <img src="{% static 'img/pizza-making.jpg' %}" alt="Процесс приготовления">
+            <figcaption>Мастер-класс по приготовлению пиццы</figcaption>
+        </figure>
+    </div>
+</main>
+
+<style>
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.company-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.company-motto {
+    font-style: italic;
+    color: #666;
+    border-left: 4px solid #ff6b6b;
+    padding: 10px 20px;
+    background: #fff5f5;
+}
+
+.banners-grid, .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.banner-item, .partner-item {
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.banner-item img, .partner-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.latest-news {
+    margin: 40px 0;
+}
+
+.news-card {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.features-list li {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.poetry-section {
+    background: #fff5f5;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.pizza-poem {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    padding: 1rem;
+}
+
+.links-section {
+    background: #f8f9fa;
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.links-section a {
+    color: #ff6b6b;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.links-section a:hover {
+    color: #ff4757;
+    text-decoration: underline;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.menu-preview {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pizza-types, .top-sales {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.pizza-gallery {
+    margin: 0;
+    text-align: center;
+}
+
+.pizza-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.pizza-gallery figcaption {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #666;
+}
+</style>
+{% endblock %}
             </p>
 
             <h3>Четверостишие с <br></h3>
@@ -324,4 +445,3 @@ def get_pizza_price(size, base_price):
     color: #666;
 }
 </style>
-{% endblock %}

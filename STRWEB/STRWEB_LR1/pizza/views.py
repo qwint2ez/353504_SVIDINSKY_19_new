@@ -679,7 +679,10 @@ def about_view(request):
 
 def faq_view(request):
     faqs = FAQ.objects.all().order_by('-date_added')
-    return render(request, 'pizza/faq.html', {'faqs': faqs})
+    return render(request, 'pizza/faq.html', {
+        'faqs': faqs,
+        'page_title': 'Часто задаваемые вопросы',
+    })
 
 def contacts_view(request):
     return render(request, 'pizza/contacts.html')
