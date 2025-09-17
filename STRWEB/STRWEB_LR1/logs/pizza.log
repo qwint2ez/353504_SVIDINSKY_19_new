@@ -17689,3 +17689,598 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 60: 's
 [WARNING] 2025-09-17 14:47:22 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
 [WARNING] 2025-09-17 14:47:22 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
 [WARNING] 2025-09-17 14:47:22 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:49:48 Watching for file changes with StatReloader
+[ERROR] 2025-09-17 14:49:50 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 134: 'endblock'. Did you forget to register or load this tag?
+[ERROR] 2025-09-17 14:49:50 "GET / HTTP/1.1" 500 171634
+[ERROR] 2025-09-17 14:49:54 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 134: 'endblock'. Did you forget to register or load this tag?
+[ERROR] 2025-09-17 14:49:54 "GET / HTTP/1.1" 500 171764
+[ERROR] 2025-09-17 14:49:54 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 134: 'endblock'. Did you forget to register or load this tag?
+[ERROR] 2025-09-17 14:49:54 "GET / HTTP/1.1" 500 171490
+[ERROR] 2025-09-17 14:50:18 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 134: 'endblock'. Did you forget to register or load this tag?
+[ERROR] 2025-09-17 14:50:18 "GET / HTTP/1.1" 500 171627
+[INFO] 2025-09-17 14:50:25 "GET / HTTP/1.1" 200 14530
+[WARNING] 2025-09-17 14:50:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 14:50:25 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 14:50:25 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:50:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:50:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:50:25 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:50:25 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:50:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:50:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:50:34 "GET /admin/ HTTP/1.1" 200 22316
+[INFO] 2025-09-17 14:50:37 "GET /admin/pizza/banner/ HTTP/1.1" 200 18618
+[INFO] 2025-09-17 14:50:37 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:50:38 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 19419
+[INFO] 2025-09-17 14:50:38 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:50:58 "GET /admin/pizza/partnercompany/ HTTP/1.1" 200 18381
+[INFO] 2025-09-17 14:50:58 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:51:00 "GET /admin/pizza/partnercompany/1/change/ HTTP/1.1" 200 19646
+[INFO] 2025-09-17 14:51:00 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:51:07 "GET /admin/pizza/banner/ HTTP/1.1" 200 18618
+[INFO] 2025-09-17 14:51:07 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:52:10 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\admin.py changed, reloading.
+[INFO] 2025-09-17 14:52:12 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:52:21 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\models.py changed, reloading.
+[INFO] 2025-09-17 14:52:21 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:52:36 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:52:41 "GET /admin/pizza/banner/ HTTP/1.1" 200 18618
+[INFO] 2025-09-17 14:52:41 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:52:42 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 18829
+[INFO] 2025-09-17 14:52:42 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[ERROR] 2025-09-17 14:52:45 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 132: 'endblock'. Did you forget to register or load this tag?
+[ERROR] 2025-09-17 14:52:45 "GET / HTTP/1.1" 500 171700
+[ERROR] 2025-09-17 14:52:45 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 132: 'endblock'. Did you forget to register or load this tag?
+[ERROR] 2025-09-17 14:52:45 "GET / HTTP/1.1" 500 171426
+[INFO] 2025-09-17 14:52:57 "GET / HTTP/1.1" 200 14460
+[WARNING] 2025-09-17 14:52:57 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:52:57 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:52:57 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:52:57 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:52:57 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:52:57 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:52:57 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:52:57 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:53:16 "GET /admin/ HTTP/1.1" 200 22316
+[INFO] 2025-09-17 14:53:18 "GET /admin/pizza/banner/ HTTP/1.1" 200 18618
+[INFO] 2025-09-17 14:53:18 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:53:19 "GET /admin/pizza/banner/add/ HTTP/1.1" 200 18393
+[INFO] 2025-09-17 14:53:20 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:53:30 "POST /admin/pizza/banner/add/ HTTP/1.1" 302 0
+[INFO] 2025-09-17 14:53:30 "GET /admin/pizza/banner/ HTTP/1.1" 200 19341
+[INFO] 2025-09-17 14:53:30 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:53:33 "GET / HTTP/1.1" 200 14793
+[WARNING] 2025-09-17 14:53:33 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:53:33 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:53:33 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:53:33 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:53:33 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:53:33 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:53:34 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:53:34 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:54:47 "GET /admin/ HTTP/1.1" 200 22307
+[INFO] 2025-09-17 14:54:48 "GET /admin/pizza/faq/ HTTP/1.1" 200 18476
+[INFO] 2025-09-17 14:54:48 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:54:50 "GET /admin/pizza/faq/add/ HTTP/1.1" 200 17863
+[INFO] 2025-09-17 14:54:50 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:55:02 "POST /admin/pizza/faq/add/ HTTP/1.1" 302 0
+[INFO] 2025-09-17 14:55:02 "GET /admin/pizza/faq/ HTTP/1.1" 200 19160
+[INFO] 2025-09-17 14:55:03 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:55:04 "GET / HTTP/1.1" 200 14793
+[WARNING] 2025-09-17 14:55:04 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:04 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:55:04 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:04 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:04 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:04 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:05 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:55:05 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:06 "GET /faq/ HTTP/1.1" 200 9003
+[WARNING] 2025-09-17 14:55:06 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:06 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:06 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:06 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:06 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:14 Privacy policy viewed by alexander
+[INFO] 2025-09-17 14:55:14 "GET /privacy-policy/ HTTP/1.1" 200 8727
+[WARNING] 2025-09-17 14:55:14 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:14 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:14 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:14 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:14 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:16 Privacy policy viewed by alexander
+[INFO] 2025-09-17 14:55:16 "GET /privacy-policy/ HTTP/1.1" 200 8727
+[WARNING] 2025-09-17 14:55:16 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:16 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:16 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:16 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:16 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:16 Privacy policy viewed by alexander
+[INFO] 2025-09-17 14:55:16 "GET /privacy-policy/ HTTP/1.1" 200 8727
+[WARNING] 2025-09-17 14:55:17 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:17 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:17 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:17 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:17 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:18 "GET /contacts/ HTTP/1.1" 200 8830
+[WARNING] 2025-09-17 14:55:18 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:18 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:18 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:18 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:18 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:19 "GET /faq/ HTTP/1.1" 200 9003
+[WARNING] 2025-09-17 14:55:19 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:19 "GET /news/ HTTP/1.1" 200 9581
+[WARNING] 2025-09-17 14:55:19 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:20 "GET /news/ HTTP/1.1" 200 9581
+[WARNING] 2025-09-17 14:55:20 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:20 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:20 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:20 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:20 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:25 "GET /my-orders/ HTTP/1.1" 200 10084
+[WARNING] 2025-09-17 14:55:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:26 "GET /pizza/create/ HTTP/1.1" 200 17130
+[WARNING] 2025-09-17 14:55:26 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:26 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:26 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:26 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:26 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:27 "GET /about/ HTTP/1.1" 200 9894
+[WARNING] 2025-09-17 14:55:27 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:27 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:27 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-17 14:55:28 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-17 14:55:28 "GET /menu/ HTTP/1.1" 200 16070
+[WARNING] 2025-09-17 14:55:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:29 "GET /news/ HTTP/1.1" 200 9581
+[WARNING] 2025-09-17 14:55:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:55:29 "GET /about/ HTTP/1.1" 200 9894
+[WARNING] 2025-09-17 14:55:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:55:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:55:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:55:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:56:40 "GET /about/ HTTP/1.1" 200 9381
+[WARNING] 2025-09-17 14:56:40 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:56:40 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:56:40 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:56:44 "GET /my-orders/ HTTP/1.1" 200 9571
+[WARNING] 2025-09-17 14:56:44 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:56:44 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:56:44 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:56:47 "GET / HTTP/1.1" 200 14280
+[WARNING] 2025-09-17 14:56:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 14:56:47 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 14:56:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:56:47 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:56:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:56:47 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:56:47 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:57:04 "GET /news/ HTTP/1.1" 200 9068
+[WARNING] 2025-09-17 14:57:04 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:57:04 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:57:04 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-17 14:59:44 Starting statistics calculation
+[INFO] 2025-09-17 14:59:45 Statistics viewed by user alexander
+[INFO] 2025-09-17 14:59:45 "GET /statistics/ HTTP/1.1" 200 85902
+[WARNING] 2025-09-17 14:59:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:59:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:59:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 18:35:11 Watching for file changes with StatReloader
+[INFO] 2025-09-17 18:35:16 "GET / HTTP/1.1" 200 15335
+[WARNING] 2025-09-17 18:35:16 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 18:35:16 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 18:35:16 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 18:35:16 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 18:35:16 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 18:35:17 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 18:35:17 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 18:35:17 "GET /static/img/favicon.png HTTP/1.1" 404 1859
+[INFO] 2025-09-17 18:45:44 Watching for file changes with StatReloader
+[INFO] 2025-09-17 18:45:46 "GET / HTTP/1.1" 200 17176
+[WARNING] 2025-09-17 18:45:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 18:45:46 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 18:45:46 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 18:45:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 18:45:46 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 18:45:46 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 18:45:59 "GET /static/docs/menu.pdf HTTP/1.1" 404 1853
+[INFO] 2025-09-17 18:49:40 "GET /faq/ HTTP/1.1" 200 8490
+[WARNING] 2025-09-17 18:49:40 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 18:49:40 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 18:49:40 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 18:49:41 "GET /news/ HTTP/1.1" 200 9068
+[WARNING] 2025-09-17 18:49:41 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 18:49:41 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 18:49:41 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 18:49:44 "GET /about/ HTTP/1.1" 200 9381
+[INFO] 2025-09-17 18:49:44 "GET /media/certificates/%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0_%D0%B1%D0%B5%D0%B7_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.drawio.png HTTP/1.1" 304 0
+[WARNING] 2025-09-17 18:49:44 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 18:49:44 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 18:49:44 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 18:49:51 "GET / HTTP/1.1" 200 17176
+[WARNING] 2025-09-17 18:49:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 18:49:51 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 18:49:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 18:49:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 18:49:51 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 18:49:51 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 18:50:22 "GET /static/docs/menu.pdf HTTP/1.1" 404 1853
+[INFO] 2025-09-17 19:00:26 "GET / HTTP/1.1" 200 20978
+[WARNING] 2025-09-17 19:00:26 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 19:00:26 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 19:00:26 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 19:00:26 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 19:00:26 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 19:00:26 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874

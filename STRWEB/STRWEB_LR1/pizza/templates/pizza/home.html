@@ -16,32 +16,28 @@
         <article>
             <h2>Рекламные баннеры</h2>
             <section id="banners">
-                {% for banner in banners %}
-                <figure>
-                    {% if banner.image %}
-                    <a href="{{ banner.link|default:'#' }}">
-                        <img src="{{ banner.image.url }}" alt="{{ banner.title }}" style="width:100%;max-height:300px;object-fit:cover;">
-                    </a>
-                    {% else %}
-                    <span>Нет изображения</span>
-                    {% endif %}
-                    <figcaption>{{ banner.title }}</figcaption>
-                </figure>
-                {% empty %}
-                <p>Нет баннеров для отображения.</p>
-                {% endfor %}
+                <ul style="display: flex; flex-wrap: wrap; gap: 20px; list-style: none; padding: 0;">
+                    {% for banner in banners %}
+                    <li style="text-align: center;">
+                        <img src="{{ banner.image.url }}" alt="{{ banner.title }}" style="max-width:100px; max-height:100px; object-fit:cover;">
+                        <div><strong>{{ banner.title }}</strong></div>
+                    </li>
+                    {% empty %}
+                    <li><span>Нет баннеров для отображения.</span></li>
+                    {% endfor %}
+                </ul>
             </section>
         </article>
         <article>
             <h2>Компании-партнеры</h2>
             <section id="partners">
-                <ul>
+                <ul style="display: flex; flex-wrap: wrap; gap: 20px; list-style: none; padding: 0;">
                     {% for partner in partners %}
-                    <li>
+                    <li style="text-align: center;">
                         <a href="{{ partner.website }}" target="_blank">
                             <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" style="max-width:100px;">
                         </a>
-                        <strong>{{ partner.name }}</strong>
+                        <div><strong>{{ partner.name }}</strong></div>
                         <p>{{ partner.description }}</p>
                     </li>
                     {% endfor %}
@@ -128,7 +124,204 @@
                 Ваш браузер не поддерживает видео.
             </video>
             <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=27.55,53.9,27.57,53.91" width="300" height="200" title="Карта доставки"></iframe>
+            <h3>Пример листинга (code)</h3>
+            <pre><code>
+def get_pizza_price(size, base_price):
+    if size == "Большая":
+        return base_price * 1.5
+    return base_price
+            </code></pre>
+
+            <h3>Пример сокращения (abbr)</h3>
+            <p>
+                Элемент <abbr title="аббревиатура">abbr</abbr> позволяет вставить в документ сокращение. Например:
+                <br>
+                <abbr title="HyperText Markup Language">HTML</abbr>,
+                <abbr title="Cascading Style Sheets">CSS</abbr>,
+                <abbr title="JavaScript">JS</abbr>
+            </p>
+
+            <h3>Пример определения (dfn)</h3>
+            <p>
+                Для вставки в HTML-документ определений служит элемент <dfn>dfn</dfn>.
+                <br>
+                The <dfn title="apple">apple</dfn> is the pomaceous fruit of the apple tree.
+            </p>
+
+            <h3>Пример цитаты (q, cite)</h3>
+            <p>
+                <q cite="http://en.wikipedia.org/wiki/Apple">The apple is the pomaceous fruit of the apple tree.</q>
+                <br>
+                My favorite book on fruit is <cite>Fruit: Edible, Inedible, Incredible</cite>.
+            </p>
+
+            <h3>Пример даты и времени (time)</h3>
+            <p>
+                At <time datetime="15:00">3 o'clock</time>
+                on <time datetime="1984-12-7">December 7th</time>.
+            </p>
+
+            <h3>Четверостишие с <br></h3>
+            <p>
+                I WANDERED lonely as a cloud<br>
+                That floats on high o'er vales and hills,<br>
+                When all at once I saw a crowd,<br>
+                A host, of golden daffodils;
+            </p>
+
+            <h3>Длинное слово с <wbr></h3>
+            <p>
+                Самое длинное слово из химии:<br>
+                метоксихлор<wbr>диэтиламино<wbr>метил<wbr>бутил<wbr>амино<wbr>акридин
+            </p>
+
+            <h3>Примеры ссылок</h3>
+            <p>
+                Хочешь попасть на mail.ru? <br>
+                <a href="http://mail.ru">Жми сюда!</a>
+            </p>
+            <p>
+                <a href="{% static 'docs/menu.pdf' %}" download>Скачать меню (PDF)</a>
+            </p>
+
+            <h3>Якоря</h3>
+            <p>
+                <a href="#n1">См. примечание в конце</a>
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit...
+            </p>
+            <br><br><br><br><br><br><br><br><br><br>
+            <p><a id="n1"></a>Это примечание</p>
         </aside>
+        <!-- Примеры контейнерных элементов -->
+        <div class="container-examples">
+            <h3>Примеры контейнерных элементов</h3>
+            
+            <!-- Параграф -->
+            <p>
+                Это пример параграфа (p). Он является блочным элементом и занимает всю доступную ширину.
+            </p>
+
+            <!-- Предварительно форматированный текст -->
+            <pre>
+    Это pre элемент.
+    Он сохраняет пробелы
+        и переносы строк.
+            </pre>
+
+            <!-- Цитата -->
+            <blockquote cite="https://www.example.com">
+                Это blockquote - блок для длинных цитат. 
+                Он имеет отступ слева и обычно выделяется визуально.
+            </blockquote>
+
+            <!-- Горизонтальная линия -->
+            <hr>
+
+            <!-- Списки -->
+            <h4>Маркированный список (ul)</h4>
+            <ul>
+                <li>Первый пункт</li>
+                <li>Второй пункт</li>
+                <li>Третий пункт</li>
+            </ul>
+
+            <h4>Нумерованный список (ol)</h4>
+            <ol>
+                <li>Первый пункт</li>
+                <li>Второй пункт</li>
+                <li>Третий пункт</li>
+            </ol>
+
+            <h4>Список определений (dl)</h4>
+            <dl>
+                <dt>HTML</dt>
+                <dd>Язык разметки гипертекста</dd>
+                <dt>CSS</dt>
+                <dd>Каскадные таблицы стилей</dd>
+            </dl>
+
+            <!-- Фигуры -->
+            <h4>Примеры фигур (figure)</h4>
+            <figure>
+                <img src="{% static 'img/sample-pizza.jpg' %}" alt="Маргарита">
+                <figcaption>Пицца "Маргарита" - классическая итальянская пицца</figcaption>
+            </figure>
+
+            <figure>
+                <pre><code>
+                    const pizza = {
+                        name: "Маргарита",
+                        price: 500
+                    };
+                </code></pre>
+                <figcaption>Пример кода с описанием пиццы</figcaption>
+            </figure>
+        </div>
     </section>
 </main>
+
+<style>
+.container-examples {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Стили для блочных элементов */
+.container-examples p,
+.container-examples pre,
+.container-examples blockquote,
+.container-examples hr,
+.container-examples ul,
+.container-examples ol,
+.container-examples dl,
+.container-examples figure {
+    margin: 1em 0;
+}
+
+.container-examples blockquote {
+    border-left: 4px solid #ddd;
+    padding: 0.5em 1em;
+    background: #f5f5f5;
+}
+
+/* Стили для списков */
+.container-examples ul,
+.container-examples ol {
+    padding-left: 2em;
+}
+
+.container-examples dl {
+    padding: 0.5em;
+    background: #f9f9f9;
+}
+
+.container-examples dt {
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.container-examples dd {
+    margin-left: 2em;
+}
+
+/* Стили для фигур */
+.container-examples figure {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.container-examples figcaption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+    color: #666;
+}
+</style>
 {% endblock %}
