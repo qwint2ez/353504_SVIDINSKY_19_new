@@ -5,8 +5,9 @@ from .models import (
     Pizza, Order, Review, Customer, Ingredient, PizzaCategory,
     Article, CompanyInfo, FAQ, Promo, Vacancy, Employee,
     Allergen, PizzaSize, Courier, OrderItem, CustomerPreferences,
-    SeasonalPeriod, PizzaPricing
+    SeasonalPeriod, PizzaPricing, Banner, PartnerCompany  # <-- добавлено Banner, PartnerCompany
 )
+from django.utils.html import format_html
 
 class PizzaPricingInline(admin.TabularInline):
     model = PizzaPricing
@@ -117,6 +118,28 @@ class EmployeeAdmin(admin.ModelAdmin):
             return f"{age} лет"
         return "Не указан"
     get_age.short_description = 'Возраст'
+
+@admin.register(Banner)
+class BannerAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_active', 'banner_image_preview')
+    search_fields = ('title',)
+
+    def banner_image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="max-height:60px;max-width:120px;" />', obj.image.url)
+        return ''
+    banner_image_preview.short_description = 'Картинка'
+
+@admin.register(PartnerCompany)
+class PartnerCompanyAdmin(admin.ModelAdmin):
+    list_display = ('name', 'logo_preview')
+    search_fields = ('name',)
+
+    def logo_preview(self, obj):
+        if obj.logo:
+            return format_html('<img src="{}" style="max-height:60px;max-width:120px;" />', obj.logo.url)
+        return ''
+    logo_preview.short_description = 'Логотип'
 
 # Регистрация остальных моделей
 admin.site.register([

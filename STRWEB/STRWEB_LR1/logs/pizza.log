@@ -16821,3 +16821,672 @@ django.db.utils.OperationalError: no such column: pizza_companyinfo.certificate_
 [WARNING] 2025-09-16 16:46:45 "GET /static/css/style.css HTTP/1.1" 404 1853
 [WARNING] 2025-09-16 16:46:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
 [INFO] 2025-09-16 16:46:51 "GET /admin/ HTTP/1.1" 200 20740
+[INFO] 2025-09-16 16:49:26 Watching for file changes with StatReloader
+[INFO] 2025-09-16 16:49:29 "GET /admin/ HTTP/1.1" 200 20740
+[INFO] 2025-09-16 16:49:30 "GET /admin/ HTTP/1.1" 200 20740
+[INFO] 2025-09-16 16:49:32 "GET /admin/auth/group/ HTTP/1.1" 200 15925
+[INFO] 2025-09-16 16:49:32 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-16 16:49:35 "GET /admin/auth/group/add/ HTTP/1.1" 200 26122
+[INFO] 2025-09-16 16:49:35 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:04:01 Watching for file changes with StatReloader
+[ERROR] 2025-09-17 13:04:09 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 60: 'static', expected 'endblock'. Did you forget to register or load this tag?
+[ERROR] 2025-09-17 13:04:09 "GET / HTTP/1.1" 500 189179
+[ERROR] 2025-09-17 13:04:10 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 60: 'static', expected 'endblock'. Did you forget to register or load this tag?
+[ERROR] 2025-09-17 13:04:10 "GET / HTTP/1.1" 500 188905
+[WARNING] 2025-09-17 13:04:10 Not Found: /favicon.ico
+[WARNING] 2025-09-17 13:04:10 "GET /favicon.ico HTTP/1.1" 404 11118
+[ERROR] 2025-09-17 13:04:12 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 60: 'static', expected 'endblock'. Did you forget to register or load this tag?
+[ERROR] 2025-09-17 13:04:12 "GET / HTTP/1.1" 500 189042
+[INFO] 2025-09-17 13:39:30 Watching for file changes with StatReloader
+[INFO] 2025-09-17 13:39:34 "GET / HTTP/1.1" 200 7560
+[INFO] 2025-09-17 13:39:34 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-17 13:39:34 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:39:34 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:39:34 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:39:34 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:39:34 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:39:34 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:39:34 "GET /static/img/favicon.png HTTP/1.1" 404 1859
+[WARNING] 2025-09-17 13:41:22 "GET /static/docs/menu.pdf HTTP/1.1" 404 1853
+[INFO] 2025-09-17 13:41:48 "GET /admin/ HTTP/1.1" 200 20740
+[WARNING] 2025-09-17 13:41:48 Not Found: /favicon.ico
+[WARNING] 2025-09-17 13:41:48 "GET /favicon.ico HTTP/1.1" 404 11118
+[INFO] 2025-09-17 13:41:53 "GET /admin/pizza/allergen/ HTTP/1.1" 200 17434
+[INFO] 2025-09-17 13:41:53 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:41:55 "GET /admin/pizza/article/ HTTP/1.1" 200 17658
+[INFO] 2025-09-17 13:41:55 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:41:56 "GET /admin/pizza/customerpreferences/ HTTP/1.1" 200 15679
+[INFO] 2025-09-17 13:41:56 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:41:57 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 17131
+[INFO] 2025-09-17 13:41:57 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:42:01 "GET /admin/pizza/companyinfo/add/ HTTP/1.1" 200 23053
+[INFO] 2025-09-17 13:42:01 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:42:16 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 17131
+[INFO] 2025-09-17 13:42:17 "GET /admin/pizza/companyinfo/1/change/ HTTP/1.1" 200 24458
+[INFO] 2025-09-17 13:42:17 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:42:46 "GET /admin/pizza/courier/ HTTP/1.1" 200 15590
+[INFO] 2025-09-17 13:42:46 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:42:50 "GET /admin/pizza/faq/ HTTP/1.1" 200 17599
+[INFO] 2025-09-17 13:42:50 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:42:52 "GET /admin/pizza/employee/ HTTP/1.1" 200 17944
+[INFO] 2025-09-17 13:42:52 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:42:54 "GET /admin/pizza/ingredient/ HTTP/1.1" 200 27261
+[INFO] 2025-09-17 13:42:54 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:42:56 "GET /admin/pizza/orderitem/ HTTP/1.1" 200 17222
+[INFO] 2025-09-17 13:42:56 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:42:59 "GET /admin/pizza/order/ HTTP/1.1" 200 20717
+[INFO] 2025-09-17 13:42:59 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:43:02 "GET /admin/pizza/pizzacategory/ HTTP/1.1" 200 17864
+[INFO] 2025-09-17 13:43:02 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:43:03 "GET /admin/pizza/pizzasize/ HTTP/1.1" 200 17537
+[INFO] 2025-09-17 13:43:03 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:43:05 "GET /admin/pizza/pizza/ HTTP/1.1" 200 26257
+[INFO] 2025-09-17 13:43:05 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:43:06 "GET /admin/pizza/promo/ HTTP/1.1" 200 18743
+[INFO] 2025-09-17 13:43:06 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:43:09 "GET /admin/pizza/review/ HTTP/1.1" 200 17457
+[INFO] 2025-09-17 13:43:09 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:43:11 "GET /admin/pizza/review/add/ HTTP/1.1" 200 23097
+[INFO] 2025-09-17 13:43:11 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:43:11 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+[INFO] 2025-09-17 13:43:19 "POST /admin/pizza/review/add/ HTTP/1.1" 302 0
+[INFO] 2025-09-17 13:43:19 "GET /admin/pizza/review/ HTTP/1.1" 200 19524
+[INFO] 2025-09-17 13:43:19 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:43:24 "GET / HTTP/1.1" 200 7560
+[WARNING] 2025-09-17 13:43:24 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:43:24 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:43:24 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:43:24 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:43:25 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:43:25 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:43:27 "GET /reviews/ HTTP/1.1" 200 4769
+[WARNING] 2025-09-17 13:43:27 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:43:27 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:43:27 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:43:43 Privacy policy viewed by alexander
+[INFO] 2025-09-17 13:43:43 "GET /privacy-policy/ HTTP/1.1" 200 3225
+[WARNING] 2025-09-17 13:43:43 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:43:43 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:43:43 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:43:48 "GET /about/ HTTP/1.1" 200 4392
+[INFO] 2025-09-17 13:43:48 "GET /media/certificates/%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0_%D0%B1%D0%B5%D0%B7_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.drawio.png HTTP/1.1" 304 0
+[WARNING] 2025-09-17 13:43:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:43:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:43:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[DEBUG] 2025-09-17 13:44:58 Starting statistics calculation
+[INFO] 2025-09-17 13:44:59 Statistics viewed by user alexander
+[INFO] 2025-09-17 13:44:59 "GET /statistics/ HTTP/1.1" 200 80913
+[WARNING] 2025-09-17 13:44:59 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:44:59 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:44:59 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-17 13:45:10 "GET /cart/ HTTP/1.1" 200 4650
+[WARNING] 2025-09-17 13:45:10 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:45:10 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:45:10 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:45:12 "GET /promotions/ HTTP/1.1" 200 5180
+[WARNING] 2025-09-17 13:45:13 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:45:13 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:45:13 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-17 13:45:20 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-17 13:45:20 "GET /menu/ HTTP/1.1" 200 10568
+[WARNING] 2025-09-17 13:45:20 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:45:20 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:45:20 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:45:23 "GET /pizza/1/ HTTP/1.1" 200 4839
+[WARNING] 2025-09-17 13:45:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:45:23 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:45:23 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:45:28 "GET /faq/ HTTP/1.1" 200 3342
+[WARNING] 2025-09-17 13:45:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:45:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:45:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:48:37 "GET /contacts/ HTTP/1.1" 200 3328
+[WARNING] 2025-09-17 13:48:37 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:48:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:48:37 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:48:40 "GET /admin/ HTTP/1.1" 200 21096
+[WARNING] 2025-09-17 13:50:30 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 13:50:32 "GET /about/ HTTP/1.1" 200 4392
+[WARNING] 2025-09-17 13:50:32 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:50:32 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:50:32 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:50:37 "GET / HTTP/1.1" 200 7560
+[WARNING] 2025-09-17 13:50:37 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:50:37 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:50:37 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:50:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:50:37 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:50:37 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:50:37 "GET /about/ HTTP/1.1" 200 4392
+[WARNING] 2025-09-17 13:50:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:50:38 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:50:38 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 13:50:41 "GET /about/ HTTP/1.1" 200 4392
+[WARNING] 2025-09-17 13:50:41 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:50:41 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:50:41 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-17 13:50:42 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-17 13:50:42 "GET /menu/ HTTP/1.1" 200 10568
+[WARNING] 2025-09-17 13:50:42 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:50:42 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:50:42 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:50:46 "GET /contacts/ HTTP/1.1" 200 3328
+[WARNING] 2025-09-17 13:50:46 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:50:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:50:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-17 13:50:50 Starting statistics calculation
+[INFO] 2025-09-17 13:50:51 Statistics viewed by user alexander
+[INFO] 2025-09-17 13:50:51 "GET /statistics/ HTTP/1.1" 200 80913
+[WARNING] 2025-09-17 13:50:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:50:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:50:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:50:53 "GET / HTTP/1.1" 200 7560
+[WARNING] 2025-09-17 13:50:53 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:50:53 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:50:53 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:50:53 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:50:53 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:50:53 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:51:07 "GET / HTTP/1.1" 200 7560
+[WARNING] 2025-09-17 13:51:07 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:51:07 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:51:07 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:51:07 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:51:07 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:51:07 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:54:22 Watching for file changes with StatReloader
+[INFO] 2025-09-17 13:54:25 "GET / HTTP/1.1" 200 7580
+[WARNING] 2025-09-17 13:54:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:54:25 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:54:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:54:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:54:25 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:54:25 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[INFO] 2025-09-17 13:56:19 "GET / HTTP/1.1" 200 7580
+[WARNING] 2025-09-17 13:56:19 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:56:19 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:56:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:56:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:56:19 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:56:19 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:56:24 "GET /admin/ HTTP/1.1" 200 21096
+[INFO] 2025-09-17 13:56:25 "GET /admin/pizza/allergen/ HTTP/1.1" 200 17434
+[INFO] 2025-09-17 13:56:25 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:56:27 "GET /admin/pizza/article/ HTTP/1.1" 200 17658
+[INFO] 2025-09-17 13:56:27 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:56:29 "GET /admin/pizza/allergen/ HTTP/1.1" 200 17434
+[INFO] 2025-09-17 13:56:33 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 17131
+[INFO] 2025-09-17 13:56:33 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:56:34 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 17131
+[INFO] 2025-09-17 13:56:34 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:56:39 "GET /admin/pizza/allergen/ HTTP/1.1" 200 17434
+[INFO] 2025-09-17 13:56:40 "GET /admin/ HTTP/1.1" 200 21096
+[INFO] 2025-09-17 13:56:45 "GET / HTTP/1.1" 200 7580
+[WARNING] 2025-09-17 13:56:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:56:45 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:56:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:56:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:56:45 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:56:45 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:56:48 "GET /about/ HTTP/1.1" 200 4392
+[WARNING] 2025-09-17 13:56:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:56:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:56:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-17 13:56:51 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-17 13:56:51 "GET /menu/ HTTP/1.1" 200 10568
+[WARNING] 2025-09-17 13:56:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:56:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:56:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:56:53 "GET / HTTP/1.1" 200 7580
+[WARNING] 2025-09-17 13:56:53 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:56:53 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:56:53 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:56:53 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:56:53 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:56:53 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:56:59 "GET /news/ HTTP/1.1" 200 4079
+[WARNING] 2025-09-17 13:56:59 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 13:56:59 "GET /media/articles/4cheese.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 13:57:00 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:57:00 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-17 13:57:16 "GET / HTTP/1.1" 200 7580
+[WARNING] 2025-09-17 13:57:16 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:57:16 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:57:16 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:57:16 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:57:16 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:57:16 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 13:59:06 Watching for file changes with StatReloader
+[INFO] 2025-09-17 13:59:10 "GET / HTTP/1.1" 200 7580
+[WARNING] 2025-09-17 13:59:10 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 13:59:10 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 13:59:10 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 13:59:10 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:59:10 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 13:59:10 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[INFO] 2025-09-17 13:59:13 "GET /admin/ HTTP/1.1" 200 21096
+[INFO] 2025-09-17 13:59:27 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 17131
+[INFO] 2025-09-17 13:59:27 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 13:59:28 "GET /admin/pizza/companyinfo/1/change/ HTTP/1.1" 200 24458
+[INFO] 2025-09-17 13:59:29 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:01:01 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\admin.py changed, reloading.
+[INFO] 2025-09-17 14:01:02 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:01:04 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\admin.py changed, reloading.
+[INFO] 2025-09-17 14:01:05 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:01:06 "GET /admin/pizza/companyinfo/1/change/ HTTP/1.1" 200 25335
+[INFO] 2025-09-17 14:01:06 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:01:08 "GET /admin/pizza/banner/ HTTP/1.1" 200 16785
+[INFO] 2025-09-17 14:01:08 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:01:10 "GET /admin/pizza/banner/add/ HTTP/1.1" 200 18983
+[INFO] 2025-09-17 14:01:10 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:01:47 "POST /admin/pizza/banner/add/ HTTP/1.1" 302 0
+[INFO] 2025-09-17 14:01:48 "GET /admin/pizza/banner/ HTTP/1.1" 200 18579
+[INFO] 2025-09-17 14:01:48 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:01:50 "GET / HTTP/1.1" 200 7946
+[WARNING] 2025-09-17 14:01:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:01:50 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:01:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:01:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:01:50 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:01:50 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:01:54 "GET / HTTP/1.1" 200 7946
+[WARNING] 2025-09-17 14:01:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:01:54 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:01:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:01:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:01:54 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:01:54 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[INFO] 2025-09-17 14:01:54 "GET /about/ HTTP/1.1" 200 4392
+[WARNING] 2025-09-17 14:01:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:01:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:01:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:01:59 "GET /admin/ HTTP/1.1" 200 22352
+[INFO] 2025-09-17 14:02:01 "GET /admin/pizza/banner/ HTTP/1.1" 200 18350
+[INFO] 2025-09-17 14:02:01 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:02:02 "GET /admin/pizza/article/ HTTP/1.1" 200 18535
+[INFO] 2025-09-17 14:02:02 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:02:03 "GET /admin/pizza/banner/ HTTP/1.1" 200 18350
+[INFO] 2025-09-17 14:02:03 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:02:04 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 19421
+[INFO] 2025-09-17 14:02:04 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:02:16 "GET /admin/pizza/partnercompany/ HTTP/1.1" 200 16846
+[INFO] 2025-09-17 14:02:16 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:02:18 "GET /admin/pizza/partnercompany/add/ HTTP/1.1" 200 19195
+[INFO] 2025-09-17 14:02:18 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:02:45 "POST /admin/pizza/partnercompany/add/ HTTP/1.1" 302 0
+[INFO] 2025-09-17 14:02:45 "GET /admin/pizza/partnercompany/ HTTP/1.1" 200 18567
+[INFO] 2025-09-17 14:02:45 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:02:48 "GET /admin/pizza/partnercompany/ HTTP/1.1" 200 18355
+[INFO] 2025-09-17 14:02:48 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:02:50 "GET / HTTP/1.1" 200 8315
+[WARNING] 2025-09-17 14:02:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:02:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:02:50 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[INFO] 2025-09-17 14:02:50 "GET /media/partners/pavel.jfif HTTP/1.1" 200 10640
+[WARNING] 2025-09-17 14:02:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:02:50 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:02:50 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:03:02 "GET / HTTP/1.1" 200 8315
+[INFO] 2025-09-17 14:03:02 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 14:03:02 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:03:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:03:02 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:03:02 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:03:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:03:02 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[INFO] 2025-09-17 14:03:49 "GET /admin/ HTTP/1.1" 200 22346
+[INFO] 2025-09-17 14:03:51 "GET /admin/pizza/banner/ HTTP/1.1" 200 18350
+[INFO] 2025-09-17 14:03:51 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:03:52 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 19421
+[INFO] 2025-09-17 14:03:52 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:05:27 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\admin.py changed, reloading.
+[INFO] 2025-09-17 14:05:28 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:05:33 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\admin.py changed, reloading.
+[INFO] 2025-09-17 14:05:34 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:05:35 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 19421
+[INFO] 2025-09-17 14:05:35 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:05:36 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 19421
+[INFO] 2025-09-17 14:05:36 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:05:38 "GET / HTTP/1.1" 200 8311
+[WARNING] 2025-09-17 14:05:38 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 14:05:38 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 14:05:38 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:05:38 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:05:38 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:05:39 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:05:39 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:06:22 "GET /admin/ HTTP/1.1" 200 22346
+[INFO] 2025-09-17 14:06:24 "GET /admin/pizza/banner/ HTTP/1.1" 200 18645
+[INFO] 2025-09-17 14:06:24 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:06:27 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 19421
+[INFO] 2025-09-17 14:06:27 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:06:29 "GET /admin/pizza/banner/ HTTP/1.1" 200 18645
+[INFO] 2025-09-17 14:06:31 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 19421
+[INFO] 2025-09-17 14:06:32 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:07:00 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:07:03 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 19421
+[INFO] 2025-09-17 14:07:03 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:07:05 "GET /admin/pizza/banner/ HTTP/1.1" 200 18645
+[INFO] 2025-09-17 14:07:05 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:07:06 "GET /admin/pizza/banner/add/ HTTP/1.1" 200 18983
+[INFO] 2025-09-17 14:07:06 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:07:14 "POST /admin/pizza/banner/add/ HTTP/1.1" 200 19248
+[INFO] 2025-09-17 14:07:14 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:07:23 "POST /admin/pizza/banner/add/ HTTP/1.1" 200 19252
+[INFO] 2025-09-17 14:07:23 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:07:40 "POST /admin/pizza/banner/add/ HTTP/1.1" 200 19594
+[INFO] 2025-09-17 14:07:40 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:07:44 "POST /admin/pizza/banner/add/ HTTP/1.1" 302 0
+[INFO] 2025-09-17 14:07:44 "GET /admin/pizza/banner/ HTTP/1.1" 200 19396
+[INFO] 2025-09-17 14:07:44 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:07:47 "GET / HTTP/1.1" 200 8751
+[WARNING] 2025-09-17 14:07:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 14:07:47 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 14:07:47 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:07:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:07:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:07:48 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:07:48 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[INFO] 2025-09-17 14:10:28 "GET / HTTP/1.1" 200 9162
+[WARNING] 2025-09-17 14:10:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 14:10:28 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 14:10:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:10:28 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:10:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:10:28 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:10:28 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:10:44 "GET /news/ HTTP/1.1" 200 4079
+[WARNING] 2025-09-17 14:10:44 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:10:44 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:10:44 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-17 14:11:26 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\admin.py changed, reloading.
+[INFO] 2025-09-17 14:11:27 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:11:32 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\admin.py changed, reloading.
+[INFO] 2025-09-17 14:11:33 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:11:49 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:12:09 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\admin.py changed, reloading.
+[INFO] 2025-09-17 14:12:10 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:12:12 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:12:17 "GET / HTTP/1.1" 200 9162
+[WARNING] 2025-09-17 14:12:17 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 14:12:17 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 14:12:17 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:12:17 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:12:17 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:12:17 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:12:17 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[INFO] 2025-09-17 14:12:26 "GET /admin/ HTTP/1.1" 200 22361
+[INFO] 2025-09-17 14:12:27 "GET /admin/pizza/banner/ HTTP/1.1" 200 19127
+[INFO] 2025-09-17 14:12:27 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:12:29 "GET /admin/pizza/banner/2/change/ HTTP/1.1" 200 19731
+[INFO] 2025-09-17 14:12:29 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:12:44 "GET /admin/pizza/banner/ HTTP/1.1" 200 19127
+[INFO] 2025-09-17 14:12:46 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 19421
+[INFO] 2025-09-17 14:12:46 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:12:47 "GET /admin/pizza/banner/ HTTP/1.1" 200 19127
+[INFO] 2025-09-17 14:12:48 "GET /admin/pizza/banner/2/change/ HTTP/1.1" 200 19731
+[INFO] 2025-09-17 14:12:48 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:12:52 "GET /admin/pizza/banner/ HTTP/1.1" 200 19127
+[INFO] 2025-09-17 14:12:53 "GET /admin/pizza/banner/1/change/ HTTP/1.1" 200 19421
+[INFO] 2025-09-17 14:12:53 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:13:00 "POST /admin/pizza/banner/1/change/ HTTP/1.1" 302 0
+[INFO] 2025-09-17 14:13:00 "GET /admin/pizza/banner/ HTTP/1.1" 200 19357
+[INFO] 2025-09-17 14:13:00 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-17 14:13:02 "GET / HTTP/1.1" 200 9161
+[WARNING] 2025-09-17 14:13:02 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:13:02 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:13:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:13:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:13:03 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:13:03 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:14:41 "GET / HTTP/1.1" 200 9245
+[WARNING] 2025-09-17 14:14:41 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 14:14:41 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 14:14:41 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:14:41 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:14:41 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:14:41 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:14:41 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[INFO] 2025-09-17 14:14:42 "GET / HTTP/1.1" 200 9245
+[WARNING] 2025-09-17 14:14:42 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:14:42 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:14:43 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:14:43 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:14:43 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:14:43 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:16:33 Watching for file changes with StatReloader
+[INFO] 2025-09-17 14:16:38 "GET / HTTP/1.1" 200 9246
+[INFO] 2025-09-17 14:16:38 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 14:16:38 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:16:38 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:16:38 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:16:38 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:16:38 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:16:38 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:16:38 "GET / HTTP/1.1" 200 9246
+[WARNING] 2025-09-17 14:16:39 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:16:39 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:16:39 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:16:39 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:16:39 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:16:39 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:16:50 Privacy policy viewed by alexander
+[INFO] 2025-09-17 14:16:50 "GET /privacy-policy/ HTTP/1.1" 200 3225
+[WARNING] 2025-09-17 14:16:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:16:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:16:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:16:52 "GET /about/ HTTP/1.1" 200 4392
+[WARNING] 2025-09-17 14:16:52 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:16:52 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:16:52 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:16:56 "GET / HTTP/1.1" 200 9246
+[WARNING] 2025-09-17 14:16:56 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:16:56 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:16:56 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:16:56 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:16:56 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:16:56 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[INFO] 2025-09-17 14:18:09 "GET / HTTP/1.1" 200 9246
+[WARNING] 2025-09-17 14:18:09 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-17 14:18:09 "GET /media/partners/pavel.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-17 14:18:09 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:18:09 "GET /static/img/sample-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 14:18:09 "GET /static/media/pizza-video.mp4 HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:18:09 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 14:18:09 "GET /static/media/pizza-song.mp3 HTTP/1.1" 404 1874
+[INFO] 2025-09-17 14:18:15 "GET /about/ HTTP/1.1" 200 4392
+[WARNING] 2025-09-17 14:18:15 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 14:18:15 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 14:18:15 "GET /static/js/form-validation.js HTTP/1.1" 404 1877

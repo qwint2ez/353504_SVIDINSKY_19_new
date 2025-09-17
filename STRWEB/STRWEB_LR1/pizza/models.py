@@ -270,6 +270,7 @@ class Banner(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='banners/')
     is_active = models.BooleanField(default=True)
+    link = models.URLField(blank=True)
 
     def __str__(self):
         return self.title
@@ -278,6 +279,7 @@ class PartnerCompany(models.Model):
     name = models.CharField(max_length=100)
     logo = models.ImageField(upload_to='partners/')
     website = models.URLField()
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
