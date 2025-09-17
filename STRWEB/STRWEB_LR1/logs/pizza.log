@@ -18899,3 +18899,20 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 327: '
 [WARNING] 2025-09-17 19:49:01 "GET /static/css/style.css HTTP/1.1" 404 1853
 [WARNING] 2025-09-17 19:49:01 Not Found: /.well-known/appspecific/com.chrome.devtools.json
 [WARNING] 2025-09-17 19:49:01 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-17 19:58:56 Watching for file changes with StatReloader
+[INFO] 2025-09-17 19:58:58 "GET / HTTP/1.1" 200 15764
+[WARNING] 2025-09-17 19:58:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 19:58:58 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 19:58:58 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 19:58:58 "GET /static/img/pizza-making.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 19:59:13 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 19:59:13 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-17 19:59:13 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-17 20:00:15 "GET /faq/ HTTP/1.1" 200 17098
+[WARNING] 2025-09-17 20:00:15 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 20:00:15 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-17 20:00:15 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-17 20:00:15 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-17 20:00:31 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-17 20:00:31 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-17 20:00:31 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229

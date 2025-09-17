@@ -56,6 +56,93 @@ function calculateDeliveryTime(distance) {
         </code></pre>
     </section>
 
+    <!-- Таблица с группировкой контента -->
+    <section id="menu-section" class="faq-section">
+        <h2>Меню и цены</h2>
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Размер</th>
+                    <th>Цена</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3">Маргарита</td>
+                    <td>25 см</td>
+                    <td>500 ₽</td>
+                </tr>
+                <tr>
+                    <td>30 см</td>
+                    <td>700 ₽</td>
+                </tr>
+                <tr>
+                    <td>35 см</td>
+                    <td>900 ₽</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">* Цены указаны без учета доставки</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <!-- Разные типы списков -->
+    <section id="ingredients-section" class="faq-section">
+        <h2>Ингредиенты и рецепты</h2>
+        
+        <!-- Маркированный список с разными маркерами -->
+        <h3>Базовые ингредиенты</h3>
+        <ul class="ingredients-list">
+            <li type="disc">Мука высшего сорта</li>
+            <li type="circle">Оливковое масло</li>
+            <li type="square">Дрожжи свежие</li>
+        </ul>
+
+        <!-- Нумерованный список с разными значениями -->
+        <h3>Этапы приготовления</h3>
+        <ol class="steps-list">
+            <li value="1">Замешиваем тесто</li>
+            <li value="2">Даем подняться 2 часа</li>
+            <li value="5">Раскатываем основу</li>
+            <li value="10">Выпекаем при 350°C</li>
+        </ol>
+    </section>
+
+    <!-- Группы фигур -->
+    <section id="gallery-section" class="faq-section">
+        <h2>Галерея наших пицц</h2>
+        
+        <!-- Фигура с изображением -->
+        <figure class="pizza-photo">
+            <figcaption>Процесс приготовления</figcaption>
+            <img src="{% static 'img/making-pizza.jpg' %}" alt="Приготовление пиццы">
+        </figure>
+
+        <!-- Фигура с таблицей -->
+        <figure class="nutritional-info">
+            <figcaption>Пищевая ценность (на 100г)</figcaption>
+            <table>
+                <tr><td>Белки</td><td>9г</td></tr>
+                <tr><td>Жиры</td><td>12г</td></tr>
+                <tr><td>Углеводы</td><td>45г</td></tr>
+            </table>
+        </figure>
+
+        <!-- Фигура с кодом -->
+        <figure class="code-example">
+            <figcaption>Калькулятор калорийности</figcaption>
+            <pre><code>
+function calculateCalories(weight) {
+    return weight * 2.5;
+}
+            </code></pre>
+        </figure>
+    </section>
+
     <!-- Основные вопросы с details/summary -->
     <div class="faq-list">
         {% for faq in faqs %}
@@ -157,6 +244,82 @@ time {
     margin-top: 10px;
     color: #666;
     font-size: 0.9em;
+}
+
+/* Стили для таблиц */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+.price-table th,
+.price-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.price-table thead {
+    background: #ff6b6b;
+    color: white;
+}
+
+.price-table tfoot {
+    background: #f8f9fa;
+    font-style: italic;
+}
+
+/* Стили для списков */
+.ingredients-list,
+.steps-list {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+.ingredients-list li {
+    margin: 0.5em 0;
+}
+
+.steps-list {
+    counter-reset: step;
+}
+
+.steps-list li::before {
+    color: #ff6b6b;
+}
+
+/* Стили для фигур */
+figure {
+    margin: 2em 0;
+    padding: 1em;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+figcaption {
+    color: #666;
+    font-style: italic;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.pizza-photo img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.nutritional-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.code-example code {
+    background: #2d2d2d;
+    color: #fff;
+    padding: 1em;
+    border-radius: 4px;
+    display: block;
 }
 </style>
 {% endblock %}
