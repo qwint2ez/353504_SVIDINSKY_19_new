@@ -2,14 +2,32 @@
 {% load static %}
 
 {% block content %}
+<aside style="float: right; height: 20%; background: #ebebeb;">
+    <h2>Навигация</h2>
+    <a href="#abbr">Сокращения</a> <br>
+    <a href="#tech">Технические вопросы</a>
+</aside>
+
+<!-- <aside class="faq-aside">
+    <h2>Навигация</h2>
+    <ul>
+        <li><a href="#abbr">Сокращения</a></li>
+        <li><a href="#tech">Технические вопросы</a></li>
+    </ul>
+</aside> -->
+
 <div class="container faq-container" itemscope itemtype="https://schema.org/FAQPage">
     <h1>Часто задаваемые вопросы</h1>
 
     <!-- Навигация по разделам FAQ -->
-    <nav class="faq-nav">
+    <!-- <aside style="float: right; height: 20%;">
+        <a href="#abbr">Сокращения</a> <br>
+        <a href="#tech">Технические вопросы</a>
+    </aside> -->
+    <!-- <nav class="faq-nav">
         <a href="#abbr">Сокращения</a> |
         <a href="#tech">Технические вопросы</a>
-    </nav>
+    </nav> -->
 
     <!-- Секция с определениями -->
     <section id="terms" class="faq-section">
@@ -37,7 +55,7 @@
     <!-- Секция с цитатами -->
     <section id="quotes" class="faq-section" itemscope itemtype="https://schema.org/Quotation">
         <h2>Цитаты наших клиентов</h2>
-        <blockquote cite="https://reviews.pizza/123" itemprop="text">
+        <blockquote cite="http://127.0.0.1:8000/reviews/" itemprop="text">
             <p>Лучшая пицца в городе! Всегда горячая и вовремя.</p>
             <cite itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <span itemprop="name">Иван Петров</span>, постоянный клиент
@@ -118,7 +136,7 @@ function calculateDeliveryTime(distance) {
         
         <figure class="pizza-photo" itemscope itemtype="https://schema.org/ImageObject">
             <figcaption>Процесс приготовления</figcaption>
-            <img src="{% static 'img/making-pizza.jpg' %}" alt="Приготовление пиццы" itemprop="contentUrl">
+            <img src="{% static 'pizza-making.jpg' %}" alt="Приготовление пиццы" itemprop="contentUrl">
             <meta itemprop="name" content="Процесс приготовления пиццы">
             <meta itemprop="description" content="Изображение процесса приготовления пиццы">
         </figure>
@@ -134,11 +152,11 @@ function calculateDeliveryTime(distance) {
 
         <figure class="code-example">
             <figcaption>Калькулятор калорийности</figcaption>
-            <pre><code>
+            <code>
 function calculateCalories(weight) {
     return weight * 2.5;
 }
-            </code></pre>
+            </code>
         </figure>
     </section>
 
@@ -233,7 +251,7 @@ function calculateCalories(weight) {
     <!-- Форма для вопросов -->
     <section>
         <h2>Быстрый вопрос</h2>
-        <form itemscope itemtype="https://schema.org/ContactPoint">
+        <form itemscope itemtype="https://schema.org/ContactPoint" method="post">
             <label for="username">Имя:</label>
             <input type="text" name="username" id="username" itemprop="name"><br>
             <label for="email">Адрес эл. почты:</label>
@@ -460,6 +478,17 @@ figcaption {
 .detailed-table td[colspan] {
     text-align: center;
     background: #fff5f5;
+}
+
+.faq-aside {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 200px;
+    position: sticky;
+    top: 20px;
+    margin-left: 2rem;
 }
 </style>
 {% endblock %}
