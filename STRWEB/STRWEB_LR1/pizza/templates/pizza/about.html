@@ -18,9 +18,10 @@
         <div class="requisites">{{ company_info.requisites|linebreaks }}</div>
         {% if company_info.video_url %}
         <h3>Видео о компании</h3>
-        <video width="22%" controls preload="metadata">
+        <video width="22%" controls preload="auto">
             <!-- {{ MEDIA_URL }}media/videoplayback.mp4 -->
-        <source src="{{ company_info.video.url }}" type="'video/mp4"> 
+        <!-- <source src="{{ company_info.video.url }}" type="video/mp4">  -->
+        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
         {% endif %}
