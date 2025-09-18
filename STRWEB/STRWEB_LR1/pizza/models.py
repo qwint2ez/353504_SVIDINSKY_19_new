@@ -184,7 +184,7 @@ class CompanyInfo(models.Model):
     requisites = models.TextField()
     founding_year = models.IntegerField()
     mission = models.TextField()
-    video_url = models.URLField(null=True, blank=True)
+    video_url = models.FileField(null=True, blank=True)
     certificate_image = models.ImageField(upload_to='certificates/', blank=True, null=True)  # Новое поле
     employees = models.ManyToManyField('Employee', related_name='company')
 

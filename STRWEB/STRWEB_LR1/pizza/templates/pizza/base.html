@@ -110,10 +110,14 @@
                 btnHor.classList.remove('active');
                 btnVer.classList.add('active');
             }
+                    // Сохраняем выбор в localStorage
+        localStorage.setItem('navType', type);
         }
-        window.onload = function() {
-            showNav('hor');
-        }
+    window.onload = function() {
+        // Проверяем сохранённое значение в localStorage
+        var navType = localStorage.getItem('navType') || 'hor'; // По умолчанию 'hor', если ничего не сохранено
+        showNav(navType);
+    }
     </script>
 </head>
 <body id="top">

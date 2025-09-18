@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="container faq-container">
+<div class="container faq-container" itemscope itemtype="https://schema.org/FAQPage">
     <h1>Часто задаваемые вопросы</h1>
 
     <!-- Навигация по разделам FAQ -->
@@ -35,11 +35,13 @@
     </section>
 
     <!-- Секция с цитатами -->
-    <section id="quotes" class="faq-section">
+    <section id="quotes" class="faq-section" itemscope itemtype="https://schema.org/Quotation">
         <h2>Цитаты наших клиентов</h2>
-        <blockquote cite="https://reviews.pizza/123">
+        <blockquote cite="https://reviews.pizza/123" itemprop="text">
             <p>Лучшая пицца в городе! Всегда горячая и вовремя.</p>
-            <cite>— Иван Петров, постоянный клиент</cite>
+            <cite itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Иван Петров</span>, постоянный клиент
+            </cite>
         </blockquote>
     </section>
 
@@ -57,52 +59,52 @@ function calculateDeliveryTime(distance) {
     <!-- Таблица с группировкой контента -->
     <section id="menu-section" class="faq-section">
         <h2>Меню и цены</h2>
-        <table class="price-table">
-            <thead>
-                <tr>
-                    <th>Название</th>
-                    <th>Размер</th>
-                    <th>Цена</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td rowspan="3">Маргарита</td>
-                    <td>25 см</td>
-                    <td>500 ₽</td>
-                </tr>
-                <tr>
-                    <td>30 см</td>
-                    <td>700 ₽</td>
-                </tr>
-                <tr>
-                    <td>35 см</td>
-                    <td>900 ₽</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3">* Цены указаны без учета доставки</td>
-                </tr>
-            </tfoot>
-        </table>
+        <div itemscope itemtype="https://schema.org/Product">
+            <span itemprop="name">Маргарита</span>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Размер</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <td rowspan="3">Маргарита</td>
+                        <td>25 см</td>
+                        <td itemprop="price" content="500">500 ₽<meta itemprop="priceCurrency" content="RUB"></td>
+                    </tr>
+                    <tr itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <td>30 см</td>
+                        <td itemprop="price" content="700">700 ₽<meta itemprop="priceCurrency" content="RUB"></td>
+                    </tr>
+                    <tr itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <td>35 см</td>
+                        <td itemprop="price" content="900">900 ₽<meta itemprop="priceCurrency" content="RUB"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">* Цены указаны без учета доставки</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </section>
 
     <!-- Разные типы списков -->
-    <section id="ingredients-section" class="faq-section">
+    <section id="ingredients-section" class="faq-section" itemscope itemtype="https://schema.org/Recipe">
         <h2>Ингредиенты и рецепты</h2>
-        
-        <!-- Маркированный список с разными маркерами -->
         <h3>Базовые ингредиенты</h3>
-        <ul class="ingredients-list">
+        <ul class="ingredients-list" itemprop="recipeIngredient">
             <li type="disc">Мука высшего сорта</li>
             <li type="circle">Оливковое масло</li>
             <li type="square">Дрожжи свежие</li>
         </ul>
 
-        <!-- Нумерованный список с разными значениями -->
         <h3>Этапы приготовления</h3>
-        <ol class="steps-list">
+        <ol class="steps-list" itemprop="recipeInstructions">
             <li value="1">Замешиваем тесто</li>
             <li value="2">Даем подняться 2 часа</li>
             <li value="5">Раскатываем основу</li>
@@ -114,13 +116,13 @@ function calculateDeliveryTime(distance) {
     <section id="gallery-section" class="faq-section">
         <h2>Галерея наших пицц</h2>
         
-        <!-- Фигура с изображением -->
-        <figure class="pizza-photo">
+        <figure class="pizza-photo" itemscope itemtype="https://schema.org/ImageObject">
             <figcaption>Процесс приготовления</figcaption>
-            <img src="{% static 'img/making-pizza.jpg' %}" alt="Приготовление пиццы">
+            <img src="{% static 'img/making-pizza.jpg' %}" alt="Приготовление пиццы" itemprop="contentUrl">
+            <meta itemprop="name" content="Процесс приготовления пиццы">
+            <meta itemprop="description" content="Изображение процесса приготовления пиццы">
         </figure>
 
-        <!-- Фигура с таблицей -->
         <figure class="nutritional-info">
             <figcaption>Пищевая ценность (на 100г)</figcaption>
             <table>
@@ -130,7 +132,6 @@ function calculateDeliveryTime(distance) {
             </table>
         </figure>
 
-        <!-- Фигура с кодом -->
         <figure class="code-example">
             <figcaption>Калькулятор калорийности</figcaption>
             <pre><code>
@@ -145,7 +146,6 @@ function calculateCalories(weight) {
     <section id="tables-section" class="faq-section">
         <h2>Информация о наших пиццах</h2>
         
-        <!-- Простая таблица с заголовками -->
         <h3>Стандартные размеры</h3>
         <table class="simple-table">
             <tr>
@@ -166,77 +166,84 @@ function calculateCalories(weight) {
             </tr>
         </table>
 
-        <!-- Сложная таблица с объединением ячеек и headers -->
         <h3>Подробная информация о пиццах</h3>
-        <table class="detailed-table">
-            <thead>
-                <tr>
-                    <th id="category" rowspan="2">Категория</th>
-                    <th id="name" rowspan="2">Название</th>
-                    <th id="size" colspan="3">Размер и цена</th>
-                    <th id="calories" rowspan="2">Калории</th>
-                </tr>
-                <tr>
-                    <th id="small">25 см</th>
-                    <th id="medium">30 см</th>
-                    <th id="large">35 см</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td headers="category" rowspan="2">Классические</td>
-                    <td headers="name">Маргарита</td>
-                    <td headers="size small">450₽</td>
-                    <td headers="size medium">650₽</td>
-                    <td headers="size large">850₽</td>
-                    <td headers="calories">220 ккал</td>
-                </tr>
-                <tr>
-                    <td headers="name">Пепперони</td>
-                    <td headers="size small">500₽</td>
-                    <td headers="size medium">700₽</td>
-                    <td headers="size large">900₽</td>
-                    <td headers="calories">250 ккал</td>
-                </tr>
-                <tr>
-                    <td headers="category" colspan="2">Акция дня</td>
-                    <td headers="size small" colspan="3">Скидка 20% на все размеры</td>
-                    <td headers="calories">-</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="6">* Цены действительны при заказе на сайте</td>
-                </tr>
-            </tfoot>
-        </table>
+        <div itemscope itemtype="https://schema.org/Product">
+            <table class="detailed-table">
+                <thead>
+                    <tr>
+                        <th id="category" rowspan="2">Категория</th>
+                        <th id="name" rowspan="2">Название</th>
+                        <th id="size" colspan="3">Размер и цена</th>
+                        <th id="calories" rowspan="2">Калории</th>
+                    </tr>
+                    <tr>
+                        <th id="small">25 см</th>
+                        <th id="medium">30 см</th>
+                        <th id="large">35 см</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr itemprop="name" content="Маргарита">
+                        <td headers="category" rowspan="2">Классические</td>
+                        <td headers="name">Маргарита</td>
+                        <td headers="size small" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="450">450₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="size medium" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="650">650₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="size large" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="850">850₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="calories" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="calories">220 ккал</span></td>
+                    </tr>
+                    <tr itemprop="name" content="Пепперони">
+                        <td headers="name">Пепперони</td>
+                        <td headers="size small" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="500">500₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="size medium" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="700">700₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="size large" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="900">900₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="calories" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="calories">250 ккал</span></td>
+                    </tr>
+                    <tr>
+                        <td headers="category" colspan="2">Акция дня</td>
+                        <td headers="size small" colspan="3">Скидка 20% на все размеры</td>
+                        <td headers="calories">-</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6">* Цены действительны при заказе на сайте</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </section>
 
-    <!-- Основные вопросы с details/bmary -->
+    <!-- Основные вопросы с details/summary -->
     <div class="faq-list">
         {% for faq in faqs %}
-        <details class="faq-item">
-            <summary>{{ faq.question }}</summary>
-            <div class="faq-content">
-                {{ faq.answer }}
-                <time datetime="{{ faq.date_added|date:'Y-m-d H:i' }}">
-                    Добавлено: {{ faq.date_added|date:"d.m.Y" }}
-                </time>
-            </div>
-        </details>
+        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <details class="faq-item">
+                <summary itemprop="name">{{ faq.question }}</summary>
+                <div class="faq-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <div itemprop="text">{{ faq.answer }}</div>
+                    <time datetime="{{ faq.date_added|date:'Y-m-d H:i' }}" itemprop="datePublished">
+                        Добавлено: {{ faq.date_added|date:"d.m.Y" }}
+                    </time>
+                </div>
+            </details>
+        </div>
         {% endfor %}
     </div>
+
+    <!-- Форма для вопросов -->
     <section>
         <h2>Быстрый вопрос</h2>
-        <form>
-        Имя:
-            <input type="text" name="username"><br>
-        Адрес эл. почты:
-            <input type="text" name="email"><br>
-         Вопрос:<br>
-             <input type="radio" name="question" value="nonsense">Бесполезный<br>
-            <input type="radio" name="question" value="dumb">Глупый<br>
-
+        <form itemscope itemtype="https://schema.org/ContactPoint">
+            <label for="username">Имя:</label>
+            <input type="text" name="username" id="username" itemprop="name"><br>
+            <label for="email">Адрес эл. почты:</label>
+            <input type="text" name="email" id="email" itemprop="email"><br>
+            <label>Вопрос:<br>
+                <input type="radio" name="question" value="nonsense" id="nonsense">
+                <label for="nonsense">Бесполезный</label><br>
+                <input type="radio" name="question" value="dumb" id="dumb">
+                <label for="dumb">Глупый</label><br>
+            </label>
             <input type="submit" value="Отправить">
             <input type="reset" value="Очистить">
         </form>
@@ -244,6 +251,7 @@ function calculateCalories(weight) {
 </div>
 
 <style>
+/* Стили остаются без изменений, так как микроразметка не влияет на CSS */
 .faq-container {
     max-width: 800px;
     margin: 2rem auto;
