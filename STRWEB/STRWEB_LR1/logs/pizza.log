@@ -22784,3 +22784,27 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'order' not found. 'order' is
 [WARNING] 2025-09-18 21:52:43 "GET /static/css/style.css HTTP/1.1" 404 1853
 [WARNING] 2025-09-18 21:52:43 Not Found: /.well-known/appspecific/com.chrome.devtools.json
 [WARNING] 2025-09-18 21:52:43 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 21:54:30 Watching for file changes with StatReloader
+[INFO] 2025-09-18 21:54:31 "GET /faq/?username=fgvhb&email=v+nvhbj HTTP/1.1" 200 24438
+[WARNING] 2025-09-18 21:54:31 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 21:54:31 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 21:54:31 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 21:54:31 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 21:54:31 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 21:54:33 "GET /faq/?username=fgvhb&email=v+nvhbj HTTP/1.1" 200 24438
+[WARNING] 2025-09-18 21:54:33 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 21:54:33 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 21:54:33 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 21:54:33 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 21:54:33 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 21:54:43 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 21:54:43 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 21:54:43 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 21:55:37 "GET /faq/?username=fgvhb&email=v+nvhbj HTTP/1.1" 200 24416
+[WARNING] 2025-09-18 21:55:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 21:55:37 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 21:55:37 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 21:57:11 "GET /faq/?username=fgvhb&email=v+nvhbj HTTP/1.1" 200 24416
+[WARNING] 2025-09-18 21:57:11 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 21:57:11 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 21:57:11 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
