@@ -149,9 +149,17 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
     template_name = 'pizza/order_form.html'
     success_url = reverse_lazy('pizza:order_complete')
 
+class OrderCreateView(LoginRequiredMixin, CreateView):
+    model = Order
+    form_class = OrderForm
+    template_name = 'pizza/order_form.html'
+    success_url = reverse_lazy('pizza:order_complete')
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['pizzas'] = Pizza.objects.all()
+        cart = Cart.objects.filter(user=self.request.user).first()
+        context['cart_items'] = cart.items.all() if cart else []
+        context['pizzas'] = Pizza.objects.all()  # Для совместимости с текущей логикой
         
         # Добавляем погоду
         weather_service = WeatherService()
@@ -159,7 +167,7 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
         if weather:
             context['weather'] = weather
             
-        # Добавляем цитату из Breaking Bad
+        # Добавляем цитату
         quote_service = QuoteService()
         quote = quote_service.get_quote()
         if quote:
@@ -173,6 +181,7 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
             order = form.save(commit=False)
             order.customer = self.request.user.customer
             order.status = 'pending'
+            order.payment_status = 'pending'
             
             # Убедимся, что delivery_date в UTC
             delivery_date = form.cleaned_data.get('delivery_date')
@@ -185,30 +194,34 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
 
             total_price = 0
             has_items = False
+            cart = Cart.objects.filter(user=self.request.user).first()
 
-            for pizza in Pizza.objects.all():
-                quantity = int(self.request.POST.get(f'quantity_{pizza.id}', 0))
-                size_id = self.request.POST.get(f'size_{pizza.id}')
-
-                if quantity > 0 and size_id:
-                    has_items = True
-                    size = PizzaSize.objects.get(id=size_id)
-                    try:
-                        pricing = PizzaPricing.objects.get(pizza=pizza, size=size)
+            if cart and cart.items.exists():
+                for item in cart.items.all():
+                    size_id = self.request.POST.get(f'size_{item.pizza.id}')
+                    quantity = int(self.request.POST.get(f'quantity_{item.pizza.id}', 0))
+                    if quantity > 0 and size_id:
+                        has_items = True
+                        size = PizzaSize.objects.get(id=size_id)
+                        pricing = PizzaPricing.objects.get(pizza=item.pizza, size=size)
                         OrderItem.objects.create(
                             order=order,
-                            pizza=pizza,
+                            pizza=item.pizza,
                             size=size,
                             quantity=quantity,
                             item_price=pricing.price * quantity
                         )
                         total_price += pricing.price * quantity
-                    except PizzaPricing.DoesNotExist:
-                        messages.error(self.request, f'Ошибка с ценой для пиццы {pizza.name}')
-                        return self.form_invalid(form)
+
+                # Очищаем корзину после создания заказа
+                cart.items.all().delete()
+            else:
+                messages.error(self.request, 'Ваша корзина пуста')
+                return self.form_invalid(form)
 
             if not has_items:
                 messages.error(self.request, 'Выберите хотя бы одну пиццу')
+                order.delete()  # Удаляем пустой заказ
                 return self.form_invalid(form)
 
             order.total_price = total_price

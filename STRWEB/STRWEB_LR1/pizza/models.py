@@ -287,11 +287,15 @@ class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def get_total_price(self):
+        return sum(item.get_total_price() for item in self.items.all())
+
 class CartItem(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items')
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    size = models.ForeignKey(PizzaSize, on_delete=models.CASCADE, null=True)
     quantity = models.PositiveIntegerField(default=1)
 
     def get_total_price(self):
-        base_price = self.pizza.get_base_price()
-        return base_price * self.quantity if base_price else 0
+        pricing = PizzaPricing.objects.filter(pizza=self.pizza, size=self.size).first()
+        return pricing.price * self.quantity if pricing else 0

@@ -21721,3 +21721,730 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 22: 's
 [WARNING] 2025-09-18 20:19:11 Method Not Allowed (POST): /payment/
 [WARNING] 2025-09-18 20:19:11 Method Not Allowed: /payment/
 [WARNING] 2025-09-18 20:19:11 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:23:08 Watching for file changes with StatReloader
+[INFO] 2025-09-18 20:23:14 "GET / HTTP/1.1" 200 16061
+[WARNING] 2025-09-18 20:23:14 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:23:14 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:23:14 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:23:16 "GET /about/ HTTP/1.1" 200 9737
+[WARNING] 2025-09-18 20:23:16 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:23:16 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:23:16 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:23:18 "GET /cart/ HTTP/1.1" 200 11418
+[WARNING] 2025-09-18 20:23:18 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:23:18 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:23:18 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:23:21 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[ERROR] 2025-09-18 20:23:22 Internal Server Error: /menu/
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'pizza_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['pizza/(?P<pk>[0-9]+)/\\Z']
+[ERROR] 2025-09-18 20:23:22 "GET /menu/ HTTP/1.1" 500 179535
+[DEBUG] 2025-09-18 20:29:56 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:29:56 "GET /menu/ HTTP/1.1" 200 15902
+[WARNING] 2025-09-18 20:29:56 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:29:56 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:29:56 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:29:59 "GET /cart/ HTTP/1.1" 200 9984
+[WARNING] 2025-09-18 20:29:59 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:29:59 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:29:59 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:30:01 "GET /payment/ HTTP/1.1" 200 9045
+[WARNING] 2025-09-18 20:30:01 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:30:01 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:30:01 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:30:03 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:30:03 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:30:03 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:31:25 "GET /order/new/ HTTP/1.1" 200 39527
+[WARNING] 2025-09-18 20:31:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:31:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:31:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:31:34 Starting order creation process for user alexander
+[INFO] 2025-09-18 20:31:34 Order created: 5 by user alexander
+[INFO] 2025-09-18 20:31:34 "POST /order/new/ HTTP/1.1" 200 39820
+[WARNING] 2025-09-18 20:31:34 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:31:34 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:31:34 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:31:38 Starting order creation process for user alexander
+[INFO] 2025-09-18 20:31:38 Order created: 6 by user alexander
+[INFO] 2025-09-18 20:31:38 "POST /order/new/ HTTP/1.1" 200 39820
+[WARNING] 2025-09-18 20:31:38 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:31:38 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:31:38 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:31:41 Starting order creation process for user alexander
+[INFO] 2025-09-18 20:31:41 Order created: 7 by user alexander
+[INFO] 2025-09-18 20:31:41 "POST /order/new/ HTTP/1.1" 200 39820
+[WARNING] 2025-09-18 20:31:41 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:31:41 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:31:41 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:31:47 Starting order creation process for user alexander
+[INFO] 2025-09-18 20:31:47 Order created: 8 by user alexander
+[INFO] 2025-09-18 20:31:47 Order 8 completed with total price: 600.00
+[INFO] 2025-09-18 20:31:47 "POST /order/new/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:31:47 "GET /order/complete/ HTTP/1.1" 200 9061
+[WARNING] 2025-09-18 20:31:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:31:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:31:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:32:16 "GET / HTTP/1.1" 200 16061
+[WARNING] 2025-09-18 20:32:16 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 20:32:16 "GET /media/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 20:32:16 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:32:16 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:32:18 "GET /payment/ HTTP/1.1" 200 9045
+[WARNING] 2025-09-18 20:32:18 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:32:18 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:32:18 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:32:22 "GET /cart/ HTTP/1.1" 200 9984
+[WARNING] 2025-09-18 20:32:22 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:32:22 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:32:22 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 20:32:24 "GET /payment/ HTTP/1.1" 200 9045
+[WARNING] 2025-09-18 20:32:24 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:32:24 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:32:24 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:32:25 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:32:25 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:32:25 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:32:28 "GET /payment/ HTTP/1.1" 200 9045
+[WARNING] 2025-09-18 20:32:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:32:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:32:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:32:30 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:32:30 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:32:30 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:32:54 "GET / HTTP/1.1" 200 16061
+[WARNING] 2025-09-18 20:32:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:32:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:32:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 20:32:57 "GET /about/ HTTP/1.1" 200 9737
+[WARNING] 2025-09-18 20:32:57 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:32:57 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:32:57 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:32:57 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:32:57 "GET /menu/ HTTP/1.1" 200 15902
+[WARNING] 2025-09-18 20:32:57 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:32:57 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:32:57 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:33:04 "GET /pizza/1/ HTTP/1.1" 200 10173
+[WARNING] 2025-09-18 20:33:05 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:33:05 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:33:05 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:33:09 "GET /order/new/ HTTP/1.1" 200 39527
+[WARNING] 2025-09-18 20:33:09 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:33:09 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:33:09 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:33:14 "GET /about/ HTTP/1.1" 200 9737
+[WARNING] 2025-09-18 20:33:14 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:33:14 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:33:14 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 20:33:20 "GET /admin/ HTTP/1.1" 200 22452
+[INFO] 2025-09-18 20:33:23 "GET /admin/pizza/pizza/ HTTP/1.1" 200 27134
+[INFO] 2025-09-18 20:33:23 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 20:33:25 "GET /admin/pizza/pizza/10/change/ HTTP/1.1" 200 40293
+[INFO] 2025-09-18 20:33:25 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+[INFO] 2025-09-18 20:33:25 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 20:33:25 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 304 0
+[INFO] 2025-09-18 20:33:41 "POST /admin/pizza/pizza/10/change/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:33:41 "GET /admin/pizza/pizza/ HTTP/1.1" 200 27360
+[INFO] 2025-09-18 20:33:41 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 20:33:42 "GET /admin/pizza/pizza/9/change/ HTTP/1.1" 200 40219
+[INFO] 2025-09-18 20:33:42 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 20:33:47 "POST /admin/pizza/pizza/9/change/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:33:47 "GET /admin/pizza/pizza/ HTTP/1.1" 200 27349
+[INFO] 2025-09-18 20:33:47 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 20:33:49 "GET /admin/pizza/pizza/8/change/ HTTP/1.1" 200 40099
+[INFO] 2025-09-18 20:33:49 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 20:33:52 "POST /admin/pizza/pizza/8/change/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:33:53 "GET /admin/pizza/pizza/ HTTP/1.1" 200 27339
+[INFO] 2025-09-18 20:33:53 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 20:33:56 "GET / HTTP/1.1" 200 16061
+[WARNING] 2025-09-18 20:33:56 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:33:56 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:33:56 "GET /static/js/main.js HTTP/1.1" 404 1844
+[DEBUG] 2025-09-18 20:33:58 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:33:58 "GET /menu/ HTTP/1.1" 200 15902
+[WARNING] 2025-09-18 20:33:58 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:33:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:33:58 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:34:01 "GET /pizza/10/ HTTP/1.1" 200 10422
+[WARNING] 2025-09-18 20:34:01 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:34:01 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:34:01 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:34:01 "GET /media/pizzas/4cheese_khHW15i.jfif HTTP/1.1" 200 16241
+[WARNING] 2025-09-18 20:34:01 Not Found: /pizza/10/static/pizza-logo.webp
+[WARNING] 2025-09-18 20:34:01 "GET /pizza/10/static/pizza-logo.webp HTTP/1.1" 404 11178
+[INFO] 2025-09-18 20:34:04 "GET /pizza/1/ HTTP/1.1" 200 10173
+[WARNING] 2025-09-18 20:34:04 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:34:04 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:34:04 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:34:07 "GET /pizza/10/ HTTP/1.1" 200 10422
+[WARNING] 2025-09-18 20:34:07 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 20:34:07 "GET /media/pizzas/4cheese_khHW15i.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-18 20:34:07 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:34:07 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:34:10 "GET /order/new/ HTTP/1.1" 200 39527
+[WARNING] 2025-09-18 20:34:10 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:34:10 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:34:10 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:34:19 "GET / HTTP/1.1" 200 16061
+[WARNING] 2025-09-18 20:34:19 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:34:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:34:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:35:52 "GET /cart/ HTTP/1.1" 200 9984
+[WARNING] 2025-09-18 20:35:52 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:35:52 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:35:52 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:35:54 "GET /payment/ HTTP/1.1" 200 9045
+[WARNING] 2025-09-18 20:35:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:35:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:35:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:35:54 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:35:54 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:35:54 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:36:44 "GET / HTTP/1.1" 200 16061
+[WARNING] 2025-09-18 20:36:44 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:36:44 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:36:44 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:36:46 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:36:46 "GET /menu/ HTTP/1.1" 200 15902
+[WARNING] 2025-09-18 20:36:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:36:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:36:46 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 20:36:47 "GET /pizza/1/ HTTP/1.1" 200 10173
+[WARNING] 2025-09-18 20:36:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:36:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:36:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:37:33 "GET /pizza/1/ HTTP/1.1" 200 10173
+[WARNING] 2025-09-18 20:37:33 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:37:33 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:37:33 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:37:33 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:37:33 "GET /menu/ HTTP/1.1" 200 19508
+[WARNING] 2025-09-18 20:37:33 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:37:33 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:37:33 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 20:37:35 "POST /cart/add/1/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:37:35 "GET /cart/ HTTP/1.1" 200 10869
+[WARNING] 2025-09-18 20:37:35 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:37:35 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:37:35 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:37:38 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:37:38 "GET /menu/ HTTP/1.1" 200 19508
+[WARNING] 2025-09-18 20:37:38 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:37:38 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:37:38 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:37:41 "POST /cart/add/2/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:37:41 "GET /cart/ HTTP/1.1" 200 11754
+[WARNING] 2025-09-18 20:37:41 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:37:41 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:37:41 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:37:43 "GET /payment/ HTTP/1.1" 200 9341
+[WARNING] 2025-09-18 20:37:43 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:37:43 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:37:43 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:37:45 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:37:45 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:37:45 "POST /payment/ HTTP/1.1" 405 0
+[DEBUG] 2025-09-18 20:39:00 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:39:00 "GET /menu/ HTTP/1.1" 200 19508
+[WARNING] 2025-09-18 20:39:00 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:00 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:39:00 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:39:02 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:39:02 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:39:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:39:05 "GET /payment/ HTTP/1.1" 200 9432
+[WARNING] 2025-09-18 20:39:05 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:39:05 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:05 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:39:06 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:39:06 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:39:06 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:39:10 "GET /payment/ HTTP/1.1" 200 9432
+[WARNING] 2025-09-18 20:39:10 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:10 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:39:10 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:39:12 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:39:12 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:39:12 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:39:36 "GET /order/new/ HTTP/1.1" 200 39527
+[WARNING] 2025-09-18 20:39:36 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:36 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:39:36 "GET /static/js/main.js HTTP/1.1" 404 1844
+[DEBUG] 2025-09-18 20:39:43 Starting order creation process for user alexander
+[INFO] 2025-09-18 20:39:43 Order created: 9 by user alexander
+[INFO] 2025-09-18 20:39:43 Order 9 completed with total price: 600.00
+[INFO] 2025-09-18 20:39:43 "POST /order/new/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:39:43 "GET /order/complete/ HTTP/1.1" 200 9473
+[WARNING] 2025-09-18 20:39:43 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:43 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:39:43 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:39:48 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:39:48 "GET /menu/ HTTP/1.1" 200 19508
+[WARNING] 2025-09-18 20:39:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:39:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:39:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 20:39:53 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:39:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:39:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:39:55 "GET /about/ HTTP/1.1" 200 9737
+[WARNING] 2025-09-18 20:39:55 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:55 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:39:55 "GET /static/js/main.js HTTP/1.1" 404 1844
+[DEBUG] 2025-09-18 20:39:55 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:39:55 "GET /menu/ HTTP/1.1" 200 19508
+[WARNING] 2025-09-18 20:39:55 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:39:55 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:55 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:39:57 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:39:57 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:57 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:39:57 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:39:58 "GET /payment/ HTTP/1.1" 200 9432
+[WARNING] 2025-09-18 20:39:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:39:58 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:39:58 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:39:59 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:39:59 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:39:59 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:40:21 "GET /payment/ HTTP/1.1" 200 9432
+[WARNING] 2025-09-18 20:40:21 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:40:21 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:40:21 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:40:37 "GET /order/complete/ HTTP/1.1" 200 9214
+[INFO] 2025-09-18 20:41:48 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:41:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:41:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:41:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:41:49 "POST /cart/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:41:49 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:41:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:41:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:41:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:41:50 "POST /cart/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:41:50 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:41:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:41:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:41:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:41:50 "POST /cart/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:41:50 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:41:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:41:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:41:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:41:51 "POST /cart/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:41:51 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:41:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:41:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:41:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:43:00 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:43:00 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:43:00 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:43:00 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:43:01 "GET /payment/ HTTP/1.1" 200 9713
+[WARNING] 2025-09-18 20:43:01 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:43:01 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:43:01 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:43:02 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:43:02 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:43:02 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:43:07 "GET /payment/ HTTP/1.1" 200 9713
+[WARNING] 2025-09-18 20:43:07 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:43:07 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:43:07 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:43:08 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:43:08 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:43:08 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:43:24 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:43:24 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:43:24 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:43:24 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:43:53 "GET / HTTP/1.1" 200 16061
+[WARNING] 2025-09-18 20:43:53 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 20:43:54 "GET /media/partners/dodo.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 20:43:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:43:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:43:56 "GET /order/complete/ HTTP/1.1" 200 9214
+[WARNING] 2025-09-18 20:43:56 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:43:56 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:43:56 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:44:50 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:44:50 "GET /menu/ HTTP/1.1" 200 19508
+[WARNING] 2025-09-18 20:44:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:44:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:44:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:44:53 "POST /cart/add/5/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:44:53 "GET /cart/ HTTP/1.1" 200 13204
+[WARNING] 2025-09-18 20:44:53 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:44:53 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:44:53 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 20:44:56 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 20:44:56 "GET /menu/ HTTP/1.1" 200 19508
+[WARNING] 2025-09-18 20:44:56 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:44:56 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:44:56 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 20:44:58 "POST /cart/add/3/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 20:44:58 "GET /cart/ HTTP/1.1" 200 14100
+[WARNING] 2025-09-18 20:44:58 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:44:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:44:58 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:45:00 "GET /payment/ HTTP/1.1" 200 9779
+[WARNING] 2025-09-18 20:45:00 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:45:00 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:45:00 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:45:05 Method Not Allowed (POST): /payment/
+[WARNING] 2025-09-18 20:45:05 Method Not Allowed: /payment/
+[WARNING] 2025-09-18 20:45:05 "POST /payment/ HTTP/1.1" 405 0
+[INFO] 2025-09-18 20:45:17 "GET /order/new/ HTTP/1.1" 200 39527
+[WARNING] 2025-09-18 20:45:17 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:45:17 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:45:17 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:45:21 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:45:21 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 20:45:21 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 20:46:00 "GET /cart/ HTTP/1.1" 200 14100
+[WARNING] 2025-09-18 20:46:00 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:46:00 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:46:00 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 20:46:01 "GET /payment/ HTTP/1.1" 200 9779
+[WARNING] 2025-09-18 20:46:01 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:46:01 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:46:01 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:46:32 "GET /order/new/ HTTP/1.1" 200 39527
+[WARNING] 2025-09-18 20:46:32 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:46:32 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:46:32 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:47:48 "GET /cart/ HTTP/1.1" 200 14100
+[WARNING] 2025-09-18 20:47:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:47:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:47:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:47:49 "GET /payment/ HTTP/1.1" 200 9779
+[WARNING] 2025-09-18 20:47:49 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:47:49 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:47:49 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 20:47:51 "GET /order/new/ HTTP/1.1" 200 39527
+[WARNING] 2025-09-18 20:47:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:47:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:47:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:48:00 "GET /order/new/ HTTP/1.1" 200 39527
+[WARNING] 2025-09-18 20:48:00 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:48:00 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:48:00 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:48:01 "GET /contacts/ HTTP/1.1" 200 8662
+[WARNING] 2025-09-18 20:48:01 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:48:01 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:48:01 "GET /static/js/main.js HTTP/1.1" 404 1844
+[ERROR] 2025-09-18 20:48:03 Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\views.py", line 705, in get
+    return render(request, self.template_name, {'cart': cart})
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order/new/' not found. 'order/new/' is not a valid view function or pattern name.
+[ERROR] 2025-09-18 20:48:03 "GET /cart/ HTTP/1.1" 500 184398
+[ERROR] 2025-09-18 20:48:06 Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\views.py", line 705, in get
+    return render(request, self.template_name, {'cart': cart})
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order/new/' not found. 'order/new/' is not a valid view function or pattern name.
+[ERROR] 2025-09-18 20:48:06 "GET /cart/ HTTP/1.1" 500 184398
+[INFO] 2025-09-18 20:48:14 "GET /cart/ HTTP/1.1" 200 14100
+[WARNING] 2025-09-18 20:48:14 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:48:14 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:48:14 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-09-18 20:48:27 Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\views.py", line 705, in get
+    return render(request, self.template_name, {'cart': cart})
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order' not found. 'order' is not a valid view function or pattern name.
+[ERROR] 2025-09-18 20:48:27 "GET /cart/ HTTP/1.1" 500 184410
+[INFO] 2025-09-18 20:48:46 "GET /cart/ HTTP/1.1" 200 14100
+[WARNING] 2025-09-18 20:48:46 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:48:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:48:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:48:57 "GET /faq/ HTTP/1.1" 200 25853
+[WARNING] 2025-09-18 20:48:57 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 20:48:57 "GET /static/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 20:48:57 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:48:57 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 20:48:59 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:48:59 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 20:48:59 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 20:51:28 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\models.py changed, reloading.
+[INFO] 2025-09-18 20:51:29 Watching for file changes with StatReloader
+[INFO] 2025-09-18 20:53:19 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\views.py changed, reloading.
+[INFO] 2025-09-18 20:53:19 Watching for file changes with StatReloader
+[INFO] 2025-09-18 20:53:32 Watching for file changes with StatReloader
+[INFO] 2025-09-18 20:53:35 "GET /faq/ HTTP/1.1" 200 25853
+[WARNING] 2025-09-18 20:53:35 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 20:53:35 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 20:53:35 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:53:35 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:53:35 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:53:39 "GET /cart/ HTTP/1.1" 200 14959
+[WARNING] 2025-09-18 20:53:39 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:53:39 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:53:39 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:53:42 "GET /order/new/ HTTP/1.1" 200 23837
+[WARNING] 2025-09-18 20:53:42 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:53:42 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:53:42 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:53:54 "GET /order/new/ HTTP/1.1" 200 23837
+[WARNING] 2025-09-18 20:53:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:53:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:53:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 20:53:59 "GET /cart/ HTTP/1.1" 200 14959
+[WARNING] 2025-09-18 20:53:59 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 20:53:59 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 20:53:59 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
