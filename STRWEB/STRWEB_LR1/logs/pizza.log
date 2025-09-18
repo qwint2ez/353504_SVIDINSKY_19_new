@@ -19414,3 +19414,1289 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 327: '
 [INFO] 2025-09-17 21:04:39 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 [INFO] 2025-09-17 21:04:41 "GET /admin/pizza/banner/3/change/ HTTP/1.1" 200 18979
 [INFO] 2025-09-17 21:04:41 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:01:47 Watching for file changes with StatReloader
+[INFO] 2025-09-18 17:01:56 "GET / HTTP/1.1" 200 15734
+[INFO] 2025-09-18 17:01:56 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 17:01:56 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 17:01:56 "GET /media/partners/dodo.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 17:01:56 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:01:56 "GET /static/img/pizza-making.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:01:56 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:01:56 "GET /static/img/favicon.png HTTP/1.1" 404 1859
+[WARNING] 2025-09-18 17:02:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:02:46 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:02:46 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:03:08 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:03:08 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:03:28 "GET /faq/ HTTP/1.1" 200 20820
+[WARNING] 2025-09-18 17:03:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:03:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:03:28 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:03:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:03:38 "GET /order/new/ HTTP/1.1" 200 39182
+[WARNING] 2025-09-18 17:03:38 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:03:38 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:03:38 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:03:47 "GET /couriers/ HTTP/1.1" 200 8632
+[WARNING] 2025-09-18 17:03:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:03:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:03:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:03:55 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:03:55 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:03:55 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:04:36 "GET /news/ HTTP/1.1" 200 9209
+[WARNING] 2025-09-18 17:04:36 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 17:04:36 "GET /media/articles/11.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-18 17:04:36 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:04:36 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:04:39 "GET /about/ HTTP/1.1" 200 9377
+[INFO] 2025-09-18 17:04:39 "GET /media/certificates/sert.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-18 17:04:39 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:04:39 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:04:39 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:04:40 "GET / HTTP/1.1" 200 15734
+[WARNING] 2025-09-18 17:04:40 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:04:40 "GET /static/img/pizza-making.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:04:40 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:04:40 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:04:44 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:04:44 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:04:44 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:09:09 "GET /faq/ HTTP/1.1" 200 20820
+[WARNING] 2025-09-18 17:09:09 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:09:09 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:09:09 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:09:09 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:09:09 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:09:09 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:11:32 "GET /admin/ HTTP/1.1" 200 22510
+[WARNING] 2025-09-18 17:11:33 Not Found: /favicon.ico
+[WARNING] 2025-09-18 17:11:33 "GET /favicon.ico HTTP/1.1" 404 11118
+[INFO] 2025-09-18 17:11:35 "GET / HTTP/1.1" 200 15734
+[WARNING] 2025-09-18 17:11:35 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:11:35 "GET /static/img/pizza-making.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:11:35 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:11:35 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:11:36 "GET /admin/ HTTP/1.1" 200 22510
+[INFO] 2025-09-18 17:11:39 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 18006
+[INFO] 2025-09-18 17:11:39 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:11:40 "GET /admin/pizza/companyinfo/1/change/ HTTP/1.1" 200 25249
+[INFO] 2025-09-18 17:11:40 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:11:53 "GET /admin/pizza/companyinfo/1/change/ HTTP/1.1" 200 25249
+[INFO] 2025-09-18 17:12:23 "GET / HTTP/1.1" 200 15734
+[WARNING] 2025-09-18 17:12:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:12:23 "GET /static/img/pizza-making.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:12:23 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:12:23 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:12:24 "GET /about/ HTTP/1.1" 200 9377
+[WARNING] 2025-09-18 17:12:24 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:12:24 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:12:24 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:12:41 "GET / HTTP/1.1" 200 15734
+[WARNING] 2025-09-18 17:12:41 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:12:41 "GET /static/img/pizza-making.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:12:41 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:12:41 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:12:45 "GET /about/ HTTP/1.1" 200 9377
+[WARNING] 2025-09-18 17:12:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:12:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:12:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:12:50 Privacy policy viewed by alexander
+[INFO] 2025-09-18 17:12:50 "GET /privacy-policy/ HTTP/1.1" 200 8214
+[WARNING] 2025-09-18 17:12:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:12:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:12:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:12:55 "GET /couriers/ HTTP/1.1" 200 8632
+[WARNING] 2025-09-18 17:12:55 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:12:55 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:12:55 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:12:56 "GET /admin/ HTTP/1.1" 200 22510
+[INFO] 2025-09-18 17:13:00 "GET /admin/auth/user/ HTTP/1.1" 200 20375
+[INFO] 2025-09-18 17:13:00 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:13:03 "GET /admin/auth/user/add/ HTTP/1.1" 200 21066
+[INFO] 2025-09-18 17:13:03 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:13:03 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+[INFO] 2025-09-18 17:13:03 "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+[INFO] 2025-09-18 17:13:21 "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 17:13:21 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 36973
+[INFO] 2025-09-18 17:13:21 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:13:27 "GET /admin/pizza/employee/ HTTP/1.1" 200 18821
+[INFO] 2025-09-18 17:13:27 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:13:32 "GET /admin/pizza/courier/ HTTP/1.1" 200 16467
+[INFO] 2025-09-18 17:13:32 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:13:34 "GET /admin/pizza/courier/add/ HTTP/1.1" 200 22145
+[INFO] 2025-09-18 17:13:34 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:14:01 "POST /admin/pizza/courier/add/ HTTP/1.1" 200 22647
+[INFO] 2025-09-18 17:14:01 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:14:10 "POST /admin/pizza/courier/add/ HTTP/1.1" 200 22468
+[INFO] 2025-09-18 17:14:10 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:14:16 "POST /admin/pizza/courier/add/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 17:14:16 "GET /admin/pizza/courier/ HTTP/1.1" 200 17946
+[INFO] 2025-09-18 17:14:16 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:14:19 "GET / HTTP/1.1" 200 15734
+[WARNING] 2025-09-18 17:14:19 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:14:19 "GET /static/img/pizza-making.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:14:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:14:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:14:21 "GET /jobs/ HTTP/1.1" 200 9005
+[WARNING] 2025-09-18 17:14:21 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:14:21 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:14:21 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 17:14:22 "GET /contacts/ HTTP/1.1" 200 8317
+[WARNING] 2025-09-18 17:14:22 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:14:22 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:14:22 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:14:23 "GET /jobs/ HTTP/1.1" 200 9005
+[WARNING] 2025-09-18 17:14:23 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:14:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:14:23 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:14:24 "GET /reviews/ HTTP/1.1" 200 10633
+[WARNING] 2025-09-18 17:14:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:14:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:14:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:14:25 "GET /cart/ HTTP/1.1" 200 9639
+[WARNING] 2025-09-18 17:14:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:14:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:14:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:14:27 "GET /orders/ HTTP/1.1" 200 11516
+[WARNING] 2025-09-18 17:14:27 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:14:27 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:14:27 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:14:28 "GET /couriers/ HTTP/1.1" 200 8857
+[WARNING] 2025-09-18 17:14:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:14:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:14:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:14:32 "GET /admin/ HTTP/1.1" 200 22401
+[INFO] 2025-09-18 17:22:02 Watching for file changes with StatReloader
+[INFO] 2025-09-18 17:22:05 "GET /couriers/ HTTP/1.1" 200 8857
+[WARNING] 2025-09-18 17:22:05 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:22:05 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:22:05 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:22:07 "GET /faq/ HTTP/1.1" 200 21314
+[WARNING] 2025-09-18 17:22:07 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:22:07 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:22:07 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:22:07 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:22:30 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:22:30 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:22:30 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:22:33 "GET /faq/ HTTP/1.1" 200 21314
+[WARNING] 2025-09-18 17:22:33 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:22:33 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:22:33 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:22:33 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:23:20 "GET /faq/ HTTP/1.1" 200 21314
+[WARNING] 2025-09-18 17:23:20 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:23:20 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:23:20 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:23:20 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:23:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:23:23 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:23:23 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:23:58 "GET /faq/ HTTP/1.1" 200 21326
+[WARNING] 2025-09-18 17:23:58 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:23:58 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:23:58 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:23:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:23:58 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:23:58 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:24:40 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:24:40 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:24:40 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:24:40 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:24:40 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:26:02 "GET /faq/ HTTP/1.1" 200 21337
+[WARNING] 2025-09-18 17:26:02 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:26:02 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:26:02 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:26:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:26:02 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:26:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:26:10 Forbidden (CSRF token missing.): /faq/
+[WARNING] 2025-09-18 17:26:10 "POST /faq/ HTTP/1.1" 403 2491
+[WARNING] 2025-09-18 17:26:10 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:26:10 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:26:14 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:26:14 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:26:46 "GET /faq/ HTTP/1.1" 200 21313
+[WARNING] 2025-09-18 17:26:46 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:26:46 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:26:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:26:46 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:26:46 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:26:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:26:53 "GET /faq/?username=%D1%8B%D1%8B%D0%B2&email=%D1%8B%D0%B2%D0%BF&question=nonsense HTTP/1.1" 200 21313
+[WARNING] 2025-09-18 17:26:53 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:26:53 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:26:53 - Broken pipe from ('127.0.0.1', 57187)
+[WARNING] 2025-09-18 17:26:53 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:26:53 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:26:53 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:26:53 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:27:29 "GET /faq/?username=%D0%97%D0%B0%D0%B2%D0%BE%D0%B7&email=sfsagasgd&question=nonsense HTTP/1.1" 200 21313
+[WARNING] 2025-09-18 17:27:29 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:27:29 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:27:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:27:29 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:27:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:27:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:27:37 "GET /about/ HTTP/1.1" 200 9377
+[WARNING] 2025-09-18 17:27:37 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:27:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:27:37 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:27:46 "GET / HTTP/1.1" 200 15734
+[WARNING] 2025-09-18 17:27:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:27:46 "GET /static/img/pizza-making.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 17:27:46 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:27:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:29:42 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:29:42 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:29:42 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:31:50 "GET / HTTP/1.1" 200 15736
+[WARNING] 2025-09-18 17:31:50 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:31:50 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:31:50 "GET /static/media/pizza-making.jpg HTTP/1.1" 404 1880
+[WARNING] 2025-09-18 17:31:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:31:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:31:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:31:51 "GET / HTTP/1.1" 200 15736
+[WARNING] 2025-09-18 17:31:51 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:31:51 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:31:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:31:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:31:51 "GET /static/media/pizza-making.jpg HTTP/1.1" 404 1880
+[WARNING] 2025-09-18 17:31:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-09-18 17:32:15 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 124: 'media', expected 'endblock'. Did you forget to register or load this tag?
+[ERROR] 2025-09-18 17:32:15 "GET / HTTP/1.1" 500 189111
+[WARNING] 2025-09-18 17:32:15 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:32:15 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:32:48 "GET / HTTP/1.1" 200 15736
+[WARNING] 2025-09-18 17:32:48 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:32:48 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:32:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:32:48 "GET /static/media/pizza-making.jpg HTTP/1.1" 404 1880
+[WARNING] 2025-09-18 17:32:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:32:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:36:44 "GET /cart/ HTTP/1.1" 200 9639
+[WARNING] 2025-09-18 17:36:44 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:36:44 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:36:44 - Broken pipe from ('127.0.0.1', 58024)
+[WARNING] 2025-09-18 17:36:44 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:36:44 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:36:44 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:36:54 "GET / HTTP/1.1" 200 15736
+[WARNING] 2025-09-18 17:36:54 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:36:54 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:36:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:36:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:36:54 "GET /static/media/pizza-making.jpg HTTP/1.1" 404 1880
+[WARNING] 2025-09-18 17:36:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:37:12 "GET /admin/ HTTP/1.1" 200 22401
+[WARNING] 2025-09-18 17:37:12 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:37:12 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:38:35 "GET / HTTP/1.1" 200 15736
+[WARNING] 2025-09-18 17:38:35 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:38:35 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:38:35 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:38:35 "GET /static/media/pizza-making.jpg HTTP/1.1" 404 1880
+[WARNING] 2025-09-18 17:38:35 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:38:35 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:42:22 "GET / HTTP/1.1" 200 15734
+[WARNING] 2025-09-18 17:42:22 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:42:22 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:42:22 - Broken pipe from ('127.0.0.1', 58364)
+[WARNING] 2025-09-18 17:42:22 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:42:22 "GET /static/media/pizza-making.jpg HTTP/1.1" 404 1880
+[WARNING] 2025-09-18 17:42:22 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:42:22 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:42:22 "GET /media/pizza-logo.webp HTTP/1.1" 200 33576
+[INFO] 2025-09-18 17:43:21 "GET / HTTP/1.1" 200 15726
+[WARNING] 2025-09-18 17:43:21 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:43:21 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:43:21 "GET /media/pizza-making.jpg HTTP/1.1" 200 33751
+[WARNING] 2025-09-18 17:43:21 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:43:21 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:43:21 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:43:21 "GET /media/pizza-logo.webp HTTP/1.1" 304 0
+[INFO] 2025-09-18 17:43:23 "GET / HTTP/1.1" 200 15726
+[WARNING] 2025-09-18 17:43:23 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:43:23 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:43:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:43:23 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:43:23 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:44:48 "GET / HTTP/1.1" 200 15711
+[WARNING] 2025-09-18 17:44:48 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:44:48 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:44:48 "GET /media/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 17:44:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:44:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:44:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:44:48 "GET /media/pizza-logo.webp HTTP/1.1" 304 0
+[INFO] 2025-09-18 17:44:49 "GET / HTTP/1.1" 200 15711
+[WARNING] 2025-09-18 17:44:49 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:44:49 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:44:49 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:44:49 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:44:49 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:44:50 "GET / HTTP/1.1" 200 15711
+[WARNING] 2025-09-18 17:44:50 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:44:50 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:44:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:44:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:44:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:46:11 "GET / HTTP/1.1" 200 15818
+[WARNING] 2025-09-18 17:46:11 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:46:11 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:46:11 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 17:46:11 "GET /media/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 17:46:11 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:46:11 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:46:11 "GET /media/pizza-logo.webp HTTP/1.1" 304 0
+[INFO] 2025-09-18 17:46:31 "GET / HTTP/1.1" 200 15770
+[WARNING] 2025-09-18 17:46:31 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:46:31 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:46:31 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:46:31 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:46:31 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:46:43 "GET / HTTP/1.1" 200 15768
+[WARNING] 2025-09-18 17:46:43 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:46:43 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:46:43 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:46:43 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:46:43 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:46:45 "GET / HTTP/1.1" 200 15768
+[WARNING] 2025-09-18 17:46:45 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:46:45 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:46:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:46:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:46:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:47:08 "GET / HTTP/1.1" 200 15703
+[WARNING] 2025-09-18 17:47:08 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:47:08 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:47:08 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:47:08 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 17:47:08 "GET /media/14.jpg HTTP/1.1" 200 242708
+[WARNING] 2025-09-18 17:47:08 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:47:08 "GET /media/pizza-logo.webp HTTP/1.1" 304 0
+[INFO] 2025-09-18 17:47:31 "GET /admin/ HTTP/1.1" 200 22401
+[WARNING] 2025-09-18 17:47:31 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:47:31 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:47:34 "GET /admin/pizza/banner/ HTTP/1.1" 200 18693
+[WARNING] 2025-09-18 17:47:34 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:47:34 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:47:35 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:47:36 "GET /admin/pizza/banner/3/change/ HTTP/1.1" 200 18979
+[WARNING] 2025-09-18 17:47:36 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:47:36 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:47:36 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:47:59 "POST /admin/pizza/banner/3/change/ HTTP/1.1" 200 19126
+[WARNING] 2025-09-18 17:47:59 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:47:59 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:47:59 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:48:08 "POST /admin/pizza/banner/3/change/ HTTP/1.1" 302 0
+[INFO] 2025-09-18 17:48:08 "GET /admin/pizza/banner/ HTTP/1.1" 200 18978
+[WARNING] 2025-09-18 17:48:08 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:48:08 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:48:08 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:48:11 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 17:48:11 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:48:11 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:48:11 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 17:48:11 "GET /media/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 17:48:11 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:48:11 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:48:27 "GET /static/docs/menu.pdf HTTP/1.1" 404 1853
+[INFO] 2025-09-18 17:49:08 "GET /about/ HTTP/1.1" 200 9375
+[WARNING] 2025-09-18 17:49:08 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:49:08 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:49:08 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:49:09 Not Found: /about/media/pizza-logo.webp
+[WARNING] 2025-09-18 17:49:09 "GET /about/media/pizza-logo.webp HTTP/1.1" 404 11166
+[INFO] 2025-09-18 17:49:20 "GET /admin/ HTTP/1.1" 200 22452
+[INFO] 2025-09-18 17:49:21 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 18006
+[INFO] 2025-09-18 17:49:21 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:49:24 "GET /admin/pizza/companyinfo/1/change/ HTTP/1.1" 200 25249
+[INFO] 2025-09-18 17:49:24 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 17:49:36 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 18006
+[INFO] 2025-09-18 17:49:37 "GET /admin/ HTTP/1.1" 200 22452
+[WARNING] 2025-09-18 17:49:42 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:49:42 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:49:42 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 17:51:47 "GET /about/ HTTP/1.1" 200 9360
+[WARNING] 2025-09-18 17:51:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:51:47 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:51:47 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:51:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:51:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:52:29 "GET /about/ HTTP/1.1" 200 9343
+[WARNING] 2025-09-18 17:52:29 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:52:29 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:52:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:52:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:52:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:53:03 "GET /about/ HTTP/1.1" 200 9344
+[WARNING] 2025-09-18 17:53:03 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:53:03 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:53:03 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:53:03 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:53:03 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:53:29 "GET /about/ HTTP/1.1" 200 9341
+[WARNING] 2025-09-18 17:53:29 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:53:29 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 17:53:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:53:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:53:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:53:49 "GET /about/ HTTP/1.1" 200 9341
+[WARNING] 2025-09-18 17:53:49 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:53:49 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:53:49 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 17:54:43 "GET /about/ HTTP/1.1" 200 9324
+[WARNING] 2025-09-18 17:54:43 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:54:43 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:54:43 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 17:54:45 "GET /about/ HTTP/1.1" 200 9324
+[WARNING] 2025-09-18 17:54:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:54:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 17:54:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 17:54:58 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 17:54:58 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 17:54:58 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 18:04:40 "GET /about/ HTTP/1.1" 200 9317
+[WARNING] 2025-09-18 18:04:40 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:04:40 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:04:40 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:04:40 Not Found: /about/media/videoplayback.mp4
+[WARNING] 2025-09-18 18:04:40 "GET /about/media/videoplayback.mp4 HTTP/1.1" 404 11172
+[WARNING] 2025-09-18 18:04:40 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:04:40 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:04:43 "GET /about/ HTTP/1.1" 200 9317
+[WARNING] 2025-09-18 18:04:43 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:04:43 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:04:43 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:04:43 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:04:43 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:04:43 Not Found: /about/media/videoplayback.mp4
+[WARNING] 2025-09-18 18:04:43 "GET /about/media/videoplayback.mp4 HTTP/1.1" 404 11172
+[INFO] 2025-09-18 18:05:14 "GET /about/ HTTP/1.1" 200 9317
+[WARNING] 2025-09-18 18:05:14 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:05:14 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:05:14 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:05:14 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:05:14 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:05:15 Not Found: /about/media/videoplayback.mp4
+[WARNING] 2025-09-18 18:05:15 "GET /about/media/videoplayback.mp4 HTTP/1.1" 404 11172
+[INFO] 2025-09-18 18:05:19 "GET /about/ HTTP/1.1" 200 9335
+[WARNING] 2025-09-18 18:05:19 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:05:19 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:05:19 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:05:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:05:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:05:19 Not Found: /about/media/videoplayback.mp4
+[WARNING] 2025-09-18 18:05:19 "GET /about/media/videoplayback.mp4 HTTP/1.1" 404 11172
+[INFO] 2025-09-18 18:05:19 "GET /about/ HTTP/1.1" 200 9335
+[WARNING] 2025-09-18 18:05:19 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:05:19 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:05:19 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:05:19 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:05:19 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:05:19 Not Found: /about/media/videoplayback.mp4
+[WARNING] 2025-09-18 18:05:19 "GET /about/media/videoplayback.mp4 HTTP/1.1" 404 11172
+[INFO] 2025-09-18 18:06:06 "GET /about/ HTTP/1.1" 200 9352
+[WARNING] 2025-09-18 18:06:06 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:06:06 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:06:06 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:06:06 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:06:06 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:06:07 "GET /about/ HTTP/1.1" 200 9352
+[WARNING] 2025-09-18 18:06:07 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:06:07 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:06:07 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:06:07 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:06:07 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:06:29 Watching for file changes with StatReloader
+[INFO] 2025-09-18 18:06:39 "GET /about/ HTTP/1.1" 200 9352
+[WARNING] 2025-09-18 18:06:39 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:06:39 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:06:39 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:06:59 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:07:00 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:07:00 "GET /media/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 18:07:00 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:07:00 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:07:41 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:07:41 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:07:41 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:07:41 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:07:41 "GET /media/pizza-logo.webp HTTP/1.1" 304 0
+[INFO] 2025-09-18 18:07:42 "GET /about/ HTTP/1.1" 200 9353
+[WARNING] 2025-09-18 18:07:42 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:07:42 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:07:42 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:08:53 "GET /admin/ HTTP/1.1" 200 22452
+[INFO] 2025-09-18 18:08:59 "GET /about/ HTTP/1.1" 200 9353
+[WARNING] 2025-09-18 18:08:59 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:08:59 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:08:59 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:08:59 "GET /media/certificates/sert.jfif HTTP/1.1" 200 9004
+[INFO] 2025-09-18 18:08:59 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 200 90727
+[WARNING] 2025-09-18 18:08:59 Not Found: /about/media/pizza-logo.webp
+[WARNING] 2025-09-18 18:08:59 "GET /about/media/pizza-logo.webp HTTP/1.1" 404 11166
+[INFO] 2025-09-18 18:09:03 "GET /admin/ HTTP/1.1" 200 22452
+[WARNING] 2025-09-18 18:09:03 Not Found: /favicon.ico
+[WARNING] 2025-09-18 18:09:03 "GET /favicon.ico HTTP/1.1" 404 11118
+[INFO] 2025-09-18 18:09:08 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 18006
+[INFO] 2025-09-18 18:09:08 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 18:09:10 "GET /admin/pizza/companyinfo/1/change/ HTTP/1.1" 200 25249
+[INFO] 2025-09-18 18:09:10 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-09-18 18:09:25 "GET /admin/pizza/companyinfo/ HTTP/1.1" 200 18006
+[INFO] 2025-09-18 18:09:26 "GET /admin/ HTTP/1.1" 200 22452
+[INFO] 2025-09-18 18:09:50 "GET /about/ HTTP/1.1" 200 9352
+[WARNING] 2025-09-18 18:09:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:09:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:09:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:09:51 "GET /about/ HTTP/1.1" 200 9352
+[WARNING] 2025-09-18 18:09:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:09:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:09:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:09:51 "GET /about/ HTTP/1.1" 200 9352
+[WARNING] 2025-09-18 18:09:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:09:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:09:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:09:51 "GET /about/ HTTP/1.1" 200 9352
+[WARNING] 2025-09-18 18:09:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:09:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:09:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:09:51 "GET /about/ HTTP/1.1" 200 9352
+[WARNING] 2025-09-18 18:09:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:09:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:09:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:09:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:09:54 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:09:54 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 18:10:27 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:10:27 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:10:27 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:10:27 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:10:27 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:10:27 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:10:28 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:10:28 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:10:28 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:10:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:10:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:10:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:10:28 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:10:28 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:10:28 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:10:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:10:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:10:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:10:28 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:10:28 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:10:28 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:10:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:10:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:10:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:10:29 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:10:29 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:10:29 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:10:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:10:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:10:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:10:32 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:10:32 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:10:32 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:10:32 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:10:32 "GET /media/certificates/sert.jfif HTTP/1.1" 200 9004
+[INFO] 2025-09-18 18:10:32 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 200 90727
+[WARNING] 2025-09-18 18:10:32 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:10:32 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:10:32 Not Found: /about/media/pizza-logo.webp
+[WARNING] 2025-09-18 18:10:32 "GET /about/media/pizza-logo.webp HTTP/1.1" 404 11166
+[INFO] 2025-09-18 18:11:14 "GET /about/ HTTP/1.1" 200 9328
+[WARNING] 2025-09-18 18:11:14 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:11:14 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:11:14 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:11:14 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:11:14 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 18:11:14 "GET /about/ HTTP/1.1" 200 9328
+[WARNING] 2025-09-18 18:11:15 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:11:15 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:11:15 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:11:15 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:11:15 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 18:12:01 Watching for file changes with StatReloader
+[INFO] 2025-09-18 18:12:05 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:12:05 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:12:05 "GET /media/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 18:12:05 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:05 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:10 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:12:10 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:10 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:10 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:20 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:12:20 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:20 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:20 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:25 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:12:25 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:25 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:27 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:12:27 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:27 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:27 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:27 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:12:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:28 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:12:28 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:28 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:28 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:29 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:12:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:29 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:12:29 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:29 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:12:29 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:12:30 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:12:30 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:30 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:30 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:30 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:12:30 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:30 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:30 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:31 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:12:31 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:31 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:31 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:45 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:12:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:46 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:12:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:46 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:47 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:12:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:47 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:12:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:12:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:12:48 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:12:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:49 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:12:49 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:49 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:12:49 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:12:49 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:12:49 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:12:49 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:12:49 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:13:22 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:13:22 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:22 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:22 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:13:22 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:13:22 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:22 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:22 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:13:23 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:13:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:23 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:23 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:13:37 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:13:37 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:13:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:37 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:13:38 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:13:38 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:38 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:13:38 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:13:39 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:13:39 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:39 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:39 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 18:13:40 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 18:13:40 "GET /menu/ HTTP/1.1" 200 15556
+[WARNING] 2025-09-18 18:13:40 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:40 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:40 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:13:40 Not Found: /menu/media/pizza-logo.webp
+[WARNING] 2025-09-18 18:13:40 "GET /menu/media/pizza-logo.webp HTTP/1.1" 404 11163
+[INFO] 2025-09-18 18:13:40 "GET /news/ HTTP/1.1" 200 9208
+[WARNING] 2025-09-18 18:13:40 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:40 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:40 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:13:40 Not Found: /news/media/pizza-logo.webp
+[WARNING] 2025-09-18 18:13:40 "GET /news/media/pizza-logo.webp HTTP/1.1" 404 11163
+[INFO] 2025-09-18 18:13:46 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:13:46 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:13:47 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:13:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:13:51 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:13:51 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:51 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:51 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:13:54 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:13:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:13:54 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:13:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:13:55 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:13:55 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:55 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:55 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:13:55 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:13:55 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:13:55 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:13:55 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:14:00 "GET /news/ HTTP/1.1" 200 9208
+[WARNING] 2025-09-18 18:14:00 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:14:00 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:14:00 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:14:00 "GET /faq/ HTTP/1.1" 200 21312
+[WARNING] 2025-09-18 18:14:00 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:14:00 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 18:14:00 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:14:00 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:14:00 Not Found: /faq/media/pizza-logo.webp
+[WARNING] 2025-09-18 18:14:00 "GET /faq/media/pizza-logo.webp HTTP/1.1" 404 11160
+[INFO] 2025-09-18 18:14:01 "GET /contacts/ HTTP/1.1" 200 8316
+[WARNING] 2025-09-18 18:14:01 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:14:01 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:14:01 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:14:01 Not Found: /contacts/media/pizza-logo.webp
+[WARNING] 2025-09-18 18:14:01 "GET /contacts/media/pizza-logo.webp HTTP/1.1" 404 11175
+[INFO] 2025-09-18 18:14:01 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:14:01 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:14:01 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:14:01 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:14:02 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:14:02 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:14:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:14:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:14:03 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:14:03 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:14:03 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:14:03 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:14:03 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:14:03 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:14:03 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:14:03 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:14:04 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:14:04 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:14:04 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:14:04 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:14:04 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:14:04 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:14:04 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:14:04 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:14:06 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:14:06 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:14:06 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:14:06 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:14:16 Not Found: /home
+[WARNING] 2025-09-18 18:14:16 "GET /home HTTP/1.1" 404 11097
+[WARNING] 2025-09-18 18:14:16 Not Found: /favicon.ico
+[WARNING] 2025-09-18 18:14:16 "GET /favicon.ico HTTP/1.1" 404 11118
+[INFO] 2025-09-18 18:17:04 D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizzeria\settings.py changed, reloading.
+[INFO] 2025-09-18 18:17:05 Watching for file changes with StatReloader
+[INFO] 2025-09-18 18:17:07 "GET / HTTP/1.1" 200 15720
+[INFO] 2025-09-18 18:17:07 "GET /media/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 18:17:07 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:17:07 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:17:07 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:17:07 "GET /media/pizza-logo.webp HTTP/1.1" 304 0
+[INFO] 2025-09-18 18:17:08 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:17:08 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:17:08 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:17:08 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 18:17:09 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 18:17:09 "GET /menu/ HTTP/1.1" 200 15556
+[WARNING] 2025-09-18 18:17:09 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:17:09 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:17:09 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:17:09 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:17:09 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:17:09 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:17:09 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:17:12 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:17:12 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:17:12 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:17:12 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:21:02 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:21:02 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:21:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:21:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:21:04 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:21:04 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:21:04 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:21:04 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:21:05 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:21:05 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:21:05 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:21:05 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:21:05 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:21:05 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:21:05 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:21:05 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:21:09 "GET /about/ HTTP/1.1" 200 9329
+[WARNING] 2025-09-18 18:21:09 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:21:09 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:21:09 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:22:10 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:22:10 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:22:10 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:22:10 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:22:11 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:22:11 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:22:11 "GET /media/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 18:22:11 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:22:11 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:22:12 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:22:12 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:22:12 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:22:12 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:22:15 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:22:15 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:22:15 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:22:15 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:22:16 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:22:16 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:22:16 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:22:16 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:22:16 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:22:16 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:22:16 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:22:16 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:22:17 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:22:17 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:22:17 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:22:17 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:22:18 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:22:18 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:22:18 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:22:18 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:22:23 "GET /about/ HTTP/1.1" 200 9327
+[WARNING] 2025-09-18 18:22:23 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:22:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:22:23 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:23:13 "GET /about/ HTTP/1.1" 200 9321
+[WARNING] 2025-09-18 18:23:13 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:23:13 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:23:13 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:23:14 "GET /about/ HTTP/1.1" 200 9321
+[WARNING] 2025-09-18 18:23:14 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:23:14 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:23:14 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:23:23 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:23:23 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:23:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:23:23 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:24:01 "GET /faq/ HTTP/1.1" 200 21311
+[WARNING] 2025-09-18 18:24:01 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 18:24:01 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:24:01 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:24:01 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:24:01 "GET /news/ HTTP/1.1" 200 9207
+[WARNING] 2025-09-18 18:24:01 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:24:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:24:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:24:18 "GET /news/ HTTP/1.1" 200 9207
+[WARNING] 2025-09-18 18:24:18 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:24:18 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:24:18 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-09-18 18:24:18 Internal Server Error: /about/
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\views.py", line 678, in about_view
+    return render(request, 'pizza/about.html', {'company_info': company_info})
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+    ...<5 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: 'media' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+i18n
+l10n
+log
+static
+tz
+[ERROR] 2025-09-18 18:24:18 "GET /about/ HTTP/1.1" 500 187567
+[INFO] 2025-09-18 18:25:08 "GET /about/ HTTP/1.1" 200 9321
+[WARNING] 2025-09-18 18:25:09 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:25:09 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:25:09 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 18:25:43 Starting statistics calculation
+[DEBUG] 2025-09-18 18:25:44 Starting statistics calculation
+[INFO] 2025-09-18 18:25:44 Statistics viewed by user alexander
+[INFO] 2025-09-18 18:25:44 - Broken pipe from ('127.0.0.1', 55393)
+[INFO] 2025-09-18 18:25:44 Statistics viewed by user alexander
+[INFO] 2025-09-18 18:25:44 "GET /statistics/ HTTP/1.1" 200 85900
+[WARNING] 2025-09-18 18:25:44 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:25:44 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:25:44 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:25:44 Not Found: /statistics/media/pizza-logo.webp
+[WARNING] 2025-09-18 18:25:44 "GET /statistics/media/pizza-logo.webp HTTP/1.1" 404 11181
+[INFO] 2025-09-18 18:25:45 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:25:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:25:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:25:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:25:46 "GET /about/ HTTP/1.1" 200 9321
+[WARNING] 2025-09-18 18:25:46 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:25:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:25:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:25:46 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:25:46 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:25:46 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:25:46 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:25:47 "GET /about/ HTTP/1.1" 200 9321
+[WARNING] 2025-09-18 18:25:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:25:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:25:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:25:47 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:25:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:25:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:25:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:25:48 "GET /about/ HTTP/1.1" 200 9321
+[WARNING] 2025-09-18 18:25:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:25:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:25:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[DEBUG] 2025-09-18 18:25:49 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 18:25:49 "GET /menu/ HTTP/1.1" 200 15555
+[WARNING] 2025-09-18 18:25:49 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:25:49 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:25:49 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:25:50 "GET / HTTP/1.1" 200 15719
+[WARNING] 2025-09-18 18:25:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:25:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:25:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:27:02 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:27:02 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:27:02 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:27:02 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:27:02 "GET /media/pizza-logo.webp HTTP/1.1" 304 0
+[INFO] 2025-09-18 18:27:03 "GET /about/ HTTP/1.1" 200 9322
+[WARNING] 2025-09-18 18:27:03 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:27:03 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:27:03 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:27:04 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:27:04 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:27:04 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:27:04 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:27:04 "GET /about/ HTTP/1.1" 200 9322
+[WARNING] 2025-09-18 18:27:05 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:27:05 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:27:05 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:27:05 "GET / HTTP/1.1" 200 15720
+[WARNING] 2025-09-18 18:27:05 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:27:05 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:27:05 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:30:20 "GET / HTTP/1.1" 200 15721
+[INFO] 2025-09-18 18:30:20 "GET /media/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-18 18:30:20 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:20 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:20 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:30:20 "GET /static/pizza-logo.webp HTTP/1.1" 200 33576
+[INFO] 2025-09-18 18:30:21 "GET / HTTP/1.1" 200 15721
+[WARNING] 2025-09-18 18:30:21 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:21 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:21 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:30:22 "GET /about/ HTTP/1.1" 200 9323
+[WARNING] 2025-09-18 18:30:22 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:22 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:22 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:30:22 Not Found: /about/static/pizza-logo.webp
+[WARNING] 2025-09-18 18:30:22 "GET /about/static/pizza-logo.webp HTTP/1.1" 404 11169
+[INFO] 2025-09-18 18:30:23 "GET / HTTP/1.1" 200 15721
+[WARNING] 2025-09-18 18:30:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:23 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:23 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:30:35 "GET /faq/ HTTP/1.1" 200 21313
+[WARNING] 2025-09-18 18:30:35 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:35 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:35 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 18:30:35 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:30:35 Not Found: /faq/static/pizza-logo.webp
+[WARNING] 2025-09-18 18:30:35 "GET /faq/static/pizza-logo.webp HTTP/1.1" 404 11163
+[INFO] 2025-09-18 18:30:36 "GET /news/ HTTP/1.1" 200 9209
+[WARNING] 2025-09-18 18:30:36 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:36 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:36 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:30:36 Not Found: /news/static/pizza-logo.webp
+[WARNING] 2025-09-18 18:30:36 "GET /news/static/pizza-logo.webp HTTP/1.1" 404 11166
+[DEBUG] 2025-09-18 18:30:36 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 18:30:36 "GET /menu/ HTTP/1.1" 200 15557
+[WARNING] 2025-09-18 18:30:36 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:36 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:36 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:30:36 Not Found: /menu/static/pizza-logo.webp
+[WARNING] 2025-09-18 18:30:36 "GET /menu/static/pizza-logo.webp HTTP/1.1" 404 11166
+[INFO] 2025-09-18 18:30:37 "GET /about/ HTTP/1.1" 200 9323
+[WARNING] 2025-09-18 18:30:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:37 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:37 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:30:37 "GET /about/ HTTP/1.1" 200 9323
+[WARNING] 2025-09-18 18:30:37 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:37 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:30:37 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:30:38 "GET / HTTP/1.1" 200 15721
+[WARNING] 2025-09-18 18:30:38 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:38 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:38 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:30:44 "GET / HTTP/1.1" 200 15721
+[WARNING] 2025-09-18 18:30:44 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:30:44 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 200 90727
+[INFO] 2025-09-18 18:30:44 "GET /media/14.jpg HTTP/1.1" 200 242708
+[INFO] 2025-09-18 18:30:44 "GET /media/pizza-making.jpg HTTP/1.1" 200 33751
+[WARNING] 2025-09-18 18:30:44 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:30:44 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:30:44 "GET /media/partners/dodo.jpg HTTP/1.1" 200 152852
+[INFO] 2025-09-18 18:30:44 "GET /static/pizza-logo.webp HTTP/1.1" 200 33576
+[INFO] 2025-09-18 18:30:45 "GET / HTTP/1.1" 200 15721
+[INFO] 2025-09-18 18:30:45 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 200 90727
+[WARNING] 2025-09-18 18:30:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:30:45 "GET /media/14.jpg HTTP/1.1" 200 242708
+[INFO] 2025-09-18 18:30:45 "GET /media/pizza-making.jpg HTTP/1.1" 200 33751
+[WARNING] 2025-09-18 18:30:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:30:45 "GET / HTTP/1.1" 200 15721
+[INFO] 2025-09-18 18:30:45 "GET /media/partners/dodo.jpg HTTP/1.1" 200 152852
+[WARNING] 2025-09-18 18:30:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:30:45 "GET /static/pizza-logo.webp HTTP/1.1" 200 33576
+[INFO] 2025-09-18 18:30:45 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 200 90727
+[INFO] 2025-09-18 18:30:45 "GET /media/14.jpg HTTP/1.1" 200 242708
+[WARNING] 2025-09-18 18:30:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:30:45 "GET /media/pizza-making.jpg HTTP/1.1" 200 33751
+[WARNING] 2025-09-18 18:30:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:30:45 "GET /media/partners/dodo.jpg HTTP/1.1" 200 152852
+[INFO] 2025-09-18 18:30:45 "GET / HTTP/1.1" 200 15721
+[WARNING] 2025-09-18 18:30:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:30:45 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 200 90727
+[INFO] 2025-09-18 18:30:45 "GET /media/14.jpg HTTP/1.1" 200 242708
+[WARNING] 2025-09-18 18:30:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:30:45 "GET /media/pizza-making.jpg HTTP/1.1" 200 33751
+[INFO] 2025-09-18 18:30:45 "GET /media/partners/dodo.jpg HTTP/1.1" 200 152852
+[INFO] 2025-09-18 18:30:45 "GET / HTTP/1.1" 200 15721
+[WARNING] 2025-09-18 18:30:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:30:45 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 200 90727
+[INFO] 2025-09-18 18:30:45 "GET /media/14.jpg HTTP/1.1" 200 242708
+[INFO] 2025-09-18 18:30:45 "GET / HTTP/1.1" 200 15721
+[WARNING] 2025-09-18 18:30:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:30:45 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 200 90727
+[INFO] 2025-09-18 18:30:45 "GET /media/14.jpg HTTP/1.1" 200 242708
+[INFO] 2025-09-18 18:30:45 "GET / HTTP/1.1" 200 15721
+[WARNING] 2025-09-18 18:30:45 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-18 18:30:45 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 200 90727
+[INFO] 2025-09-18 18:30:45 "GET /media/14.jpg HTTP/1.1" 200 242708
+[WARNING] 2025-09-18 18:30:45 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:30:45 "GET /media/pizza-making.jpg HTTP/1.1" 200 33751
+[WARNING] 2025-09-18 18:30:45 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:30:45 "GET /media/partners/dodo.jpg HTTP/1.1" 200 152852
+[INFO] 2025-09-18 18:30:45 "GET /static/pizza-logo.webp HTTP/1.1" 200 33576
+[INFO] 2025-09-18 18:30:47 "GET /about/ HTTP/1.1" 200 9323
+[WARNING] 2025-09-18 18:30:47 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:47 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:47 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:30:47 Not Found: /about/static/pizza-logo.webp
+[WARNING] 2025-09-18 18:30:47 "GET /about/static/pizza-logo.webp HTTP/1.1" 404 11169
+[DEBUG] 2025-09-18 18:30:47 Menu filter params: category=None, sauce=None, is_vegan=None, price=None-None
+[INFO] 2025-09-18 18:30:47 "GET /menu/ HTTP/1.1" 200 15557
+[WARNING] 2025-09-18 18:30:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:30:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:48 Not Found: /menu/static/pizza-logo.webp
+[WARNING] 2025-09-18 18:30:48 "GET /menu/static/pizza-logo.webp HTTP/1.1" 404 11166
+[INFO] 2025-09-18 18:30:48 "GET /news/ HTTP/1.1" 200 9209
+[WARNING] 2025-09-18 18:30:48 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:48 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:48 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:30:48 Not Found: /news/static/pizza-logo.webp
+[WARNING] 2025-09-18 18:30:48 "GET /news/static/pizza-logo.webp HTTP/1.1" 404 11166
+[INFO] 2025-09-18 18:30:49 "GET /faq/ HTTP/1.1" 200 21313
+[WARNING] 2025-09-18 18:30:49 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:30:49 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:30:49 "GET /static/img/making-pizza.jpg HTTP/1.1" 404 1874
+[WARNING] 2025-09-18 18:30:49 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:30:49 Not Found: /faq/static/pizza-logo.webp
+[WARNING] 2025-09-18 18:30:49 "GET /faq/static/pizza-logo.webp HTTP/1.1" 404 11163
+[INFO] 2025-09-18 18:31:03 "GET /about/ HTTP/1.1" 200 9323
+[WARNING] 2025-09-18 18:31:03 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:31:03 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:31:03 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:34:07 "GET /about/ HTTP/1.1" 200 9330
+[WARNING] 2025-09-18 18:34:07 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:34:07 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:34:07 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:34:08 "GET / HTTP/1.1" 200 15721
+[WARNING] 2025-09-18 18:34:08 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:34:08 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:34:08 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:34:09 "GET /about/ HTTP/1.1" 200 9330
+[WARNING] 2025-09-18 18:34:09 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:34:09 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:34:09 "GET /static/js/main.js HTTP/1.1" 404 1844
+[INFO] 2025-09-18 18:34:10 "GET /about/ HTTP/1.1" 200 9330
+[WARNING] 2025-09-18 18:34:10 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:34:10 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:34:10 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-18 18:34:23 "GET /about/ HTTP/1.1" 200 9330
+[WARNING] 2025-09-18 18:34:23 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:34:23 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:34:23 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:34:25 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:34:25 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:34:25 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 18:34:50 "GET /about/ HTTP/1.1" 200 9330
+[WARNING] 2025-09-18 18:34:50 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:34:50 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:34:50 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:34:50 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:34:50 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-18 18:34:52 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:34:52 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:34:52 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[INFO] 2025-09-18 18:34:54 "GET /about/ HTTP/1.1" 200 9330
+[WARNING] 2025-09-18 18:34:54 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:34:54 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-18 18:34:54 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-18 18:34:55 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-18 18:34:55 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-18 18:34:55 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229

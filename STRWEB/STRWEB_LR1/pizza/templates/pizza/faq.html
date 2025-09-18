@@ -7,9 +7,7 @@
 
     <!-- Навигация по разделам FAQ -->
     <nav class="faq-nav">
-        <a href="#ordering">Заказ</a> |
-        <a href="#delivery">Доставка</a> |
-        <a href="#menu">Меню</a> |
+        <a href="#abbr">Сокращения</a> |
         <a href="#tech">Технические вопросы</a>
     </nav>
 
@@ -228,6 +226,21 @@ function calculateCalories(weight) {
         </details>
         {% endfor %}
     </div>
+    <section>
+        <h2>Быстрый вопрос</h2>
+        <form>
+        Имя:
+            <input type="text" name="username"><br>
+        Адрес эл. почты:
+            <input type="text" name="email"><br>
+         Вопрос:<br>
+             <input type="radio" name="question" value="nonsense">Бесполезный<br>
+            <input type="radio" name="question" value="dumb">Глупый<br>
+
+            <input type="submit" value="Отправить">
+            <input type="reset" value="Очистить">
+        </form>
+    </section>
 </div>
 
 <style>

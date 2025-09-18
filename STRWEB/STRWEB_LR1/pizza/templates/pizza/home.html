@@ -21,7 +21,7 @@
                 <ul class="banners-grid">
                     {% for banner in banners %}
                     <li class="banner-item">
-                        <img src="{{ banner.image.url }}" alt="{{ banner.title }}">
+                        <img src="{{ MEDIA_URL }}media/14.jpg" alt="{{ banner.title }}">
                         <div class="banner-title">{{ banner.title }}</div>
                     </li>
                     {% empty %}
@@ -121,7 +121,7 @@
 
         <!-- Фигуры с изображениями -->
         <figure class="pizza-gallery">
-            <img src="{% static 'img/pizza-making.jpg' %}" alt="Процесс приготовления">
+            <img src="{{ MEDIA_URL }}media/pizza-making.jpg" alt="Процесс приготовления">
             <figcaption>Мастер-класс по приготовлению пиццы</figcaption>
         </figure>
     </div>

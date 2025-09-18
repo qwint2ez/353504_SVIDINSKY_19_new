@@ -18,8 +18,8 @@
         <div class="requisites">{{ company_info.requisites|linebreaks }}</div>
         {% if company_info.video_url %}
         <h3>Видео о компании</h3>
-        <video controls width="320">
-            <source src="{{ company_info.video_url }}" type="video/mp4">
+        <video>
+        <source src="static/videoplayback.mp4" type="'video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
         {% endif %}
