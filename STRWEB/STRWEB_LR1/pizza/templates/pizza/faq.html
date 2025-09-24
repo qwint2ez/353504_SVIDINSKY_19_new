@@ -248,26 +248,124 @@ function calculateCalories(weight) {
         {% endfor %}
     </div>
 
-    <!-- Форма для вопросов -->
-    <section>
+     <!-- Форма для вопросов -->
+    <section id="question-form" class="faq-section">
         <h2>Быстрый вопрос</h2>
-        <!-- method="post" -->
-        <form itemscope itemtype="https://schema.org/ContactPoint">
+        <form action="http://server.com/submit" method="post" enctype="multipart/form-data" name="questionForm" 
+          accept-charset="UTF-8" autocomplete="on" novalidate 
+          itemscope itemtype="https://schema.org/ContactPoint">
+        {% csrf_token %}
+        <fieldset title="User Information">
+            <legend>Информация о пользователе</legend>
+            
             <label for="username">Имя:</label>
-            <input type="text" name="username" id="username" itemprop="name"><br>
+            <input type="text" name="username" id="username" placeholder="Введите ваше имя" 
+                   required autofocus size="30" maxlength="50" autocomplete="name" 
+                   itemprop="name"><br>
+
             <label for="email">Адрес эл. почты:</label>
-            <input type="text" name="email" id="email" itemprop="email"><br>
-            <label>Вопрос:<br>
-                <input type="radio" name="question" value="nonsense" id="nonsense">
-                <label for="nonsense">Бесполезный</label><br>
-                <input type="radio" name="question" value="dumb" id="dumb">
-                <label for="dumb">Глупый</label><br>
-            </label>
-            <input type="submit" value="Отправить">
-            <input type="reset" value="Очистить">
-        </form>
-    </section>
+            <input type="email" name="email" id="email" placeholder="email@example.com" 
+                   required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                   autocomplete="email" itemprop="email"><br>
+
+            <label for="phone">Телефон:</label>
+            <input type="tel" name="phone" id="phone" placeholder="+7(XXX)XXX-XX-XX" 
+                   pattern="\+7[0-9]{10}" autocomplete="tel"><br>
+
+            <label for="birthdate">Дата рождения:</label>
+            <input type="date" name="birthdate" id="birthdate" min="1900-01-01" max="2025-12-31"><br>
+
+            <label for="color">Любимый цвет:</label>
+            <input type="color" name="color" id="color" value="#ff6b6b"><br>
+        </fieldset>
+
+        <fieldset title="Question Details">
+            <legend>Детали вопроса</legend>
+
+            <label for="question-text">Ваш вопрос:</label>
+            <textarea name="question-text" id="question-text" cols="45" rows="5" 
+                      placeholder="Опишите ваш вопрос" required maxlength="500"></textarea><br>
+
+            <label>Тип вопроса:</label><br>
+            <input type="radio" name="question-type" value="nonsense" id="nonsense" checked>
+            <label for="nonsense">Бесполезный</label><br>
+            <input type="radio" name="question-type" value="dumb" id="dumb">
+            <label for="dumb">Глупый</label><br>
+            <input type="radio" name="question-type" value="serious" id="serious">
+            <label for="serious">Серьезный</label><br>
+
+            <label for="priority">Приоритет (1-10):</label>
+            <input type="range" name="priority" id="priority" min="1" max="10" step="1" value="5"><br>
+
+            <label for="pizza-type">Любимая пицца:</label>
+            <select name="pizza-type" id="pizza-type" size="1">
+                <option disabled>Выберите пиццу:</option>
+                <optgroup label="Классические">
+                    <option value="margherita" selected>Маргарита</option>
+                    <option value="pepperoni">Пепперони</option>
+                </optgroup>
+                <optgroup label="Вегетарианские">
+                    <option value="veggie">Вегетарианская</option>
+                </optgroup>
+            </select><br>
+
+            <label for="suggestions">Предложения по меню:</label>
+            <input type="text" name="suggestions" id="suggestions" list="menu-suggestions">
+            <datalist id="menu-suggestions">
+                <option value="Четыре сыра">
+                <option value="Гавайская">
+                <option value="Мясная">
+            </datalist><br>
+
+            <label>Дополнительно:</label><br>
+            <input type="checkbox" name="extras" value="delivery" id="delivery">
+            <label for="delivery">Хочу быструю доставку</label><br>
+            <input type="checkbox" name="extras" value="newsletter" id="newsletter">
+            <label for="newsletter">Подписаться на рассылку</label><br>
+
+            <label for="file-upload">Прикрепить изображение:</label>
+            <input type="file" name="file-upload" id="file-upload" 
+                   accept="image/jpeg,image/png,image/gif"><br>
+
+            <input type="hidden" name="form-id" value="quick-question-001">
+        </fieldset>
+
+        <button type="button" name="preview" onclick="previewForm()">Предпросмотр</button>
+        <input type="image" name="submit-img" src="{% static 'submit-button.png' %}" 
+               alt="Отправить форму" width="100" title="Кнопка-изображение (отправляет координаты клика)">
+        <input type="submit" value="Отправить (стандартная кнопка)">
+        <input type="reset" value="Очистить">
+    </form>
+
+    <script>
+        function previewForm() {
+            // Простой JS для предпросмотра: собираем данные и показываем в alert
+            const form = document.forms['questionForm'];
+            let data = 'Предпросмотр формы:\n\n';
+            for (let i = 0; i < form.elements.length; i++) {
+                const elem = form.elements[i];
+                if (elem.name && elem.value && elem.type !== 'submit' && elem.type !== 'reset' && elem.type !== 'button') {
+                    data += `${elem.name}: ${elem.value}\n`;
+                }
+                // Для checkbox — проверяем checked
+                if (elem.type === 'checkbox' && elem.checked) {
+                    data += `${elem.name}: ${elem.value} (выбрано)\n`;
+                }
+                // Для radio — аналогично
+                if (elem.type === 'radio' && elem.checked) {
+                    data += `${elem.name}: ${elem.value} (выбрано)\n`;
+                }
+                // Для range — показываем значение
+                if (elem.type === 'range') {
+                    data += `${elem.name}: ${elem.value}\n`;
+                }
+            }
+            alert(data);
+        }
+    </script>
+</section>
 </div>
+
 
 <style>
 /* Стили остаются без изменений, так как микроразметка не влияет на CSS */

@@ -22808,3 +22808,164 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'order' not found. 'order' is
 [WARNING] 2025-09-18 21:57:11 "GET /static/js/main.js HTTP/1.1" 404 1844
 [WARNING] 2025-09-18 21:57:11 "GET /static/css/style.css HTTP/1.1" 404 1853
 [WARNING] 2025-09-18 21:57:11 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-24 15:13:12 Watching for file changes with StatReloader
+[INFO] 2025-09-24 15:13:17 "GET / HTTP/1.1" 200 14629
+[INFO] 2025-09-24 15:13:17 "GET /media/14.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-24 15:13:17 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-24 15:13:17 "GET /media/company/logo_ukLt0LM.jpg HTTP/1.1" 304 0
+[INFO] 2025-09-24 15:13:17 "GET /media/partners/dodo.jpg HTTP/1.1" 304 0
+[INFO] 2025-09-24 15:13:17 "GET /media/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-24 15:13:17 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-24 15:13:17 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-24 15:13:18 "GET /about/ HTTP/1.1" 200 8433
+[WARNING] 2025-09-24 15:13:18 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-24 15:13:18 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[INFO] 2025-09-24 15:13:18 "GET /media/certificates/sert.jfif HTTP/1.1" 304 0
+[WARNING] 2025-09-24 15:13:18 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-24 15:13:20 Not Found: /about/static/pizza-logo.webp
+[WARNING] 2025-09-24 15:13:20 "GET /about/static/pizza-logo.webp HTTP/1.1" 404 11169
+[INFO] 2025-09-24 15:13:21 "GET /faq/ HTTP/1.1" 200 28538
+[WARNING] 2025-09-24 15:13:21 "GET /static/submit-button.png HTTP/1.1" 404 1865
+[WARNING] 2025-09-24 15:13:21 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-24 15:13:21 "GET /static/css/style.css HTTP/1.1" 404 1853
+[INFO] 2025-09-24 15:13:21 "GET /static/pizza-making.jpg HTTP/1.1" 304 0
+[WARNING] 2025-09-24 15:13:21 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-24 15:13:21 Not Found: /faq/static/pizza-logo.webp
+[WARNING] 2025-09-24 15:13:21 "GET /faq/static/pizza-logo.webp HTTP/1.1" 404 11163
+[WARNING] 2025-09-24 15:15:55 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-24 15:15:55 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-24 15:15:55 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[ERROR] 2025-09-24 15:19:48 Internal Server Error: /faq/
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\views.py", line 695, in faq_view
+    return render(request, 'pizza/faq.html', {
+        'faqs': faqs,
+        'page_title': 'Часто задаваемые вопросы',
+    })
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'faq_submit' not found. 'faq_submit' is not a valid view function or pattern name.
+[ERROR] 2025-09-24 15:19:48 "GET /faq/ HTTP/1.1" 500 160709
+[WARNING] 2025-09-24 15:19:48 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-24 15:19:48 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
+[WARNING] 2025-09-24 15:19:48 Not Found: /favicon.ico
+[WARNING] 2025-09-24 15:19:48 "GET /favicon.ico HTTP/1.1" 404 11118
+[INFO] 2025-09-24 15:20:26 "GET / HTTP/1.1" 200 14629
+[WARNING] 2025-09-24 15:20:26 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-24 15:20:26 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-24 15:20:26 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[ERROR] 2025-09-24 15:20:29 Internal Server Error: /faq/
+Traceback (most recent call last):
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\353504_SVIDINSKY_19\STRWEB\STRWEB_LR1\pizza\views.py", line 695, in faq_view
+    return render(request, 'pizza/faq.html', {
+        'faqs': faqs,
+        'page_title': 'Часто задаваемые вопросы',
+    })
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Alexander\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'faq_submit' not found. 'faq_submit' is not a valid view function or pattern name.
+[ERROR] 2025-09-24 15:20:29 "GET /faq/ HTTP/1.1" 500 160566
+[INFO] 2025-09-24 15:21:42 "GET /faq/ HTTP/1.1" 200 29854
+[WARNING] 2025-09-24 15:21:42 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-24 15:21:42 "GET /static/submit-button.png HTTP/1.1" 404 1865
+[WARNING] 2025-09-24 15:21:42 "GET /static/js/main.js HTTP/1.1" 404 1844
+[WARNING] 2025-09-24 15:21:42 "GET /static/js/form-validation.js HTTP/1.1" 404 1877
+[WARNING] 2025-09-24 15:22:30 "GET /static/css/style.css HTTP/1.1" 404 1853
+[WARNING] 2025-09-24 15:22:30 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2025-09-24 15:22:30 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11229
