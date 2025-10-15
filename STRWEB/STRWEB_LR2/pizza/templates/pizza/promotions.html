@@ -1,0 +1,143 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Акции и промокоды</h2>
+
+    {% if user.is_authenticated %}
+    <div class="promo-input">
+        <h3>Применить промокод</h3>
+        <form method="post" action="{% url 'pizza:apply_promo' %}">
+            {% csrf_token %}
+            <input type="text" name="promo_code" placeholder="Введите промокод">
+            <button type="submit">Применить</button>
+        </form>
+    </div>
+
+    <div class="active-promos">
+        <h3>Ваши активные промокоды</h3>
+        {% for promo in active_promos %}
+        <div class="promo-card">
+            <div class="promo-header">
+                {% if promo.title %}<h4>{{ promo.title }}</h4>{% endif %}
+                <div class="promo-code">{{ promo.code }}</div>
+            </div>
+            {% if promo.description %}
+            <p class="promo-description">{{ promo.description }}</p>
+            {% endif %}
+            <div class="promo-details">
+                <div class="promo-discount">Скидка: {{ promo.discount }}%</div>
+                <div class="promo-validity">
+                    Действует до: {{ promo.valid_to|date:"d.m.Y" }}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>У вас нет активных промокодов</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="current-promotions">
+        <h3>Текущие акции</h3>
+        {% for promo in public_promos %}
+        <div class="promo-card">
+            <div class="promo-header">
+                {% if promo.title %}<h4>{{ promo.title }}</h4>{% endif %}
+                <div class="promo-code">{{ promo.code }}</div>
+            </div>
+            {% if promo.description %}
+            <p class="promo-description">{{ promo.description }}</p>
+            {% endif %}
+            <div class="promo-details">
+                <div class="promo-discount">Скидка: {{ promo.discount }}%</div>
+                <div class="promo-validity">
+                    Действует до: {{ promo.valid_to|date:"d.m.Y" }}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>В данный момент нет активных акций</p>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.promo-input {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.promo-input form {
+    display: flex;
+    gap: 10px;
+}
+
+.promo-input input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.promo-card {
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.promo-header {
+    margin-bottom: 10px;
+}
+
+.promo-code {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.promo-description {
+    color: #666;
+    margin: 10px 0;
+}
+
+.promo-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.promo-discount {
+    color: #e44d26;
+    font-weight: bold;
+}
+
+.promo-validity {
+    color: #666;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}
+</style>
+{% endblock %}

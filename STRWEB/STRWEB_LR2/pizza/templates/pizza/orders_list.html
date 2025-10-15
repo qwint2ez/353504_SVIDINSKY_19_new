@@ -1,0 +1,44 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Управление заказами</h2>
+
+    {% for order in orders %}
+    <div class="order-card">
+        <h3>Заказ #{{ order.id }}</h3>
+        <p>Клиент: {{ order.customer.user.username }}</p>
+        <p>Дата: {{ order.created_at|date:"d.m.Y H:i" }}</p>
+        <p>Статус: {{ order.get_status_display }}</p>
+        
+        <form method="post" action="{% url 'pizza:update_order_status' order.id %}" class="status-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Статус:</label>
+                <select name="status" class="form-control">
+                    {% for status, label in status_choices %}
+                    <option value="{{ status }}" {% if order.status == status %}selected{% endif %}>
+                        {{ label }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Курьер:</label>
+                <select name="courier_id" class="form-control">
+                    <option value="">Выберите курьера</option>
+                    {% for courier in couriers %}
+                    <option value="{{ courier.id }}" {% if order.courier == courier %}selected{% endif %}>
+                        {{ courier.user.username }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Применить</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Заказы за {{ month }}/{{ year }}</h1>
+    
+    <div class="orders-list">
+        {% for order in orders %}
+            <div class="order-item">
+                <h3>Заказ #{{ order.id }}</h3>
+                <p>Статус: {{ order.get_status_display }}</p>
+                <p>Сумма: {{ order.total_price }}₽</p>
+                <p>Дата: {{ order.order_date|date:"d.m.Y H:i" }}</p>
+            </div>
+        {% empty %}
+            <p>Нет заказов за этот период</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Список курьеров</h2>
+    
+    <div class="couriers-list">
+        {% for courier in couriers %}
+        <div class="courier-card">
+            <h3>{{ courier.user.get_full_name|default:courier.user.username }}</h3>
+            <p>Телефон: {{ courier.phone }}</p>
+            <p>Рейтинг: {{ courier.rating }}</p>
+            <p>Выполнено заказов: {{ courier.completed_orders }}</p>
+            <p>Статус: {% if courier.is_available %}Доступен{% else %}Занят{% endif %}</p>
+        </div>
+        {% empty %}
+        <p>Нет доступных курьеров</p>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.couriers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.courier-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.courier-card h3 {
+    margin-top: 0;
+    color: #333;
+}
+</style>
+{% endblock %}

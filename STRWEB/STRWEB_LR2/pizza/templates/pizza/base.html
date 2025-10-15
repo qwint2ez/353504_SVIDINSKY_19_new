@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Пиццерия{% endblock %}</title>
+    <meta name="description" content="Пиццерия: лучшие пиццы, свежие продукты, быстрая доставка.">
+    <meta name="keywords" content="пицца, доставка, меню, акции, вакансии, отзывы, компания">
+    <meta name="author" content="Пиццерия">
+    <meta property="og:title" content="Пиццерия">
+    <meta property="og:description" content="Пиццерия: лучшие пиццы, свежие продукты, быстрая доставка.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/webp" href="static/pizza-logo.webp">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body id="top">
+    <!-- <div class="preloader"></div> -->
+    <header>
+        <nav aria-label="Горизонтальная навигация" class="main-nav">
+            <ul>
+                <li><a href="{% url 'pizza:home' %}">Главная</a></li>
+                <li><a href="{% url 'pizza:about' %}">О компании</a></li>
+                <li><a href="{% url 'pizza:menu' %}">Меню</a></li>
+                <li><a href="{% url 'pizza:news' %}">Новости</a></li>
+                <li><a href="{% url 'pizza:faq' %}">FAQ</a></li>
+                <li><a href="{% url 'pizza:contacts' %}">Контакты</a></li>
+                <li><a href="{% url 'pizza:jobs' %}">Вакансии</a></li>
+                <li><a href="{% url 'pizza:reviews_list' %}">Отзывы</a></li>
+                <li><a href="{% url 'pizza:promotions' %}">Акции</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'pizza:cart' %}">Корзина</a></li>
+                    {% if user.is_staff %}
+                        <li><a href="{% url 'pizza:orders_list' %}">Управление заказами</a></li>
+                        <li><a href="{% url 'pizza:statistics' %}">Статистика</a></li>
+                    {% endif %}
+                    {% if user.is_superuser %}
+                        <li><a href="{% url 'pizza:pizza_create' %}">Добавить пиццу</a></li>
+                        <li><a href="{% url 'pizza:couriers_list' %}">Курьеры</a></li>
+                        <li><a href="{% url 'admin:index' %}">Админ-панель</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'pizza:my_orders' %}">Мои заказы</a></li>
+                    <li><a href="{% url 'pizza:order_create' %}">Заказать</a></li>
+                    <li><a href="{% url 'pizza:review_create' %}">Оставить отзыв</a></li>
+                    <li><a href="{% url 'pizza:logout' %}">Выйти</a></li>
+                {% else %}
+                    <li><a href="{% url 'pizza:login' %}">Войти</a></li>
+                    <li><a href="{% url 'pizza:register' %}">Регистрация</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <nav aria-label="Вертикальная панель" class="side-nav">
+            <ul>
+                <li><a href="{% url 'pizza:home' %}">Главная</a></li>
+                <li><a href="{% url 'pizza:about' %}">О компании</a></li>
+                <li><a href="{% url 'pizza:menu' %}">Меню</a></li>
+                <li><a href="{% url 'pizza:news' %}">Новости</a></li>
+                <li><a href="{% url 'pizza:faq' %}">FAQ</a></li>
+                <li><a href="{% url 'pizza:contacts' %}">Контакты</a></li>
+                <li><a href="{% url 'pizza:jobs' %}">Вакансии</a></li>
+                <li><a href="{% url 'pizza:reviews_list' %}">Отзывы</a></li>
+                <li><a href="{% url 'pizza:promotions' %}">Акции</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'pizza:cart' %}">Корзина</a></li>
+                    {% if user.is_staff %}
+                        <li><a href="{% url 'pizza:orders_list' %}">Управление заказами</a></li>
+                        <li><a href="{% url 'pizza:statistics' %}">Статистика</a></li>
+                    {% endif %}
+                    {% if user.is_superuser %}
+                        <li><a href="{% url 'pizza:pizza_create' %}">Добавить пиццу</a></li>
+                        <li><a href="{% url 'pizza:couriers_list' %}">Курьеры</a></li>
+                        <li><a href="{% url 'admin:index' %}">Админ-панель</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'pizza:my_orders' %}">Мои заказы</a></li>
+                    <li><a href="{% url 'pizza:order_create' %}">Заказать</a></li>
+                    <li><a href="{% url 'pizza:review_create' %}">Оставить отзыв</a></li>
+                    <li><a href="{% url 'pizza:logout' %}">Выйти</a></li>
+                {% else %}
+                    <li><a href="{% url 'pizza:login' %}">Войти</a></li>
+                    <li><a href="{% url 'pizza:register' %}">Регистрация</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content">
+        {% block content %}
+        {% endblock %}
+        {% if messages %}
+        <aside>                         
+            <div class="messages">
+                {% for message in messages %}
+                <div class="message {{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+        </aside>
+        {% endif %}
+    </main>
+    <footer>
+        <div class="preloader"></div>
+        <section>
+            <div class="container">
+                <p class="text-center">&copy; 2025 Пиццерия</p>
+                <nav class="footer-links" id="footer-links">
+                    <a href="{% url 'pizza:privacy_policy' %}">Политика конфиденциальности</a>
+                </nav>
+            </div>
+        </section>
+    </footer>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/form-validation.js' %}"></script>
+</body>
+</html>
+
+<!--         <style>
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            background: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+        .main-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        .main-nav li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .main-nav li a:hover {
+            background: #e0e0e0;
+        }
+        .side-nav {
+            width: 220px;
+            background: #f0f0f0;
+            border-right: 1px solid #ddd;
+            padding: 1rem 0.5rem;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+            display: none;
+        }
+        .side-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .side-nav li {
+            margin-bottom: 1rem;
+        }
+        .side-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .side-nav a:hover {
+            background: #e0e0e0;
+        }
+        .nav-switcher {
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .nav-switcher button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .nav-switcher button.active {
+            background: #388E3C;
+        }
+        @media (max-width: 900px) {
+            .main-nav ul { flex-direction: column; align-items: center; }
+            .side-nav { width: 100%; border-right: none; border-top: 1px solid #ddd; box-shadow: none; }
+        }
+    </style> -->

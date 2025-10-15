@@ -1,0 +1,156 @@
+{% extends 'pizza/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Оформление заказа</h1>
+    
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if weather %}
+    <div class="weather-info">
+        <h3>Погода для доставки:</h3>
+        <p>🌡️ Температура: {{ weather.temperature }}°C</p>
+        <p>🌤️ Условия: {{ weather.description }}</p>
+    </div>
+    {% endif %}
+
+    {% if quote %}
+    <div class="quote-box">
+        <p style="font-style: italic;">"{{ quote.quote }}"</p>
+        <p style="text-align: right;">— {{ quote.author }}</p>
+    </div>
+    {% endif %}
+
+    <form method="post" class="order-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if cart_items %}
+        <div class="pizzas">
+            {% for item in cart_items %}
+            <div class="pizza-item">
+                <h4>{{ item.pizza.name }}</h4>
+                <p>{{ item.pizza.description }}</p>
+                <p>Категория: {{ item.pizza.category.name }}</p>
+
+                <div class="sizes">
+                    <h5>Выберите размер:</h5>
+                    {% for size in item.pizza.available_sizes.all %}
+                    <div class="size-option">
+                        {% for pricing in item.pizza.pizzapricing_set.all %}
+                            {% if pricing.size_id == size.id %}
+                                <label>
+                                    <input type="radio" name="size_{{ item.pizza.id }}"
+                                           value="{{ size.id }}"
+                                           {% if item.size.id == size.id %}checked{% endif %}>
+                                    {{ size.size }} - {{ pricing.price|floatformat:2 }} ₽
+                                </label>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="quantity">
+                    <label>Количество:</label>
+                    <select name="quantity_{{ item.pizza.id }}">
+                        {% for i in "012345" %}
+                        <option value="{{ i }}" {% if item.quantity == i|add:"0" %}selected{% endif %}>
+                            {{ i }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>Ваша корзина пуста. <a href="{% url 'pizza:menu' %}" class="cart-btn cart-btn-menu">Перейти в меню</a></p>
+        {% endif %}
+
+        <button type="submit" class="cart-btn cart-btn-submit">Оформить заказ</button>
+    </form>
+</div>
+
+<style>
+.weather-info, .quote-box {
+    background: #f8f9fa;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pizza-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.sizes {
+    margin: 15px 0;
+}
+
+.size-option {
+    margin: 10px 0;
+}
+
+.quantity {
+    margin-top: 15px;
+}
+
+.cart-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.cart-btn-submit {
+    background: #4CAF50;
+    color: white;
+}
+
+.cart-btn-submit:hover {
+    background: #388E3C;
+}
+
+.cart-btn-menu {
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cart-btn-menu:hover {
+    background: #0056b3;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+</style>
+{% endblock %}

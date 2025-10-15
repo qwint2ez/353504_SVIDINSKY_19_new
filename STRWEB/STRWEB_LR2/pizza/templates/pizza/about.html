@@ -1,0 +1,75 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>О компании</h1>
+    {% if company_info %}
+    <div class="company-info">
+        {% if company_info.logo %}
+        <img src="{{ company_info.logo.url }}" alt="{{ company_info.name }}" class="company-logo">
+        {% endif %}
+        <h2>{{ company_info.name }}</h2>
+        <div class="description">{{ company_info.description }}</div>
+        
+        <h3>История компании</h3>
+        <ul class="history-list">
+            <li>1994 - Основание</li>
+            <li>2015 - Расширение</li>
+            <li>2020 - Онлайн-доставка</li>
+        </ul>
+        <div class="history">{{ company_info.history|linebreaks }}</div>
+        
+        <h3>Наша миссия</h3>
+        <div class="mission">{{ company_info.mission }}</div>
+        
+        <h3>Реквизиты</h3>
+        <div class="requisites">{{ company_info.requisites|linebreaks }}</div>
+        
+        {% if company_info.video_url %}
+        <h3>Видео о компании</h3>
+        <video width="22%" controls preload="auto">
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        {% endif %}
+        
+        <h3>Сертификат качества</h3>
+        <div class="certificate">
+            <h3>СЕРТИФИКАТ КАЧЕСТВА</h3>
+            <p>Настоящим удостоверяется, что</p>
+            <h4>ПИЦЦЕРИЯ "СКЕБОБ"</h4>
+            <p>соответствует высшим стандартам качества в приготовлении пиццы</p>
+            <p>Сертификат действителен с 01.01.2020 по 01.01.2030</p>
+            <p>Номер сертификата: PZ-2024-001</p>
+            <div class="signature">
+                <p>Директор по качеству</p>
+                <p>Иванов А.С.</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+<!-- <style>
+.company-info {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.company-logo {
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+}
+.history, .mission, .requisites, .certificate {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+.certificate img {
+    display: block;
+    margin: 0 auto;
+}
+</style> -->

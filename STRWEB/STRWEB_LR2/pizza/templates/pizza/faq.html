@@ -1,0 +1,598 @@
+{% extends 'pizza/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- <aside style="float: right; height: 20%; background: #ebebeb;">
+    <h2>Навигация</h2>
+    <a href="#abbr">Сокращения</a> <br>
+    <a href="#tech">Технические вопросы</a>
+</aside> -->
+
+<aside class="faq-aside">
+    <h2>Навигация</h2>
+    <ul>
+        <li><a href="#abbr">Сокращения</a></li>
+        <li><a href="#tech">Технические вопросы</a></li>
+    </ul>
+</aside>
+
+<div class="container faq-container" itemscope itemtype="https://schema.org/FAQPage">
+    <h1>Часто задаваемые вопросы</h1>
+
+    <!-- Навигация по разделам FAQ -->
+    <!-- <aside style="float: right; height: 20%;">
+        <a href="#abbr">Сокращения</a> <br>
+        <a href="#tech">Технические вопросы</a>
+    </aside> -->
+    <!-- <nav class="faq-nav">
+        <a href="#abbr">Сокращения</a> |
+        <a href="#tech">Технические вопросы</a>
+    </nav> -->
+
+    <!-- Секция с определениями -->
+    <section id="terms" class="faq-section">
+        <h2>Термины и определения</h2>
+        <dl class="terms-list">
+            <dt><dfn id="napoletana">Пицца Неаполитана</dfn></dt>
+            <dd>Традиционная итальянская пицца, приготовленная по строгим правилам.</dd>
+            
+            <dt><dfn id="marinara">Маринара</dfn></dt>
+            <dd>Классическая пицца с томатным соусом, чесноком и орегано.</dd>
+        </dl>
+    </section>
+
+    <!-- Секция с сокращениями -->
+    <section id="abbr" class="faq-section">
+        <h2>Используемые сокращения</h2>
+        <p>
+            В нашей работе мы используем следующие термины:
+            <abbr title="Время доставки">ВД</abbr>,
+            <abbr title="Система контроля качества">СКК</abbr>,
+            <abbr title="Индивидуальный предприниматель">ИП</abbr>
+        </p>
+    </section>
+
+    <!-- Секция с цитатами -->
+    <section id="quotes" class="faq-section" itemscope itemtype="https://schema.org/Quotation">
+        <h2>Цитаты наших клиентов</h2>
+        <blockquote cite="http://127.0.0.1:8000/reviews/" itemprop="text">
+            <p>Лучшая пицца в городе! Всегда горячая и вовремя.</p>
+            <cite itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Иван Петров</span>, постоянный клиент
+            </cite>
+        </blockquote>
+                <blockquote cite="http://127.0.0.1:8000/reviews/" itemprop="text">
+            <p>If u wanna eat - eat.</p>
+            <cite itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">Skebob Nachos</span>, постоянный клиент
+            </cite>
+        </blockquote>
+    </section>
+
+    <!-- Секция с листингом кода -->
+    <section id="tech" class="faq-section">
+        <h2>Техническая информация</h2>
+        <pre><code>
+// Пример расчета времени доставки
+function calculateDeliveryTime(distance) {
+    return Math.max(30, distance * 2);
+}
+        </code></pre>
+    </section>
+
+    <!-- Таблица с группировкой контента -->
+    <section id="menu-section" class="faq-section">
+        <h2>Меню и цены</h2>
+        <div itemscope itemtype="https://schema.org/Product">
+            <span itemprop="name">Маргарита</span>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Размер</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <td rowspan="3">Маргарита</td>
+                        <td>25 см</td>
+                        <td itemprop="price" content="500">500 ₽<meta itemprop="priceCurrency" content="RUB"></td>
+                    </tr>
+                    <tr itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <td>30 см</td>
+                        <td itemprop="price" content="700">700 ₽<meta itemprop="priceCurrency" content="RUB"></td>
+                    </tr>
+                    <tr itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <td>35 см</td>
+                        <td itemprop="price" content="900">900 ₽<meta itemprop="priceCurrency" content="RUB"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">* Цены указаны без учета доставки</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+
+    <!-- Разные типы списков -->
+    <section id="ingredients-section" class="faq-section" itemscope itemtype="https://schema.org/Recipe">
+        <h2>Ингредиенты и рецепты</h2>
+        <h3>Базовые ингредиенты</h3>
+        <ul class="ingredients-list" itemprop="recipeIngredient">
+            <li type="disc">Мука высшего сорта</li>
+            <li type="circle">Оливковое масло</li>
+            <li type="square">Дрожжи свежие</li>
+        </ul>
+
+        <h3>Этапы приготовления</h3>
+        <ol class="steps-list" itemprop="recipeInstructions">
+            <li value="1">Замешиваем тесто</li>
+            <li value="2">Даем подняться 2 часа</li>
+            <li value="5">Раскатываем основу</li>
+            <li value="10">Выпекаем при 350°C</li>
+        </ol>
+    </section>
+
+    <!-- Группы фигур -->
+    <section id="gallery-section" class="faq-section">
+        <h2>Галерея наших пицц</h2>
+        
+        <figure class="pizza-photo" itemscope itemtype="https://schema.org/ImageObject">
+            <figcaption>Процесс приготовления</figcaption>
+            <img src="{% static 'pizza-making.jpg' %}" alt="Приготовление пиццы" itemprop="contentUrl">
+            <meta itemprop="name" content="Процесс приготовления пиццы">
+            <meta itemprop="description" content="Изображение процесса приготовления пиццы">
+        </figure>
+
+        <figure class="nutritional-info">
+            <figcaption>Пищевая ценность (на 100г)</figcaption>
+            <table>
+                <tr><td>Белки</td><td>9г</td></tr>
+                <tr><td>Жиры</td><td>12г</td></tr>
+                <tr><td>Углеводы</td><td>45г</td></tr>
+            </table>
+        </figure>
+
+        <figure class="code-example">
+            <figcaption>Калькулятор калорийности</figcaption>
+            <code>
+function calculateCalories(weight) {
+    return weight * 2.5;
+}
+            </code>
+        </figure>
+    </section>
+
+    <!-- Секция с примерами таблиц -->
+    <section id="tables-section" class="faq-section">
+        <h2>Информация о наших пиццах</h2>
+        
+        <h3>Стандартные размеры</h3>
+        <table class="simple-table">
+            <tr>
+                <th>Размер</th>
+                <th>Диаметр</th>
+            </tr>
+            <tr>
+                <td>Маленькая</td>
+                <td>25 см</td>
+            </tr>
+            <tr>
+                <td>Средняя</td>
+                <td>30 см</td>
+            </tr>
+            <tr>
+                <td>Большая</td>
+                <td>35 см</td>
+            </tr>
+        </table>
+
+        <h3>Подробная информация о пиццах</h3>
+        <div itemscope itemtype="https://schema.org/Product">
+            <table class="detailed-table">
+                <thead>
+                    <tr>
+                        <th id="category" rowspan="2">Категория</th>
+                        <th id="name" rowspan="2">Название</th>
+                        <th id="size" colspan="3">Размер и цена</th>
+                        <th id="calories" rowspan="2">Калории</th>
+                    </tr>
+                    <tr>
+                        <th id="small">25 см</th>
+                        <th id="medium">30 см</th>
+                        <th id="large">35 см</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr itemprop="name" content="Маргарита">
+                        <td headers="category" rowspan="2">Классические</td>
+                        <td headers="name">Маргарита</td>
+                        <td headers="size small" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="450">450₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="size medium" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="650">650₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="size large" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="850">850₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="calories" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="calories">220 ккал</span></td>
+                    </tr>
+                    <tr itemprop="name" content="Пепперони">
+                        <td headers="name">Пепперони</td>
+                        <td headers="size small" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="500">500₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="size medium" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="700">700₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="size large" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="900">900₽</span><meta itemprop="priceCurrency" content="RUB"></td>
+                        <td headers="calories" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="calories">250 ккал</span></td>
+                    </tr>
+                    <tr>
+                        <td headers="category" colspan="2">Акция дня</td>
+                        <td headers="size small" colspan="3">Скидка 20% на все размеры</td>
+                        <td headers="calories">-</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6">* Цены действительны при заказе на сайте</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+
+    <!-- Основные вопросы с details/summary -->
+    <div class="faq-list">
+        {% for faq in faqs %}
+        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <details class="faq-item">
+                <summary itemprop="name">{{ faq.question }}</summary>
+                <div class="faq-content" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <div itemprop="text">{{ faq.answer }}</div>
+                    <time datetime="{{ faq.date_added|date:'Y-m-d H:i' }}" itemprop="datePublished">
+                        Добавлено: {{ faq.date_added|date:"d.m.Y" }}
+                    </time>
+                </div>
+            </details>
+        </div>
+        {% endfor %}
+    </div>
+
+     <!-- Форма для вопросов -->
+    <section id="question-form" class="faq-section">
+        <h2>Быстрый вопрос</h2>
+        <form>
+        <!-- <form action="http://server.com/submit" method="post" enctype="multipart/form-data" name="questionForm"     
+          accept-charset="UTF-8" autocomplete="on" novalidate 
+          itemscope itemtype="https://schema.org/ContactPoint"> -->
+        {% csrf_token %}
+        <fieldset title="User Information">
+            <legend>Информация о пользователе</legend>
+            
+            <label for="username">Имя:</label>
+            <input type="text" name="username" id="username" placeholder="Введите ваше имя" 
+                   required autofocus size="30" maxlength="50" autocomplete="name" 
+                   itemprop="name"><br>
+
+            <label for="email">Адрес эл. почты:</label>
+            <input type="email" name="email" id="email" placeholder="email@example.com" 
+                   required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                   autocomplete="email" itemprop="email"><br>
+
+            <label for="phone">Телефон:</label>
+            <input type="tel" name="phone" id="phone" placeholder="+7(XXX)XXX-XX-XX" 
+                   pattern="\+7[0-9]{10}" autocomplete="tel"><br>
+
+            <label for="birthdate">Дата рождения:</label>
+            <input type="date" name="birthdate" id="birthdate" min="1900-01-01" max="2025-12-31"><br>
+
+            <label for="color">Любимый цвет:</label>
+            <input type="color" name="color" id="color" value="#ff6b6b"><br>
+        </fieldset>
+
+        <fieldset title="Question Details">
+            <legend>Детали вопроса</legend>
+
+            <label for="question-text">Ваш вопрос:</label>
+            <textarea name="question-text" id="question-text" cols="45" rows="5" 
+                      placeholder="Опишите ваш вопрос" required maxlength="500"></textarea><br>
+
+            <label>Тип вопроса:</label><br>
+            <input type="radio" name="question-type" value="nonsense" id="nonsense" checked>
+            <label for="nonsense">Бесполезный</label><br>
+            <input type="radio" name="question-type" value="dumb" id="dumb">
+            <label for="dumb">Глупый</label><br>
+            <input type="radio" name="question-type" value="serious" id="serious">
+            <label for="serious">Серьезный</label><br>
+
+            <label for="priority">Приоритет (1-10):</label>
+            <input type="range" name="priority" id="priority" min="1" max="10" step="1" value="5"><br>
+
+            <label for="pizza-type">Любимая пицца:</label>
+            <select name="pizza-type" id="pizza-type" size="1">
+                <option disabled>Выберите пиццу:</option>
+                <optgroup label="Классические">
+                    <option value="margherita" selected>Маргарита</option>
+                    <option value="pepperoni">Пепперони</option>
+                </optgroup>
+                <optgroup label="Вегетарианские">
+                    <option value="veggie">Вегетарианская</option>
+                </optgroup>
+            </select><br>
+
+            <label for="suggestions">Предложения по меню:</label>
+            <input type="text" name="suggestions" id="suggestions" list="menu-suggestions">
+            <datalist id="menu-suggestions">
+                <option value="Четыре сыра">
+                <option value="Гавайская">
+                <option value="Мясная">
+            </datalist><br>
+
+            <label>Дополнительно:</label><br>
+            <input type="checkbox" name="extras" value="delivery" id="delivery">
+            <label for="delivery">Хочу быструю доставку</label><br>
+            <input type="checkbox" name="extras" value="newsletter" id="newsletter">
+            <label for="newsletter">Подписаться на рассылку</label><br>
+
+            <label for="file-upload">Прикрепить изображение:</label>
+            <input type="file" name="file-upload" id="file-upload" 
+                   accept="image/jpeg,image/png,image/gif"><br>
+
+            <input type="hidden" name="form-id" value="quick-question-001">
+        </fieldset>
+
+        <button type="button" name="preview" onclick="previewForm()">Предпросмотр</button>
+        <input type="image" name="submit-img" src="{% static 'submit-button.png' %}" 
+               alt="Отправить форму" width="100" title="Кнопка-изображение (отправляет координаты клика)">
+        <input type="submit" value="Отправить (стандартная кнопка)">
+        <input type="reset" value="Очистить">
+    </form>
+
+    <script>
+        function previewForm() {
+            // Простой JS для предпросмотра: собираем данные и показываем в alert
+            const form = document.forms['questionForm'];
+            let data = 'Предпросмотр формы:\n\n';
+            for (let i = 0; i < form.elements.length; i++) {
+                const elem = form.elements[i];
+                if (elem.name && elem.value && elem.type !== 'submit' && elem.type !== 'reset' && elem.type !== 'button') {
+                    data += `${elem.name}: ${elem.value}\n`;
+                }
+                // Для checkbox — проверяем checked
+                if (elem.type === 'checkbox' && elem.checked) {
+                    data += `${elem.name}: ${elem.value} (выбрано)\n`;
+                }
+                // Для radio — аналогично
+                if (elem.type === 'radio' && elem.checked) {
+                    data += `${elem.name}: ${elem.value} (выбрано)\n`;
+                }
+                // Для range — показываем значение
+                if (elem.type === 'range') {
+                    data += `${elem.name}: ${elem.value}\n`;
+                }
+            }
+            alert(data);
+        }
+    </script>
+</section>
+</div>
+
+
+<!-- <style>
+.faq-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 20px;
+}
+
+.faq-nav {
+    margin: 20px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.faq-section {
+    margin: 40px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.terms-list {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.terms-list dt {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.terms-list dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+blockquote {
+    border-left: 4px solid #ff6b6b;
+    padding: 15px;
+    margin: 20px 0;
+    background: #fff5f5;
+    font-style: italic;
+}
+
+cite {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+}
+
+pre code {
+    display: block;
+    padding: 15px;
+    background: #2d2d2d;
+    color: #fff;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+details {
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+summary {
+    padding: 15px;
+    cursor: pointer;
+    background: #f8f9fa;
+    font-weight: bold;
+}
+
+summary:hover {
+    background: #e9ecef;
+}
+
+time {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Стили для таблиц */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+.price-table th,
+.price-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.price-table thead {
+    background: #ff6b6b;
+    color: white;
+}
+
+.price-table tfoot {
+    background: #f8f9fa;
+    font-style: italic;
+}
+
+/* Стили для списков */
+.ingredients-list,
+.steps-list {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+.ingredients-list li {
+    margin: 0.5em 0;
+}
+
+.steps-list {
+    counter-reset: step;
+}
+
+.steps-list li::before {
+    color: #ff6b6b;
+}
+
+/* Стили для фигур */
+figure {
+    margin: 2em 0;
+    padding: 1em;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+figcaption {
+    color: #666;
+    font-style: italic;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.pizza-photo img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.nutritional-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.code-example code {
+    background: #2d2d2d;
+    color: #fff;
+    padding: 1em;
+    border-radius: 4px;
+    display: block;
+}
+
+/* Стили для таблиц */
+.simple-table, .detailed-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    background: white;
+}
+
+.simple-table th,
+.simple-table td,
+.detailed-table th,
+.detailed-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.simple-table th {
+    background: #ff6b6b;
+    color: white;
+}
+
+.detailed-table thead th {
+    background: #ff6b6b;
+    color: white;
+    font-weight: bold;
+}
+
+.detailed-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.detailed-table tbody td[headers="category"] {
+    background: #fff5f5;
+    font-weight: bold;
+}
+
+.detailed-table tfoot td {
+    background: #f8f9fa;
+    font-style: italic;
+    text-align: center;
+}
+
+.detailed-table td[colspan] {
+    text-align: center;
+    background: #fff5f5;
+}
+
+.faq-aside {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 200px;
+    top: 20px;
+    margin-left: 2rem;
+}
+</style> -->
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>{{ pizza.name }}</h1>
+    {% if pizza.image %}
+    <img src="{{ pizza.image.url }}" class="img-fluid mb-3" alt="{{ pizza.name }}">
+    {% endif %}
+    <div class="row">
+        <div class="col-md-8">
+            <p>{{ pizza.description }}</p>
+            <p><strong>Соус:</strong> {{ pizza.sauce }}</p>
+            <h3>Ингредиенты:</h3>
+            <ul>
+                {% for ingredient in pizza.ingredients.all %}
+                <li>{{ ingredient.name }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Аллергены:</h3>
+            <ul>
+                {% for allergen in pizza.allergens.all %}
+                <li>{{ allergen.name }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Доступные размеры и цены:</h3>
+            {% for pricing in pizza.pizzapricing_set.all %}
+            <p>{{ pricing.size.size }}: {{ pricing.price }} ₽</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="mt-3">
+        <a href="{% url 'pizza:menu' %}" class="btn btn-secondary">Назад к списку</a>
+    </div>
+    {% if user.is_superuser %}
+    <div class="admin-actions">
+        <a href="{% url 'pizza:pizza_update' pizza.pk %}" class="btn btn-warning">Редактировать</a>
+        <a href="{% url 'pizza:pizza_delete' pizza.pk %}" class="btn btn-danger">Удалить</a>
+    </div>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <div class="user-actions">
+        <a href="{% url 'pizza:order_create' %}" class="btn btn-primary">Заказать</a>
+        <a href="{% url 'pizza:review_create' %}" class="btn btn-secondary">Оставить отзыв</a>
+    </div>
+    {% else %}
+    <p>Для заказа пиццы необходимо <a href="{% url 'pizza:login' %}">войти</a> или <a href="{% url 'pizza:register' %}">зарегистрироваться</a></p>
+    {% endif %}
+</div>
+{% endblock %}
